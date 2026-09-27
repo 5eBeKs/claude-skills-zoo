@@ -90,6 +90,15 @@ judge given the correct bridge failed right answers there, so it was dropped. Th
 not see a misleading sentence around a right figure (in the live tests, Sonnet without the skill
 called the PayPal order a permanent gap). That is graded only in the live tests, by reading.
 
+### The data zoo
+
+A monthly skill breaks in the month the export changes. Eight changes are made, one at a time, to a
+copy of store A whose shape the owner confirmed the month before (a new payment gateway, a new tag, a
+pending payment, a new financial status, a second currency, a renamed column, an export that stops on
+the 20th, a new payout line), and the scripts run on each as they were before the export checks and as
+they are now. Each outcome is stopped, named, crashed or silent, with the headline figure beside it
+(`results/data-zoo.json`).
+
 ### The answer hook
 
 The skills tell the model to show the owner exactly the text that the renderer returned and the

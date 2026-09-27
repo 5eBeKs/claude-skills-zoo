@@ -17,7 +17,8 @@
     "open question: Should revenue be reported with VAT, as the customer paid, or without VAT?",
     "open question: Is the shipping fee customers pay part of revenue, or kept out of it?",
     "open question: A partial refund: subtract only the amount (usual), or treat the whole order as refunded?",
-    "open question: A refund belongs to the month of the order (this export can only do that), or the month of the refund?"
+    "open question: A refund belongs to the month of the order (this export can only do that), or the month of the refund?",
+    "open question: The export's shape is not recorded yet: are the payment methods, statuses, tags and currencies listed under \"How this was counted\" all as expected? If so, they are kept as store_shape.json, and a new one next month is flagged."
   ],
   "skipped": [
     "2026",

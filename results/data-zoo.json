@@ -1,0 +1,93 @@
+{
+  "before": "e41aaef",
+  "changes": [
+    {
+      "id": "new_payment_method",
+      "what": "Two orders paid with Klarna, a gateway the store never used",
+      "before": "silent",
+      "before_said": "",
+      "now": "named",
+      "now_said": "",
+      "headline_unchanged_export": "2918.82",
+      "headline_before": "2918.82",
+      "headline_now": "2918.82"
+    },
+    {
+      "id": "new_tag",
+      "what": "An order tagged 'wholesale', a kind of sale the owner may count apart",
+      "before": "silent",
+      "before_said": "",
+      "now": "named",
+      "now_said": "",
+      "headline_unchanged_export": "2918.82",
+      "headline_before": "2918.82",
+      "headline_now": "2918.82"
+    },
+    {
+      "id": "pending_payment",
+      "what": "An order whose payment is still pending",
+      "before": "silent",
+      "before_said": "",
+      "now": "named",
+      "now_said": "",
+      "headline_unchanged_export": "2918.82",
+      "headline_before": "2918.82",
+      "headline_now": "2888.02"
+    },
+    {
+      "id": "new_status",
+      "what": "An order with a status the store never had ('on_hold')",
+      "before": "silent",
+      "before_said": "",
+      "now": "named",
+      "now_said": "",
+      "headline_unchanged_export": "2918.82",
+      "headline_before": "2918.82",
+      "headline_now": "2884.42"
+    },
+    {
+      "id": "second_currency",
+      "what": "An order charged in US dollars in a euro store",
+      "before": "silent",
+      "before_said": "",
+      "now": "named",
+      "now_said": "",
+      "headline_unchanged_export": "2918.82",
+      "headline_before": "2918.82",
+      "headline_now": "2894.42"
+    },
+    {
+      "id": "renamed_column",
+      "what": "The 'Lineitem sku' column comes back as 'Lineitem SKU'",
+      "before": "crashed",
+      "before_said": "KeyError: 'Lineitem sku'",
+      "now": "stopped",
+      "now_said": "export shape: orders_export.csv does not have the column(s) 'Lineitem sku' (the export has 'Lineitem SKU': renamed?). The export's shape changed; nothing is counted until the columns are back or the s",
+      "headline_unchanged_export": "2918.82",
+      "headline_before": null,
+      "headline_now": null
+    },
+    {
+      "id": "stops_on_the_20th",
+      "what": "The export was taken on the 20th: the last eleven days are missing",
+      "before": "silent",
+      "before_said": "",
+      "now": "named",
+      "now_said": "",
+      "headline_unchanged_export": "2918.82",
+      "headline_before": "1319.52",
+      "headline_now": "1319.52"
+    },
+    {
+      "id": "new_payout_type",
+      "what": "A 'reserve' line: Shopify holds back part of a payout",
+      "before": "named",
+      "before_said": "",
+      "now": "named",
+      "now_said": "",
+      "headline_unchanged_export": "2448.74",
+      "headline_before": "2398.74",
+      "headline_now": "2398.74"
+    }
+  ]
+}

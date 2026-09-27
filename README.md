@@ -61,6 +61,10 @@ Around them:
 - **The coverage check.** Everything the results list for the owner is named in the answer: orders
   left out and why, disputes, orders paid outside Shopify Payments, payouts in transit, products
   below cost or without a cost, open questions.
+- **The export checked first.** A renamed column stops the script; a new gateway, tag, status or
+  currency is named, and orders that are not sales yet are left out with the reason; the answer says
+  whether the export covers the month and what it was checked against
+  ([The data zoo](#the-data-zoo-the-export-changes)).
 - **An answer hook.** Claude may not finish on an answer that is not the checked text (see
   [The answer hook](#the-answer-hook)).
 - **A tool server** with the same scripts, so the skills work without a terminal (Claude Desktop,
@@ -150,6 +154,25 @@ the hook sent Claude back: once Claude told the owner what the short answer leav
 checked version, once it named all 85 orders left out; an answer made to fail twice ended with the
 warning ([`results/hook-check.md`](results/hook-check.md)). In six sessions with the owner's usual
 message the first answer already passed.
+
+## The data zoo: the export changes
+
+A monthly skill breaks in the month the export changes. Eight changes to an export the owner had
+confirmed, each run through the scripts before and after the export checks:
+
+| Change | Before | Now |
+|---|---|---|
+| Two orders paid with a gateway the store never used | silent | named |
+| An order tagged 'wholesale' | silent | named |
+| An order whose payment is still pending | silent, counted as a sale | named, left out |
+| An order with a status the store never had | silent, counted as a sale | named, left out |
+| An order in US dollars in a euro store | silent, added to the euro total | named, left out |
+| The 'Lineitem sku' column renamed | crashed | stopped: "the export has 'Lineitem SKU': renamed?" |
+| The export taken on the 20th | silent: a month at half its sales | named: "the export may stop early" |
+| A 'reserve' line in the payouts | named | named |
+
+The answer now also says on how many days of the month there are records, and what it was checked
+against: the owner's figures from Shopify or the bank, or nothing.
 
 ## Three stores against independent truth
 
