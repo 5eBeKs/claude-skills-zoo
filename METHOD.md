@@ -98,8 +98,10 @@ run keeps its result next to the exports (`.monthend/`), and when Claude is abou
 which the scripts ran, the hook checks the final message against those results. Figures that trace to
 no result, unknown order numbers or another currency, or items the owner should see and the message
 does not name (unless it points to a saved answer that passes the whole check), send Claude back once
-with the list. Other sessions are left alone. `results/hook-check.md` is a live session with hook
-events recorded.
+with the list. If the second answer fails too, the turn ends with a warning to the reader and a record
+of the failed answer next to the exports. Other sessions are left alone. `results/hook-check.md` has
+three live sessions with hook events recorded. Every answer also ends with the fingerprints of what it
+was computed from and by (each file's rows and SHA-256, the plugin's version).
 
 ## Checking the checks
 

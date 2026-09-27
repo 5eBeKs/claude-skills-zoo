@@ -41,6 +41,22 @@
     "a partial refund takes off only the amount refunded (the usual answer; please confirm)",
     "a refund belongs to the month of its order (the usual answer; please confirm)"
   ],
+  "inputs": [
+    {
+      "file": "orders_export.csv",
+      "sha256": "b3f1fd5c8f24954ca26c1ede603fba554decc32f79177865fb9fe5999f407c1d",
+      "rows": 103
+    }
+  ],
+  "computed_by": {
+    "plugin": "shopify-month-end",
+    "version": "0.4.0",
+    "scripts_sha256": "62db2d26990e4f0f2a89c8387dce2e209dfcc8c3d48a9161a681ebebaa2d02ab"
+  },
+  "fingerprints_in_words": [
+    "orders_export.csv: 103 rows, SHA-256 b3f1fd5c8f24954c",
+    "computed by shopify-month-end v0.4.0, scripts 62db2d26990e"
+  ],
   "open_questions": [
     "Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?",
     "Does a sale count when it is paid, or only once it is shipped?",

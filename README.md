@@ -52,7 +52,8 @@ Around them:
 - **Definitions, asked once and shown every time.** A short questionnaire (test orders, when a sale
   counts, VAT, shipping, refunds), answered by the owner in a file a person can read. Every answer
   ends with "How this was counted": each definition in words, marked as the owner's answer or as
-  the usual one still to be confirmed. See [`examples/answer-correct.md`](examples/answer-correct.md).
+  the usual one still to be confirmed, and the files it was computed from (rows and SHA-256) with the
+  plugin's version. See [`examples/answer-correct.md`](examples/answer-correct.md).
 - **Figures are never typed.** The model writes a draft with placeholders (`{{net_after_refunds|money}}`);
   a renderer fills them from the script's results, lists included, however long.
 - **The number check.** Every figure in the answer traces to the script's results, every order
@@ -143,11 +144,12 @@ flags the first two; the third it passes, and so did the linter until the bench 
 The skills say "show the owner exactly the checked text". On store C a model once showed a retelling
 instead. A Stop hook in the plugin now holds the rule: when the month-end scripts ran in a session, the
 final message must pass the number check against their results, and anything it leaves out must be in
-a checked file it points to; otherwise Claude is sent back once with the list. In a live session where
-the owner asked for two sentences and no files, the hook sent Claude back, and Claude told the owner
-what the short answer leaves out and offered the checked version
-([`results/hook-check.md`](results/hook-check.md)). In six sessions with the owner's usual message the
-first answer already passed.
+a checked file it points to; otherwise Claude is sent back once with the list, and if the second answer
+fails too, the reader is warned. In live sessions where the owner asked for two sentences and no files,
+the hook sent Claude back: once Claude told the owner what the short answer leaves out and offered the
+checked version, once it named all 85 orders left out; an answer made to fail twice ended with the
+warning ([`results/hook-check.md`](results/hook-check.md)). In six sessions with the owner's usual
+message the first answer already passed.
 
 ## Three stores against independent truth
 

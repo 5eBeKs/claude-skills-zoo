@@ -31,3 +31,5 @@ How this was counted:
 - the shipping customers pay is part of revenue (the usual answer; please confirm)
 - a partial refund takes off only the amount refunded (the usual answer; please confirm)
 - a refund belongs to the month of its order (the usual answer; please confirm)
+- orders_export.csv: 103 rows, SHA-256 b3f1fd5c8f24954c
+- computed by shopify-month-end v0.4.0, scripts 62db2d26990e
