@@ -1,0 +1,931 @@
+{
+  "schemaVersion": 1,
+  "claudeVersion": "2.1.280",
+  "startedAt": "2026-09",
+  "durationSeconds": 315,
+  "costUsd": 1.8322752,
+  "partial": false,
+  "suite": {
+    "root": "<local path>",
+    "ablation": "with-without",
+    "tagFilters": [
+      "routing"
+    ],
+    "threshold": 1,
+    "concurrency": 1,
+    "plugins": [
+      {
+        "name": "shopify-month-end",
+        "version": "0.1.0",
+        "path": "<local path>"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "route-margins",
+      "dir": "evals\\route-margins",
+      "source": "mixed",
+      "promptMarkdown": "Which of our products actually lose money? The August orders export and our unit costs (cogs.csv) are in the `files` folder. Prices include 19% VAT.",
+      "runsPerCase": 3,
+      "timeoutSeconds": 600,
+      "maxTurns": 30,
+      "graders": [
+        {
+          "name": "not-summary",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\"",
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "skill-fired",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\""
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 7,
+            "costUsd": 0.0879616,
+            "judgeCostUsd": 0,
+            "durationSeconds": 14,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 7,
+            "costUsd": 0.0865268,
+            "judgeCostUsd": 0,
+            "durationSeconds": 14,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 8,
+            "costUsd": 0.0936236,
+            "judgeCostUsd": 0,
+            "durationSeconds": 18,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 0.5,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.0792214,
+            "judgeCostUsd": 0,
+            "durationSeconds": 23,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0.5,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.0766906,
+            "judgeCostUsd": 0,
+            "durationSeconds": 14,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0.5,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.07829559999999999,
+            "judgeCostUsd": 0,
+            "durationSeconds": 16,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 0.5,
+        "passRateWithout": 0,
+        "delta": 0.5
+      }
+    },
+    {
+      "name": "route-payouts",
+      "dir": "evals\\route-payouts",
+      "source": "mixed",
+      "promptMarkdown": "We sold way more in August than landed in our bank. The Shopify orders export and the Shopify Payments payout transactions export are in the `files` folder. Where did the money go?",
+      "runsPerCase": 3,
+      "timeoutSeconds": 600,
+      "maxTurns": 30,
+      "graders": [
+        {
+          "name": "skill-fired",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?payout-reconciliation\""
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 7,
+            "costUsd": 0.0906634,
+            "judgeCostUsd": 0,
+            "durationSeconds": 14,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 7,
+            "costUsd": 0.0902042,
+            "judgeCostUsd": 0,
+            "durationSeconds": 14,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 7,
+            "costUsd": 0.08749439999999999,
+            "judgeCostUsd": 0,
+            "durationSeconds": 13,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 0,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.08387080000000001,
+            "judgeCostUsd": 0,
+            "durationSeconds": 16,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.0814988,
+            "judgeCostUsd": 0,
+            "durationSeconds": 17,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0,
+            "passed": false,
+            "turns": 6,
+            "costUsd": 0.07559160000000001,
+            "judgeCostUsd": 0,
+            "durationSeconds": 14,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 0,
+        "passRateWithout": 0,
+        "delta": 1
+      }
+    },
+    {
+      "name": "route-summary",
+      "dir": "evals\\route-summary",
+      "source": "mixed",
+      "promptMarkdown": "Hi! Our Shopify orders export for August is in the `files` folder (orders_export.csv). How did the month go? I need the key numbers for my accountant.",
+      "runsPerCase": 3,
+      "timeoutSeconds": 600,
+      "maxTurns": 30,
+      "graders": [
+        {
+          "name": "not-margins",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\"",
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "skill-fired",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\""
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 9,
+            "costUsd": 0.1059186,
+            "judgeCostUsd": 0,
+            "durationSeconds": 17,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-margins",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 7,
+            "costUsd": 0.0895904,
+            "judgeCostUsd": 0,
+            "durationSeconds": 14,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-margins",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 10,
+            "costUsd": 0.108406,
+            "judgeCostUsd": 0,
+            "durationSeconds": 18,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-margins",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 0.5,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.0804106,
+            "judgeCostUsd": 0,
+            "durationSeconds": 16,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-margins",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0.5,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.08076,
+            "judgeCostUsd": 0,
+            "durationSeconds": 13,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-margins",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0.5,
+            "passed": false,
+            "turns": 7,
+            "costUsd": 0.0814072,
+            "judgeCostUsd": 0,
+            "durationSeconds": 22,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "not-margins",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": false,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 1..∞)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 0.5,
+        "passRateWithout": 0,
+        "delta": 0.5
+      }
+    },
+    {
+      "name": "route-unrelated",
+      "dir": "evals\\route-unrelated",
+      "source": "prose",
+      "promptMarkdown": "Write a two-sentence product description for our new Oolong 50g tea.",
+      "runsPerCase": 3,
+      "timeoutSeconds": 600,
+      "maxTurns": 30,
+      "graders": [
+        {
+          "name": "no-payout-reconciliation",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?payout-reconciliation\"",
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "no-shopify-monthly-summary",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\"",
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "name": "no-sku-margin-check",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\"",
+            "min": 0,
+            "max": 0
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 1,
+            "costUsd": 0.0478206,
+            "judgeCostUsd": 0,
+            "durationSeconds": 5,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "no-payout-reconciliation",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-shopify-monthly-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-sku-margin-check",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 1,
+            "costUsd": 0.0466206,
+            "judgeCostUsd": 0,
+            "durationSeconds": 4,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "no-payout-reconciliation",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-shopify-monthly-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-sku-margin-check",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 1,
+            "costUsd": 0.0480206,
+            "judgeCostUsd": 0,
+            "durationSeconds": 5,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "no-payout-reconciliation",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-shopify-monthly-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-sku-margin-check",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 1,
+            "costUsd": 0.043300599999999995,
+            "judgeCostUsd": 0,
+            "durationSeconds": 4,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "no-payout-reconciliation",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-shopify-monthly-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-sku-margin-check",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 1,
+            "costUsd": 0.0444646,
+            "judgeCostUsd": 0,
+            "durationSeconds": 5,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "no-payout-reconciliation",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-shopify-monthly-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-sku-margin-check",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 1,
+            "costUsd": 0.043912599999999996,
+            "judgeCostUsd": 0,
+            "durationSeconds": 5,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "no-payout-reconciliation",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-shopify-monthly-summary",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "no-sku-margin-check",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 0x (expected 0..0)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 1,
+        "passRateWithout": 1,
+        "delta": 0
+      }
+    }
+  ],
+  "aggregates": {
+    "casesTotal": 4,
+    "casesPassed": 4,
+    "overallScore": 1,
+    "overallPassRate": 1,
+    "meanDelta": 0.5
+  }
+}

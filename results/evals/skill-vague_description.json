@@ -1,0 +1,1223 @@
+{
+ "schemaVersion": 1,
+ "claudeVersion": "2.1.280",
+ "startedAt": "2026-09",
+ "durationSeconds": 757,
+ "costUsd": 4.0550138,
+ "partial": false,
+ "suite": {
+  "root": "<local path>",
+  "ablation": "none",
+  "modelOverride": "claude-opus-5-5",
+  "tagFilters": [
+   "routing"
+  ],
+  "threshold": 1,
+  "concurrency": 1,
+  "plugins": [
+   {
+    "name": "shopify-month-end",
+    "version": "0.2.0",
+    "path": "<local path>"
+   }
+  ]
+ },
+ "cases": [
+  {
+   "name": "route-margins",
+   "dir": "evals\\route-margins",
+   "source": "mixed",
+   "promptMarkdown": "Which of our products actually lose money? The August orders export and our unit costs (cogs.csv) are in the `files` folder. Prices include 19% VAT.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "not-summary",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\"",
+      "min": 0,
+      "max": 0
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 6,
+      "costUsd": 0.37173359999999994,
+      "judgeCostUsd": 0,
+      "durationSeconds": 78,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 6,
+      "costUsd": 0.15163079999999998,
+      "judgeCostUsd": 0,
+      "durationSeconds": 32,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 6,
+      "costUsd": 0.21116419999999997,
+      "judgeCostUsd": 0,
+      "durationSeconds": 42,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1
+   }
+  },
+  {
+   "name": "route-margins-indirect",
+   "dir": "evals\\route-margins-indirect",
+   "source": "mixed",
+   "promptMarkdown": "Are we losing money on anything we sell? Last month's export and what each item costs us are in the `files` folder.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "not-summary",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\"",
+      "min": 0,
+      "max": 0
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.0906362,
+      "judgeCostUsd": 0,
+      "durationSeconds": 14,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.09252200000000001,
+      "judgeCostUsd": 0,
+      "durationSeconds": 15,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.1027974,
+      "judgeCostUsd": 0,
+      "durationSeconds": 16,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1
+   }
+  },
+  {
+   "name": "route-payouts",
+   "dir": "evals\\route-payouts",
+   "source": "mixed",
+   "promptMarkdown": "We sold way more in August than landed in our bank. The Shopify orders export and the Shopify Payments payout transactions export are in the `files` folder. Where did the money go?",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?payout-reconciliation\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.5235536000000001,
+      "judgeCostUsd": 0,
+      "durationSeconds": 91,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 6,
+      "costUsd": 0.28193559999999995,
+      "judgeCostUsd": 0,
+      "durationSeconds": 53,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.34591099999999997,
+      "judgeCostUsd": 0,
+      "durationSeconds": 52,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1
+   }
+  },
+  {
+   "name": "route-summary",
+   "dir": "evals\\route-summary",
+   "source": "mixed",
+   "promptMarkdown": "Hi! Our Shopify orders export for August is in the `files` folder (orders_export.csv). How did the month go? I need the key numbers for my accountant.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "not-margins",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\"",
+      "min": 0,
+      "max": 0
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.49141460000000003,
+      "judgeCostUsd": 0,
+      "durationSeconds": 105,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-margins",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.35636799999999996,
+      "judgeCostUsd": 0,
+      "durationSeconds": 72,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-margins",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.137364,
+      "judgeCostUsd": 0,
+      "durationSeconds": 24,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-margins",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1
+   }
+  },
+  {
+   "name": "route-summary-indirect",
+   "dir": "evals\\route-summary-indirect",
+   "source": "mixed",
+   "promptMarkdown": "Can you pull together last month's numbers for my accountant? The export is in the `files` folder.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "not-margins",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\"",
+      "min": 0,
+      "max": 0
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.20073219999999997,
+      "judgeCostUsd": 0,
+      "durationSeconds": 41,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-margins",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.1778234,
+      "judgeCostUsd": 0,
+      "durationSeconds": 35,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-margins",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 7,
+      "costUsd": 0.37438140000000003,
+      "judgeCostUsd": 0,
+      "durationSeconds": 71,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "not-margins",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1
+   }
+  },
+  {
+   "name": "route-unrelated",
+   "dir": "evals\\route-unrelated",
+   "source": "prose",
+   "promptMarkdown": "Write a two-sentence product description for our new Oolong 50g tea.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "no-payout-reconciliation",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?payout-reconciliation\"",
+      "min": 0,
+      "max": 0
+     }
+    },
+    {
+     "name": "no-shopify-monthly-summary",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\"",
+      "min": 0,
+      "max": 0
+     }
+    },
+    {
+     "name": "no-sku-margin-check",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\"",
+      "min": 0,
+      "max": 0
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 2,
+      "costUsd": 0.0512486,
+      "judgeCostUsd": 0,
+      "durationSeconds": 6,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "no-payout-reconciliation",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "no-shopify-monthly-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "no-sku-margin-check",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 1,
+      "costUsd": 0.0462886,
+      "judgeCostUsd": 0,
+      "durationSeconds": 5,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "no-payout-reconciliation",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "no-shopify-monthly-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "no-sku-margin-check",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 1,
+      "costUsd": 0.0475086,
+      "judgeCostUsd": 0,
+      "durationSeconds": 6,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "mocks": {
+       "servers": [
+        {
+         "server": "plugin_shopify-month-end_monthend",
+         "kind": "shadow",
+         "withheld": true,
+         "tools": []
+        }
+       ],
+       "warnings": [
+        "mocks: \"plugin:shopify-month-end:monthend\" has no mock and is NOT started — its tools are unavailable this run; add mocks/<server>/ to mock it, or pass --allow-real-servers to run the plugin's real server (as you, outside the sandbox)"
+       ],
+       "calls": {
+        "total": 0,
+        "errors": 0,
+        "unmocked": [],
+        "costUsd": 0,
+        "replay": {
+         "hits": 0,
+         "misses": 0
+        }
+       }
+      },
+      "graders": [
+       {
+        "name": "no-payout-reconciliation",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "no-shopify-monthly-summary",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "no-sku-margin-check",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 0x (expected 0..0)",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1
+   }
+  }
+ ],
+ "aggregates": {
+  "casesTotal": 6,
+  "casesPassed": 6,
+  "overallScore": 1,
+  "overallPassRate": 1
+ }
+}

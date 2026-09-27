@@ -1,0 +1,2377 @@
+{
+ "schemaVersion": 1,
+ "claudeVersion": "2.1.280",
+ "startedAt": "2026-09",
+ "durationSeconds": 2309,
+ "costUsd": 11.531186600000002,
+ "partial": false,
+ "suite": {
+  "root": "<local path>",
+  "ablation": "with-without",
+  "modelOverride": "claude-opus-5-5",
+  "tagFilters": [
+   "numbers"
+  ],
+  "threshold": 1,
+  "concurrency": 1,
+  "plugins": [
+   {
+    "name": "shopify-month-end",
+    "version": "0.2.0",
+    "path": "<local path>"
+   }
+  ]
+ },
+ "cases": [
+  {
+   "name": "numbers-margins",
+   "dir": "evals\\numbers-margins",
+   "source": "mixed",
+   "promptMarkdown": "Which of our products actually lose money? The August orders export and our unit costs (cogs.csv) are in the `files` folder. Prices include 19% VAT.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "below-cost-named",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "STR-STL-001|Steel Strainer",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "gift-set-unknown",
+     "type": "llm",
+     "weight": 1,
+     "graderMarkdown": "PASS if the answer says the Gift Set (SET-GFT-001) has no known cost, so its margin is unknown.\nFAIL if it gives the Gift Set a margin, treats its cost as zero, or does not mention it.",
+     "config": {
+      "criteria": "PASS if the answer says the Gift Set (SET-GFT-001) has no known cost, so its margin is unknown.\nFAIL if it gives the Gift Set a margin, treats its cost as zero, or does not mention it.",
+      "focus": "last_message"
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.2111768,
+      "judgeCostUsd": 0.0029760000000000003,
+      "durationSeconds": 41,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched STR-STL-001|Steel Strainer",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "The Steel Strainer is the one product I can confirm lost money in August. The Gift Set has no cost in `cogs.csv`, so I can't tell yet whether it made or lost money. Every amount below is in EUR. All 49 figures in the report were checked against the calculation, and the check passed.\n\n## August 2026: which products lose money\n\n**Sold below cost: Steel Strainer (STR-STL-001).** It's the only product with a negative margin. 20 units brought in 109.24 without VAT but cost 142.00, a margin of -32.76 (-30.0%). Its unit cost is 7.10.\n\n**Margin unknown: SET-GFT-001 (Gift Set).** It has no cost in `cogs.csv`. Its 17 units brought in 700.00 without VAT, but I can't tell whether it makes or loses money. Its margin is unknown, not zero. Please send its unit cost.\n\nAll other products made money.\n\n| SKU | Product | Units | Revenue ex VAT | Cost | Margin | Margin % |\n|---|---|---|---|---|---|---|\n| STR-STL-001 | Steel Strainer | 20 | 109.24 | 142.00 | -32.76 | -30.0% |\n| SET-GFT-001 | Gift Set | 17 | 700.00 | unknown | unknown | unknown |\n| CUP-CER-001 | Ceramic Cup | 14 | 211.76 | 105.00 | 106.76 | 50.4% |\n| POT-GLS-600 | Glass Teapot 600ml | 19 | 542.86 | 302.10 | 240.76 | 44.4% |\n| TEA-BLK-100 | Black Tea 100g | 27 | 260.92 | 102.60 | 158.32 | 60.7% |\n| TEA-GRN-100 | Green Tea 100g | 13 | 140.92 | 53.30 | 87.62 | 62.2% |\n| TEA-MAT-030 | Matcha 30g | 8 | 161.34 | 77.60 | 83.74 | 51.9% |\n| TEA-OOL-050 | Oolong 50g | 16 | 215.13 | 99.20 | 115.93 | 53.9% |\n\nThese amounts don't belong to any one product: 20.28 in order-level discounts and 70.50 in refunds. The product margins above don't include them.\n\nVAT removed from prices: 0.19. Orders counted: 58.\n\n**How this was counted**\n- Orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm).\n- A sale counts once it is paid, whether or not it has shipped (the usual answer; please confirm).\n- Prices include VAT at 19% (as you said).\n\n**To confirm**\n- Test orders (tagged 'test', or paid through Shopify's test gateway): should they stay out of sales (the usual choice), or be counted?\n- Does a sale count when it's paid, or only once it has shipped?\n\nUntil you confirm, the figures use the usual answers to these questions. A different answer would change them."
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.19854740000000004,
+      "judgeCostUsd": 0.0027270000000000003,
+      "durationSeconds": 35,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched STR-STL-001|Steel Strainer",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "Only the Steel Strainer lost money in August. The Gift Set's margin can't be worked out because it has no cost in `cogs.csv`. All amounts below are in EUR:\n\n---\n\n## Products sold below cost — August 2026\n\n**Only one product lost money: Steel Strainer (STR-STL-001).**\nIt sold 20 units for 109.24 without VAT, against 142.00 in cost — a margin of -32.76 (-30.0%).\n\n**Unknown cost: SET-GFT-001.** The Gift Set brought in 700.00 without VAT over 17 units, but it is not in cogs.csv, so its margin is unknown (not zero). Please send its unit cost to finish the check.\n\n### All products\n\n| SKU | Product | Units | Revenue ex VAT | Cost | Margin | Margin % |\n|---|---|---|---|---|---|---|\n| CUP-CER-001 | Ceramic Cup | 14 | 211.76 | 105.00 | 106.76 | 50.4% |\n| POT-GLS-600 | Glass Teapot 600ml | 19 | 542.86 | 302.10 | 240.76 | 44.4% |\n| SET-GFT-001 | Gift Set | 17 | 700.00 | unknown | unknown | unknown |\n| STR-STL-001 | Steel Strainer | 20 | 109.24 | 142.00 | -32.76 | -30.0% |\n| TEA-BLK-100 | Black Tea 100g | 27 | 260.92 | 102.60 | 158.32 | 60.7% |\n| TEA-GRN-100 | Green Tea 100g | 13 | 140.92 | 53.30 | 87.62 | 62.2% |\n| TEA-MAT-030 | Matcha 30g | 8 | 161.34 | 77.60 | 83.74 | 51.9% |\n| TEA-OOL-050 | Oolong 50g | 16 | 215.13 | 99.20 | 115.93 | 53.9% |\n\nNot spread over products: 20.28 in discounts and 70.50 in refunds.\n\nVAT removed at 0.19; figures cover 58 orders.\n\n### How this was counted\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- prices include VAT at 19% (as given)\n\n### Open questions\nThese figures use the usual answers below until you confirm them; a different answer would change them.\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?"
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.20325420000000002,
+      "judgeCostUsd": 0.0028139999999999997,
+      "durationSeconds": 36,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched STR-STL-001|Steel Strainer",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "In August one product lost money: the Steel Strainer. I can't say yet whether the Gift Set did, because it isn't in cogs.csv. All amounts below are in EUR, with the 19% VAT taken out of the prices.\n\n## Products sold below cost (2026-08)\n\n**Steel Strainer (STR-STL-001)** is the only product with a known cost that sold below cost: 20 units, 109.24 revenue without VAT against 142.00 cost, so a margin of -32.76 (-30.0%). Its unit cost is 7.10.\n\n## Cost unknown\n\n**Gift Set (SET-GFT-001)**: 17 units, 700.00 revenue without VAT. It is not in cogs.csv, so its margin is unknown (not zero). Can you send its unit cost?\n\n## All products\n\n| SKU | Product | Units | Revenue ex VAT | Cost | Margin | Margin % |\n|---|---|---:|---:|---:|---:|---:|\n| CUP-CER-001 | Ceramic Cup | 14 | 211.76 | 105.00 | 106.76 | 50.4% |\n| POT-GLS-600 | Glass Teapot 600ml | 19 | 542.86 | 302.10 | 240.76 | 44.4% |\n| SET-GFT-001 | Gift Set | 17 | 700.00 | unknown | unknown | unknown |\n| STR-STL-001 | Steel Strainer | 20 | 109.24 | 142.00 | -32.76 | -30.0% |\n| TEA-BLK-100 | Black Tea 100g | 27 | 260.92 | 102.60 | 158.32 | 60.7% |\n| TEA-GRN-100 | Green Tea 100g | 13 | 140.92 | 53.30 | 87.62 | 62.2% |\n| TEA-MAT-030 | Matcha 30g | 8 | 161.34 | 77.60 | 83.74 | 51.9% |\n| TEA-OOL-050 | Oolong 50g | 16 | 215.13 | 99.20 | 115.93 | 53.9% |\n\nNot spread over products: 20.28 in order-level discounts and 70.50 in refunds. VAT removed at 0.19; figures cover 58 orders.\n\n## How this was counted\n\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- prices include VAT at 19% (as given)\n\n## Please confirm\n\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n\nUntil you confirm, the figures use the usual answers above; a different answer would change them."
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.1706962,
+      "judgeCostUsd": 0.0024659999999999994,
+      "durationSeconds": 24,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched STR-STL-001|Steel Strainer",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "**Only one product loses money: the Steel Strainer (STR-STL-001).** It sells for €6.50 including VAT, which is €5.46 after VAT. It costs €7.10, so you lose about **€1.64 on every unit**.\n\nIn August you sold 20 strainers. Across those that comes to a **loss of about €34**, a bit more than 20 × €1.64 because 2 of them were bought with the WELCOME10 discount (10% off). I left out the test order (#1013), the voided order (#1021) and the fully refunded order (#1042).\n\nPer-unit margin for every product in `cogs.csv`:\n\n| Product | Price incl. VAT | Price excl. VAT | Unit cost | Margin |\n|---|---|---|---|---|\n| Steel Strainer | 6.50 | 5.46 | 7.10 | **−1.64** |\n| Black Tea 100g | 11.50 | 9.66 | 3.80 | +5.86 |\n| Green Tea 100g | 12.90 | 10.84 | 4.10 | +6.74 |\n| Oolong 50g | 16.00 | 13.45 | 6.20 | +7.25 |\n| Ceramic Cup | 18.00 | 15.13 | 7.50 | +7.63 |\n| Glass Teapot 600ml | 34.00 | 28.57 | 15.90 | +12.67 |\n| Matcha 30g | 24.00 | 20.17 | 9.70 | +10.47 |\n\nEverything except the strainer keeps a margin of at least 43% of its ex-VAT price. So a 10% discount or typical payment fees won't push any of them into a loss.\n\n**What I couldn't check:**\n- **Gift Set (SET-GFT-001) isn't in `cogs.csv`.** You sold 16 in August at €41.18 each after VAT. It only loses money if it costs you more than about €41, or about €37 when WELCOME10 is used. If it's a bundle of the items above, its cost is probably well below that, but I'd need the real number.\n- **Payment fees and shipping costs aren't in either file.** One order (#1054) was just 2 strainers for €13 plus €4.90 shipping, which probably lost money overall. Most other strainer sales came in orders alongside other products.\n\nTo fix the strainer, the price would need to be at least about €8.45 including VAT just to break even, before fees."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.1708688,
+      "judgeCostUsd": 0.002295,
+      "durationSeconds": 24,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched STR-STL-001|Steel Strainer",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "**Only one product clearly loses money: the Steel Strainer (STR-STL-001).** It sells for €6.50 including VAT, which is €5.46 after taking out the 19%. It costs €7.10, so every strainer sold loses about €1.64, even at full price.\n\nIn August you sold 20 strainers. They lost about **€33.85** in total, including a 10% WELCOME10 discount on one order (#1043).\n\nA second product can't be checked. **Gift Set (SET-GFT-001) has no row in cogs.csv.** It sells for €41.18 after VAT (€37.06 with WELCOME10), and 16 were sold in August. It's one of your biggest sellers, so it's worth adding its cost. It loses money only if its cost is above about €37–41, which could happen if it bundles a teapot or several items.\n\nEverything else makes money, even with the 10% discount:\n\n| Product | Price after VAT | Unit cost | Margin |\n|---|---|---|---|\n| Green Tea 100g | €10.84 | €4.10 | €6.74 |\n| Black Tea 100g | €9.66 | €3.80 | €5.86 |\n| Oolong 50g | €13.45 | €6.20 | €7.25 |\n| Matcha 30g | €20.17 | €9.70 | €10.47 |\n| Ceramic Cup | €15.13 | €7.50 | €7.63 |\n| Glass Teapot 600ml | €28.57 | €15.90 | €12.67 |\n| Steel Strainer | €5.46 | €7.10 | **−€1.64** |\n\n**What I left out of the unit counts:**\n- #1013, because it's tagged `test`\n- #1021, because it was voided\n- #1042, because it was fully refunded\n\nNone of these three contained a strainer, so leaving them out doesn't change the strainer figure.\n\n**What this doesn't include:** shipping, payment fees and packaging, because the files don't have those costs. Once you add them, the thinner products (Black Tea with a €5.86 margin, and the teas bought on their own in general) may make much less on small orders. The export also shows most orders under €40 pay €4.90 shipping, so shipping is partly covered but the real cost is unknown."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.17918099999999998,
+      "judgeCostUsd": 0.0028260000000000004,
+      "durationSeconds": 28,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched STR-STL-001|Steel Strainer",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "**Only the Steel Strainer (STR-STL-001) loses money.** It sells for €6.50 including VAT, which is €5.46 after the 19% is taken out. It costs you €7.10, so you lose about €1.64 on every one you sell.\n\n**Unit economics (prices net of VAT):**\n\n| Product | Price incl. VAT | Price excl. VAT | Unit cost | Profit per unit | Margin |\n|---|---|---|---|---|---|\n| **Steel Strainer** | 6.50 | 5.46 | 7.10 | **−1.64** | **−30%** |\n| Glass Teapot 600ml | 34.00 | 28.57 | 15.90 | 12.67 | 44% |\n| Ceramic Cup | 18.00 | 15.13 | 7.50 | 7.63 | 50% |\n| Matcha 30g | 24.00 | 20.17 | 9.70 | 10.47 | 52% |\n| Oolong 50g | 16.00 | 13.45 | 6.20 | 7.25 | 54% |\n| Black Tea 100g | 11.50 | 9.66 | 3.80 | 5.86 | 61% |\n| Green Tea 100g | 12.90 | 10.84 | 4.10 | 6.74 | 62% |\n| Gift Set | 49.00 | 41.18 | **not in cogs.csv** | ? | ? |\n\n**What the strainer cost you in August:** you sold 20 units in 13 orders. Revenue excluding VAT was about €108 after one 10% WELCOME10 discount, and the units cost €142, so you lost about **€34** on them. Two orders contained nothing but strainers (#1007 and #1054).\n\n**Open question: the Gift Set.** It's one of your biggest sellers, with 16 units kept after refunds. But SET-GFT-001 isn't in `cogs.csv`, so I can't tell whether it makes money. It breaks even at a unit cost of about €41.18, or about €37 for orders that used WELCOME10. If the set bundles several of your products (for example teapot + cups + tea), its cost could get close to that, so please check it.\n\n**How I got these numbers:**\n- I left out order #1013 (tagged `test`), #1021 (voided) and #1042 (fully refunded).\n- #1030 had a partial €10 refund on a Gift Set. That doesn't change any of the per-unit numbers above.\n- WELCOME10 takes 10% off. That doesn't push any other product below zero; the Teapot has the thinnest margin and still keeps about 37% after the discount.\n- I didn't include shipping, payment fees or packaging, because the files don't have those costs. Some orders were charged €4.90 shipping and others shipped free. Your real shipping cost could make small orders unprofitable too, and strainer-only orders would be hit hardest."
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1,
+    "scoreWithout": 1,
+    "passRateWithout": 1,
+    "delta": 0
+   }
+  },
+  {
+   "name": "numbers-margins-b",
+   "dir": "evals\\numbers-margins-b",
+   "source": "mixed",
+   "promptMarkdown": "Which of our products lose money? August orders and our cost sheet (cogs.csv) are in the `files` folder. Our prices do not include sales tax.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "cedar-cost-found",
+     "type": "llm",
+     "weight": 1,
+     "graderMarkdown": "The cost sheet lists the Cedar Candle 8oz as `mo-cnd-001 ` (lower case, trailing space); the export uses MO-CND-001. They are the same product.\n\nPASS if the answer treats the Cedar Candle's cost as known: it gives the Cedar Candle a margin (per unit or for the month, in any format) or lists it among the products that make money.\nFAIL if it says the Cedar Candle has no cost or an unknown cost, gives it a margin equal to its whole revenue, or leaves it out.",
+     "config": {
+      "criteria": "The cost sheet lists the Cedar Candle 8oz as `mo-cnd-001 ` (lower case, trailing space); the export uses MO-CND-001. They are the same product.\n\nPASS if the answer treats the Cedar Candle's cost as known: it gives the Cedar Candle a margin (per unit or for the month, in any format) or lists it among the products that make money.\nFAIL if it says the Cedar Candle has no cost or an unknown cost, gives it a margin equal to its whole revenue, or leaves it out.",
+      "focus": "last_message"
+     }
+    },
+    {
+     "name": "sample-below-cost",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "MO-SMP-001|Sample Votive",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.19323939999999998,
+      "judgeCostUsd": 0.0027959999999999964,
+      "durationSeconds": 33,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "## August product margins (USD)\n\n**Only one product sold below cost: Sample Votive (MO-SMP-001).** It had 9 units, 0.00 in revenue and 9.90 in cost, so its margin was -9.90. It brought in no revenue at all, so it looks like a free sample given away with orders, not a product priced too low. If that's right, treat it as a marketing cost.\n\nEvery other product made money. All products have a known cost.\n\n| SKU | Product | Units | Revenue (ex. tax) | Cost | Margin | Margin % |\n|---|---|---|---|---|---|---|\n| MO-CND-001 | Cedar Candle 8oz | 28 | 672.00 | 207.20 | 464.80 | 69.2% |\n| MO-CND-002 | Fig Candle 8oz | 22 | 528.00 | 173.80 | 354.20 | 67.1% |\n| MO-CND-010 | Travel Tin Trio | 24 | 468.00 | 146.40 | 321.60 | 68.7% |\n| MO-DIF-001 | Reed Diffuser | 39 | 1,248.00 | 436.80 | 811.20 | 65.0% |\n| MO-MAT-001 | Match Cloche | 34 | 408.00 | 163.20 | 244.80 | 60.0% |\n| MO-SMP-001 | Sample Votive | 9 | 0.00 | 9.90 | -9.90 | n/a (no revenue) |\n| MO-WCK-001 | Wick Trimmer | 27 | 378.00 | 140.40 | 237.60 | 62.9% |\n\nSome amounts are not assigned to any product: 10.00 in order-level discounts and 58.06 in refunds. They reduce overall profit, but the margins above do not include them.\n\nThese figures cover 67 orders. Tax rate removed from prices: 0, because you said your prices don't include sales tax.\n\n**How this was counted**\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- prices include VAT at 0% (as given)\n\n**Please confirm**\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n\nFor now the figures use the usual answer to each question. If your answer is different, the figures will change."
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched MO-SMP-001|Sample Votive",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 10,
+      "costUsd": 0.27945100000000006,
+      "judgeCostUsd": 0.0029040000000000003,
+      "durationSeconds": 54,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "## Products losing money: August (2026-08)\n\n**Only one product sold below cost: Sample Votive (MO-SMP-001).**\n- 9 units went out, revenue 0.00, cost 9.90, so the margin is -9.90.\n- It brought in no revenue at all, so it looks like a free sample or giveaway, not a pricing problem. The margin % shows as 0.0 only because there is no revenue to divide by. If it's meant as a freebie, that is its marketing cost.\n\nEvery other product made money, with margins from 60.0% (Match Cloche) to 69.2% (Cedar Candle 8oz). No product is missing a cost.\n\n| SKU | Product | Units | Revenue (no tax) | Cost | Margin | Margin % |\n|---|---|---|---|---|---|---|\n| MO-CND-001 | Cedar Candle 8oz | 28 | 672.00 | 207.20 | 464.80 | 69.2% |\n| MO-CND-002 | Fig Candle 8oz | 22 | 528.00 | 173.80 | 354.20 | 67.1% |\n| MO-CND-010 | Travel Tin Trio | 24 | 468.00 | 146.40 | 321.60 | 68.7% |\n| MO-DIF-001 | Reed Diffuser | 39 | 1,248.00 | 436.80 | 811.20 | 65.0% |\n| MO-MAT-001 | Match Cloche | 34 | 408.00 | 163.20 | 244.80 | 60.0% |\n| MO-SMP-001 | Sample Votive | 9 | 0.00 | 9.90 | -9.90 | n/a |\n| MO-WCK-001 | Wick Trimmer | 27 | 378.00 | 140.40 | 237.60 | 62.9% |\n\nAll amounts are in USD. Not included in the product figures: 10.00 in order-level discounts and 58.06 in refunds.\n\nThe figures cover 67 orders. Sales tax removed: 0 (as you said, your prices don't include it).\n\n**How I counted this**\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- prices include VAT at 0% (as given)\n\n**Please confirm.** Until you do, the figures use the usual answers below, and a different answer would change them:\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?"
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched MO-SMP-001|Sample Votive",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.19990780000000002,
+      "judgeCostUsd": 0.0029250000000000005,
+      "durationSeconds": 36,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "**Only one product lost money in August: Sample Votive (MO-SMP-001).** 9 units went out with no revenue, so their cost of 9.90 USD is a straight loss (margin -9.90). They look like free samples given away, not a product priced below cost. Whether that's worth it depends on what the samples bring in, and this data doesn't show that.\n\nEvery other product sells well above cost. Every SKU sold had a cost in cogs.csv.\n\n| SKU | Product | Units | Revenue (no tax) | Cost | Margin | Margin % |\n|---|---|---:|---:|---:|---:|---:|\n| MO-DIF-001 | Reed Diffuser | 39 | 1,248.00 | 436.80 | 811.20 | 65.0% |\n| MO-CND-001 | Cedar Candle 8oz | 28 | 672.00 | 207.20 | 464.80 | 69.2% |\n| MO-CND-002 | Fig Candle 8oz | 22 | 528.00 | 173.80 | 354.20 | 67.1% |\n| MO-CND-010 | Travel Tin Trio | 24 | 468.00 | 146.40 | 321.60 | 68.7% |\n| MO-MAT-001 | Match Cloche | 34 | 408.00 | 163.20 | 244.80 | 60.0% |\n| MO-WCK-001 | Wick Trimmer | 27 | 378.00 | 140.40 | 237.60 | 62.9% |\n| MO-SMP-001 | Sample Votive | 9 | 0.00 | 9.90 | -9.90 | n/a (no revenue) |\n\nAll amounts are in USD.\n\n- **Discounts and refunds:** 10.00 in order-level discounts and 58.06 in refunds aren't assigned to individual products. They're too small to push any other product below cost.\n- **Scope:** the figures cover 67 orders. No sales tax was taken out of prices, since your prices don't include it.\n- **Cost sheet:** one SKU in cogs.csv was written differently (\"mo-cnd-001 \", lowercase with a trailing space). It was still matched to Cedar Candle 8oz.\n\n**How this was counted**\n- Orders tagged \"test\" and orders paid through Shopify's test gateway are left out of sales. This is the usual approach; please confirm.\n- A sale counts once it's paid, whether or not it has shipped. This is also the usual approach; please confirm.\n- Prices contain no sales tax, as you said.\n\n**Please confirm:** the figures above use the usual answers to these two questions. A different answer would change the figures:\n- Should test orders stay out of sales, or be counted?\n- Does a sale count when it's paid, or only once it has shipped?"
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched MO-SMP-001|Sample Votive",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.24979220000000002,
+      "judgeCostUsd": 0.0032100000000000045,
+      "durationSeconds": 43,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "**Short answer: only the Sample Votive (MO-CND-SMP-001) loses money.** It's given away at $0.00 and costs $1.10, so it's a deliberate giveaway rather than a pricing problem. Every product you actually charge for has a healthy margin.\n\n**August gross margin by product** (price minus unit cost; tax isn't counted as revenue)\n\n| Product | SKU | Price | Unit cost | Margin/unit | Units | Aug. margin |\n|---|---|---|---|---|---|---|\n| Reed Diffuser | MO-DIF-001 | $32.00 | $11.20 | $20.80 (65%) | 39 | $811.20 |\n| Cedar Candle 8oz | MO-CND-001 | $24.00 | $7.40 | $16.60 (69%) | 27 | $448.20 |\n| Fig Candle 8oz | MO-CND-002 | $24.00 | $7.90 | $16.10 (67%) | 22 | $354.20 |\n| Travel Tin Trio | MO-CND-010 | $19.50 | $6.10 | $13.40 (69%) | 24 | $321.60 |\n| Wick Trimmer | MO-WCK-001 | $14.00 | $5.20 | $8.80 (63%) | 27 | $237.60 |\n| Match Cloche | MO-MAT-001 | $12.00 | $4.80 | $7.20 (60%) | 33 | $237.60 |\n| **Sample Votive** | MO-SMP-001 | **$0.00** | $1.10 | **−$1.10** | 9 | **−$9.90** |\n\nTotal is about $2,400, or about $2,380 after the two $5 SUMMER5 discounts and a $12 partial refund. Those don't change the answer for any product.\n\n**What I left out of the order export:**\n- Orders #1998–2000, because they were placed on July 31.\n- #2008, which was voided.\n- #2011 and #2044, which were paid through \"Bogus Gateway (for testing)\".\n- #2038, which was fully refunded. If those items weren't returned, you also lost $12.20 in product cost on it.\n- One SKU in `cogs.csv` is written `mo-cnd-001 ` (lowercase, with a trailing space). I matched it to Cedar Candle, but a strict lookup would miss it, so it's worth fixing.\n\n**Things worth checking:**\n1. **Travel Tin Trio cost.** If $6.10 is the cost of one tin rather than the whole set of three, the Trio actually costs $18.30. That leaves only $1.20 on a $19.50 sale, and payment fees would push it into a loss. Please confirm which it is.\n2. **Costs I don't have.** The analysis only covers product cost. It doesn't include payment processing fees, your actual shipping costs (orders over about $50 ship free), or packaging. Those hit the $12 Match Cloche and $14 Wick Trimmer hardest when someone orders one by itself. If you share shipping and fee costs, I can work out profit per order."
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched MO-SMP-001|Sample Votive",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.27401,
+      "judgeCostUsd": 0.0031890000000000043,
+      "durationSeconds": 52,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "Only one product lost money in August: the **Sample Votive** (MO-SMP-001). It sells for $0.00 and costs $1.10 each. Every other product makes money on each unit, with a lot of room to spare.\n\n**August 2026 gross margin by product** (price excluding sales tax, minus unit cost)\n\n| Product | SKU | Units | Revenue | COGS | Gross profit | Margin |\n|---|---|---|---|---|---|---|\n| Reed Diffuser | MO-DIF-001 | 39 | $1,248.00 | $436.80 | **$811.20** | 65% |\n| Cedar Candle 8oz | MO-CND-001 | 27 | $648.00 | $199.80 | **$448.20** | 69% |\n| Fig Candle 8oz | MO-CND-002 | 22 | $528.00 | $173.80 | **$354.20** | 67% |\n| Travel Tin Trio | MO-CND-010 | 24 | $468.00 | $146.40 | **$321.60** | 69% |\n| Match Cloche | MO-MAT-001 | 33 | $396.00 | $158.40 | **$237.60** | 60% |\n| Wick Trimmer | MO-WCK-001 | 27 | $378.00 | $140.40 | **$237.60** | 63% |\n| Sample Votive | MO-SMP-001 | 9 | $0.00 | $9.90 | **−$9.90** | n/a |\n| **Total** | | | **$3,666.00** | **$1,265.50** | **$2,400.50** | 65% |\n\nThe votive seems to be a free add-on, so the loss is probably on purpose. It came to $9.90 for the month.\n\n**Orders I left out or adjusted:**\n- **Not in August:** #1998–#2000 were placed on July 31.\n- **Voided:** #2008 was voided and cancelled.\n- **Test orders:** #2011 and #2044 were paid through \"Bogus Gateway (for testing)\".\n- **Full refund:** #2038 was refunded in full, so it counts as no revenue.\n- **Not taken off the table:** two SUMMER5 discounts ($5 each) and a $12 partial refund on #2049. They can't be matched to a single product, so they're left in. Together they're only $22, which doesn't change which products make money.\n- **SKU mismatch:** the cost sheet lists the Cedar Candle as `mo-cnd-001 ` (lowercase, with a trailing space). I matched it to MO-CND-001.\n\n**What this doesn't include:** your costs for shipping, packaging and payment processing, because they aren't in the files. Orders over $50 get free shipping, and smaller orders pay $6.95. The Match Cloche ($7.20 profit per unit) and Wick Trimmer ($8.80) have the least room. If they often ship alone for $6.95 and your real shipping cost is higher than that, those orders could lose money. If you have your shipping and fee costs, I can add them in."
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched MO-SMP-001|Sample Votive",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.2577746,
+      "judgeCostUsd": 0.003336000000000002,
+      "durationSeconds": 47,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "**Only one product loses money: the Sample Votive (MO-SMP-001).** You give it away at $0.00 and it costs $1.10, so the 9 sent out in August cost you **$9.90**. Every product you charge for makes a healthy gross margin of 60–69%.\n\n### August gross margin by product\n\nI used line-item prices, which don't include tax, minus unit cost from `cogs.csv`.\n\n| Product | SKU | Units | Price | Unit cost | Margin/unit | Gross profit | Margin |\n|---|---|---|---|---|---|---|---|\n| Reed Diffuser | MO-DIF-001 | 39 | $32.00 | $11.20 | $20.80 | $811.20 | 65% |\n| Cedar Candle 8oz | MO-CND-001 | 27 | $24.00 | $7.40 | $16.60 | $448.20 | 69% |\n| Fig Candle 8oz | MO-CND-002 | 22 | $24.00 | $7.90 | $16.10 | $354.20 | 67% |\n| Travel Tin Trio | MO-CND-010 | 24 | $19.50 | $6.10 | $13.40 | $321.60 | 69% |\n| Wick Trimmer | MO-WCK-001 | 27 | $14.00 | $5.20 | $8.80 | $237.60 | 63% |\n| Match Cloche | MO-MAT-001 | 33 | $12.00 | $4.80 | $7.20 | $237.60 | 60% |\n| **Sample Votive** | MO-SMP-001 | 9 | $0.00 | $1.10 | **−$1.10** | **−$9.90** | — |\n\n### Orders I left out or adjusted\n- **Excluded:**\n  - #1998–#2000, which were placed on July 31.\n  - #2008, which was voided and cancelled.\n  - #2011 and #2044, which were paid through \"Bogus Gateway (for testing)\".\n- **#2038 (fully refunded, one Cedar Candle and one Match Cloche):** I didn't count it as a sale. If those items weren't returned to stock, it cost you another $12.20 in goods.\n- **Small adjustments that don't change the answer:** two SUMMER5 discounts ($10 total) and a $12 partial refund on #2049.\n- **Cost sheet fix:** `cogs.csv` lists the Cedar Candle SKU as `mo-cnd-001 `, in lowercase with a trailing space. I matched it to `MO-CND-001`. Any tool that matches SKUs exactly would miss it and show the Cedar Candle as having no cost.\n\n### What this doesn't cover\nThis only counts the cost of the goods. The data doesn't include shipping, packaging or card fees. Shipping is the one to check: orders of about $50 or more were charged $0 shipping. Small free-shipping orders are where another product could turn out to lose money, and the Match Cloche is closest because it has the smallest margin at $7.20 a unit. If you share your average shipping and fee costs, I can redo this with them included.\n\nI counted everything by hand because I didn't have a way to run a script here. The margins are large enough that a small counting error wouldn't change which product loses money."
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched MO-SMP-001|Sample Votive",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1,
+    "scoreWithout": 1,
+    "passRateWithout": 1,
+    "delta": 0
+   }
+  },
+  {
+   "name": "numbers-payouts",
+   "dir": "evals\\numbers-payouts",
+   "source": "mixed",
+   "promptMarkdown": "We sold way more in August than landed in our bank. The Shopify orders export and the Shopify Payments payout transactions export are in the `files` folder. Where did the money go?",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "bank-figure",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "2,?448\\.74",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "chargeback",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "#1060",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "euro-not-dollar",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "\\$\\s?\\d",
+      "flags": "",
+      "match": "not_contains"
+     }
+    },
+    {
+     "name": "in-transit",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "209\\.69|213\\.90",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "paypal-named",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "#1055",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "refunds",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "70\\.50",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?payout-reconciliation\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 9,
+      "costUsd": 0.21664879999999997,
+      "judgeCostUsd": 0,
+      "durationSeconds": 38,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?448\\.74",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1060",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 209\\.69|213\\.90",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1055",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 70\\.50",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.18224780000000002,
+      "judgeCostUsd": 0,
+      "durationSeconds": 32,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?448\\.74",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1060",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 209\\.69|213\\.90",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1055",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 70\\.50",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.17929080000000003,
+      "judgeCostUsd": 0,
+      "durationSeconds": 30,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?448\\.74",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1060",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 209\\.69|213\\.90",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1055",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 70\\.50",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.2679372,
+      "judgeCostUsd": 0,
+      "durationSeconds": 51,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?448\\.74",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1060",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 209\\.69|213\\.90",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1055",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 70\\.50",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 5,
+      "costUsd": 0.8871498000000001,
+      "judgeCostUsd": 0,
+      "durationSeconds": 199,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?448\\.74",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1060",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 209\\.69|213\\.90",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1055",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 70\\.50",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.2730136,
+      "judgeCostUsd": 0,
+      "durationSeconds": 52,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?448\\.74",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1060",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 209\\.69|213\\.90",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1055",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 70\\.50",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1,
+    "scoreWithout": 1,
+    "passRateWithout": 1,
+    "delta": 0
+   }
+  },
+  {
+   "name": "numbers-payouts-b",
+   "dir": "evals\\numbers-payouts-b",
+   "source": "mixed",
+   "promptMarkdown": "Why is our August payout so much lower than what we sold? The orders export and the Shopify Payments payout transactions are in the `files` folder.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "bank-figure",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "3,?713\\.86",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "both-disputes",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "#2015[\\s\\S]*#2027|#2027[\\s\\S]*#2015",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "dollar-not-euro",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "€",
+      "flags": "",
+      "match": "not_contains"
+     }
+    },
+    {
+     "name": "gift-card-named",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "#2051",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "in-transit",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "271\\.90|280\\.94",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "july-orders-paid-in-august",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "#1998|95\\.79",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "refunds",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "58\\.06",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?payout-reconciliation\""
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.1900534,
+      "judgeCostUsd": 0,
+      "durationSeconds": 32,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 3,?713\\.86",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2015[\\s\\S]*#2027|#2027[\\s\\S]*#2015",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2051",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 271\\.90|280\\.94",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1998|95\\.79",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 58\\.06",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.19754880000000002,
+      "judgeCostUsd": 0,
+      "durationSeconds": 34,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 3,?713\\.86",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2015[\\s\\S]*#2027|#2027[\\s\\S]*#2015",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2051",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 271\\.90|280\\.94",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1998|95\\.79",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 58\\.06",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 8,
+      "costUsd": 0.1857234,
+      "judgeCostUsd": 0,
+      "durationSeconds": 31,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 3,?713\\.86",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2015[\\s\\S]*#2027|#2027[\\s\\S]*#2015",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2051",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 271\\.90|280\\.94",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1998|95\\.79",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 58\\.06",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       }
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 5,
+      "costUsd": 0.7310340000000001,
+      "judgeCostUsd": 0,
+      "durationSeconds": 154,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 3,?713\\.86",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2015[\\s\\S]*#2027|#2027[\\s\\S]*#2015",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2051",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 271\\.90|280\\.94",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1998|95\\.79",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 58\\.06",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.30437759999999997,
+      "judgeCostUsd": 0,
+      "durationSeconds": 51,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 3,?713\\.86",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2015[\\s\\S]*#2027|#2027[\\s\\S]*#2015",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2051",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 271\\.90|280\\.94",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1998|95\\.79",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 58\\.06",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 5,
+      "costUsd": 0.6714845999999999,
+      "judgeCostUsd": 0,
+      "durationSeconds": 134,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 3,?713\\.86",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2015[\\s\\S]*#2027|#2027[\\s\\S]*#2015",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "weight": 1,
+        "explanation": "pattern absent as expected",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2051",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 271\\.90|280\\.94",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1998|95\\.79",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 58\\.06",
+        "withOnly": false,
+        "scored": true
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1,
+    "scoreWithout": 1,
+    "passRateWithout": 1,
+    "delta": 0
+   }
+  },
+  {
+   "name": "numbers-summary",
+   "dir": "evals\\numbers-summary",
+   "source": "mixed",
+   "promptMarkdown": "Hi! Our Shopify orders export for August is in the `files` folder (orders_export.csv). How did the month go? I need the key numbers for my accountant.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "net-correct",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "2,?848\\.32",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\""
+     }
+    },
+    {
+     "name": "test-order-named",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "#1013",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "test-order-not-counted",
+     "type": "llm",
+     "weight": 1,
+     "graderMarkdown": "Order #1013 is tagged `test`; it is not a sale. Without it the month has 58 orders and €2,918.82 charged; with it, 59 orders and €2,999.72.\n\nPASS if the totals the answer reports as the month's figures leave #1013 out. Mentioning the total with it included is fine when the answer says that total includes the test order and is not the figure to use.\nFAIL if any figure the answer gives as the month's result counts #1013 as a sale (59 orders, €2,999.72 charged, or a net or average built on them).",
+     "config": {
+      "criteria": "Order #1013 is tagged `test`; it is not a sale. Without it the month has 58 orders and €2,918.82 charged; with it, 59 orders and €2,999.72.\n\nPASS if the totals the answer reports as the month's figures leave #1013 out. Mentioning the total with it included is fine when the answer says that total includes the test order and is not the figure to use.\nFAIL if any figure the answer gives as the month's result counts #1013 as a sale (59 orders, €2,999.72 charged, or a net or average built on them).",
+      "focus": "last_message"
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 9,
+      "costUsd": 0.21761480000000002,
+      "judgeCostUsd": 0.003504000000000007,
+      "durationSeconds": 36,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?848\\.32",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1013",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "Here's the August summary from `files/orders_export.csv`. The export is internally consistent, and every figure below was checked against it. There was no store definitions file, so the calculations use the usual accounting rules, and the questions at the end are for you or your accountant to confirm.\n\n---\n\n# Sales summary — 2026-08\n\nIn 2026-08 the store charged €2,918.82 and had €2,848.32 left after refunds. The total charged includes €466.00 of VAT and €151.90 of shipping paid by customers. The net after refunds still holds most of both (refunds gave some back), so neither figure is profit: the VAT is owed to the tax office, and product and shipping costs are not taken off here.\n\n| Figure | Amount |\n|---|---|\n| Total charged | €2,918.82 |\n| Refunds | €70.50 |\n| Net after refunds | €2,848.32 |\n| Orders counted | 58 |\n| Average order value | €50.32 |\n| Refund rate | 2.4% |\n| Units sold | 134 |\n| VAT inside the total | €466.00 |\n| Shipping charged | €151.90 |\n| Discounts given | €20.28 (6 orders had a discount) |\n\n**Revenue as the store defines it:** €2,918.82 (VAT included, shipping included, partial refunds as amount).\n\n## Top products\n(line price x quantity, before order discounts, VAT included when prices include it)\n\n1. Gift Set — 17 units, €833.00\n2. Glass Teapot 600ml — 19 units, €646.00\n3. Black Tea 100g — 27 units, €310.50\n4. Oolong 50g — 16 units, €256.00\n5. Ceramic Cup — 14 units, €252.00\n\n## Refunds\nOrders with a refund: #1030, #1042. The export does not say why they were refunded.\n\n## What was left out\n2 orders were excluded: test order: #1013; cancelled: #1021.\n\nOrders are placed in the month by order Created at, as written in the export. Refunds are counted in the month of their order.\n\n## How this was counted\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- revenue is reported with VAT, as customers paid (the usual answer; please confirm)\n- the shipping customers pay is part of revenue (the usual answer; please confirm)\n- a partial refund takes off only the amount refunded (the usual answer; please confirm)\n- a refund belongs to the month of its order (the usual answer; please confirm)\n\n## Questions for you (or your accountant)\nThe figures above use the usual answers until you confirm them:\n\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n- Should revenue be reported with VAT, as the customer paid, or without VAT?\n- Is the shipping fee customers pay part of revenue, or kept out of it?\n- A partial refund: subtract only the amount (usual), or treat the whole order as refunded?\n- A refund belongs to the month of the order (this export can only do that), or the month of the refund?\n\n---\n\nI can't say how August compares with other months without their exports. Your accountant may also want two related checks:\n- **Payouts vs. bank:** this needs the Shopify Payments payout export.\n- **Profit per product:** this needs a cost sheet with each SKU's unit cost."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 10,
+      "costUsd": 0.218135,
+      "judgeCostUsd": 0.003260999999999993,
+      "durationSeconds": 36,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?848\\.32",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1013",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "August was a steady month with low refunds. Every figure below was calculated from your export and checked against it.\n\n## 2026-08 sales summary\n\nIn 2026-08 the store charged €2,918.82 and had €2,848.32 left after refunds. The total charged includes €466.00 of VAT and €151.90 of shipping paid by customers; the net after refunds still holds most of both (refunds gave some back). Neither figure is profit — product costs, fees, VAT owed and shipping costs have not been taken off.\n\n| Figure | Amount |\n|---|---|\n| Total charged | €2,918.82 |\n| Refunds | €70.50 |\n| Net after refunds | €2,848.32 |\n| Orders counted | 58 |\n| Average order value | €50.32 |\n| Refund rate | 2.4% |\n| Units sold | 134 |\n| VAT inside the total | €466.00 |\n| Shipping charged | €151.90 |\n| Discounts given | €20.28 (6 orders had a discount) |\n\n**Revenue as the store defines it:** €2,918.82 (VAT included, shipping included, partial refunds as amount).\n\n**Top products** (line price x quantity, before order discounts, VAT included when prices include it):\n1. Gift Set — 17 units, €833.00\n2. Glass Teapot 600ml — 19 units, €646.00\n3. Black Tea 100g — 27 units, €310.50\n4. Oolong 50g — 16 units, €256.00\n5. Ceramic Cup — 14 units, €252.00\n\n**Excluded:** 2 orders — test order: #1013; cancelled: #1021. Months are assigned by order Created at, as written in the export; refunds are counted in the month of their order.\n\n**How this was counted**\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- revenue is reported with VAT, as customers paid (the usual answer; please confirm)\n- the shipping customers pay is part of revenue (the usual answer; please confirm)\n- a partial refund takes off only the amount refunded (the usual answer; please confirm)\n- a refund belongs to the month of its order (the usual answer; please confirm)\n\n**Questions for you** — the figures above use the usual answers until you confirm:\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n- Should revenue be reported with VAT, as the customer paid, or without VAT?\n- Is the shipping fee customers pay part of revenue, or kept out of it?\n- A partial refund: subtract only the amount (usual), or treat the whole order as refunded?\n- A refund belongs to the month of the order (this export can only do that), or the month of the refund?\n\n---\n\nYour accountant will probably want these answers, so tell me yours and I'll rerun the numbers with them. This summary covers sales only. If you also export your Shopify Payments payouts, I can match them against these sales to show fees and what actually reached the bank. With a cost sheet, I can also work out the profit margin on each product."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 10,
+      "costUsd": 0.22123980000000001,
+      "judgeCostUsd": 0.0035579999999999987,
+      "durationSeconds": 38,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?848\\.32",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1013",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "Here's your August summary. I didn't find a `store_definitions.json` file with your own rules for counting, so these figures use the standard rules, which are listed at the end for you to confirm. The export was consistent throughout, and every figure below was checked against it.\n\n---\n\n# Sales summary — 2026-08\n\nIn 2026-08 the store charged €2,918.82 and had €2,848.32 left after refunds. The total charged includes €466.00 of VAT and €151.90 of shipping paid by customers; the amount left after refunds still holds most of both (refunds gave some back). Neither figure is profit — VAT is owed to the tax office, and product costs, shipping costs and fees have not been taken off.\n\n| Figure | Amount |\n|---|---|\n| Total charged (incl. VAT and shipping) | €2,918.82 |\n| Refunds | €70.50 |\n| Net after refunds | €2,848.32 |\n| Orders counted | 58 |\n| Average order value | €50.32 |\n| Refund rate | 2.4% |\n| Units sold | 134 |\n| VAT inside the total | €466.00 |\n| Shipping charged | €151.90 |\n| Discounts given | €20.28 (6 orders had a discount) |\n\n**Revenue as the store defines it:** €2,918.82 (VAT included, shipping included, partial refunds as amount).\n\n**Refunded orders:** #1030, #1042.\n\n## Top products\nBasis: line price x quantity, before order discounts, VAT included when prices include it.\n\n1. Gift Set — €833.00 (17 units)\n2. Glass Teapot 600ml — €646.00 (19 units)\n3. Black Tea 100g — €310.50 (27 units)\n4. Oolong 50g — €256.00 (16 units)\n5. Ceramic Cup — €252.00 (14 units)\n\n## What was left out\n2 orders were excluded: test order: #1013; cancelled: #1021.\n\nOrders are assigned to the month by order Created at, as written in the export. Refunds are counted in the month of their order, not the month the refund was issued.\n\n## How this was counted\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- revenue is reported with VAT, as customers paid (the usual answer; please confirm)\n- the shipping customers pay is part of revenue (the usual answer; please confirm)\n- a partial refund takes off only the amount refunded (the usual answer; please confirm)\n- a refund belongs to the month of its order (the usual answer; please confirm)\n\n## Questions for you (or your accountant)\nThe figures above use the usual answers until you confirm them:\n\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n- Should revenue be reported with VAT, as the customer paid, or without VAT?\n- Is the shipping fee customers pay part of revenue, or kept out of it?\n- A partial refund: subtract only the amount (usual), or treat the whole order as refunded?\n- A refund belongs to the month of the order (this export can only do that), or the month of the refund?\n\n---\n\nThis covers sales only. If your accountant also needs to know why the amount paid into your bank is different from sales (card fees, payouts still in transit), send me your Shopify Payments payout export and I'll match it against these orders. If you send a cost-per-product sheet, I can also work out the profit margin on each product."
+       }
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 3,
+      "costUsd": 0.2591626,
+      "judgeCostUsd": 0.0026369999999999935,
+      "durationSeconds": 58,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?848\\.32",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1013",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "August brought in **€2,848.32 net** from **58 real orders**. The average order was about €50, and 31 of the 58 orders paid for shipping.\n\nI had no way to run a script here, so I added everything up by hand from the export. I checked that each order's line items, discount and shipping add up to its total. Every order's VAT works out to 19% of the gross amount (tax is included in the prices). The totals also agree with each other: 19% of the net amount gives €454.77, and adding up the tax column gives €454.74. The 3-cent gap is normal per-order rounding.\n\n## Key numbers for the accountant (EUR, VAT included unless noted)\n\n| | Amount |\n|---|---|\n| Product sales (before discounts) | 2,787.20 |\n| Discounts (WELCOME10, 6 orders) | −20.28 |\n| Shipping charged | 151.90 |\n| **Gross sales** | **2,918.82** |\n| Refunds | −70.50 |\n| **Net sales (VAT included)** | **2,848.32** |\n| VAT collected, after refunds | ~454.74 |\n| **Net sales (excluding VAT)** | **~2,393.58** |\n\n**By payment method** (after refunds, to match against payouts):\n- Shopify Payments: €2,749.32\n- PayPal: €99.00 (one order, #1055)\n\nThe export doesn't include payment processing fees. Those are in your Shopify Payments payout reports and your PayPal statement.\n\n## What I left out or adjusted\n- **#1013 (€80.90) is tagged \"test\".** I left it out of the numbers above. If it was a real sale, add €80.90 gross and €12.92 VAT.\n- **#1021 (€22.90) was voided.** It was cancelled the same day, so no money was taken, and I excluded it.\n- **#1042 (€60.50) was fully refunded.** It's counted in sales and again in the refunds line, so it cancels out.\n- **#1030 got a €10.00 partial refund.** I assumed the €10 includes VAT, which makes about €1.60 of it VAT.\n\nCounted this way, the export has 60 orders. Removing the voided and test orders leaves 58, and 57 of those kept their money after refunds.\n\nIf it's useful, I can also break down sales by product or by week."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.5311652,
+      "judgeCostUsd": 0.002835000000000004,
+      "durationSeconds": 123,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?848\\.32",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1013",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "August was a decent month. After excluding one cancelled order and one test order, you took **€2,848 net of refunds from 58 real orders** (€2,919 before refunds). I checked every order in the export, and all line items and order totals add up.\n\n## Key numbers for your accountant (EUR)\n\n| | Amount |\n|---|---|\n| Orders | 58 |\n| Product sales (before discounts) | 2,787.20 |\n| Discounts (WELCOME10 code, 6 orders) | −20.28 |\n| Shipping charged | 151.90 |\n| **Gross sales incl. VAT** | **2,918.82** |\n| Refunds (2 orders) | −70.50 |\n| **Net sales incl. VAT** | **2,848.32** |\n| VAT collected, less VAT on refunds | 454.74 |\n| **Net sales excl. VAT** | **2,393.58** |\n\n- **VAT:** every order is taxed at exactly 19%, with VAT included in the price. The VAT on refunds is €11.26.\n- **Payment methods:** 57 orders came through Shopify Payments (€2,819.82) and 1 through PayPal (€99.00).\n\n## What I left out, and why\n\n- **#1021 (€22.90)** was cancelled and voided on the same day, so no money came in.\n- **#1013 (€80.90)** is tagged `test`. Its status is \"paid\", though, so please confirm it really was a test. If it was a real sale, add €80.90 to gross sales and €12.92 to VAT.\n\n## Refunds\n\n- **#1042:** fully refunded (€60.50, a Gift Set and Black Tea).\n- **#1030:** partially refunded (€10.00 of €49.00).\n- The export doesn't show when the refunds happened. If either was issued in September, your accountant may want it booked in that month.\n\n## How the month went\n\n- **Average order value:** €50.32.\n- **Units sold:** 134.\n- **Top products by revenue:**\n  - Gift Set: €833\n  - Glass Teapot: €646\n  - Black Tea: €311 (27 units, the most of any product)\n- **Free shipping:** 27 orders didn't pay shipping. Every order with €42 or more in products shipped free, and every order at €38.80 or less paid shipping, so your threshold looks like €40.\n\n## What your accountant still needs\n\nThis export doesn't include **Shopify Payments or PayPal fees**, so these figures won't match what actually reached your bank account. Download the payout report from Shopify (Finances → Payouts) and the PayPal statement for August to go with it."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 3,
+      "costUsd": 0.26141120000000007,
+      "judgeCostUsd": 0.0027360000000000093,
+      "durationSeconds": 60,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 2,?848\\.32",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #1013",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "I went through all 60 orders in August (#1001–#1060) and checked each one: line items add up to the subtotals, and subtotal − discount + shipping equals the total. The export is internally consistent. Three orders needed special handling before the numbers could be used:\n\n- **#1021 was voided** (cancelled 2 hours after it was placed, never fulfilled). No money changed hands, so I left it out.\n- **#1013 is tagged \"test\"** (€80.90). I left it out as a test order. **Please confirm.** If it was a real sale, add it back.\n- **Refunds:** #1042 was fully refunded (€60.50) and #1030 was partly refunded (€10.00).\n\n## August 2026: key numbers (EUR)\n\n| | Amount |\n|---|---|\n| Orders (excl. voided and test) | **58** |\n| Product sales (before discounts) | €2,787.20 |\n| Discounts (WELCOME10, 6 orders) | −€20.28 |\n| Shipping charged (31 orders × €4.90) | €151.90 |\n| **Gross sales (incl. VAT)** | **€2,918.82** |\n| Refunds | −€70.50 |\n| **Net sales (incl. VAT)** | **€2,848.32** |\n| VAT collected (on gross sales) | €466.00 |\n| VAT on refunds | −€11.26 |\n| **Net VAT** | **€454.74** |\n| **Net sales excl. VAT** | **€2,393.58** |\n| Average order value | €50.32 |\n\n**By payment method:** Shopify Payments took €2,819.82 across 57 orders, and PayPal took €99.00 on 1 order (#1055). Your accountant can use this split to match against payouts.\n\n## Notes for your accountant\n\n- **Prices include VAT.** The tax works out to 19% of the total, and that includes shipping.\n- **Processing fees aren't in this export.** Shopify Payments and PayPal fees appear in the payout reports, so payouts will be lower than the net sales figure.\n- **Refund dates aren't in this export.** If either refund went through in September, it belongs to that month instead.\n\nAs for how the month went: it was a steady month with about €2.9k in gross sales and very few problems. Only 2 of the 58 orders were refunded, and the discount code cost just €20. The Gift Set (€49) was the best seller, and it's the product that pushes most orders past the free-shipping threshold."
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1,
+    "scoreWithout": 1,
+    "passRateWithout": 1,
+    "delta": 0
+   }
+  },
+  {
+   "name": "numbers-summary-b",
+   "dir": "evals\\numbers-summary-b",
+   "source": "mixed",
+   "promptMarkdown": "Hey, our Shopify orders export for August is in the `files` folder. How did the month go? I need the numbers for my bookkeeper.",
+   "runsPerCase": 3,
+   "timeoutSeconds": 600,
+   "maxTurns": 30,
+   "graders": [
+    {
+     "name": "net-correct",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "4,?147\\.57",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "skill-fired",
+     "type": "tool_used",
+     "weight": 1,
+     "config": {
+      "tool": "Skill",
+      "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\""
+     }
+    },
+    {
+     "name": "test-orders-named",
+     "type": "regex",
+     "weight": 1,
+     "config": {
+      "target": "last_message",
+      "pattern": "#2011[\\s\\S]*#2044|#2044[\\s\\S]*#2011",
+      "flags": "",
+      "match": "contains"
+     }
+    },
+    {
+     "name": "test-orders-not-counted",
+     "type": "llm",
+     "weight": 1,
+     "graderMarkdown": "Orders #2011 and #2044 were paid through the Bogus Gateway, Shopify's test gateway; they are not sales. A total of $4,284.88 or $4,226.82 means one or both were counted.\n\nPASS if the totals the answer reports as the month's figures leave #2011 and #2044 out. Mentioning a total with them included is fine when the answer says it includes the test orders and is not the figure to use.\nFAIL if any figure the answer gives as the month's result counts #2011 or #2044 as a sale.",
+     "config": {
+      "criteria": "Orders #2011 and #2044 were paid through the Bogus Gateway, Shopify's test gateway; they are not sales. A total of $4,284.88 or $4,226.82 means one or both were counted.\n\nPASS if the totals the answer reports as the month's figures leave #2011 and #2044 out. Mentioning a total with them included is fine when the answer says it includes the test orders and is not the figure to use.\nFAIL if any figure the answer gives as the month's result counts #2011 or #2044 as a sale.",
+      "focus": "last_message"
+     }
+    }
+   ],
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 9,
+      "costUsd": 0.2235834,
+      "judgeCostUsd": 0.0036149999999999932,
+      "durationSeconds": 40,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 4,?147\\.57",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2011[\\s\\S]*#2044|#2044[\\s\\S]*#2011",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "August went fine: $4,205.63 charged across 67 orders, and only two orders had refunds. Below is the summary for your bookkeeper. Every figure was calculated from `files/orders_export.csv` and checked against the export.\n\n---\n\n## August sales summary (2026-08)\n\nIn 2026-08 the store charged $4,205.63 and had $4,147.57 left after refunds. That total includes $284.28 of tax/VAT and $229.35 of shipping paid by customers. The net after refunds still holds most of both, since refunds only gave some back. So neither figure is profit: the tax is owed to the tax authority, shipping pays the carrier, and product costs and fees haven't been taken off.\n\n| | |\n|---|---|\n| Total charged | $4,205.63 |\n| Refunds | $58.06 |\n| Net after refunds | $4,147.57 |\n| Orders counted | 67 |\n| Average order value | $62.77 |\n| Refund rate | 1.4% |\n| Units sold | 183 |\n| Tax/VAT inside the total | $284.28 |\n| Shipping charged | $229.35 |\n| Discounts given | $10.00 (2 orders) |\n\n**Revenue as the store defines it:** $4,205.63 (VAT included, shipping included, partial refunds as amount).\n\n**Top products** (line price x quantity, before order discounts, VAT included when prices include it):\n1. Reed Diffuser: $1,248.00, 39 units\n2. Cedar Candle 8oz: $672.00, 28 units\n3. Fig Candle 8oz: $528.00, 22 units\n4. Travel Tin Trio: $468.00, 24 units\n5. Match Cloche: $408.00, 34 units\n\n**Refunds:** #2038, #2049.\n\n**Excluded:** 3 orders, cancelled: #2008; test order (test payment gateway): #2011, #2044. Orders are assigned to the month by order Created at, as written in the export, and refunds are counted in the month of their order.\n\n**How this was counted:**\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- revenue is reported with VAT, as customers paid (the usual answer; please confirm)\n- the shipping customers pay is part of revenue (the usual answer; please confirm)\n- a partial refund takes off only the amount refunded (the usual answer; please confirm)\n- a refund belongs to the month of its order (the usual answer; please confirm)\n\n**Questions for you (or your bookkeeper).** The figures above use the usual answers until you confirm them:\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n- Should revenue be reported with VAT, as the customer paid, or without VAT?\n- Is the shipping fee customers pay part of revenue, or kept out of it?\n- A partial refund: subtract only the amount (usual), or treat the whole order as refunded?\n- A refund belongs to the month of the order (this export can only do that), or the month of the refund?\n\n---\n\n- **Your store's rules aren't on file yet.** There was no `store_definitions.json` next to the export, so I used the usual answers for the six questions above. If any of your answers are different, some figures will change. Tell me and I'll run it again.\n- **What this doesn't cover:** it isn't a comparison with other months, and it doesn't reconcile the money that reached your bank. If your bookkeeper needs to match sales to bank deposits, send me the Shopify Payments payouts export and I can do that too."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 10,
+      "costUsd": 0.22964920000000003,
+      "judgeCostUsd": 0.00356999999999999,
+      "durationSeconds": 61,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 4,?147\\.57",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2011[\\s\\S]*#2044|#2044[\\s\\S]*#2011",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "Here's the August summary from `files/orders_export.csv`, ready for your bookkeeper. The export's own numbers are consistent with each other, and every figure below has been checked against it.\n\n# Sales summary: 2026-08\n\nIn 2026-08 the store charged $4,205.63 and had $4,147.57 left after refunds. The total charged includes $284.28 of VAT/sales tax and $229.35 of shipping paid by customers. Most of both is still in the net after refunds (refunds gave some back), so neither figure is profit. The tax is owed to the tax authority, the shipping pays for postage, and product costs and fees have not been taken off.\n\n| Figure | Amount |\n|---|---|\n| Total charged | $4,205.63 |\n| Refunds | $58.06 |\n| Net after refunds | $4,147.57 |\n| Orders counted | 67 |\n| Average order value | $62.77 |\n| Refund rate | 1.4% |\n| Units sold | 183 |\n| VAT/tax inside the total | $284.28 |\n| Shipping charged | $229.35 |\n| Discounts given | $10.00 (2 orders had a discount) |\n\n**Revenue as the store defines it:** $4,205.63 (VAT included, shipping included, partial refunds as amount).\n\n**Refunds:** #2038, #2049. The export does not say why they were refunded.\n\n## Top products\n\nBasis: line price x quantity, before order discounts, VAT included when prices include it.\n\n| Product | Units | Revenue |\n|---|---|---|\n| Reed Diffuser | 39 | $1,248.00 |\n| Cedar Candle 8oz | 28 | $672.00 |\n| Fig Candle 8oz | 22 | $528.00 |\n| Travel Tin Trio | 24 | $468.00 |\n| Match Cloche | 34 | $408.00 |\n\n## What was left out\n\nOf 70 orders in the export, 3 orders were left out: cancelled: #2008; test order (test payment gateway): #2011, #2044.\n\nOrders are assigned to the month by order Created at, as written in the export, and refunds are counted in the month of their order.\n\n## How this was counted\n\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- revenue is reported with VAT, as customers paid (the usual answer; please confirm)\n- the shipping customers pay is part of revenue (the usual answer; please confirm)\n- a partial refund takes off only the amount refunded (the usual answer; please confirm)\n- a refund belongs to the month of its order (the usual answer; please confirm)\n\n## Questions for you (or your bookkeeper)\n\nThe figures above use the usual answers until you confirm them:\n\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n- Should revenue be reported with VAT, as the customer paid, or without VAT?\n- Is the shipping fee customers pay part of revenue, or kept out of it?\n- A partial refund: subtract only the amount (usual), or treat the whole order as refunded?\n- A refund belongs to the month of the order (this export can only do that), or the month of the refund?\n\n---\n\nIf your bookkeeper answers any of those questions differently (for example, they want revenue without tax or shipping), tell me and I'll redo the figures on that basis. This summary covers sales only. It doesn't include what reached your bank from Shopify Payments or your product margins. I can do either if you share the payouts export or a cost sheet."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 9,
+      "costUsd": 0.21935639999999998,
+      "judgeCostUsd": 0.0034349999999999936,
+      "durationSeconds": 37,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 4,?147\\.57",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "weight": 1,
+        "explanation": "Skill called 1x (expected 1..∞)",
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2011[\\s\\S]*#2044|#2044[\\s\\S]*#2011",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "Here's your August summary. It's built from `files/orders_export.csv`, and every figure below was checked against the export.\n\n## 2026-08 sales summary\n\nIn 2026-08 the store charged $4,205.63 and had $4,147.57 left after refunds. That total charged includes $284.28 of VAT/sales tax and $229.35 of shipping, and the net after refunds still holds most of both (refunds gave some back). Neither figure is profit: tax is owed on, shipping pays the carrier, and product costs and fees aren't taken off yet.\n\n| Figure | Amount |\n|---|---|\n| Total charged | $4,205.63 |\n| Refunds | $58.06 |\n| Net after refunds | $4,147.57 |\n| Orders counted | 67 |\n| Average order value | $62.77 |\n| Refund rate | 1.4% |\n| Units sold | 183 |\n| Tax inside the total | $284.28 |\n| Shipping charged | $229.35 |\n| Discounts given | $10.00 (2 orders had a discount) |\n\n**Revenue as the store defines it:** $4,205.63 (VAT included, shipping included, partial refunds as amount).\n\n**Refunds:** #2038, #2049.\n\n### Top products\n(line price x quantity, before order discounts, VAT included when prices include it)\n\n1. Reed Diffuser: $1,248.00 (39 units)\n2. Cedar Candle 8oz: $672.00 (28 units)\n3. Fig Candle 8oz: $528.00 (22 units)\n4. Travel Tin Trio: $468.00 (24 units)\n5. Match Cloche: $408.00 (34 units)\n\n### What was left out\n3 orders were excluded: cancelled: #2008; test order (test payment gateway): #2011, #2044.\n\nOrders are placed in the month by order Created at, as written in the export. Refunds are counted in the month of their order, not the month the refund was issued.\n\n### How this was counted\n- orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)\n- a sale counts once it is paid, shipped or not (the usual answer; please confirm)\n- revenue is reported with VAT, as customers paid (the usual answer; please confirm)\n- the shipping customers pay is part of revenue (the usual answer; please confirm)\n- a partial refund takes off only the amount refunded (the usual answer; please confirm)\n- a refund belongs to the month of its order (the usual answer; please confirm)\n\n### Questions for you (or your bookkeeper)\nNo store definitions file was provided, so the figures above use the usual answers until you confirm them:\n\n- Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?\n- Should revenue be reported with VAT, as the customer paid, or without VAT?\n- Is the shipping fee customers pay part of revenue, or kept out of it?\n- A partial refund: subtract only the amount (usual), or treat the whole order as refunded?\n- A refund belongs to the month of the order (this export can only do that), or the month of the refund?\n\n---\n\nThe export also has a few orders from late July, and I left those out so only August is counted. Your bookkeeper will probably also want to know why less reached the bank than you sold (card fees, payouts still on the way). If you add the Shopify Payments payout export for August, I can match the two up."
+       }
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.899567,
+      "judgeCostUsd": 0.003155999999999992,
+      "durationSeconds": 217,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 4,?147\\.57",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2011[\\s\\S]*#2044|#2044[\\s\\S]*#2011",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "August was a solid month: **67 real orders bringing in $4,205.63 before refunds, or $4,147.57 after refunds.** Average order value was $62.77.\n\nOne caveat on accuracy: I couldn't run a script in this session, so these figures were worked out by hand. They do check out against each other. Every order's line items match its subtotal, every order's parts add up to its total, and product revenue adds up to gross sales. Still, it's worth comparing the headline numbers to Shopify's Finances report before you send them.\n\n## Summary for your bookkeeper\n\n| | Amount |\n|---|---|\n| Gross sales (products) | $3,702.00 |\n| Discounts (code SUMMER5, used 2×) | −$10.00 |\n| **Net sales** | **$3,692.00** |\n| Shipping charged | $229.35 |\n| Sales tax collected | $284.28 |\n| **Total collected** | **$4,205.63** |\n| Refunds | −$58.06 |\n| **Net after refunds** | **$4,147.57** |\n\n## Orders I left out (and why)\n\nThe file has 73 orders, but 6 of them shouldn't count toward August:\n\n- **#1998–#2000 ($99.57):** these were placed on July 31, so they belong to July.\n- **#2008 ($50.35):** voided and cancelled, so no money was collected.\n- **#2011 and #2044 ($79.25):** paid through \"Bogus Gateway\", which is Shopify's test payment method. These are test orders, not real sales.\n\n## Things to tell your bookkeeper\n\n1. **Refunds:** #2038 was fully refunded ($46.06, which includes $6.95 shipping and $3.11 tax). #2049 was partly refunded ($12.00), but the export doesn't say what that refund was for.\n2. **Gift card:** #2051 ($120.12) was paid partly with a gift card, and the export doesn't show how much. If you counted that gift card as income when it was sold, the gift card part of this order shouldn't be counted as income again. Shopify's gift card report will show the amount.\n3. **Tax is charged on shipping too.** Every order is taxed at 7.25% on products plus shipping. Divide tax by product sales alone and you get about 7.7%, which is why that number looks high.\n4. **Shipping:** orders of $50 or more ship free. Orders under $50 pay a flat $6.95. There were 34 free and 33 paid.\n\n## Best sellers\n\n| Product | Units | Revenue |\n|---|---|---|\n| Reed Diffuser | 39 | $1,248.00 |\n| Cedar Candle 8oz | 28 | $672.00 |\n| Fig Candle 8oz | 22 | $528.00 |\n| Travel Tin Trio | 24 | $468.00 |\n| Match Cloche | 34 | $408.00 |\n| Wick Trimmer | 27 | $378.00 |\n| Sample Votive (free) | 9 | $0.00 |\n\nReed Diffusers made up about a third of product sales."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.6547067999999998,
+      "judgeCostUsd": 0.002832000000000001,
+      "durationSeconds": 145,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 4,?147\\.57",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2011[\\s\\S]*#2044|#2044[\\s\\S]*#2011",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "## August 2026 summary\n\nAugust went fine: 67 real orders came in, $4,205.63 was collected, and $4,147.57 remains after refunds.\n\n| For the bookkeeper | Amount |\n|---|---|\n| Gross product sales | $3,702.00 |\n| Discounts (SUMMER5, used twice) | −$10.00 |\n| Shipping charged | $229.35 |\n| Sales tax collected | $284.28 |\n| **Total collected** | **$4,205.63** |\n| Refunds | −$58.06 |\n| **Net after refunds** | **$4,147.57** |\n\n- **Orders:** 67. The average order was about $62.77 including shipping and tax, or $55.25 in products alone.\n- **Best sellers by revenue:** Reed Diffuser $1,248 (39 sold), Cedar Candle $672 (28), Fig Candle $528 (22), Travel Tin Trio $468 (24), Match Cloche $408 (34), Wick Trimmer $378 (27).\n- **Sales tax:** the $284.28 belongs to the tax authority and isn't your income. About $3.11 of it was refunded on #2038.\n\n## What I left out, and why\n\nIf you just add up the export's Total column you get $4,434.80, which is $229.17 too high:\n- **#1998–#2000 ($99.57):** these were placed on July 31, so they belong in July's books.\n- **#2008 ($50.35):** voided and cancelled the same day. No money was kept.\n- **#2011 and #2044 ($79.25):** paid through \"Bogus Gateway (for testing)\". These are test orders, not real sales. Please check they weren't actually shipped, because the export shows them as fulfilled.\n\n## Things to mention to the bookkeeper\n\n1. **Refunds:** #2038 was refunded in full ($46.06). #2049 got a $12.00 partial refund, and the export doesn't say what that covered.\n2. **Gift card (#2051, $120.12):** this order was paid partly with a gift card. The export doesn't show how much. The gift card part probably shouldn't count as new revenue, since that money was booked when the card was sold. You can check the split in Shopify under that order.\n3. **Fees:** Shopify Payments processing fees aren't in this file. Your bookkeeper will need the Payouts report to match these numbers to your bank deposits.\n\nI couldn't run a script here, so the totals were added up by hand. I added up subtotals, shipping and tax a second time on my own and got the same result each time. Every order also checks out: its line items add up to its subtotal, and its total equals subtotal + shipping + tax − discount."
+       }
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "turns": 4,
+      "costUsd": 0.7211859999999999,
+      "judgeCostUsd": 0.0032759999999999873,
+      "durationSeconds": 167,
+      "startedAt": "2026-09",
+      "error": null,
+      "tracePath": "<local path>",
+      "skippedPaidGraders": false,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched 4,?147\\.57",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "weight": 1,
+        "explanation": "matched #2011[\\s\\S]*#2044|#2044[\\s\\S]*#2011",
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "weight": 1,
+        "explanation": "judge votes: PASS PASS PASS",
+        "withOnly": false,
+        "scored": true,
+        "judgeVotes": [
+         true,
+         true,
+         true
+        ],
+        "evidence": "August was 67 real orders bringing in **$4,205.63**, or **$4,147.57 after refunds**. Average order was $62.77.\n\n## Numbers for your bookkeeper (August 1–31, 2026)\n\n| | Amount |\n|---|---|\n| Gross product sales | $3,702.00 |\n| Discounts (SUMMER5 code, 2 orders) | −$10.00 |\n| **Net product sales** | **$3,692.00** |\n| Shipping charged | $229.35 |\n| Sales tax collected | $284.28 |\n| **Total collected** | **$4,205.63** |\n| Refunds | −$58.06 |\n| **Net after refunds** | **$4,147.57** |\n\n- **Sales tax ($284.28) is money you owe the state, not income.** It's a flat 7.25%, charged on shipping too.\n- **Refunds:** #2038 was refunded in full ($46.06, which includes its shipping and tax). #2049 got a $12.00 partial refund. The export doesn't show what the $12 covered.\n\n## What I left out, and why\n\n- **3 July orders** (#1998–#2000, $99.57): the export starts on July 31.\n- **1 cancelled order** (#2008, $50.35): voided the same day, so no money came in.\n- **2 test orders** (#2011 and #2044, $79.25 combined): they went through \"Bogus Gateway (for testing)\", which is Shopify's fake payment method. They show as \"paid\" but no real money was collected. If you counted all 70 August orders you'd get $4,335.23, which overstates the month by $130.\n\n## Worth telling your bookkeeper\n\n- **#2051 ($120.12) was paid partly with a gift card.** The export doesn't say how much. The gift card portion was probably booked when the card was sold, so they'll want the Shopify gift card report so it isn't counted twice.\n- **Shopify Payments fees aren't in this export.** Your deposits will be less than $4,147.57, so they'll need the payouts report to match your bank.\n- **Refund dates aren't in the export either.** I've assumed both refunds happened in August.\n\n## Top products\n\n| Product | Units | Sales |\n|---|---|---|\n| Reed Diffuser | 39 | $1,248 |\n| Cedar Candle 8oz | 28 | $672 |\n| Fig Candle 8oz | 22 | $528 |\n| Travel Tin Trio | 24 | $468 |\n| Match Cloche | 34 | $408 |\n| Wick Trimmer | 27 | $378 |\n\nThe Reed Diffuser brought in about a third of product sales. 9 free Sample Votives also went out as add-ons.\n\nThe totals were worked out by hand, not with a script, because no shell tool was available. The file checks out: on every order, the line items add up to the subtotal, and subtotal − discount + shipping + tax equals the total. I also re-counted the product units, subtotal and shipping myself and they matched. I didn't re-add every order's grand total or tax, so if your bookkeeper wants to double-check anything, check the $4,205.63 total and $284.28 tax against Shopify's own Sales report."
+       }
+      ]
+     }
+    ]
+   },
+   "aggregates": {
+    "score": 1,
+    "passRate": 1,
+    "scoreWithout": 1,
+    "passRateWithout": 1,
+    "delta": 0
+   }
+  }
+ ],
+ "aggregates": {
+  "casesTotal": 6,
+  "casesPassed": 6,
+  "overallScore": 1,
+  "overallPassRate": 1,
+  "meanDelta": 0
+ }
+}

@@ -1,0 +1,42 @@
+{
+  "store": "A",
+  "month": "2026-08",
+  "currency": "EUR",
+  "orders_counted": 58,
+  "excluded": [
+    "#1013",
+    "#1021"
+  ],
+  "test_orders": [
+    "#1013"
+  ],
+  "total_charged": "2918.82",
+  "refunds": "70.50",
+  "net_after_refunds": "2848.32",
+  "average_order_value": "50.32",
+  "units_sold": 134,
+  "sku_margin_ex_vat": {
+    "CUP-CER-001": "106.76",
+    "TEA-OOL-050": "115.93",
+    "TEA-BLK-100": "158.32",
+    "TEA-GRN-100": "87.62",
+    "STR-STL-001": "-32.76",
+    "TEA-MAT-030": "83.74",
+    "POT-GLS-600": "240.76"
+  },
+  "below_cost": [
+    "STR-STL-001"
+  ],
+  "unknown_cost": [
+    "SET-GFT-001"
+  ],
+  "card_orders_total": "2819.82",
+  "paid_out_for_this_months_sales": "2448.74",
+  "paid_out_for_earlier_sales": "0.00",
+  "paid_out_in_month": "2448.74",
+  "in_transit_at_month_end": "209.69",
+  "gap_card_sales_to_paid_out": "371.08",
+  "paid_outside_shopify_payments": [
+    "#1055"
+  ]
+}

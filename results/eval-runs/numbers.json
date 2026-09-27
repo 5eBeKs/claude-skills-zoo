@@ -1,0 +1,963 @@
+{
+  "schemaVersion": 1,
+  "claudeVersion": "2.1.280",
+  "startedAt": "2026-09",
+  "durationSeconds": 808,
+  "costUsd": 4.2681268,
+  "partial": false,
+  "suite": {
+    "root": "<local path>",
+    "ablation": "with-without",
+    "tagFilters": [
+      "numbers"
+    ],
+    "threshold": 1,
+    "concurrency": 1,
+    "plugins": [
+      {
+        "name": "shopify-month-end",
+        "version": "0.2.0",
+        "path": "<local path>"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "numbers-margins",
+      "dir": "evals\\numbers-margins",
+      "source": "mixed",
+      "promptMarkdown": "Which of our products actually lose money? The August orders export and our unit costs (cogs.csv) are in the `files` folder. Prices include 19% VAT.",
+      "runsPerCase": 3,
+      "timeoutSeconds": 600,
+      "maxTurns": 30,
+      "graders": [
+        {
+          "name": "below-cost-named",
+          "type": "regex",
+          "weight": 1,
+          "config": {
+            "target": "last_message",
+            "pattern": "STR-STL-001|Steel Strainer",
+            "flags": "",
+            "match": "contains"
+          }
+        },
+        {
+          "name": "gift-set-unknown",
+          "type": "llm",
+          "weight": 1,
+          "graderMarkdown": "PASS if the answer says the Gift Set (SET-GFT-001) has no known cost, so its margin is unknown.\nFAIL if it gives the Gift Set a margin, treats its cost as zero, or does not mention it.",
+          "config": {
+            "criteria": "PASS if the answer says the Gift Set (SET-GFT-001) has no known cost, so its margin is unknown.\nFAIL if it gives the Gift Set a margin, treats its cost as zero, or does not mention it.",
+            "focus": "last_message"
+          }
+        },
+        {
+          "name": "skill-fired",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?sku-margin-check\""
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 8,
+            "costUsd": 0.1911014,
+            "judgeCostUsd": 0.002526,
+            "durationSeconds": 38,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "below-cost-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched STR-STL-001|Steel Strainer",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gift-set-unknown",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "All amounts below are in EUR. Every figure was checked against the calculation output.\n\n---\n\n## August 2026 — products sold below cost\n\n**One product lost money: Steel Strainer (STR-STL-001).** It sold 20 units for 109.24 excluding VAT, against a cost of 142.00 (7.10 per unit). That is a gross margin of -32.76 (-30.0%).\n\n**One product has no cost on file: Gift Set (SET-GFT-001).** It sold 17 units for 700.00 excluding VAT. It isn't in cogs.csv, so its margin is **unknown**. That doesn't mean it's zero, and it could be losing money too. Please send its unit cost.\n\nAll the other products made money.\n\n| SKU | Product | Units | Revenue ex VAT | Cost | Margin | Margin % |\n|---|---|---:|---:|---:|---:|---:|\n| CUP-CER-001 | Ceramic Cup | 14 | 211.76 | 105.00 | 106.76 | 50.4% |\n| POT-GLS-600 | Glass Teapot 600ml | 19 | 542.86 | 302.10 | 240.76 | 44.4% |\n| SET-GFT-001 | Gift Set | 17 | 700.00 | unknown | unknown | unknown |\n| STR-STL-001 | Steel Strainer | 20 | 109.24 | 142.00 | -32.76 | -30.0% |\n| TEA-BLK-100 | Black Tea 100g | 27 | 260.92 | 102.60 | 158.32 | 60.7% |\n| TEA-GRN-100 | Green Tea 100g | 13 | 140.92 | 53.30 | 87.62 | 62.2% |\n| TEA-MAT-030 | Matcha 30g | 8 | 161.34 | 77.60 | 83.74 | 51.9% |\n| TEA-OOL-050 | Oolong 50g | 16 | 215.13 | 99.20 | 115.93 | 53.9% |\n\nTwo things aren't included in the per-product margins above: 20.28 in order-level discounts and 70.50 in refunds. Based on 58 orders, with 0.19 VAT removed from prices.\n\n**Open questions.** I used the usual defaults for these, so please confirm:\n- Orders tagged 'test': leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?"
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 8,
+            "costUsd": 0.1906568,
+            "judgeCostUsd": 0.002655,
+            "durationSeconds": 33,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "below-cost-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched STR-STL-001|Steel Strainer",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gift-set-unknown",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "Only one product lost money in August: the **Steel Strainer**. The **Gift Set** might be losing money too, but I can't tell because it's missing from `cogs.csv`. All amounts are in EUR. I took the 19% VAT out of the prices and checked every figure below against the source data.\n\n## Product margins — 2026-08\n\n**Sold below cost**\n- **Steel Strainer (STR-STL-001)**: 20 units, revenue ex VAT 109.24, cost 142.00 → margin **-32.76** (-30.0%). Unit cost is 7.10.\n\n**Margin unknown — cost missing**\n- **Gift Set (SET-GFT-001)**: 17 units, revenue ex VAT 700.00. It is not in cogs.csv, so its margin is unknown (not zero). Can you send its unit cost?\n\n**All products**\n\n| SKU | Product | Units | Revenue ex VAT | Cost | Margin | Margin % |\n|---|---|---:|---:|---:|---:|---:|\n| CUP-CER-001 | Ceramic Cup | 14 | 211.76 | 105.00 | 106.76 | 50.4% |\n| POT-GLS-600 | Glass Teapot 600ml | 19 | 542.86 | 302.10 | 240.76 | 44.4% |\n| SET-GFT-001 | Gift Set | 17 | 700.00 | unknown | unknown | unknown |\n| STR-STL-001 | Steel Strainer | 20 | 109.24 | 142.00 | -32.76 | -30.0% |\n| TEA-BLK-100 | Black Tea 100g | 27 | 260.92 | 102.60 | 158.32 | 60.7% |\n| TEA-GRN-100 | Green Tea 100g | 13 | 140.92 | 53.30 | 87.62 | 62.2% |\n| TEA-MAT-030 | Matcha 30g | 8 | 161.34 | 77.60 | 83.74 | 51.9% |\n| TEA-OOL-050 | Oolong 50g | 16 | 215.13 | 99.20 | 115.93 | 53.9% |\n\nNot spread over products: 20.28 in order-level discounts and 70.50 in refunds. The margins above are before these, so the real margins are a bit lower.\n\nVAT removed from prices: 0.19. Based on 58 orders.\n\n**Open questions (defaults used for now)**\n- Orders tagged 'test': leave them out of sales (usual), or count them? Right now they are left out.\n- Does a sale count when it is paid, or only once it is shipped? Right now any paid order counts."
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 8,
+            "costUsd": 0.1903088,
+            "judgeCostUsd": 0.0025649999999999996,
+            "durationSeconds": 33,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "below-cost-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched STR-STL-001|Steel Strainer",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gift-set-unknown",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "Only one product lost money in August: the Steel Strainer. One other product, the Gift Set, has no cost in `cogs.csv`, so I can't tell yet whether it made money. All amounts are in EUR with 19% VAT removed. Every figure below was checked against the calculation.\n\n## Products losing money – August 2026\n\n**Sold below cost: Steel Strainer (STR-STL-001)** — 20 units, revenue 109.24 ex VAT against cost 142.00 (unit cost 7.10), so a gross margin of -32.76 (-30.0%).\n\n**Cost unknown: Gift Set (SET-GFT-001)** — 17 units, 700.00 revenue ex VAT, but it has no entry in cogs.csv, so its margin is unknown (not zero). Please send its unit cost.\n\nAll other products made a positive gross margin.\n\n| SKU | Product | Units | Revenue ex VAT | Cost | Margin | Margin % |\n|---|---|---:|---:|---:|---:|---:|\n| CUP-CER-001 | Ceramic Cup | 14 | 211.76 | 105.00 | 106.76 | 50.4% |\n| POT-GLS-600 | Glass Teapot 600ml | 19 | 542.86 | 302.10 | 240.76 | 44.4% |\n| SET-GFT-001 | Gift Set | 17 | 700.00 | unknown | unknown | unknown |\n| STR-STL-001 | Steel Strainer | 20 | 109.24 | 142.00 | -32.76 | -30.0% |\n| TEA-BLK-100 | Black Tea 100g | 27 | 260.92 | 102.60 | 158.32 | 60.7% |\n| TEA-GRN-100 | Green Tea 100g | 13 | 140.92 | 53.30 | 87.62 | 62.2% |\n| TEA-MAT-030 | Matcha 30g | 8 | 161.34 | 77.60 | 83.74 | 51.9% |\n| TEA-OOL-050 | Oolong 50g | 16 | 215.13 | 99.20 | 115.93 | 53.9% |\n\nNot spread over products: 20.28 in order-level discounts and 70.50 in refunds.\n\nVAT removed from prices: 0.19. Orders counted: 58.\n\n**Open questions** (defaults used, not yet confirmed by you):\n- Orders tagged 'test': leave them out of sales (usual), or count them?\n- Does a sale count when it is paid, or only once it is shipped?"
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 4,
+            "costUsd": 0.1806456,
+            "judgeCostUsd": 0.0027750000000000014,
+            "durationSeconds": 27,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "below-cost-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched STR-STL-001|Steel Strainer",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gift-set-unknown",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "**Only the Steel Strainer (STR-STL-001) loses money.** I can't say whether the Gift Set does, because it has no cost in `cogs.csv`.\n\n## Margin per unit (price excluding 19% VAT, minus unit cost)\n\n| Product | Price (with VAT) | Price (without VAT) | Unit cost | Margin per unit | Margin % |\n|---|---|---|---|---|---|\n| **Steel Strainer** | 6.50 | 5.46 | 7.10 | **−1.64** | **−30%** |\n| Glass Teapot 600ml | 34.00 | 28.57 | 15.90 | +12.67 | 44% |\n| Ceramic Cup | 18.00 | 15.13 | 7.50 | +7.63 | 50% |\n| Matcha 30g | 24.00 | 20.17 | 9.70 | +10.47 | 52% |\n| Oolong 50g | 16.00 | 13.45 | 6.20 | +7.25 | 54% |\n| Black Tea 100g | 11.50 | 9.66 | 3.80 | +5.86 | 61% |\n| Green Tea 100g | 12.90 | 10.84 | 4.10 | +6.74 | 62% |\n| Gift Set | 49.00 | 41.18 | **not in cogs.csv** | ? | ? |\n\nThe VAT treatment checks out against the Taxes column. For example, order #1007 totals €24.40 and shows €3.90 tax, which is 24.40 × 19/119.\n\n## Steel Strainer in August\n- **20 units sold** in valid orders, 2 of them with the 10% WELCOME10 discount.\n- Each sale loses €1.64, or €2.18 with the discount. **Total loss is about €34.**\n- It's usually bought alongside tea, so it may work as an add-on. But at €6.50 it's priced below its own cost. It would need to sell for at least **€8.45 including VAT** just to break even.\n\n## Gift Set: needs a cost\nIt's your highest-revenue item: 16 units, about €780 including VAT. It's only profitable if its unit cost is below **€41.18**, or about €37 when WELCOME10 is used. If it's a bundle of other products, please send its cost or its contents and I'll finish the check.\n\n## What I excluded or left out\n- **Excluded:** #1021 (voided), #1042 (fully refunded) and #1013 (tagged `test`).\n- **Kept:** #1030. It had a €10 partial refund, which cuts into that Gift Set sale.\n- **Not included:** shipping costs, payment fees and overhead, because none of them are in the data. With those included, low-margin small orders would look worse. Order #1054, for example, was just two strainers for €13."
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 4,
+            "costUsd": 0.1726814,
+            "judgeCostUsd": 0.0025920000000000006,
+            "durationSeconds": 24,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "below-cost-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched STR-STL-001|Steel Strainer",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gift-set-unknown",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "**Only one product loses money: the Steel Strainer (STR-STL-001).** One product, the Gift Set, can't be judged because it has no cost in `cogs.csv`.\n\n**Per-unit margin, excluding 19% VAT**\n\n| Product | Price (incl. VAT) | Net price | Unit cost | Margin per unit |\n|---|---|---|---|---|\n| **Steel Strainer** | 6.50 | 5.46 | 7.10 | **−1.64 (−30%)** |\n| Glass Teapot 600ml | 34.00 | 28.57 | 15.90 | +12.67 (44%) |\n| Ceramic Cup | 18.00 | 15.13 | 7.50 | +7.63 (50%) |\n| Oolong 50g | 16.00 | 13.45 | 6.20 | +7.25 (54%) |\n| Matcha 30g | 24.00 | 20.17 | 9.70 | +10.47 (52%) |\n| Green Tea 100g | 12.90 | 10.84 | 4.10 | +6.74 (62%) |\n| Black Tea 100g | 11.50 | 9.66 | 3.80 | +5.86 (61%) |\n| Gift Set | 49.00 | 41.18 | **missing** | unknown |\n\n**Steel Strainer in August:** 20 units sold across 13 orders, for a total loss of about **€33.85**. Two of those units were sold with the WELCOME10 code (10% off), so each lost €2.18. Even at full price, you lose money on every one. It would need to sell for at least **€8.45 including VAT** just to cover its cost.\n\n**Gift Set:** you sold 16 units, making it one of your biggest sellers by revenue. It only loses money if its cost is above €41.18 per unit, or above about €37 after the 10% WELCOME10 discount. If it's a bundle of your other products, the cost could be close to that, so it's worth adding its cost to `cogs.csv`.\n\n**What I counted:**\n- I left out the voided order (#1021), the fully refunded order (#1042) and #1013, which is tagged `test`.\n- The Taxes column matches a VAT-inclusive 19%, so the net prices above are correct.\n- For the 10% discount codes, I took the discount off the net price of each item.\n- These are margins on the product only. They don't include shipping, payment fees or packaging. Orders under about €40 paid €4.90 for shipping and larger orders shipped free. Once those costs are included, small orders (like the €13 order of two strainers, #1054) may also be losing money."
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 4,
+            "costUsd": 0.172971,
+            "judgeCostUsd": 0.0023640000000000015,
+            "durationSeconds": 24,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "below-cost-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched STR-STL-001|Steel Strainer",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gift-set-unknown",
+                "passed": true,
+                "weight": 1,
+                "explanation": "judge votes: PASS PASS PASS",
+                "withOnly": false,
+                "scored": true,
+                "judgeVotes": [
+                  true,
+                  true,
+                  true
+                ],
+                "evidence": "**Only one product clearly loses money: the Steel Strainer (STR-STL-001).** It sells for €6.50 including VAT, which is €5.46 after taking out the 19%. It costs €7.10, so every strainer sold loses about €1.64.\n\n| Product | Price excl. VAT | Unit cost | Profit per unit (margin) |\n|---|---|---|---|\n| Green Tea 100g | 10.84 | 4.10 | +6.74 (62%) |\n| Black Tea 100g | 9.66 | 3.80 | +5.86 (61%) |\n| Oolong 50g | 13.45 | 6.20 | +7.25 (54%) |\n| Matcha 30g | 20.17 | 9.70 | +10.47 (52%) |\n| Ceramic Cup | 15.13 | 7.50 | +7.63 (50%) |\n| Glass Teapot 600ml | 28.57 | 15.90 | +12.67 (44%) |\n| **Steel Strainer** | **5.46** | **7.10** | **−1.64 (−30%)** |\n| Gift Set | 41.18 | *not in cogs.csv* | unknown |\n\n**August impact:** 20 strainers were sold across valid orders. After taking out VAT and one WELCOME10 discount, they brought in about €108 and cost €142, a **loss of about €34**. The loss grows whenever a WELCOME10 code is applied. Two orders (#1007 and #1054) contained only strainers.\n\n**Things to check:**\n- **Gift Set (SET-GFT-001) has no unit cost in cogs.csv.** It sold 16 units in August. It only makes money if its cost is under €41.18. If it's a bundle of other products, its cost could be close to that.\n- **What I excluded:** the voided order #1021, the fully refunded order #1042, and #1013, which is tagged `test`. None of these change the result.\n- **What's not included:** payment processing fees, shipping costs and packaging. The shipping charged to customers (€4.90) may not cover the actual shipping cost. So products that look profitable here may earn less than shown, and the strainer's loss is probably bigger than €1.64 per unit.\n\nTo fix the strainer, you'd need to charge at least €8.45 including VAT just to cover its cost. The other option is to only sell it bundled with tea."
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 1,
+        "passRateWithout": 1,
+        "delta": 0
+      }
+    },
+    {
+      "name": "numbers-payouts",
+      "dir": "evals\\numbers-payouts",
+      "source": "mixed",
+      "promptMarkdown": "We sold way more in August than landed in our bank. The Shopify orders export and the Shopify Payments payout transactions export are in the `files` folder. Where did the money go?",
+      "runsPerCase": 3,
+      "timeoutSeconds": 600,
+      "maxTurns": 30,
+      "graders": [
+        {
+          "name": "euro-not-dollar",
+          "type": "regex",
+          "weight": 1,
+          "config": {
+            "target": "last_message",
+            "pattern": "\\$\\s?\\d",
+            "flags": "",
+            "match": "not_contains"
+          }
+        },
+        {
+          "name": "gap-correct",
+          "type": "regex",
+          "weight": 1,
+          "config": {
+            "target": "last_message",
+            "pattern": "371\\.08",
+            "flags": "",
+            "match": "contains"
+          }
+        },
+        {
+          "name": "paypal-named",
+          "type": "regex",
+          "weight": 1,
+          "config": {
+            "target": "last_message",
+            "pattern": "#1055",
+            "flags": "",
+            "match": "contains"
+          }
+        },
+        {
+          "name": "skill-fired",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?payout-reconciliation\""
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 8,
+            "costUsd": 0.16647660000000003,
+            "judgeCostUsd": 0,
+            "durationSeconds": 28,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "euro-not-dollar",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gap-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 371\\.08",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "paypal-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1055",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 8,
+            "costUsd": 0.1741776,
+            "judgeCostUsd": 0,
+            "durationSeconds": 30,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "euro-not-dollar",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gap-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 371\\.08",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "paypal-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1055",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 9,
+            "costUsd": 0.2196874,
+            "judgeCostUsd": 0,
+            "durationSeconds": 39,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "euro-not-dollar",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gap-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 371\\.08",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "paypal-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1055",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 0.6666666666666666,
+            "passed": false,
+            "turns": 6,
+            "costUsd": 0.2813744,
+            "judgeCostUsd": 0,
+            "durationSeconds": 53,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "euro-not-dollar",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gap-correct",
+                "passed": false,
+                "weight": 1,
+                "explanation": "pattern not found in last_message",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "paypal-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1055",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0.6666666666666666,
+            "passed": false,
+            "turns": 4,
+            "costUsd": 0.2645162,
+            "judgeCostUsd": 0,
+            "durationSeconds": 50,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "euro-not-dollar",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gap-correct",
+                "passed": false,
+                "weight": 1,
+                "explanation": "pattern not found in last_message",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "paypal-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1055",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0.6666666666666666,
+            "passed": false,
+            "turns": 4,
+            "costUsd": 0.2839928,
+            "judgeCostUsd": 0,
+            "durationSeconds": 57,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "euro-not-dollar",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "gap-correct",
+                "passed": false,
+                "weight": 1,
+                "explanation": "pattern not found in last_message",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "paypal-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1055",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 0.6666666666666666,
+        "passRateWithout": 0,
+        "delta": 0.33333333333333337
+      }
+    },
+    {
+      "name": "numbers-summary",
+      "dir": "evals\\numbers-summary",
+      "source": "mixed",
+      "promptMarkdown": "Hi! Our Shopify orders export for August is in the `files` folder (orders_export.csv). How did the month go? I need the key numbers for my accountant.",
+      "runsPerCase": 3,
+      "timeoutSeconds": 600,
+      "maxTurns": 30,
+      "graders": [
+        {
+          "name": "net-correct",
+          "type": "regex",
+          "weight": 1,
+          "config": {
+            "target": "last_message",
+            "pattern": "2,?848\\.32",
+            "flags": "",
+            "match": "contains"
+          }
+        },
+        {
+          "name": "skill-fired",
+          "type": "tool_used",
+          "weight": 1,
+          "config": {
+            "tool": "Skill",
+            "input_match": "\"skill\"\\s*:\\s*\"(?:[\\w-]+:)?shopify-monthly-summary\""
+          }
+        },
+        {
+          "name": "test-order-named",
+          "type": "regex",
+          "weight": 1,
+          "config": {
+            "target": "last_message",
+            "pattern": "#1013",
+            "flags": "",
+            "match": "contains"
+          }
+        },
+        {
+          "name": "test-order-not-counted",
+          "type": "regex",
+          "weight": 1,
+          "config": {
+            "target": "last_message",
+            "pattern": "2,?999\\.72",
+            "flags": "",
+            "match": "not_contains"
+          }
+        }
+      ],
+      "arms": {
+        "with": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 10,
+            "costUsd": 0.19908140000000002,
+            "judgeCostUsd": 0,
+            "durationSeconds": 33,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "net-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 2,?848\\.32",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              },
+              {
+                "name": "test-order-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1013",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-not-counted",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 10,
+            "costUsd": 0.2012758,
+            "judgeCostUsd": 0,
+            "durationSeconds": 33,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "net-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 2,?848\\.32",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              },
+              {
+                "name": "test-order-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1013",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-not-counted",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 10,
+            "costUsd": 0.2033358,
+            "judgeCostUsd": 0,
+            "durationSeconds": 35,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "net-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 2,?848\\.32",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "skill-fired",
+                "passed": true,
+                "weight": 1,
+                "explanation": "Skill called 1x (expected 1..∞)",
+                "withOnly": true,
+                "scored": false
+              },
+              {
+                "name": "test-order-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1013",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-not-counted",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ],
+        "without": [
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 4,
+            "costUsd": 0.5888146,
+            "judgeCostUsd": 0,
+            "durationSeconds": 133,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "net-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 2,?848\\.32",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1013",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-not-counted",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 1,
+            "passed": true,
+            "turns": 3,
+            "costUsd": 0.27190119999999995,
+            "judgeCostUsd": 0,
+            "durationSeconds": 63,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "net-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 2,?848\\.32",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1013",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-not-counted",
+                "passed": true,
+                "weight": 1,
+                "explanation": "pattern absent as expected",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          },
+          {
+            "score": 0.6666666666666666,
+            "passed": false,
+            "turns": 3,
+            "costUsd": 0.315128,
+            "judgeCostUsd": 0,
+            "durationSeconds": 77,
+            "startedAt": "2026-09",
+            "error": null,
+            "tracePath": "<local path>",
+            "skippedPaidGraders": false,
+            "graders": [
+              {
+                "name": "net-correct",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched 2,?848\\.32",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-named",
+                "passed": true,
+                "weight": 1,
+                "explanation": "matched #1013",
+                "withOnly": false,
+                "scored": true
+              },
+              {
+                "name": "test-order-not-counted",
+                "passed": false,
+                "weight": 1,
+                "explanation": "pattern found (expected absent)",
+                "withOnly": false,
+                "scored": true
+              }
+            ]
+          }
+        ]
+      },
+      "aggregates": {
+        "score": 1,
+        "passRate": 1,
+        "scoreWithout": 0.8888888888888888,
+        "passRateWithout": 0.6666666666666666,
+        "delta": 0.11111111111111116
+      }
+    }
+  ],
+  "aggregates": {
+    "casesTotal": 3,
+    "casesPassed": 3,
+    "overallScore": 1,
+    "overallPassRate": 1,
+    "meanDelta": 0.14814814814814817
+  }
+}

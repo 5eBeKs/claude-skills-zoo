@@ -1,0 +1,51 @@
+{
+  "store": "B",
+  "month": "2026-08",
+  "currency": "USD",
+  "orders_counted": 67,
+  "excluded": [
+    "#2008",
+    "#2011",
+    "#2044"
+  ],
+  "test_orders": [
+    "#2011",
+    "#2044"
+  ],
+  "total_charged": "4205.63",
+  "refunds": "58.06",
+  "net_after_refunds": "4147.57",
+  "sales_tax_in_total": "284.28",
+  "average_order_value": "62.77",
+  "units_sold": 183,
+  "sku_revenue": {
+    "MO-WCK-001": "378.00",
+    "MO-CND-001": "672.00",
+    "MO-DIF-001": "1248.00",
+    "MO-MAT-001": "408.00",
+    "MO-CND-010": "468.00",
+    "MO-SMP-001": "0.00",
+    "MO-CND-002": "528.00"
+  },
+  "sku_margin_no_tax": {
+    "MO-WCK-001": "237.60",
+    "MO-CND-001": "464.80",
+    "MO-DIF-001": "811.20",
+    "MO-MAT-001": "244.80",
+    "MO-CND-010": "321.60",
+    "MO-SMP-001": "-9.90",
+    "MO-CND-002": "354.20"
+  },
+  "below_cost": [
+    "MO-SMP-001"
+  ],
+  "card_orders_total": "4185.63",
+  "gift_card_paid": "20.00",
+  "paid_out_for_this_months_sales": "3618.07",
+  "paid_out_for_earlier_sales": "95.79",
+  "paid_out_in_month": "3713.86",
+  "in_transit_at_month_end": "271.90",
+  "gap_card_sales_to_paid_out": "471.77",
+  "dispute_lost_cost": "96.51",
+  "dispute_won_net": "0.00"
+}

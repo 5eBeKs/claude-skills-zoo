@@ -1,0 +1,26 @@
+ok   discount-codes
+     W06 disable-model-invocation is true: Claude will not pick this skill on its own
+FAIL MonthlyReport
+     E04 name 'MonthlyReport' is not kebab-case (lowercase letters, digits, hyphens; max 64)
+     W04 description overlaps 62% with 'orders-summary': Claude may pick the wrong skill
+     W04 description overlaps 62% with 'sales-summary': Claude may pick the wrong skill
+FAIL no-frontmatter
+     E01 no frontmatter: first line must be '---'
+ok   orders-summary
+     W04 description overlaps 62% with 'MonthlyReport': Claude may pick the wrong skill
+     W04 description overlaps 100% with 'sales-summary': Claude may pick the wrong skill
+     W05 description does not say when NOT to use it, and sibling skills exist
+FAIL refund-report
+     E03 unknown frontmatter field 'auto-invoke'
+     E07 SKILL.md references 'scripts/format_table.py', which does not exist
+     E08 scripts/refunds.py does not compile: line 1: invalid syntax
+ok   sales-helper
+     W01 description gives no trigger: add 'Use when ...' with concrete cases
+     W02 description is only 23 characters: too vague to route on
+     W05 description does not say when NOT to use it, and sibling skills exist
+ok   sales-summary
+     W04 description overlaps 62% with 'MonthlyReport': Claude may pick the wrong skill
+     W04 description overlaps 100% with 'orders-summary': Claude may pick the wrong skill
+     W05 description does not say when NOT to use it, and sibling skills exist
+
+7 skills, 5 errors, 12 warnings

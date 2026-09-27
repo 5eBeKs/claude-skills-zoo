@@ -1,0 +1,858 @@
+{
+  "revision": "working tree",
+  "stores": {
+    "A": [
+      {
+        "skill": "summary",
+        "figure": "orders counted",
+        "truth": 58,
+        "script": 58,
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "orders left out",
+        "truth": [
+          "#1013",
+          "#1021"
+        ],
+        "script": [
+          "#1013",
+          "#1021"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "total charged",
+        "truth": "2918.82",
+        "script": "2918.82",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "refunds",
+        "truth": "70.50",
+        "script": "70.50",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "net after refunds",
+        "truth": "2848.32",
+        "script": "2848.32",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "average order value",
+        "truth": "50.32",
+        "script": "50.32",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "units sold",
+        "truth": 134,
+        "script": 134,
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "export adds up with itself",
+        "truth": [],
+        "script": [],
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "card sales",
+        "truth": "2819.82",
+        "script": "2819.82",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out for this month's sales",
+        "truth": "2448.74",
+        "script": "2448.74",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out for last month's sales",
+        "truth": "0.00",
+        "script": "0",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out in month (the bank)",
+        "truth": "2448.74",
+        "script": "2448.74",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "in transit at month end",
+        "truth": "209.69",
+        "script": "209.69",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "gap sales to bank",
+        "truth": "371.08",
+        "script": "371.08",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "bridge closes",
+        "truth": true,
+        "script": true,
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "sold below cost",
+        "truth": [
+          "STR-STL-001"
+        ],
+        "script": [
+          "STR-STL-001"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin CUP-CER-001",
+        "truth": "106.76",
+        "script": "106.76",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin POT-GLS-600",
+        "truth": "240.76",
+        "script": "240.76",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin STR-STL-001",
+        "truth": "-32.76",
+        "script": "-32.76",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin TEA-BLK-100",
+        "truth": "158.32",
+        "script": "158.32",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin TEA-GRN-100",
+        "truth": "87.62",
+        "script": "87.62",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin TEA-MAT-030",
+        "truth": "83.74",
+        "script": "83.74",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin TEA-OOL-050",
+        "truth": "115.93",
+        "script": "115.93",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "cost unknown",
+        "truth": [
+          "SET-GFT-001"
+        ],
+        "script": [
+          "SET-GFT-001"
+        ],
+        "ok": true
+      }
+    ],
+    "B": [
+      {
+        "skill": "summary",
+        "figure": "orders counted",
+        "truth": 67,
+        "script": 67,
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "orders left out",
+        "truth": [
+          "#2008",
+          "#2011",
+          "#2044"
+        ],
+        "script": [
+          "#2008",
+          "#2011",
+          "#2044"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "total charged",
+        "truth": "4205.63",
+        "script": "4205.63",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "refunds",
+        "truth": "58.06",
+        "script": "58.06",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "net after refunds",
+        "truth": "4147.57",
+        "script": "4147.57",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "average order value",
+        "truth": "62.77",
+        "script": "62.77",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "units sold",
+        "truth": 183,
+        "script": 183,
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "export adds up with itself",
+        "truth": [],
+        "script": [],
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "card sales",
+        "truth": "4185.63",
+        "script": "4185.63",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out for this month's sales",
+        "truth": "3618.07",
+        "script": "3618.07",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out for last month's sales",
+        "truth": "95.79",
+        "script": "95.79",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out in month (the bank)",
+        "truth": "3713.86",
+        "script": "3713.86",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "in transit at month end",
+        "truth": "271.90",
+        "script": "271.90",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "gap sales to bank",
+        "truth": "471.77",
+        "script": "471.77",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "bridge closes",
+        "truth": true,
+        "script": true,
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "sold below cost",
+        "truth": [
+          "MO-SMP-001"
+        ],
+        "script": [
+          "MO-SMP-001"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin MO-CND-001",
+        "truth": "464.80",
+        "script": "464.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin MO-CND-002",
+        "truth": "354.20",
+        "script": "354.20",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin MO-CND-010",
+        "truth": "321.60",
+        "script": "321.60",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin MO-DIF-001",
+        "truth": "811.20",
+        "script": "811.20",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin MO-MAT-001",
+        "truth": "244.80",
+        "script": "244.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin MO-SMP-001",
+        "truth": "-9.90",
+        "script": "-9.90",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin MO-WCK-001",
+        "truth": "237.60",
+        "script": "237.60",
+        "ok": true
+      }
+    ],
+    "C": [
+      {
+        "skill": "summary",
+        "figure": "orders counted",
+        "truth": 1555,
+        "script": 1555,
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "orders left out",
+        "truth": [
+          "#32854",
+          "#32872",
+          "#32917",
+          "#32993",
+          "#33065",
+          "#33276",
+          "#33290",
+          "#33318",
+          "#33322",
+          "#33331",
+          "#33337",
+          "#33348",
+          "#33356",
+          "#33364",
+          "#33382",
+          "#33415",
+          "#33418",
+          "#33420",
+          "#33431",
+          "#33442",
+          "#33443",
+          "#33450",
+          "#33451",
+          "#33456",
+          "#33459",
+          "#33472",
+          "#33501",
+          "#33504",
+          "#33519",
+          "#33533",
+          "#33536",
+          "#33590",
+          "#33604",
+          "#33631",
+          "#33634",
+          "#33653",
+          "#33693",
+          "#33700",
+          "#33755",
+          "#33772",
+          "#33783",
+          "#33788",
+          "#33826",
+          "#33842",
+          "#33843",
+          "#33865",
+          "#33869",
+          "#33871",
+          "#33916",
+          "#33965",
+          "#33985",
+          "#34021",
+          "#34023",
+          "#34035",
+          "#34042",
+          "#34045",
+          "#34052",
+          "#34063",
+          "#34094",
+          "#34104",
+          "#34128",
+          "#34133",
+          "#34138",
+          "#34161",
+          "#34183",
+          "#34184",
+          "#34190",
+          "#34195",
+          "#34218",
+          "#34228",
+          "#34268",
+          "#34281",
+          "#34287",
+          "#34302",
+          "#34312",
+          "#34316",
+          "#34341",
+          "#34374",
+          "#34387",
+          "#34403",
+          "#34406",
+          "#34411",
+          "#34426",
+          "#34440",
+          "#34449"
+        ],
+        "script": [
+          "#32854",
+          "#32872",
+          "#32917",
+          "#32993",
+          "#33065",
+          "#33276",
+          "#33290",
+          "#33318",
+          "#33322",
+          "#33331",
+          "#33337",
+          "#33348",
+          "#33356",
+          "#33364",
+          "#33382",
+          "#33415",
+          "#33418",
+          "#33420",
+          "#33431",
+          "#33442",
+          "#33443",
+          "#33450",
+          "#33451",
+          "#33456",
+          "#33459",
+          "#33472",
+          "#33501",
+          "#33504",
+          "#33519",
+          "#33533",
+          "#33536",
+          "#33590",
+          "#33604",
+          "#33631",
+          "#33634",
+          "#33653",
+          "#33693",
+          "#33700",
+          "#33755",
+          "#33772",
+          "#33783",
+          "#33788",
+          "#33826",
+          "#33842",
+          "#33843",
+          "#33865",
+          "#33869",
+          "#33871",
+          "#33916",
+          "#33965",
+          "#33985",
+          "#34021",
+          "#34023",
+          "#34035",
+          "#34042",
+          "#34045",
+          "#34052",
+          "#34063",
+          "#34094",
+          "#34104",
+          "#34128",
+          "#34133",
+          "#34138",
+          "#34161",
+          "#34183",
+          "#34184",
+          "#34190",
+          "#34195",
+          "#34218",
+          "#34228",
+          "#34268",
+          "#34281",
+          "#34287",
+          "#34302",
+          "#34312",
+          "#34316",
+          "#34341",
+          "#34374",
+          "#34387",
+          "#34403",
+          "#34406",
+          "#34411",
+          "#34426",
+          "#34440",
+          "#34449"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "total charged",
+        "truth": "106722.52",
+        "script": "106722.52",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "refunds",
+        "truth": "1703.19",
+        "script": "1703.19",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "net after refunds",
+        "truth": "105019.33",
+        "script": "105019.33",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "average order value",
+        "truth": "68.63",
+        "script": "68.63",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "units sold",
+        "truth": 4918,
+        "script": 4918,
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "export adds up with itself",
+        "truth": [],
+        "script": [],
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "revenue on the owner's definitions",
+        "truth": "86504.99",
+        "script": "86504.99",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "revenue after refunds",
+        "truth": "85085.66",
+        "script": "85085.66",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "card sales",
+        "truth": "99582.82",
+        "script": "99582.82",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out for this month's sales",
+        "truth": "88472.41",
+        "script": "88472.41",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out for last month's sales",
+        "truth": "5924.13",
+        "script": "5924.13",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid out in month (the bank)",
+        "truth": "94396.54",
+        "script": "94396.54",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "in transit at month end",
+        "truth": "6075.32",
+        "script": "6075.32",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "gap sales to bank",
+        "truth": "5186.28",
+        "script": "5186.28",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "bridge closes",
+        "truth": true,
+        "script": true,
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "sold below cost",
+        "truth": [
+          "GL-CLR-001",
+          "GL-CLR-002",
+          "GL-SMP-001"
+        ],
+        "script": [
+          "GL-CLR-001",
+          "GL-CLR-002",
+          "GL-SMP-001"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-BAG-001",
+        "truth": "1694.00",
+        "script": "1694.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-BDY-200",
+        "truth": "2140.53",
+        "script": "2140.53",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-CLN-100",
+        "truth": "2013.17",
+        "script": "2013.17",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-CLN-250",
+        "truth": "3052.80",
+        "script": "3052.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-CLR-001",
+        "truth": "-16.80",
+        "script": "-16.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-CLR-002",
+        "truth": "-14.00",
+        "script": "-14.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-CND-001",
+        "truth": "2508.63",
+        "script": "2508.63",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-EYE-015",
+        "truth": "3414.20",
+        "script": "3414.20",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-GFT-001",
+        "truth": "2088.00",
+        "script": "2088.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-GFT-002",
+        "truth": "4392.50",
+        "script": "4392.50",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-HND-075",
+        "truth": "1634.27",
+        "script": "1634.27",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-LIP-004",
+        "truth": "1511.10",
+        "script": "1511.10",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-MIN-001",
+        "truth": "1953.47",
+        "script": "1953.47",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-MSK-075",
+        "truth": "2508.80",
+        "script": "2508.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-MST-050",
+        "truth": "3679.20",
+        "script": "3679.20",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-MST-051",
+        "truth": "3764.80",
+        "script": "3764.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-OIL-030",
+        "truth": "3206.73",
+        "script": "3206.73",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-SCR-150",
+        "truth": "2258.67",
+        "script": "2258.67",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-SER-030",
+        "truth": "3340.47",
+        "script": "3340.47",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-SER-031",
+        "truth": "4596.80",
+        "script": "4596.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-SMP-001",
+        "truth": "-65.80",
+        "script": "-65.80",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-SOP-100",
+        "truth": "1064.85",
+        "script": "1064.85",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-SPF-050",
+        "truth": "2613.60",
+        "script": "2613.60",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-TNR-150",
+        "truth": "2284.67",
+        "script": "2284.67",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "margin GL-TWL-001",
+        "truth": "1050.60",
+        "script": "1050.60",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "cost unknown",
+        "truth": [
+          "GL-NEW-001"
+        ],
+        "script": [
+          "GL-NEW-001"
+        ],
+        "ok": true
+      }
+    ]
+  }
+}

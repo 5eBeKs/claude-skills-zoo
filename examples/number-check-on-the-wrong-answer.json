@@ -1,0 +1,27 @@
+{
+  "numbers_checked": 12,
+  "untraced_numbers": [
+    "2,828.04",
+    "2,828.04",
+    "59",
+    "50.84"
+  ],
+  "unknown_order_refs": [
+    "#1077"
+  ],
+  "wrong_currency": [],
+  "missing_from_answer": [
+    "orders_excluded: #1013",
+    "open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?",
+    "open question: Does a sale count when it is paid, or only once it is shipped?",
+    "open question: Should revenue be reported with VAT, as the customer paid, or without VAT?",
+    "open question: Is the shipping fee customers pay part of revenue, or kept out of it?",
+    "open question: A partial refund: subtract only the amount (usual), or treat the whole order as refunded?",
+    "open question: A refund belongs to the month of the order (this export can only do that), or the month of the refund?"
+  ],
+  "skipped": [
+    "2026",
+    "2026"
+  ],
+  "ok": false
+}

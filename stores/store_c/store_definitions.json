@@ -1,0 +1,37 @@
+{
+  "test_order_policy": {
+    "question": "Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?",
+    "answer": "excluded_by_flag",
+    "means": "orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales"
+  },
+  "sale_status_basis": {
+    "question": "Does a sale count when it is paid, or only once it is shipped?",
+    "answer": "shipped_or_delivered",
+    "means": "a sale counts only once it is shipped; paid orders not yet shipped (pre-orders) are left out"
+  },
+  "vat_basis": {
+    "question": "Should revenue be reported with VAT, as the customer paid, or without VAT?",
+    "answer": "vat_exclusive",
+    "means": "revenue is reported without VAT"
+  },
+  "shipping_fee_treatment": {
+    "question": "Is the shipping fee customers pay part of revenue, or kept out of it?",
+    "answer": "excluded_from_revenue",
+    "means": "the shipping customers pay is kept out of revenue"
+  },
+  "partial_refund_policy": {
+    "question": "A partial refund: subtract only the amount (usual), or treat the whole order as refunded?",
+    "answer": "amount_only",
+    "means": "a partial refund takes off only the amount refunded"
+  },
+  "refund_period_attribution": {
+    "question": "A refund belongs to the month of the order (this export can only do that), or the month of the refund?",
+    "answer": "order_period",
+    "means": "a refund belongs to the month of its order"
+  },
+  "vat_rate": {
+    "question": "What VAT rate is in your prices (for example 19%)?",
+    "answer": "0.20",
+    "means": "prices include VAT at 20%"
+  }
+}

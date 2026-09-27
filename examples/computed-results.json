@@ -1,0 +1,178 @@
+{
+  "month": "2026-08",
+  "currency": "EUR",
+  "definitions_used": {
+    "test_order_policy": {
+      "value": "excluded_by_flag",
+      "source": "default, not confirmed by the owner",
+      "means": "orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales"
+    },
+    "sale_status_basis": {
+      "value": "paid_any_status",
+      "source": "default, not confirmed by the owner",
+      "means": "a sale counts once it is paid, shipped or not"
+    },
+    "vat_basis": {
+      "value": "vat_inclusive",
+      "source": "default, not confirmed by the owner",
+      "means": "revenue is reported with VAT, as customers paid"
+    },
+    "shipping_fee_treatment": {
+      "value": "included_in_revenue",
+      "source": "default, not confirmed by the owner",
+      "means": "the shipping customers pay is part of revenue"
+    },
+    "partial_refund_policy": {
+      "value": "amount_only",
+      "source": "default, not confirmed by the owner",
+      "means": "a partial refund takes off only the amount refunded"
+    },
+    "refund_period_attribution": {
+      "value": "order_period",
+      "source": "default, not confirmed by the owner",
+      "means": "a refund belongs to the month of its order"
+    }
+  },
+  "definitions_in_words": [
+    "orders tagged 'test' and orders paid through Shopify's test gateway are left out of sales (the usual answer; please confirm)",
+    "a sale counts once it is paid, shipped or not (the usual answer; please confirm)",
+    "revenue is reported with VAT, as customers paid (the usual answer; please confirm)",
+    "the shipping customers pay is part of revenue (the usual answer; please confirm)",
+    "a partial refund takes off only the amount refunded (the usual answer; please confirm)",
+    "a refund belongs to the month of its order (the usual answer; please confirm)"
+  ],
+  "open_questions": [
+    "Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?",
+    "Does a sale count when it is paid, or only once it is shipped?",
+    "Should revenue be reported with VAT, as the customer paid, or without VAT?",
+    "Is the shipping fee customers pay part of revenue, or kept out of it?",
+    "A partial refund: subtract only the amount (usual), or treat the whole order as refunded?",
+    "A refund belongs to the month of the order (this export can only do that), or the month of the refund?"
+  ],
+  "revenue_basis": "VAT included, shipping included, partial refunds as amount",
+  "month_basis": "order Created at, as written in the export",
+  "product_revenue_basis": "line price x quantity, before order discounts, VAT included when prices include it",
+  "tax_in_prices": "included in prices",
+  "revenue": "2918.82",
+  "revenue_after_refunds": "2848.32",
+  "orders_in_export": 60,
+  "orders_counted": 58,
+  "orders_excluded": [
+    {
+      "order": "#1013",
+      "reason": "test order",
+      "total": "80.90"
+    },
+    {
+      "order": "#1021",
+      "reason": "cancelled",
+      "total": "22.90"
+    }
+  ],
+  "gross_merchandise": "2787.20",
+  "discounts": "20.28",
+  "shipping_charged": "151.90",
+  "total_charged": "2918.82",
+  "refunds": "70.50",
+  "net_after_refunds": "2848.32",
+  "vat_included_in_total": "466.00",
+  "average_order_value": "50.32",
+  "refund_rate_pct": "2.4",
+  "units_sold": 134,
+  "orders_with_refund": [
+    {
+      "order": "#1030",
+      "refunded": "10.00",
+      "status": "partially_refunded"
+    },
+    {
+      "order": "#1042",
+      "refunded": "60.50",
+      "status": "refunded"
+    }
+  ],
+  "orders_with_discount": 6,
+  "top_skus_by_revenue": [
+    {
+      "sku": "SET-GFT-001",
+      "name": "Gift Set",
+      "units": 17,
+      "revenue": "833.00"
+    },
+    {
+      "sku": "POT-GLS-600",
+      "name": "Glass Teapot 600ml",
+      "units": 19,
+      "revenue": "646.00"
+    },
+    {
+      "sku": "TEA-BLK-100",
+      "name": "Black Tea 100g",
+      "units": 27,
+      "revenue": "310.50"
+    },
+    {
+      "sku": "TEA-OOL-050",
+      "name": "Oolong 50g",
+      "units": 16,
+      "revenue": "256.00"
+    },
+    {
+      "sku": "CUP-CER-001",
+      "name": "Ceramic Cup",
+      "units": 14,
+      "revenue": "252.00"
+    }
+  ],
+  "all_skus": [
+    {
+      "sku": "SET-GFT-001",
+      "name": "Gift Set",
+      "units": 17,
+      "revenue": "833.00"
+    },
+    {
+      "sku": "POT-GLS-600",
+      "name": "Glass Teapot 600ml",
+      "units": 19,
+      "revenue": "646.00"
+    },
+    {
+      "sku": "TEA-BLK-100",
+      "name": "Black Tea 100g",
+      "units": 27,
+      "revenue": "310.50"
+    },
+    {
+      "sku": "TEA-OOL-050",
+      "name": "Oolong 50g",
+      "units": 16,
+      "revenue": "256.00"
+    },
+    {
+      "sku": "CUP-CER-001",
+      "name": "Ceramic Cup",
+      "units": 14,
+      "revenue": "252.00"
+    },
+    {
+      "sku": "TEA-MAT-030",
+      "name": "Matcha 30g",
+      "units": 8,
+      "revenue": "192.00"
+    },
+    {
+      "sku": "TEA-GRN-100",
+      "name": "Green Tea 100g",
+      "units": 13,
+      "revenue": "167.70"
+    },
+    {
+      "sku": "STR-STL-001",
+      "name": "Steel Strainer",
+      "units": 20,
+      "revenue": "130.00"
+    }
+  ],
+  "data_issues": []
+}

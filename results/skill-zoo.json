@@ -1,0 +1,810 @@
+[
+  {
+    "id": "none",
+    "what": "No defect (control).",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [],
+    "lint_warnings": [],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "vague_description",
+    "what": "The description says almost nothing: 'Helps with Shopify reports.'",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [],
+    "lint_warnings": [
+      "W01 description gives no trigger: add 'Use when ...' with concrete cases",
+      "W02 description is only 27 characters: too vague to route on",
+      "W05 description does not say when NOT to use it, and sibling skills exist"
+    ],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "no_trigger",
+    "what": "The description says what the skill does but not when to use it.",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [],
+    "lint_warnings": [
+      "W01 description gives no trigger: add 'Use when ...' with concrete cases",
+      "W05 description does not say when NOT to use it, and sibling skills exist"
+    ],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "overlaps_margins",
+    "what": "The summary's description also claims product margins and profitability.",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [],
+    "lint_warnings": [
+      "W04 description overlaps 84% with 'sku-margin-check': Claude may pick the wrong skill",
+      "W05 description does not say when NOT to use it, and sibling skills exist"
+    ],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "too_broad",
+    "what": "The description claims any question about the store.",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [],
+    "lint_warnings": [
+      "W01 description gives no trigger: add 'Use when ...' with concrete cases",
+      "W05 description does not say when NOT to use it, and sibling skills exist"
+    ],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "name_not_kebab",
+    "what": "name: ShopifyMonthlySummary (folder stays shopify-monthly-summary).",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [
+      "E04 name 'ShopifyMonthlySummary' is not kebab-case (lowercase letters, digits, hyphens; max 64)"
+    ],
+    "lint_warnings": [],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "name_differs_from_folder",
+    "what": "name: monthly-report, in folder shopify-monthly-summary.",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [
+      "E04 name 'monthly-report' differs from folder 'shopify-monthly-summary'"
+    ],
+    "lint_warnings": [],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "description_field_typo",
+    "what": "The field is spelled 'descripton', so the skill has no description.",
+    "skill": "shopify-monthly-summary",
+    "validate": "flagged",
+    "validate_said": [],
+    "lint_errors": [
+      "E03 unknown frontmatter field 'descripton'",
+      "E05 description missing"
+    ],
+    "lint_warnings": [],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 0,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 0
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 0,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 0
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "frontmatter_not_first",
+    "what": "A title line comes before the opening '---'.",
+    "skill": "shopify-monthly-summary",
+    "validate": "flagged",
+    "validate_said": [],
+    "lint_errors": [
+      "E01 no frontmatter: first line must be '---'"
+    ],
+    "lint_warnings": [],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 0,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 0
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 0,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 0
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "model_invocation_disabled",
+    "what": "disable-model-invocation: true, a valid field someone left on.",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [],
+    "lint_warnings": [
+      "W06 disable-model-invocation is true: Claude will not pick this skill on its own"
+    ],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 0,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 0
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 0,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 0
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "trigger_past_the_limit",
+    "what": "The trigger sentence sits after 1,536 characters of description.",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [
+      "E06 description is 2429 characters, limit 1024"
+    ],
+    "lint_warnings": [],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  },
+  {
+    "id": "script_missing",
+    "what": "SKILL.md runs scripts/monthly_kpi.py, which does not exist.",
+    "skill": "shopify-monthly-summary",
+    "validate": "passed",
+    "validate_said": [],
+    "lint_errors": [
+      "E07 SKILL.md references 'scripts/monthly_kpi.py', which does not exist"
+    ],
+    "lint_warnings": [],
+    "routing": {
+      "route-margins": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-margins-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-summary": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-payouts": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "skill-fired": 3
+        }
+      },
+      "route-summary": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-summary-indirect": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "not-margins": 3,
+          "skill-fired": 3
+        }
+      },
+      "route-unrelated": {
+        "runs": 3,
+        "passed": 3,
+        "errors": 0,
+        "graders": {
+          "no-payout-reconciliation": 3,
+          "no-shopify-monthly-summary": 3,
+          "no-sku-margin-check": 3
+        }
+      }
+    }
+  }
+]

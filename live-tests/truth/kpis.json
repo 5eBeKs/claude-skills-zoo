@@ -1,0 +1,130 @@
+{
+  "month": "2026-08",
+  "currency": "EUR",
+  "definitions": {
+    "money": "as charged, VAT included",
+    "month": "by order Created at",
+    "excluded": "test-tagged, cancelled and voided orders",
+    "refunds": "Refunded Amount on counted orders"
+  },
+  "orders_in_export": 60,
+  "orders_counted": 58,
+  "orders_excluded": [
+    {
+      "order": "#1013",
+      "reason": "test order",
+      "total": "80.90"
+    },
+    {
+      "order": "#1021",
+      "reason": "cancelled",
+      "total": "22.90"
+    }
+  ],
+  "gross_merchandise": "2787.20",
+  "discounts": "20.28",
+  "shipping_charged": "151.90",
+  "total_charged": "2918.82",
+  "refunds": "70.50",
+  "net_after_refunds": "2848.32",
+  "vat_included_in_total": "466.00",
+  "average_order_value": "50.32",
+  "refund_rate_pct": "2.4",
+  "units_sold": 134,
+  "orders_with_refund": [
+    {
+      "order": "#1030",
+      "refunded": "10.00",
+      "status": "partially_refunded"
+    },
+    {
+      "order": "#1042",
+      "refunded": "60.50",
+      "status": "refunded"
+    }
+  ],
+  "orders_with_discount": 6,
+  "top_skus_by_revenue": [
+    {
+      "sku": "SET-GFT-001",
+      "name": "Gift Set",
+      "units": 17,
+      "revenue": "833.00"
+    },
+    {
+      "sku": "POT-GLS-600",
+      "name": "Glass Teapot 600ml",
+      "units": 19,
+      "revenue": "646.00"
+    },
+    {
+      "sku": "TEA-BLK-100",
+      "name": "Black Tea 100g",
+      "units": 27,
+      "revenue": "310.50"
+    },
+    {
+      "sku": "TEA-OOL-050",
+      "name": "Oolong 50g",
+      "units": 16,
+      "revenue": "256.00"
+    },
+    {
+      "sku": "CUP-CER-001",
+      "name": "Ceramic Cup",
+      "units": 14,
+      "revenue": "252.00"
+    }
+  ],
+  "all_skus": [
+    {
+      "sku": "SET-GFT-001",
+      "name": "Gift Set",
+      "units": 17,
+      "revenue": "833.00"
+    },
+    {
+      "sku": "POT-GLS-600",
+      "name": "Glass Teapot 600ml",
+      "units": 19,
+      "revenue": "646.00"
+    },
+    {
+      "sku": "TEA-BLK-100",
+      "name": "Black Tea 100g",
+      "units": 27,
+      "revenue": "310.50"
+    },
+    {
+      "sku": "TEA-OOL-050",
+      "name": "Oolong 50g",
+      "units": 16,
+      "revenue": "256.00"
+    },
+    {
+      "sku": "CUP-CER-001",
+      "name": "Ceramic Cup",
+      "units": 14,
+      "revenue": "252.00"
+    },
+    {
+      "sku": "TEA-MAT-030",
+      "name": "Matcha 30g",
+      "units": 8,
+      "revenue": "192.00"
+    },
+    {
+      "sku": "TEA-GRN-100",
+      "name": "Green Tea 100g",
+      "units": 13,
+      "revenue": "167.70"
+    },
+    {
+      "sku": "STR-STL-001",
+      "name": "Steel Strainer",
+      "units": 20,
+      "revenue": "130.00"
+    }
+  ],
+  "data_issues": []
+}

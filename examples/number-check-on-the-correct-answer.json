@@ -1,0 +1,12 @@
+{
+  "numbers_checked": 22,
+  "untraced_numbers": [],
+  "unknown_order_refs": [],
+  "wrong_currency": [],
+  "missing_from_answer": [],
+  "skipped": [
+    "2026",
+    "2026"
+  ],
+  "ok": true
+}

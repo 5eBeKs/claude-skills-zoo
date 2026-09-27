@@ -1,0 +1,181 @@
+# How the bench works
+
+## The question it answers
+
+A Claude skill for a business fails in two ways that nobody sees. Either it never runs (or the
+wrong skill runs), or it runs and the answer is wrong in a way that looks right: a test order
+counted as a sale, VAT-inclusive money called revenue without VAT, a refund blamed on product
+quality. The bench plants such defects one at a time and records which layer stops each one, and
+which nothing stops.
+
+What it found changes the question. The strongest model rarely gets the arithmetic wrong any more;
+it gets the context wrong, or leaves it unsaid: which orders count, what "sales" includes, which
+month a refund or a payout belongs to. So the bench also reads every answer for what the owner can
+see: whether its figures rest on the store's definitions, whether every order left out, disputed or
+not yet paid out is named, and whether the answer says its own figures are approximate.
+
+## Four parts
+
+| Part | What is planted | Layers measured | Model runs |
+|---|---|---|---|
+| **Stores** | Three synthetic stores with real-export traps; store C at a real store's size | the skills' scripts against each generator's own truth | none |
+| **Skill zoo** | 11 defects in a skill's frontmatter or files, one per plugin copy | `claude plugin validate --strict`, the linter, the routing eval | 6 questions × 3 runs per defect |
+| **Answer zoo** | 24 defects in 7 classes in correct answers | the number check, the coverage check, a reviewer model | 3 runs per defect and per clean answer, per reviewer |
+| **Models** | the owner's questions on the three stores | Opus 5.5 with the plugin and without it: right figures, and what the owner can see | 3 runs per arm per case |
+
+### Stores
+
+Store A (`data/`) is an EU tea shop: VAT inside the prices, a test order tagged `test`, a PayPal
+order, a chargeback, payouts in transit. Store B is a US candle shop
+built to differ: sales tax added on top, test orders paid through Shopify's test gateway with no
+tag, an order paid partly with a gift card, a dispute the shop won, a payout adjustment, a cost
+sheet typed by hand. Each generator computes `truth.json` from its own order records, not from
+the CSV files it writes, so a match between script and truth is two independent paths agreeing.
+Store C is a UK skincare shop at a real store's size: three months, 4,470 orders, 9,074 export
+rows and 4,133 payout lines, and the question is one month. Its owner has answered the definitions
+(`store_definitions.json`, next to the exports, written so a person can read it): a sale counts once
+it is shipped, revenue is reported without VAT and without shipping. So August's 70 pre-orders,
+paid and charged, are not August sales. It also has test orders both ways, orders cancelled after
+payment, refunds of June and July orders paid out in August, disputes lost, won and still open, and
+gift cards.
+The bench can run the same comparison on the scripts of any earlier commit; `results/stores-at-ad8b48e.json` is its first run, before the fixes it led to.
+
+### Skill zoo
+
+Each defect is applied to `shopify-monthly-summary` in its own copy of the plugin. The routing
+eval then asks the owner questions (the summary and margins questions twice: once naming the
+Shopify export, once indirectly, "last month's numbers for my accountant") and a copywriting
+request, three runs each, and records whether the summary skill fires on its own question,
+whether it stays out of the margins question, and whether anything fires on the unrelated request. A defect that no static layer flags but that
+changes routing is the kind that reaches a client.
+
+### Answer zoo
+
+The correct answers are rendered from templates and store A's results, the way the skills render theirs. Each
+defect changes one thing in one answer. The machine layers are free and deterministic:
+
+- **numbers**: every figure traces to the results, every order reference exists, the currency is
+  the store's;
+- **coverage**: every item the results list for the owner (left-out orders, disputes, orders paid
+  outside Shopify Payments, payouts in transit, products below cost or without a cost, open
+  questions) is named in the answer (same file).
+
+A defect the machine lets through goes to the **reviewer**: the same answer, the owner's question
+and the results, shown to a model three times, each in a fresh session.
+The reviewer must answer `VERDICT: PASS` or `VERDICT: FAIL` and list problems. **B**: FAIL and it
+named the defect (a pattern per defect); **F**: FAIL for something else; **M**: PASS; **E**: the run
+failed. A reviewer catches a defect when most of its three runs are B. The three untouched answers
+are the clean control, also three runs each: a FAIL there is a false alarm.
+
+### Models
+
+The numbers cases run each owner question on the three stores, three times with the plugin and
+three times without it, on Opus 5.5 (earlier runs of Sonnet 5 and Fable 5.1 used graders and
+references since corrected, and are not reported). Stores A and B run in `claude plugin eval`.
+Without the plugin the model can read the files but has no shell: on Windows plugin eval's sessions
+have none, which is what a chat with the file attached gives. Store C is too big to add up by
+reading, and the fair comparison there is the plugin's scripts against code the model writes
+itself, so its cases run in plain `claude -p` sessions with a shell, in a fresh folder holding the
+files, with no MCP servers (none of the user's connectors), no web, publishing, notification or
+scheduling tools, and no user settings; with the plugin, it is loaded from a fresh copy. Those
+sessions run code on the machine without a sandbox. A run passes when every
+grader passes: the right headline figure, the traps named, nothing misleading printed. Where only
+one form of the right answer exists (an order number, a total), the grader is a pattern. Where a
+right answer can take several forms (a margin per unit or for the month, a bridge that starts from
+card sales or from every order), the grader is a model judge given the correct figures, and a test
+checks that every figure a judge is given comes from the scripts' results. The payout cases are
+patterns only: the figure on the bank statement, the money in transit (net or gross), the refunds
+(all, or only those paid out in the month), the disputes and the orders that never reach payouts. A
+judge given the correct bridge failed right answers there, so it was dropped. The price: a pattern does
+not see a misleading sentence around a right figure (in the live tests, Sonnet without the skill
+called the PayPal order a permanent gap). That is graded only in the live tests, by reading.
+
+### The answer hook
+
+The skills tell the model to show the owner exactly the text that the renderer returned and the
+number check passed. A Stop hook in the plugin (`hooks/check_answer.py`) holds that rule: every script
+run keeps its result next to the exports (`.monthend/`), and when Claude is about to finish a turn in
+which the scripts ran, the hook checks the final message against those results. Figures that trace to
+no result, unknown order numbers or another currency, or items the owner should see and the message
+does not name (unless it points to a saved answer that passes the whole check), send Claude back once
+with the list. Other sessions are left alone. `results/hook-check.md` is a live session with hook
+events recorded.
+
+## Checking the checks
+
+A bench that only confirms its author is worth little, so after each model run every failure was
+read, and so were the answers the plugin got right. What that turned up:
+
+- **Graders that failed right answers.** On the first run, four patterns failed answers written
+  without the plugin that were right: a margin given per unit instead of for the month, a payout
+  bridge that started from every order in the export instead of card sales. They became judges.
+  On the second run the payout judge failed right answers too, with and without the plugin (the
+  kept answers show a bridge that closes to the cent), so the payout cases went back to patterns,
+  now accepting each right way to split the bridge. The patterns were tried on the kept answers
+  before the re-run (`regrade`), so the re-run measured the models, not the graders.
+- **A definition the skill, the truth and the graders shared.** Store B's truth is computed by its
+  generator, independently of the scripts, but on the same definition: money paid out for this
+  month's sales. Opus without the plugin reconciled to what the bank statement shows, which also
+  holds the previous month's last sales, paid out in the first days of this one, and it was right:
+  the skill's "paid out this month" would not match the owner's bank. Independent arithmetic is not independent
+  definitions. The bridge now ends at the bank; `results/stores-at-b445df1.json` is the skills the
+  first model runs used, measured against the corrected truth.
+- **Reviewers that were right about the references.** Opus as a reviewer failed the untouched
+  summary: "left after refunds" read as money kept, and VAT, shipping and the month basis were
+  missing. Later Sonnet failed the untouched payout and margin answers: the figures rest on answers
+  the owner has not confirmed, and the question at the end reads as cut off from them. Both were
+  right; the references and the skills' instructions changed before the final run.
+- **A defect nothing static saw.** `disable-model-invocation: true` passes `claude plugin
+  validate` and passed the linter, and the summary skill stopped firing (0 of 3). The linter now
+  warns on it (W06).
+- **A question that said less than the script did.** The questionnaire asked about orders "tagged
+  'test'"; the scripts also left out orders paid through Shopify's test gateway. Opus with a shell,
+  given store C's answered definitions and no plugin, kept four test-gateway orders in the sales and
+  asked the owner about them. By the words of the definition it was right. The question now names
+  the gateway, and every definition is printed in words under "How this was counted".
+- **A size the answer format could not carry.** A placeholder names one figure; store C leaves out
+  85 orders in August and has 87 payments in transit. Lists now render whole (`|list`, `|by_reason`,
+  `|count`), so every one of them is still named.
+- **Half a penny.** The scripts rounded money half to even; store C's truth, like the stores' own
+  figures, rounds half up, and one figure differed by a penny. All three scripts now round half up.
+- **A penny that is not a definition.** Opus without the plugin on store C took VAT out of the
+  month's sum; the store takes it out order by order. Over 1,555 orders the two differ by about a
+  pound, and both are right. The revenue grader there now accepts a figure within two pounds of any
+  of the three defensible revenues (before refunds, after refunds without VAT, after only the product
+  part of refunds); the store C runs were graded again from their kept answers (`regrade`).
+
+## What is published
+
+The skills, the checks and the bench are private: they are the working tool. The case publishes
+everything they measured:
+
+- `ZOO.md`, generated from the results, not edited by hand;
+- `results/`: every result as recorded, including the `claude plugin eval` and `claude -p` runs
+  (local paths removed, run times cut to the month), and `hook-check.md`;
+- `live-tests/`: every model answer, unedited, and the figures they were checked against;
+- `results/evals/answers/`: the final answer of every numbers and reviewer run, with and without
+  the plugin, next to its grades, with the saved answer it points to when it saved one. The answers
+  are as the model wrote them, with one change: where a model mentioned the day of the run, it reads
+  `[run date]`;
+- `stores/`: the three stores' exports, store C's definitions and every `truth.json`, so anyone can
+  recount the truth from the CSVs;
+- `gallery/`: the case in pictures and a two-page PDF, every figure read from the results;
+- `examples/`: what the linter and the number check print on the examples.
+
+Model runs used the Claude Code login on the machine; on a subscription they count against the
+plan's usage, and `claude plugin eval` reports a list-price estimate next to each run. On Windows,
+Git's `bash.exe` must come before the WSL launcher on `PATH`, or the scaffold scripts that copy the
+store files into each run fail.
+
+Running the bench on your own skills is part of an engagement: the same four parts, with your
+skills, your exports and the defects your processes can produce.
+
+## What it is not
+
+- **Not a model ranking.** Three to six runs per cell show a repeated behaviour, not a rate.
+- **Not a benchmark of real stores.** Both stores are synthetic, with the traps named above; a
+  real store has traps nobody planted, which is what the first week of an engagement looks for.
+- **Not a blind test.** The same person wrote the skills, planted the defects and chose the
+  patterns a reviewer must use to name them. What makes the numbers checkable is that every
+  answer and grade is kept, and both stores' data and truth are public, so any figure can be
+  recounted from the CSV files.

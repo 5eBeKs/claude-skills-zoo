@@ -1,0 +1,99 @@
+{
+  "month": "2026-08",
+  "currency": "EUR",
+  "vat_rate_removed": "0.19",
+  "orders_counted": 58,
+  "skus": [
+    {
+      "sku": "CUP-CER-001",
+      "name": "Ceramic Cup",
+      "units": 14,
+      "revenue_ex_vat": "211.76",
+      "unit_cost": "7.50",
+      "cost_total": "105.00",
+      "gross_margin": "106.76",
+      "margin_pct": "50.4"
+    },
+    {
+      "sku": "POT-GLS-600",
+      "name": "Glass Teapot 600ml",
+      "units": 19,
+      "revenue_ex_vat": "542.86",
+      "unit_cost": "15.90",
+      "cost_total": "302.10",
+      "gross_margin": "240.76",
+      "margin_pct": "44.4"
+    },
+    {
+      "sku": "SET-GFT-001",
+      "name": "Gift Set",
+      "units": 17,
+      "revenue_ex_vat": "700.00",
+      "unit_cost": null,
+      "cost_total": null,
+      "gross_margin": "unknown",
+      "margin_pct": "unknown"
+    },
+    {
+      "sku": "STR-STL-001",
+      "name": "Steel Strainer",
+      "units": 20,
+      "revenue_ex_vat": "109.24",
+      "unit_cost": "7.10",
+      "cost_total": "142.00",
+      "gross_margin": "-32.76",
+      "margin_pct": "-30.0"
+    },
+    {
+      "sku": "TEA-BLK-100",
+      "name": "Black Tea 100g",
+      "units": 27,
+      "revenue_ex_vat": "260.92",
+      "unit_cost": "3.80",
+      "cost_total": "102.60",
+      "gross_margin": "158.32",
+      "margin_pct": "60.7"
+    },
+    {
+      "sku": "TEA-GRN-100",
+      "name": "Green Tea 100g",
+      "units": 13,
+      "revenue_ex_vat": "140.92",
+      "unit_cost": "4.10",
+      "cost_total": "53.30",
+      "gross_margin": "87.62",
+      "margin_pct": "62.2"
+    },
+    {
+      "sku": "TEA-MAT-030",
+      "name": "Matcha 30g",
+      "units": 8,
+      "revenue_ex_vat": "161.34",
+      "unit_cost": "9.70",
+      "cost_total": "77.60",
+      "gross_margin": "83.74",
+      "margin_pct": "51.9"
+    },
+    {
+      "sku": "TEA-OOL-050",
+      "name": "Oolong 50g",
+      "units": 16,
+      "revenue_ex_vat": "215.13",
+      "unit_cost": "6.20",
+      "cost_total": "99.20",
+      "gross_margin": "115.93",
+      "margin_pct": "53.9"
+    }
+  ],
+  "below_cost": [
+    "STR-STL-001"
+  ],
+  "unknown_cost": [
+    "SET-GFT-001"
+  ],
+  "not_allocated_to_skus": {
+    "discounts": "20.28",
+    "refunds": "70.50"
+  },
+  "costs_without_sales": []
+}

@@ -1,0 +1,296 @@
+[
+  {
+    "id": "clean_summary",
+    "answer": "summary",
+    "class": "clean",
+    "what": "No defect.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "clean_payouts",
+    "answer": "payouts",
+    "class": "clean",
+    "what": "No defect.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "clean_margins",
+    "answer": "margins",
+    "class": "clean",
+    "what": "No defect.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "net_digits_transposed",
+    "answer": "summary",
+    "class": "number",
+    "what": "Net after refunds printed with two digits swapped.",
+    "numbers": true,
+    "coverage": false,
+    "numbers_said": [
+      "2,884.32"
+    ],
+    "coverage_said": []
+  },
+  {
+    "id": "net_discount_subtracted_twice",
+    "answer": "summary",
+    "class": "number",
+    "what": "Net after refunds also subtracts the discounts, which are already inside the total.",
+    "numbers": true,
+    "coverage": false,
+    "numbers_said": [
+      "2,828.04"
+    ],
+    "coverage_said": []
+  },
+  {
+    "id": "aov_on_all_orders",
+    "answer": "summary",
+    "class": "number",
+    "what": "Average order value divides by all 60 orders in the export.",
+    "numbers": true,
+    "coverage": false,
+    "numbers_said": [
+      "48.65"
+    ],
+    "coverage_said": []
+  },
+  {
+    "id": "refund_rate_digits_swapped",
+    "answer": "summary",
+    "class": "number",
+    "what": "Refund rate printed as 4.2% instead of 2.4%.",
+    "numbers": true,
+    "coverage": false,
+    "numbers_said": [
+      "4.2%"
+    ],
+    "coverage_said": []
+  },
+  {
+    "id": "discount_count_wrong",
+    "answer": "summary",
+    "class": "number",
+    "what": "Says 3 orders used a discount code; 6 did.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "test_order_counted",
+    "answer": "summary",
+    "class": "population",
+    "what": "The test order is counted as a sale: 59 orders and €2,999.72 charged.",
+    "numbers": true,
+    "coverage": false,
+    "numbers_said": [
+      "2,999.72",
+      "2,929.22",
+      "59"
+    ],
+    "coverage_said": []
+  },
+  {
+    "id": "cancelled_order_not_named",
+    "answer": "summary",
+    "class": "population",
+    "what": "The list of left-out orders drops the cancelled one; the owner cannot see it was excluded.",
+    "numbers": false,
+    "coverage": true,
+    "numbers_said": [],
+    "coverage_said": [
+      "orders_excluded: #1021"
+    ]
+  },
+  {
+    "id": "paypal_order_not_named",
+    "answer": "payouts",
+    "class": "population",
+    "what": "The PayPal order is not mentioned; the owner will look for €99 in Shopify payouts.",
+    "numbers": false,
+    "coverage": true,
+    "numbers_said": [],
+    "coverage_said": [
+      "orders_paid_outside_shopify_payments: #1055"
+    ]
+  },
+  {
+    "id": "in_transit_order_dropped",
+    "answer": "payouts",
+    "class": "population",
+    "what": "One of the four in-transit payouts is left out of the list.",
+    "numbers": false,
+    "coverage": true,
+    "numbers_said": [],
+    "coverage_said": [
+      "in_transit: #1058"
+    ]
+  },
+  {
+    "id": "revenue_called_ex_vat",
+    "answer": "summary",
+    "class": "definition",
+    "what": "Total charged, which includes VAT, is labelled as revenue without VAT.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "net_called_profit",
+    "answer": "summary",
+    "class": "definition",
+    "what": "Net after refunds is called profit.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "margins_with_vat_inside",
+    "answer": "margins",
+    "class": "definition",
+    "what": "The table header says revenue without VAT, the caveat line says VAT was not taken out.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "refunds_and_discounts_swapped",
+    "answer": "margins",
+    "class": "label",
+    "what": "The discounts and refunds not spread over products swap labels.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "currency_dollars",
+    "answer": "payouts",
+    "class": "label",
+    "what": "The euro store's gap is written in dollars.",
+    "numbers": true,
+    "coverage": false,
+    "numbers_said": [
+      "USD"
+    ],
+    "coverage_said": []
+  },
+  {
+    "id": "fees_labelled_refunds",
+    "answer": "payouts",
+    "class": "label",
+    "what": "Card fees and refunds swap their row labels.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "wrong_product_below_cost",
+    "answer": "margins",
+    "class": "label",
+    "what": "The product sold below cost is named as the Ceramic Cup; the figures are the strainer's.",
+    "numbers": false,
+    "coverage": true,
+    "numbers_said": [],
+    "coverage_said": [
+      "below_cost: STR-STL-001"
+    ]
+  },
+  {
+    "id": "unknown_cost_called_zero",
+    "answer": "margins",
+    "class": "caveat",
+    "what": "The product with no cost is presented as costing nothing.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "open_question_dropped",
+    "answer": "payouts",
+    "class": "caveat",
+    "what": "The open question on how test orders are counted is dropped.",
+    "numbers": false,
+    "coverage": true,
+    "numbers_said": [],
+    "coverage_said": [
+      "open question: Orders tagged 'test': leave them out of sales (usual), or count them?"
+    ]
+  },
+  {
+    "id": "dispute_said_recoverable",
+    "answer": "payouts",
+    "class": "caveat",
+    "what": "Says the disputed money will come back, which nothing in the payouts shows.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "refunds_blamed_on_quality",
+    "answer": "summary",
+    "class": "inference",
+    "what": "Explains the refunds by product quality, which nothing in the export measures.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "best_month_claim",
+    "answer": "summary",
+    "class": "inference",
+    "what": "Calls August the best month so far, with one month of data.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "drop_the_strainer",
+    "answer": "margins",
+    "class": "inference",
+    "what": "Recommends dropping the strainer from one month of data, against the skill's own rule.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "units_left_out",
+    "answer": "summary",
+    "class": "answer",
+    "what": "Units sold, which the owner asked for, is missing.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  },
+  {
+    "id": "wrong_month",
+    "answer": "summary",
+    "class": "answer",
+    "what": "The summary is headed September; the export is August.",
+    "numbers": false,
+    "coverage": false,
+    "numbers_said": [],
+    "coverage_said": []
+  }
+]

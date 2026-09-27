@@ -1,0 +1,63 @@
+{
+  "month": "2026-08",
+  "currency": "EUR",
+  "totals_owners_ask_about": {
+    "gap_card_sales_to_paid_out": "371.08",
+    "dispute_total_cost": "34.30",
+    "paid_out_plus_in_transit": "2658.43",
+    "paid_outside_shopify_payments": "99.00"
+  },
+  "bridge": {
+    "card_orders_total": "2819.82",
+    "refunds": "70.50",
+    "card_fees": "56.59",
+    "disputes_amount": "19.30",
+    "dispute_fees": "15.00",
+    "other_transaction_types_net": "0",
+    "in_transit_at_month_end": "209.69",
+    "paid_out_in_month": "2448.74",
+    "unexplained_difference": "0.00"
+  },
+  "bridge_closes": true,
+  "card_orders_counted": 57,
+  "orders_paid_outside_shopify_payments": [
+    {
+      "order": "#1055",
+      "payment": "PayPal Express Checkout",
+      "total": "99.00"
+    }
+  ],
+  "orders_without_charge": [],
+  "charges_without_counted_order": [],
+  "charge_amount_mismatch": [],
+  "disputes": [
+    {
+      "order": "#1060",
+      "amount": "19.30",
+      "fee": "15.00"
+    }
+  ],
+  "in_transit": [
+    {
+      "order": "#1050",
+      "net": "43.19",
+      "payout_date": "2026-09-01"
+    },
+    {
+      "order": "#1059",
+      "net": "90.37",
+      "payout_date": "2026-09-01"
+    },
+    {
+      "order": "#1009",
+      "net": "42.50",
+      "payout_date": "2026-09-02"
+    },
+    {
+      "order": "#1058",
+      "net": "33.63",
+      "payout_date": "2026-09-02"
+    }
+  ],
+  "other_transaction_types": []
+}

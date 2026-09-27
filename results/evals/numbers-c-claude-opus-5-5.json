@@ -1,0 +1,730 @@
+{
+ "runner": "headless.py (claude -p with a shell)",
+ "model": "claude-opus-5-5",
+ "cases": [
+  {
+   "name": "numbers-summary-c",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.2919588000000001,
+      "turns": 10,
+      "durationSeconds": 47,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "<local path>"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.3224822,
+      "turns": 10,
+      "durationSeconds": 57,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "<local path>"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.28006,
+      "turns": 9,
+      "durationSeconds": 51,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "<local path>"
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.24158380000000002,
+      "turns": 7,
+      "durationSeconds": 55,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 0,
+      "passed": false,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.20441559999999998,
+      "turns": 6,
+      "durationSeconds": 46,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": false,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.2531744,
+      "turns": 7,
+      "durationSeconds": 57,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-payouts-c",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.3643056,
+      "turns": 11,
+      "durationSeconds": 61,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "<local path>"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.33446200000000004,
+      "turns": 10,
+      "durationSeconds": 56,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "<local path>"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.42264720000000006,
+      "turns": 10,
+      "durationSeconds": 69,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "<local path>"
+      ]
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.3737558,
+      "turns": 8,
+      "durationSeconds": 91,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.4036374,
+      "turns": 7,
+      "durationSeconds": 107,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.34197999999999995,
+      "turns": 7,
+      "durationSeconds": 103,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-margins-c",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.3157168,
+      "turns": 9,
+      "durationSeconds": 65,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.33034700000000006,
+      "turns": 9,
+      "durationSeconds": 58,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.3433094,
+      "turns": 9,
+      "durationSeconds": 60,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": []
+     }
+    ],
+    "without": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.2922772,
+      "turns": 9,
+      "durationSeconds": 63,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.2983908,
+      "turns": 8,
+      "durationSeconds": 63,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "tracePath": "<local path>",
+      "costUsd": 0.2677498,
+      "turns": 9,
+      "durationSeconds": 51,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": false,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  }
+ ],
+ "costUsd": 5.6822538
+}
