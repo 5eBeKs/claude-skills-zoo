@@ -1,0 +1,1515 @@
+{
+ "runner": "headless.py (claude -p with a shell)",
+ "model": "claude-opus-5-5",
+ "whole_plugin": true,
+ "cases": [
+  {
+   "name": "numbers-summary",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.2812068,
+      "turns": 10,
+      "durationSeconds": 47,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"test order #1013\" among the orders left out of the figures"
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.23488219999999999,
+      "turns": 7,
+      "durationSeconds": 40,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"test order #1013\" among the orders left out of the figures"
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.25461680000000003,
+      "turns": 8,
+      "durationSeconds": 46,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-order-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-order-not-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"test order #1013\" among the orders left out of the figures"
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-summary-b",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.22548459999999998,
+      "turns": 6,
+      "durationSeconds": 38,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"test order (test payment gateway): #2011, #2044\" left out of the figures"
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.2377136,
+      "turns": 7,
+      "durationSeconds": 41,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"test order (test payment gateway): #2011, #2044\" left out of the figures"
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.2622552,
+      "turns": 8,
+      "durationSeconds": 46,
+      "graders": [
+       {
+        "name": "net-correct",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "test-orders-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "test-orders-not-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"test order (test payment gateway): #2011, #2044\" left out of the figures"
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-summary-c",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.3218836,
+      "turns": 10,
+      "durationSeconds": 51,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "summary_2026-08.md"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.32658039999999994,
+      "turns": 11,
+      "durationSeconds": 49,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "summary_2026-08.md"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.3102098,
+      "turns": 9,
+      "durationSeconds": 46,
+      "graders": [
+       {
+        "name": "orders-counted",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pre-orders-left-out",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "revenue-on-the-owners-definitions",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "summary_2026-08.md"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-payouts",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.2323456,
+      "turns": 7,
+      "durationSeconds": 40,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.22235919999999998,
+      "turns": 7,
+      "durationSeconds": 37,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.240342,
+      "turns": 8,
+      "durationSeconds": 40,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "chargeback",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "euro-not-dollar",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "paypal-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-payouts-b",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.29520440000000003,
+      "turns": 9,
+      "durationSeconds": 52,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.26098160000000004,
+      "turns": 9,
+      "durationSeconds": 45,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.379413,
+      "turns": 13,
+      "durationSeconds": 67,
+      "graders": [
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "both-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "dollar-not-euro",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-card-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-orders-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "refunds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-payouts-c",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.48612800000000006,
+      "turns": 14,
+      "durationSeconds": 79,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "reconciliation_2026-08.md"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.5619208,
+      "turns": 12,
+      "durationSeconds": 83,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "reconciliation_2026-08.md"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.39725980000000005,
+      "turns": 9,
+      "durationSeconds": 63,
+      "graders": [
+       {
+        "name": "august-disputes",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "bank-figure",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "in-transit",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "july-sales-paid-in-august",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "pounds",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": [
+       "reconciliation_2026-08.md"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-margins",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.2511574,
+      "turns": 10,
+      "durationSeconds": 47,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"SET-GFT-001 (Gift Set) ... its margin is unknown, not zero\""
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.21879980000000002,
+      "turns": 6,
+      "durationSeconds": 38,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"SET-GFT-001 (Gift Set) ... its margin is unknown, not zero\""
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.29005400000000003,
+      "turns": 8,
+      "durationSeconds": 55,
+      "graders": [
+       {
+        "name": "below-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "gift-set-unknown",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"SET-GFT-001 (Gift Set) ... its margin is unknown, not zero\""
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-margins-b",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.3968004,
+      "turns": 11,
+      "durationSeconds": 70,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"MO-CND-001 | Cedar Candle 8oz | 28 | 672.00 | 207.20 | 464.80 | 69.2%\""
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.2191218,
+      "turns": 6,
+      "durationSeconds": 43,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"MO-CND-001 | Cedar Candle 8oz | 28 | 672.00 | 207.20 | 464.80 | 69.2%\""
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.26478579999999996,
+      "turns": 7,
+      "durationSeconds": 52,
+      "graders": [
+       {
+        "name": "cedar-cost-found",
+        "passed": true,
+        "withOnly": false,
+        "scored": true,
+        "to_read": true,
+        "why": "\"MO-CND-001 | Cedar Candle 8oz | 28 | 672.00 | 207.20 | 464.80 | 69.2%\""
+       },
+       {
+        "name": "sample-below-cost",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       }
+      ],
+      "reports": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-margins-c",
+   "arms": {
+    "with": [
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.3530526000000001,
+      "turns": 9,
+      "durationSeconds": 50,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": [
+       "margins_2026-08.md"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.3584068,
+      "turns": 9,
+      "durationSeconds": 54,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": [
+       "margins_2026-08.md"
+      ]
+     },
+     {
+      "score": 1,
+      "passed": true,
+      "error": null,
+      "costUsd": 0.36549380000000004,
+      "turns": 10,
+      "durationSeconds": 62,
+      "graders": [
+       {
+        "name": "both-clearance-products",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       },
+       {
+        "name": "skill-fired",
+        "passed": true,
+        "withOnly": true,
+        "scored": false
+       },
+       {
+        "name": "unknown-cost-named",
+        "passed": true,
+        "withOnly": false,
+        "scored": true
+       }
+      ],
+      "reports": [
+       "margins_2026-08.md"
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "costUsd": 8.248459800000001,
+ "readings": [
+  {
+   "case": "numbers-summary",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary-b",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary-b",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary-b",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary-c",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary-c",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-summary-c",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-payouts",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true
+  },
+  {
+   "case": "numbers-payouts",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true
+  },
+  {
+   "case": "numbers-payouts",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true
+  },
+  {
+   "case": "numbers-payouts-b",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true
+  },
+  {
+   "case": "numbers-payouts-b",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true
+  },
+  {
+   "case": "numbers-payouts-b",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 1,
+   "hook_last_exit": 0,
+   "hook_why": [
+    "The answer for the owner is not the checked text. 2 items the results list for the owner are not named, for example: open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?; open question: The export's shape is not recorded "
+   ],
+   "label_right": true
+  },
+  {
+   "case": "numbers-payouts-c",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true,
+   "refund_split_shown": true
+  },
+  {
+   "case": "numbers-payouts-c",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true,
+   "refund_split_shown": true
+  },
+  {
+   "case": "numbers-payouts-c",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "label_right": true,
+   "refund_split_shown": true
+  },
+  {
+   "case": "numbers-margins",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-margins",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-margins",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 1,
+   "hook_last_exit": 0,
+   "hook_why": [
+    "The answer for the owner is not the checked text. 3 items the results list for the owner are not named, for example: open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?; open question: Does a sale count when it is paid, "
+   ]
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 1,
+   "hook_last_exit": 0,
+   "hook_why": [
+    "The answer for the owner is not the checked text. 2 items the results list for the owner are not named, for example: open question: Does a sale count when it is paid, or only once it is shipped?; open question: The export's shape is not recorded yet: are the payment methods, statuses, tags and curre"
+   ]
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": []
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 1,
+   "hook_last_exit": 0,
+   "hook_why": [
+    "The answer for the owner is not the checked text. 3 items the results list for the owner are not named, for example: open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?; open question: Does a sale count when it is paid, "
+   ]
+  },
+  {
+   "case": "numbers-margins-c",
+   "run": 1,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "names_kept": true
+  },
+  {
+   "case": "numbers-margins-c",
+   "run": 2,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "names_kept": true
+  },
+  {
+   "case": "numbers-margins-c",
+   "run": 3,
+   "right": 1,
+   "basis": true,
+   "named": true,
+   "how_counted": true,
+   "fingerprints": true,
+   "hook_blocked": 0,
+   "hook_last_exit": 0,
+   "hook_why": [],
+   "names_kept": true
+  }
+ ]
+}

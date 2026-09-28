@@ -50,12 +50,12 @@
   ],
   "computed_by": {
     "plugin": "shopify-month-end",
-    "version": "0.5.0",
-    "scripts_sha256": "0918f9959f073876f8932edfb6bc4090cab2e31067abd2bf7f02e467b840ec21"
+    "version": "0.6.1",
+    "scripts_sha256": "f5c57f31c2db0aaabcd06069cf967f718396195ede9b6a5836ee67c752e96dda"
   },
   "fingerprints_in_words": [
     "orders_export.csv: 103 rows, SHA-256 b3f1fd5c8f24954c",
-    "computed by shopify-month-end v0.5.0, scripts 0918f9959f07"
+    "computed by shopify-month-end v0.6.1, scripts f5c57f31c2db"
   ],
   "open_questions": [
     "Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?",

@@ -1,0 +1,355 @@
+[
+ {
+  "case": "numbers-summary",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-summary",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-summary",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 1,
+  "hook_last_exit": 0,
+  "hook_why": [
+   "The answer for the owner is not the checked text. figures that are in no computed result: 15, 24. Show the owner exactly the text that render returned and check_numbers passed, or, when its lists are long, save that text as <name>_<YYYY-MM>.md next to the exports and point to it, with the rest of th"
+  ]
+ },
+ {
+  "case": "numbers-summary-b",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-summary-b",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-summary-b",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-summary-c",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-summary-c",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-summary-c",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-payouts",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "label_right": true
+ },
+ {
+  "case": "numbers-payouts",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 1,
+  "hook_last_exit": 0,
+  "hook_why": [
+   "The answer for the owner is not the checked text. 2 items the results list for the owner are not named, for example: open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?; open question: The export's shape is not recorded "
+  ],
+  "label_right": true
+ },
+ {
+  "case": "numbers-payouts",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "label_right": true
+ },
+ {
+  "case": "numbers-payouts-b",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "label_right": true
+ },
+ {
+  "case": "numbers-payouts-b",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 1,
+  "hook_last_exit": 0,
+  "hook_why": [
+   "The answer for the owner is not the checked text. 2 items the results list for the owner are not named, for example: open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?; open question: The export's shape is not recorded "
+  ],
+  "label_right": true
+ },
+ {
+  "case": "numbers-payouts-b",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "label_right": true
+ },
+ {
+  "case": "numbers-payouts-c",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "label_right": true,
+  "refund_split_shown": true
+ },
+ {
+  "case": "numbers-payouts-c",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "label_right": true,
+  "refund_split_shown": true
+ },
+ {
+  "case": "numbers-payouts-c",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "label_right": true,
+  "refund_split_shown": true
+ },
+ {
+  "case": "numbers-margins",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-margins",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-margins",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-margins-b",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 1,
+  "hook_last_exit": 0,
+  "hook_why": [
+   "The answer for the owner is not the checked text. 3 items the results list for the owner are not named, for example: open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?; open question: Does a sale count when it is paid, "
+  ]
+ },
+ {
+  "case": "numbers-margins-b",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 1,
+  "hook_last_exit": 0,
+  "hook_why": [
+   "The answer for the owner is not the checked text. 3 items the results list for the owner are not named, for example: open question: Test orders (tagged 'test', or paid through Shopify's test gateway): leave them out of sales (usual), or count them?; open question: Does a sale count when it is paid, "
+  ]
+ },
+ {
+  "case": "numbers-margins-b",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": []
+ },
+ {
+  "case": "numbers-margins-c",
+  "run": 1,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 1,
+  "hook_last_exit": 0,
+  "hook_why": [
+   "The answer for the owner is not the checked text. figures that are in no computed result: 86, 71. Show the owner exactly the text that render returned and check_numbers passed, or, when its lists are long, save that text as <name>_<YYYY-MM>.md next to the exports and point to it, with the rest of th"
+  ],
+  "names_kept": true
+ },
+ {
+  "case": "numbers-margins-c",
+  "run": 2,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 1,
+  "hook_last_exit": 0,
+  "hook_why": [
+   "The answer for the owner is not the checked text. figures that are in no computed result: 30.80, 56. Show the owner exactly the text that render returned and check_numbers passed, or, when its lists are long, save that text as <name>_<YYYY-MM>.md next to the exports and point to it, with the rest of"
+  ],
+  "names_kept": true
+ },
+ {
+  "case": "numbers-margins-c",
+  "run": 3,
+  "right": 1,
+  "basis": true,
+  "named": true,
+  "how_counted": true,
+  "fingerprints": true,
+  "hook_blocked": 0,
+  "hook_last_exit": 0,
+  "hook_why": [],
+  "names_kept": true
+ }
+]

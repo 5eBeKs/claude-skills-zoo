@@ -1,5 +1,5 @@
 {
-  "revision": "working tree",
+  "revision": "18f59e1",
   "stores": {
     "A": [
       {
@@ -183,6 +183,28 @@
           "SET-GFT-001"
         ],
         "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "test orders",
+        "truth": [
+          "#1013"
+        ],
+        "script": [
+          "#1013"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "orders paid outside Shopify Payments",
+        "truth": [
+          "#1055"
+        ],
+        "script": [
+          "#1055"
+        ],
+        "ok": true
       }
     ],
     "B": [
@@ -357,6 +379,82 @@
         "figure": "margin MO-WCK-001",
         "truth": "237.60",
         "script": "237.60",
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "test orders",
+        "truth": [
+          "#2011",
+          "#2044"
+        ],
+        "script": [
+          "#2011",
+          "#2044"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "sales tax in the total",
+        "truth": "284.28",
+        "script": "284.28",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "paid by gift card, not in payouts",
+        "truth": "20.00",
+        "script": "20.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "revenue MO-CND-001",
+        "truth": "672.00",
+        "script": "672.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "revenue MO-CND-002",
+        "truth": "528.00",
+        "script": "528.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "revenue MO-CND-010",
+        "truth": "468.00",
+        "script": "468.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "revenue MO-DIF-001",
+        "truth": "1248.00",
+        "script": "1248.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "revenue MO-MAT-001",
+        "truth": "408.00",
+        "script": "408.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "revenue MO-SMP-001",
+        "truth": "0.00",
+        "script": "0.00",
+        "ok": true
+      },
+      {
+        "skill": "margins",
+        "figure": "revenue MO-WCK-001",
+        "truth": "378.00",
+        "script": "378.00",
         "ok": true
       }
     ],
@@ -850,6 +948,43 @@
         ],
         "script": [
           "GL-NEW-001"
+        ],
+        "ok": true
+      },
+      {
+        "skill": "summary",
+        "figure": "orders left out, by reason",
+        "truth": {
+          "cancelled": 7,
+          "test": 8,
+          "not shipped": 70
+        },
+        "script": {
+          "cancelled": 7,
+          "test": 8,
+          "not shipped": 70
+        },
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "refunds processed in the month",
+        "truth": "2762.41",
+        "script": "2762.41",
+        "ok": true
+      },
+      {
+        "skill": "payouts",
+        "figure": "disputes in the month",
+        "truth": [
+          "#32603",
+          "#32955",
+          "#33706"
+        ],
+        "script": [
+          "#32603",
+          "#32955",
+          "#33706"
         ],
         "ok": true
       }

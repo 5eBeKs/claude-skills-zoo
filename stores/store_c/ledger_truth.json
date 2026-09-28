@@ -1,0 +1,91 @@
+{
+  "month": "2026-08",
+  "currency": "GBP",
+  "payouts_in_processor_data": 21,
+  "short_by_0.30": {
+    "payout": "PO-20260806",
+    "date": "2026-08-06",
+    "processor": "2503.81",
+    "ledger": "2503.51",
+    "should": "note, not flag"
+  },
+  "missing_in_ledger": {
+    "payout": "PO-20260810",
+    "date": "2026-08-10",
+    "amount": "8612.89"
+  },
+  "short_by_0.60": {
+    "payout": "PO-20260813",
+    "date": "2026-08-13",
+    "processor": "3768.85",
+    "ledger": "3768.25",
+    "should": "flag"
+  },
+  "amount_differs": {
+    "payout": "PO-20260818",
+    "date": "2026-08-18",
+    "processor": "2322.88",
+    "ledger": "3222.88",
+    "difference": "900.00"
+  },
+  "deposit_entered_twice": {
+    "payout": "PO-20260825",
+    "dates": [
+      "2026-08-25",
+      "2026-08-27"
+    ],
+    "amount": "2257.17",
+    "second_num": "1017"
+  },
+  "deposit_not_in_processor_data": {
+    "date": "2026-08-21",
+    "amount": "2500.00",
+    "num": "1022"
+  },
+  "duplicate_expense": {
+    "vendor": "Northbound Couriers",
+    "amount": "418.60",
+    "nums": [
+      "1028",
+      "1029"
+    ]
+  },
+  "not_a_duplicate": {
+    "vendor": "Klaviyo",
+    "amount": "45.00",
+    "every": "7 days",
+    "nums": [
+      "1030",
+      "1031",
+      "1032",
+      "1033"
+    ]
+  },
+  "uncategorized": {
+    "count": 3,
+    "nums": [
+      "1036",
+      "1037",
+      "1038"
+    ]
+  },
+  "no_receipt_over_25": {
+    "count": 6,
+    "nums": [
+      "1036",
+      "1037",
+      "1038",
+      "1039",
+      "1040",
+      "1041"
+    ]
+  },
+  "fees_and_refunds_not_in_books": {
+    "fees": "2062.63",
+    "refunds": "2976.75"
+  },
+  "books_income_includes_errors": {
+    "shopify_sales_in_books": "91439.92",
+    "payouts_in_processor_data": "94396.54"
+  }
+}

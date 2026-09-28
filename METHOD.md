@@ -25,7 +25,7 @@ not yet paid out is named, and whether the answer says its own figures are appro
 
 ### Stores
 
-Store A (`data/`) is an EU tea shop: VAT inside the prices, a test order tagged `test`, a PayPal
+Store A (`data/` in the code, `stores/store_a/` in the public case) is an EU tea shop: VAT inside the prices, a test order tagged `test`, a PayPal
 order, a chargeback, payouts in transit. Store B is a US candle shop
 built to differ: sales tax added on top, test orders paid through Shopify's test gateway with no
 tag, an order paid partly with a gift card, a dispute the shop won, a payout adjustment, a cost
@@ -36,7 +36,7 @@ rows and 4,133 payout lines, and the question is one month. Its owner has answer
 (`store_definitions.json`, next to the exports, written so a person can read it): a sale counts once
 it is shipped, revenue is reported without VAT and without shipping. So August's 70 pre-orders,
 paid and charged, are not August sales. It also has test orders both ways, orders cancelled after
-payment, refunds of June and July orders paid out in August, disputes lost, won and still open, and
+payment, refunds of July orders paid out in August, disputes lost, won and still open, and
 gift cards.
 The bench can run the same comparison on the scripts of any earlier commit; `results/stores-at-ad8b48e.json` is its first run, before the fixes it led to.
 
@@ -65,7 +65,7 @@ and the results, shown to a model three times, each in a fresh session.
 The reviewer must answer `VERDICT: PASS` or `VERDICT: FAIL` and list problems. **B**: FAIL and it
 named the defect (a pattern per defect); **F**: FAIL for something else; **M**: PASS; **E**: the run
 failed. A reviewer catches a defect when most of its three runs are B. The three untouched answers
-are the clean control, also three runs each: a FAIL there is a false alarm.
+are the clean control, also three runs each: a FAIL there is an objection to an untouched answer, read like any other.
 
 ### Models
 
@@ -137,8 +137,8 @@ read, and so were the answers the plugin got right. What that turned up:
   the owner has not confirmed, and the question at the end reads as cut off from them. Both were
   right; the references and the skills' instructions changed before the final run.
 - **A defect nothing static saw.** `disable-model-invocation: true` passes `claude plugin
-  validate` and passed the linter, and the summary skill stopped firing (0 of 3). The linter now
-  warns on it (W06).
+  validate` and passed the linter, and the summary skill stopped firing (0 of 6: its question
+  asked plainly and indirectly, three runs each). The linter now warns on it (W06).
 - **A question that said less than the script did.** The questionnaire asked about orders "tagged
   'test'"; the scripts also left out orders paid through Shopify's test gateway. Opus with a shell,
   given store C's answered definitions and no plugin, kept four test-gateway orders in the sales and
@@ -173,8 +173,8 @@ everything they measured:
 - `gallery/`: the case in pictures and a two-page PDF, every figure read from the results;
 - `examples/`: what the linter and the number check print on the examples.
 
-Model runs used the Claude Code login on the machine; on a subscription they count against the
-plan's usage, and `claude plugin eval` reports a list-price estimate next to each run. On Windows,
+Model runs used Claude Code on the author's machine; `claude plugin eval` reports a list-price
+estimate next to each run, not a charge. On Windows,
 Git's `bash.exe` must come before the WSL launcher on `PATH`, or the scaffold scripts that copy the
 store files into each run fail.
 
@@ -183,10 +183,11 @@ skills, your exports and the defects your processes can produce.
 
 ## What it is not
 
-- **Not a model ranking.** Three to six runs per cell show a repeated behaviour, not a rate.
-- **Not a benchmark of real stores.** Both stores are synthetic, with the traps named above; a
+- **Not a model ranking.** Three runs per cell (six in the skill zoo: a question asked two ways) show a
+  repeated behaviour, not a rate.
+- **Not a benchmark of real stores.** The three stores are synthetic, with the traps named above; a
   real store has traps nobody planted, which is what the first week of an engagement looks for.
 - **Not a blind test.** The same person wrote the skills, planted the defects and chose the
   patterns a reviewer must use to name them. What makes the numbers checkable is that every
-  answer and grade is kept, and both stores' data and truth are public, so any figure can be
+  answer and grade is kept, and every store's data and truth are public, so any figure can be
   recounted from the CSV files.

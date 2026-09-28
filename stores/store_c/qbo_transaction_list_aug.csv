@@ -1,0 +1,47 @@
+Store C Ltd
+Transaction List by Date
+August 1-31, 2026
+
+Date,Transaction type,Num,Posting,Name,Memo/Description,Account,Split,Amount,Attachments
+08/01/2026,Expense,1034,Yes,Harbour Lettings,"Unit 4 rent, August",Business Checking,Rent or Lease,-1850.00,1
+08/03/2026,Deposit,1001,Yes,Shopify,Shopify payout PO-20260803,Business Checking,Shopify Sales,8474.79,0
+08/03/2026,Bill Payment (Check),1023,Yes,Rosewater Supply Co,Stock for resale,Business Checking,Cost of Goods Sold,-3120.40,1
+08/04/2026,Deposit,1002,Yes,Shopify,Shopify payout PO-20260804,Business Checking,Shopify Sales,3025.34,0
+08/04/2026,Expense,1030,Yes,Klaviyo,Weekly email plan,Business Checking,Software & Subscriptions,-45.00,1
+08/05/2026,Deposit,1003,Yes,Shopify,Shopify payout PO-20260805,Business Checking,Shopify Sales,3931.37,0
+08/05/2026,Expense,1035,Yes,Shopify,Shopify plan,Business Checking,Software & Subscriptions,-79.00,1
+08/06/2026,Deposit,1004,Yes,Shopify,Shopify payout PO-20260806,Business Checking,Shopify Sales,2503.51,0
+08/07/2026,Deposit,1005,Yes,Shopify,Shopify payout PO-20260807,Business Checking,Shopify Sales,3635.44,0
+08/07/2026,Expense,1039,Yes,Photo Studio North,Product shoot,Business Checking,Advertising & Marketing,-360.00,0
+08/09/2026,Bill Payment (Check),1024,Yes,Glassjar Packaging,Stock for resale,Business Checking,Cost of Goods Sold,-842.15,1
+08/09/2026,Expense,1036,Yes,Amazon,,Business Checking,Uncategorized Expense,-63.48,0
+08/11/2026,Deposit,1006,Yes,Shopify,Shopify payout PO-20260811,Business Checking,Shopify Sales,3431.14,0
+08/11/2026,Expense,1031,Yes,Klaviyo,Weekly email plan,Business Checking,Software & Subscriptions,-45.00,1
+08/12/2026,Deposit,1007,Yes,Shopify,Shopify payout PO-20260812,Business Checking,Shopify Sales,3571.76,0
+08/12/2026,Expense,1028,Yes,Northbound Couriers,Courier invoice NC-8841,Business Checking,Shipping & Delivery,-418.60,1
+08/13/2026,Deposit,1008,Yes,Shopify,Shopify payout PO-20260813,Business Checking,Shopify Sales,3768.25,0
+08/14/2026,Deposit,1009,Yes,Shopify,Shopify payout PO-20260814,Business Checking,Shopify Sales,3189.14,0
+08/14/2026,Expense,1029,Yes,Northbound Couriers,Courier invoice NC-8841,Business Checking,Shipping & Delivery,-418.60,1
+08/15/2026,Bill Payment (Check),1025,Yes,Botanica Labs,Stock for resale,Business Checking,Cost of Goods Sold,-5610.00,1
+08/17/2026,Deposit,1010,Yes,Shopify,Shopify payout PO-20260817,Business Checking,Shopify Sales,8157.35,0
+08/17/2026,Expense,1037,Yes,Market stall fee,Summer fair,Business Checking,Ask My Accountant,-120.00,0
+08/18/2026,Deposit,1011,Yes,Shopify,Shopify payout PO-20260818,Business Checking,Shopify Sales,3222.88,0
+08/18/2026,Expense,1032,Yes,Klaviyo,Weekly email plan,Business Checking,Software & Subscriptions,-45.00,1
+08/19/2026,Deposit,1012,Yes,Shopify,Shopify payout PO-20260819,Business Checking,Shopify Sales,3756.41,0
+08/19/2026,Expense,1040,Yes,Meta Ads,August ads,Business Checking,Advertising & Marketing,-940.00,0
+08/20/2026,Deposit,1013,Yes,Shopify,Shopify payout PO-20260820,Business Checking,Shopify Sales,3728.16,0
+08/21/2026,Deposit,1014,Yes,Shopify,Shopify payout PO-20260821,Business Checking,Shopify Sales,3385.41,0
+08/21/2026,Deposit,1022,Yes,Shopify,Transfer from savings,Business Checking,Shopify Sales,2500.00,0
+08/21/2026,Bill Payment (Check),1026,Yes,Rosewater Supply Co,Stock for resale,Business Checking,Cost of Goods Sold,-2875.90,1
+08/23/2026,Expense,1041,Yes,Office Depot,Printer ink,Business Checking,Office Supplies,-38.99,0
+08/24/2026,Deposit,1015,Yes,Shopify,Shopify payout PO-20260824,Business Checking,Shopify Sales,9207.03,0
+08/25/2026,Deposit,1016,Yes,Shopify,Shopify payout PO-20260825,Business Checking,Shopify Sales,2257.17,0
+08/25/2026,Expense,1033,Yes,Klaviyo,Weekly email plan,Business Checking,Software & Subscriptions,-45.00,1
+08/26/2026,Deposit,1018,Yes,Shopify,Shopify payout PO-20260826,Business Checking,Shopify Sales,2926.14,0
+08/27/2026,Deposit,1017,Yes,Shopify,Shopify payout PO-20260825,Business Checking,Shopify Sales,2257.17,0
+08/27/2026,Deposit,1019,Yes,Shopify,Shopify payout PO-20260827,Business Checking,Shopify Sales,3180.29,0
+08/27/2026,Bill Payment (Check),1027,Yes,Botanica Labs,Stock for resale,Business Checking,Cost of Goods Sold,-4390.25,1
+08/27/2026,Expense,1038,Yes,Card payment,,Business Checking,,-212.35,0
+08/28/2026,Deposit,1020,Yes,Shopify,Shopify payout PO-20260828,Business Checking,Shopify Sales,3560.78,0
+08/29/2026,Expense,1042,Yes,Coffee Hub,Team coffee,Business Checking,Meals,-14.20,0
+08/31/2026,Deposit,1021,Yes,Shopify,Shopify payout PO-20260831,Business Checking,Shopify Sales,7770.39,0

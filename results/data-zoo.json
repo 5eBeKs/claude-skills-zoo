@@ -7,7 +7,7 @@
       "before": "silent",
       "before_said": "",
       "now": "named",
-      "now_said": "",
+      "now_said": "New in this export: Payment Method 'Klarna'. What is it, and should it count as usual?",
       "headline_unchanged_export": "2918.82",
       "headline_before": "2918.82",
       "headline_now": "2918.82"
@@ -18,7 +18,7 @@
       "before": "silent",
       "before_said": "",
       "now": "named",
-      "now_said": "",
+      "now_said": "New in this export: Tags 'wholesale'. What is it, and should it count as usual?",
       "headline_unchanged_export": "2918.82",
       "headline_before": "2918.82",
       "headline_now": "2918.82"
@@ -29,7 +29,7 @@
       "before": "silent",
       "before_said": "",
       "now": "named",
-      "now_said": "",
+      "now_said": "#1005",
       "headline_unchanged_export": "2918.82",
       "headline_before": "2918.82",
       "headline_now": "2888.02"
@@ -40,7 +40,7 @@
       "before": "silent",
       "before_said": "",
       "now": "named",
-      "now_said": "",
+      "now_said": "#1006",
       "headline_unchanged_export": "2918.82",
       "headline_before": "2918.82",
       "headline_now": "2884.42"
@@ -51,18 +51,18 @@
       "before": "silent",
       "before_said": "",
       "now": "named",
-      "now_said": "",
+      "now_said": "#1007",
       "headline_unchanged_export": "2918.82",
       "headline_before": "2918.82",
       "headline_now": "2894.42"
     },
     {
       "id": "renamed_column",
-      "what": "The 'Lineitem sku' column comes back as 'Lineitem SKU'",
+      "what": "The 'Lineitem price' column comes back as 'Lineitem unit price'",
       "before": "crashed",
-      "before_said": "KeyError: 'Lineitem sku'",
+      "before_said": "KeyError: 'Lineitem price'",
       "now": "stopped",
-      "now_said": "export shape: orders_export.csv does not have the column(s) 'Lineitem sku' (the export has 'Lineitem SKU': renamed?). The export's shape changed; nothing is counted until the columns are back or the s",
+      "now_said": "export shape: orders_export.csv does not have the column(s) 'Lineitem price' (the export has 'Lineitem unit price': renamed?). The export's shape changed; nothing is counted until the columns are back",
       "headline_unchanged_export": "2918.82",
       "headline_before": null,
       "headline_now": null
@@ -73,7 +73,7 @@
       "before": "silent",
       "before_said": "",
       "now": "named",
-      "now_said": "",
+      "now_said": "the orders export has records on 15 of 31 days of August 2026; nothing after 2026-08-20: the export may stop early",
       "headline_unchanged_export": "2918.82",
       "headline_before": "1319.52",
       "headline_now": "1319.52"
@@ -82,9 +82,9 @@
       "id": "new_payout_type",
       "what": "A 'reserve' line: Shopify holds back part of a payout",
       "before": "named",
-      "before_said": "",
+      "before_said": "reserve",
       "now": "named",
-      "now_said": "",
+      "now_said": "New in this export: Type 'reserve'. What is it, and should it count as usual?",
       "headline_unchanged_export": "2448.74",
       "headline_before": "2398.74",
       "headline_now": "2398.74"

@@ -43,4 +43,4 @@ How this was counted:
 - the orders export's shape is not recorded yet (financial status: paid, partially_refunded, refunded, voided; fulfillment status: fulfilled, unfulfilled; currency: EUR; payment method: PayPal Express Checkout, Shopify Payments; tags: test)
 - checked against nothing outside the export: give a figure from Shopify or the bank to check it
 - orders_export.csv: 103 rows, SHA-256 b3f1fd5c8f24954c
-- computed by shopify-month-end v0.5.0, scripts 0918f9959f07
+- computed by shopify-month-end v0.6.1, scripts f5c57f31c2db

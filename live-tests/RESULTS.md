@@ -1,6 +1,6 @@
 # Live tests: the same questions, with and without the skills
 
-*Run in September 2026 inside Claude Code, on a subscription (no API). Each run is a fresh subagent
+*Run in September 2026 inside Claude Code. Each run is a fresh subagent
 that sees only the store's CSV files and the owner's message; it does not see the generator, the
 planted traps or the expected numbers. Answers are saved unedited in `answers/`, the correct
 figures (produced by the skills' scripts) in `truth/`.*

@@ -1,0 +1,105 @@
+{
+ "note": "Each first answer the answer hook stopped, read: 'real' when the answer left out something the results list for the owner or showed figures the results do not hold; 'the check' when the text was right and the check was wrong. Read from each run's trace (the hook's message and the answer it stopped).",
+ "0.5.1": [
+  {
+   "case": "numbers-summary-b",
+   "run": 1,
+   "read": "the check",
+   "why": "'Aug 2, 7, 13 and 22': a list of days after a month read 13 as a figure"
+  },
+  {
+   "case": "numbers-summary-b",
+   "run": 2,
+   "read": "real",
+   "why": "the owner's open questions not put to the owner (the same '13' also flagged by the check)"
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 2,
+   "read": "the check",
+   "why": "'none on Aug 2, 7, 13 and 22': the same list of days"
+  },
+  {
+   "case": "numbers-margins-c",
+   "run": 1,
+   "read": "the check",
+   "why": "the saved margins file failed only because 0.5.1 blanked money kept as strings inside larger figures ('4,730.00' read as '4,73')"
+  },
+  {
+   "case": "numbers-margins-c",
+   "run": 2,
+   "read": "the check",
+   "why": "the same cut figures (41, 67, 76); to pass, the model rounded its whole table to pounds"
+  }
+ ],
+ "0.5.2": [
+  {
+   "case": "numbers-payouts-b",
+   "run": 3,
+   "read": "real",
+   "why": "open questions not put to the owner: test orders, the export's shape"
+  },
+  {
+   "case": "numbers-margins",
+   "run": 3,
+   "read": "real",
+   "why": "open questions not put to the owner: test orders, when a sale counts, the export's shape"
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 1,
+   "read": "real",
+   "why": "open questions not put to the owner: when a sale counts, the export's shape"
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 3,
+   "read": "real",
+   "why": "open questions not put to the owner: test orders, when a sale counts, the export's shape"
+  }
+ ],
+ "0.6.0": [
+  {
+   "case": "numbers-summary",
+   "run": 3,
+   "read": "the check",
+   "why": "'no orders on 6 days in August (2, 8, 13, 15, 17 and 24)': the days are the results' own, but in brackets after the month they were read as figures; 0.6.1 reads them as dates"
+  },
+  {
+   "case": "numbers-payouts",
+   "run": 2,
+   "read": "real",
+   "why": "open questions not put to the owner: test orders, the export's shape"
+  },
+  {
+   "case": "numbers-payouts-b",
+   "run": 2,
+   "read": "real",
+   "why": "open questions not put to the owner: test orders, the export's shape"
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 1,
+   "read": "real",
+   "why": "open questions not put to the owner: test orders, when a sale counts, the export's shape"
+  },
+  {
+   "case": "numbers-margins-b",
+   "run": 2,
+   "read": "real",
+   "why": "open questions not put to the owner: test orders, when a sale counts, the export's shape"
+  },
+  {
+   "case": "numbers-margins-c",
+   "run": 1,
+   "read": "real",
+   "why": "wrong counts: '86 orders were left out ... 71 not yet shipped' where the results have 85 and 70"
+  },
+  {
+   "case": "numbers-margins-c",
+   "run": 2,
+   "read": "real",
+   "why": "figures the model added itself: 'lost £30.80 on 56 units' (16.80 + 14.00, 21 + 35 units), right sums that are not in the results"
+  }
+ ]
+}
