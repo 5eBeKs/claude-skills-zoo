@@ -1,0 +1,458 @@
+{
+ "model": "claude-opus-5-5",
+ "plugin": "0.11.6",
+ "whole_plugin": true,
+ "with_mcp": true,
+ "cases": [
+  {
+   "name": "numbers-summary",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-summary-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "net-correct": true,
+      "skill-fired": true,
+      "test-order-named": true,
+      "test-order-not-counted": {
+       "scored": false,
+       "to_read": true
+      }
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-summary-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "net-correct": true,
+      "skill-fired": true,
+      "test-order-named": true,
+      "test-order-not-counted": {
+       "scored": false,
+       "to_read": true
+      }
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-summary-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "net-correct": true,
+      "skill-fired": true,
+      "test-order-named": true,
+      "test-order-not-counted": {
+       "scored": false,
+       "to_read": true
+      }
+     },
+     "own_check": "passed",
+     "turns": 6,
+     "sent_back_once": false
+    }
+   ]
+  },
+  {
+   "name": "numbers-payouts",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-payouts-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "bank-figure": true,
+      "chargeback": true,
+      "euro-not-dollar": true,
+      "in-transit": true,
+      "paypal-named": true,
+      "refunds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": true
+    },
+    {
+     "answer": "installed-0116-answers/numbers-payouts-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "bank-figure": true,
+      "chargeback": true,
+      "euro-not-dollar": true,
+      "in-transit": true,
+      "paypal-named": true,
+      "refunds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 7,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-payouts-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "bank-figure": true,
+      "chargeback": true,
+      "euro-not-dollar": true,
+      "in-transit": true,
+      "paypal-named": true,
+      "refunds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 7,
+     "sent_back_once": false
+    }
+   ]
+  },
+  {
+   "name": "numbers-margins",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-margins-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "below-cost-named": true,
+      "gift-set-unknown": {
+       "scored": false,
+       "to_read": true
+      },
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-margins-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "below-cost-named": true,
+      "gift-set-unknown": {
+       "scored": false,
+       "to_read": true
+      },
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-margins-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "below-cost-named": true,
+      "gift-set-unknown": {
+       "scored": false,
+       "to_read": true
+      },
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 19,
+     "sent_back_once": false
+    }
+   ]
+  },
+  {
+   "name": "numbers-summary-b",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-summary-b-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "net-correct": true,
+      "skill-fired": true,
+      "test-orders-named": true,
+      "test-orders-not-counted": {
+       "scored": false,
+       "to_read": true
+      }
+     },
+     "own_check": "passed",
+     "turns": 9,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-summary-b-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "net-correct": true,
+      "skill-fired": true,
+      "test-orders-named": true,
+      "test-orders-not-counted": {
+       "scored": false,
+       "to_read": true
+      }
+     },
+     "own_check": "passed",
+     "turns": 7,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-summary-b-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "net-correct": true,
+      "skill-fired": true,
+      "test-orders-named": true,
+      "test-orders-not-counted": {
+       "scored": false,
+       "to_read": true
+      }
+     },
+     "own_check": "passed",
+     "turns": 9,
+     "sent_back_once": false
+    }
+   ]
+  },
+  {
+   "name": "numbers-payouts-b",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-payouts-b-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "bank-figure": true,
+      "both-disputes": true,
+      "dollar-not-euro": true,
+      "gift-card-named": true,
+      "in-transit": true,
+      "july-orders-paid-in-august": true,
+      "refunds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": true
+    },
+    {
+     "answer": "installed-0116-answers/numbers-payouts-b-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "bank-figure": true,
+      "both-disputes": true,
+      "dollar-not-euro": true,
+      "gift-card-named": true,
+      "in-transit": true,
+      "july-orders-paid-in-august": true,
+      "refunds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 7,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-payouts-b-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "bank-figure": true,
+      "both-disputes": true,
+      "dollar-not-euro": true,
+      "gift-card-named": true,
+      "in-transit": true,
+      "july-orders-paid-in-august": true,
+      "refunds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    }
+   ]
+  },
+  {
+   "name": "numbers-margins-b",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-margins-b-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "cedar-cost-found": {
+       "scored": false,
+       "to_read": true
+      },
+      "sample-below-cost": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-margins-b-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "cedar-cost-found": {
+       "scored": false,
+       "to_read": true
+      },
+      "sample-below-cost": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 7,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-margins-b-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "cedar-cost-found": {
+       "scored": false,
+       "to_read": true
+      },
+      "sample-below-cost": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 13,
+     "sent_back_once": false
+    }
+   ]
+  },
+  {
+   "name": "numbers-summary-c",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-summary-c-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "orders-counted": true,
+      "pre-orders-left-out": true,
+      "revenue-on-the-owners-definitions": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 11,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-summary-c-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "orders-counted": true,
+      "pre-orders-left-out": true,
+      "revenue-on-the-owners-definitions": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-summary-c-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "orders-counted": true,
+      "pre-orders-left-out": true,
+      "revenue-on-the-owners-definitions": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    }
+   ]
+  },
+  {
+   "name": "numbers-payouts-c",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-payouts-c-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "august-disputes": true,
+      "bank-figure": true,
+      "in-transit": true,
+      "july-sales-paid-in-august": true,
+      "pounds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 11,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-payouts-c-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "august-disputes": true,
+      "bank-figure": true,
+      "in-transit": true,
+      "july-sales-paid-in-august": true,
+      "pounds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 10,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-payouts-c-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "august-disputes": true,
+      "bank-figure": true,
+      "in-transit": true,
+      "july-sales-paid-in-august": true,
+      "pounds": true,
+      "skill-fired": true
+     },
+     "own_check": "passed",
+     "turns": 13,
+     "sent_back_once": true
+    }
+   ]
+  },
+  {
+   "name": "numbers-margins-c",
+   "runs": [
+    {
+     "answer": "installed-0116-answers/numbers-margins-c-with-1.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "both-clearance-products": true,
+      "skill-fired": true,
+      "unknown-cost-named": true
+     },
+     "own_check": "passed",
+     "turns": 9,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-margins-c-with-2.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "both-clearance-products": true,
+      "skill-fired": true,
+      "unknown-cost-named": true
+     },
+     "own_check": "passed",
+     "turns": 8,
+     "sent_back_once": false
+    },
+    {
+     "answer": "installed-0116-answers/numbers-margins-c-with-3.md",
+     "passed_scored_graders": true,
+     "graders": {
+      "both-clearance-products": true,
+      "skill-fired": true,
+      "unknown-cost-named": true
+     },
+     "own_check": "passed",
+     "turns": 13,
+     "sent_back_once": true
+    }
+   ]
+  }
+ ]
+}

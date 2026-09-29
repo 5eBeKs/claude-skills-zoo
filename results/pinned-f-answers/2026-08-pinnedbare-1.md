@@ -1,4 +1,10 @@
-I ran the calculation you pinned for this Stripe month-end on the October 4 exports, and it ran cleanly: no warnings and every check passed. There were no new transaction types, statuses or currencies, and no rows it couldn't place. Your balance export only starts on July 1, so one payout (po_1xkjSw9fHvRz2kWb2U0BxRPp) includes rows from before then; the answer names it. Twelve of the definitions are still my reading and you haven't confirmed them; they're listed under "Open questions". The full answer is also saved as `answer.md` next to your files.
+I ran the calculation you pinned earlier (`stripe-month-end`, pin 1) on these exports. Every check passed, it raised no warnings, and there was nothing new in the files: no unfamiliar transaction types, statuses or currencies. Three things to know:
+
+- **Export date:** you said the exports were taken on October 4, but today is [run date]. Please confirm they're the files you meant. The one payout still in transit (`po_1y6qln9fHvRz2kWb1nwUqJzF`) counts as in transit because its arrival date is after August 31, not because of its status in the export.
+- **Open questions:** 12 decisions are still my reading, not yet confirmed by you. They're listed under "Open questions"; none of them changes this month's numbers.
+- **Where the bookkeeper lines are:** they're the last section of the answer. The pinned answer always ends with a line naming the calculation that produced it, so that line comes after them.
+
+The full answer is also saved as `answer.md` in the session scratchpad.
 
 ---
 
@@ -184,4 +190,4 @@ Held in reserve at month end: $1,473.01
 
 Counted by the pinned calculation d8c663a3d3cd ('stripe-month-end', pin 1); the same code, definitions and answer as when the owner pinned it.
 
-Checked by pinned-calculation v0.11.1 · seal 3d1f1e6427c4
+Checked by pinned-calculation v0.11.6 · seal 3d1f1e6427c4

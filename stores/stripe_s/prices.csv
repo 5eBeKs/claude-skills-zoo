@@ -1,0 +1,33 @@
+Price ID,Product ID,Product Name,Description,Amount,Currency,Type,Interval,Interval Count,Usage Type,Billing Scheme,Tax Behavior,Active,Created (UTC)
+price_1JIswyN11bGju0S4yIe0DARh,prod_DyxueaYtXZpfwT,Brindlepost Team,Brindlepost Team monthly USD (2026-08 price),18.00,usd,recurring,month,1,licensed,per_unit,exclusive,true,2026-07-28 15:12:00
+price_1INcVYN11bGju0S4AJQKggQT,prod_9vu1W9I8I2YXF3,Onboarding package,Onboarding package one-time EUR,450.00,eur,one_time,,,,per_unit,exclusive,true,2026-02-20 16:07:00
+price_1INcVYN11bGju0S4F6k5KbIT,prod_26jxruAvkhqZlF,Admin training workshop,Admin training workshop one-time USD,750.00,usd,one_time,,,,per_unit,exclusive,true,2026-02-20 16:07:00
+price_1INcVYN11bGju0S4RNGlM20Z,prod_R9IKbQtX8kNb9Q,Workspace setup fee,Workspace setup fee one-time GBP,85.00,gbp,one_time,,,,per_unit,exclusive,true,2026-02-20 16:07:00
+price_1INcVYN11bGju0S4RNqdrQPn,prod_9vu1W9I8I2YXF3,Onboarding package,Onboarding package one-time GBP,400.00,gbp,one_time,,,,per_unit,exclusive,true,2026-02-20 16:07:00
+price_1INcVYN11bGju0S4kKKU6zfA,prod_R9IKbQtX8kNb9Q,Workspace setup fee,Workspace setup fee one-time EUR,95.00,eur,one_time,,,,per_unit,exclusive,true,2026-02-20 16:07:00
+price_1INcVYN11bGju0S4nggWJITU,prod_R9IKbQtX8kNb9Q,Workspace setup fee,Workspace setup fee one-time USD,99.00,usd,one_time,,,,per_unit,exclusive,true,2026-02-20 16:07:00
+price_1INcVYN11bGju0S4r43ur178,prod_9vu1W9I8I2YXF3,Onboarding package,Onboarding package one-time USD,500.00,usd,one_time,,,,per_unit,exclusive,true,2026-02-20 16:07:00
+price_1INcUaN11bGju0S43Z8Bjbrx,prod_DyxueaYtXZpfwT,Brindlepost Team,Brindlepost Team monthly USD,16.00,usd,recurring,month,1,licensed,per_unit,exclusive,false,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4501MMirn,prod_v6JxN9sDa0whxJ,Brindlepost Business,Brindlepost Business monthly USD,99.00,usd,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S46rb1LjCI,prod_v6JxN9sDa0whxJ,Brindlepost Business,Brindlepost Business annual USD,990.00,usd,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4B5UNC0AD,prod_v6JxN9sDa0whxJ,Brindlepost Business,Brindlepost Business monthly EUR,95.00,eur,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4Ce1O4sP7,prod_DyxueaYtXZpfwT,Brindlepost Team,Brindlepost Team monthly EUR,15.00,eur,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4GYHJQtPv,prod_5GtFSRjPeukKKQ,Brindlepost Business seats,Brindlepost Business seats monthly USD,22.00,usd,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4HlqUmra0,prod_5GtFSRjPeukKKQ,Brindlepost Business seats,Brindlepost Business seats monthly GBP,18.00,gbp,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4IqZJkMeg,prod_v6JxN9sDa0whxJ,Brindlepost Business,Brindlepost Business monthly GBP,85.00,gbp,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4J5AeYzTQ,prod_5GtFSRjPeukKKQ,Brindlepost Business seats,Brindlepost Business seats annual USD,220.00,usd,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4KQnkrkyr,prod_v6JxN9sDa0whxJ,Brindlepost Business,Brindlepost Business annual EUR,950.00,eur,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4Kb8zgtUf,prod_8v4cQq2bQsGEKu,Brindlepost Starter,Brindlepost Starter annual GBP,80.00,gbp,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4NWk4vGlf,prod_DyxueaYtXZpfwT,Brindlepost Team,Brindlepost Team annual USD,160.00,usd,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4NjJn85jD,prod_8v4cQq2bQsGEKu,Brindlepost Starter,Brindlepost Starter monthly GBP,8.00,gbp,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4Uyz1prvn,prod_DyxueaYtXZpfwT,Brindlepost Team,Brindlepost Team annual EUR,150.00,eur,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4VMVtWgTW,prod_5GtFSRjPeukKKQ,Brindlepost Business seats,Brindlepost Business seats annual GBP,180.00,gbp,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4bijP4YAW,prod_8v4cQq2bQsGEKu,Brindlepost Starter,Brindlepost Starter monthly USD,9.00,usd,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4eMtWK4lc,prod_v6JxN9sDa0whxJ,Brindlepost Business,Brindlepost Business annual GBP,850.00,gbp,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4j82gJFXC,prod_8v4cQq2bQsGEKu,Brindlepost Starter,Brindlepost Starter monthly EUR,9.00,eur,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4lh5KYQ87,prod_5GtFSRjPeukKKQ,Brindlepost Business seats,Brindlepost Business seats annual EUR,210.00,eur,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4p5w5U5v7,prod_8v4cQq2bQsGEKu,Brindlepost Starter,Brindlepost Starter annual EUR,90.00,eur,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4wlPOZpki,prod_DyxueaYtXZpfwT,Brindlepost Team,Brindlepost Team monthly GBP,13.00,gbp,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4xaiNOVfB,prod_5GtFSRjPeukKKQ,Brindlepost Business seats,Brindlepost Business seats monthly EUR,21.00,eur,recurring,month,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4y83ygeYv,prod_DyxueaYtXZpfwT,Brindlepost Team,Brindlepost Team annual GBP,130.00,gbp,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00
+price_1INcUaN11bGju0S4yBPWfi6E,prod_8v4cQq2bQsGEKu,Brindlepost Starter,Brindlepost Starter annual USD,90.00,usd,recurring,year,1,licensed,per_unit,exclusive,true,2026-02-20 16:06:00

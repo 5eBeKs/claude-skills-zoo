@@ -1,0 +1,11 @@
+id,Name,Percent Off,Amount Off,Currency,Duration,Duration In Months,Redeem By (UTC),Max Redemptions,Times Redeemed,Valid,Created (UTC)
+rT5wYp0Q,Retention offer - 25% off for 3 months,25,,,repeating,3,,,23,true,2026-03-30 15:00:00
+EUR10,EUR 10 off first invoice,,10.00,eur,once,,,,20,true,2026-03-18 15:00:00
+legacy-10,Migrated customers - 10% off,10,,,forever,,,,73,true,2026-02-27 15:00:00
+FRIENDS100,Friends and family - free,100,,,forever,,,25,6,true,2026-02-21 15:00:00
+NONPROFIT30,Nonprofit discount - 30% off,30,,,forever,,,,50,true,2026-02-21 15:00:00
+PARTNER100,Partner program - 3 months free,100,,,repeating,3,,200,19,true,2026-02-21 15:00:00
+10OFF6,USD 10 off for 6 months,,10.00,usd,repeating,6,,,45,true,2026-02-20 15:00:00
+ANNUAL15,Annual plans - 15% off,15,,,forever,,,,131,true,2026-02-20 15:00:00
+LAUNCH50,Launch offer - 50% off for 3 months,50,,,repeating,3,2026-04-30 03:59:59,,120,false,2026-02-20 15:00:00
+WELCOME20,Welcome - 20% off first invoice,20,,,once,,,,125,true,2026-02-20 15:00:00

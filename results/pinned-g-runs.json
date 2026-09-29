@@ -57,6 +57,7 @@
   "durationSeconds": 101,
   "costUsd": 0.5269004,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-07-plain-2": {
@@ -117,6 +118,7 @@
   "durationSeconds": 114,
   "costUsd": 0.6356766,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-07-plain-3": {
@@ -177,6 +179,7 @@
   "durationSeconds": 101,
   "costUsd": 0.4908726,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-plain-1": {
@@ -237,6 +240,7 @@
   "durationSeconds": 116,
   "costUsd": 0.6294546,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-plain-2": {
@@ -297,6 +301,7 @@
   "durationSeconds": 148,
   "costUsd": 0.7944085999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-plain-3": {
@@ -357,6 +362,7 @@
   "durationSeconds": 113,
   "costUsd": 0.5945774,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-plain-1": {
@@ -417,6 +423,7 @@
   "durationSeconds": 159,
   "costUsd": 0.9593186,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-plain-2": {
@@ -477,6 +484,7 @@
   "durationSeconds": 105,
   "costUsd": 0.6423182000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-plain-3": {
@@ -537,6 +545,7 @@
   "durationSeconds": 140,
   "costUsd": 0.7003272,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-07-pinned-1": {
@@ -597,6 +606,7 @@
   "durationSeconds": 1800,
   "costUsd": null,
   "plugin": "0.11.0 at fe34b49",
+  "own_check": null,
   "error": "timed out after 1800s"
  },
  "2026-08-bare-1": {
@@ -657,6 +667,7 @@
   "durationSeconds": 147,
   "costUsd": 0.6548985999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-bare-2": {
@@ -717,6 +728,7 @@
   "durationSeconds": 148,
   "costUsd": 0.6592374000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-bare-3": {
@@ -777,6 +789,7 @@
   "durationSeconds": 120,
   "costUsd": 0.5094468,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-bare-1": {
@@ -837,6 +850,7 @@
   "durationSeconds": 129,
   "costUsd": 0.6049622000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-bare-2": {
@@ -897,6 +911,7 @@
   "durationSeconds": 140,
   "costUsd": 0.7103656,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-bare-3": {
@@ -957,6 +972,7 @@
   "durationSeconds": 127,
   "costUsd": 0.5442388,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-07-pinned-setup2": {
@@ -1017,6 +1033,7 @@
   "durationSeconds": 427,
   "costUsd": 0.970615,
   "plugin": "0.11.0 at 1212631",
+  "own_check": null,
   "error": null
  },
  "2026-08-pinned-1": {
@@ -1077,6 +1094,7 @@
   "durationSeconds": 48,
   "costUsd": 0.3895432,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinned-2": {
@@ -1137,6 +1155,7 @@
   "durationSeconds": 70,
   "costUsd": 0.42280619999999997,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinned-3": {
@@ -1197,6 +1216,7 @@
   "durationSeconds": 92,
   "costUsd": 0.47214940000000005,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinned-1": {
@@ -1257,6 +1277,7 @@
   "durationSeconds": 88,
   "costUsd": 0.45534399999999997,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinned-2": {
@@ -1317,6 +1338,7 @@
   "durationSeconds": 76,
   "costUsd": 0.45362220000000003,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinned-3": {
@@ -1377,6 +1399,7 @@
   "durationSeconds": 60,
   "costUsd": 0.36517180000000005,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinnedbare0110-1": {
@@ -1437,6 +1460,7 @@
   "durationSeconds": 53,
   "costUsd": 0.3700906,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinnedbare0110-2": {
@@ -1497,6 +1521,7 @@
   "durationSeconds": 98,
   "costUsd": 0.4719826,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinnedbare0110-3": {
@@ -1557,6 +1582,7 @@
   "durationSeconds": 76,
   "costUsd": 0.40272700000000006,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinnedbare0110-1": {
@@ -1617,6 +1643,7 @@
   "durationSeconds": 71,
   "costUsd": 0.392156,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinnedbare0110-2": {
@@ -1677,6 +1704,7 @@
   "durationSeconds": 80,
   "costUsd": 0.4603428,
   "plugin": "0.11.0 at 1212631",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinnedbare0110-3": {
@@ -1737,186 +1765,7 @@
   "durationSeconds": 43,
   "costUsd": 0.30547040000000003,
   "plugin": "0.11.0 at 1212631",
-  "error": null
- },
- "2026-08-pinnedbare-1": {
-  "lines": {
-   "Product sales": {
-    "want": "104709.12",
-    "got": "104709.12",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "-4550.17",
-    "got": "-4550.17",
-    "ok": true
-   },
-   "Net product sales": {
-    "want": "103162.11",
-    "got": "103162.11",
-    "ok": true
-   },
-   "Amazon fees": {
-    "want": "-40616.33",
-    "got": "-40616.33",
-    "ok": true
-   },
-   "Advertising": {
-    "want": "-10826.11",
-    "got": "-10826.11",
-    "ok": true
-   },
-   "Reimbursements": {
-    "want": "222.06",
-    "got": "222.06",
-    "ok": true
-   },
-   "Deposited to the bank": {
-    "want": "32239.51",
-    "got": "32239.51",
-    "ok": true
-   },
-   "Owed by Amazon at month end": {
-    "want": "69067.66",
-    "got": "69067.66",
-    "ok": true
-   },
-   "Reserve held at month end": {
-    "want": "4069.25",
-    "got": "4069.25",
-    "ok": true
-   },
-   "Orders": {
-    "want": "2917.00",
-    "got": "2917",
-    "ok": true
-   }
-  },
-  "passed": true,
-  "turns": 8,
-  "durationSeconds": 188,
-  "costUsd": 0.8305308,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-08-pinnedbare-2": {
-  "lines": {
-   "Product sales": {
-    "want": "104709.12",
-    "got": "104709.12",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "-4550.17",
-    "got": "-4550.17",
-    "ok": true
-   },
-   "Net product sales": {
-    "want": "103162.11",
-    "got": "103162.11",
-    "ok": true
-   },
-   "Amazon fees": {
-    "want": "-40616.33",
-    "got": "-40616.33",
-    "ok": true
-   },
-   "Advertising": {
-    "want": "-10826.11",
-    "got": "-10826.11",
-    "ok": true
-   },
-   "Reimbursements": {
-    "want": "222.06",
-    "got": "222.06",
-    "ok": true
-   },
-   "Deposited to the bank": {
-    "want": "32239.51",
-    "got": "32239.51",
-    "ok": true
-   },
-   "Owed by Amazon at month end": {
-    "want": "69067.66",
-    "got": "69067.66",
-    "ok": true
-   },
-   "Reserve held at month end": {
-    "want": "4069.25",
-    "got": "4069.25",
-    "ok": true
-   },
-   "Orders": {
-    "want": "2917.00",
-    "got": "2917",
-    "ok": true
-   }
-  },
-  "passed": true,
-  "turns": 8,
-  "durationSeconds": 164,
-  "costUsd": 0.70117,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-08-pinnedbare-3": {
-  "lines": {
-   "Product sales": {
-    "want": "104709.12",
-    "got": "104709.12",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "-4550.17",
-    "got": "-4550.17",
-    "ok": true
-   },
-   "Net product sales": {
-    "want": "103162.11",
-    "got": "103162.11",
-    "ok": true
-   },
-   "Amazon fees": {
-    "want": "-40616.33",
-    "got": "-40616.33",
-    "ok": true
-   },
-   "Advertising": {
-    "want": "-10826.11",
-    "got": "-10826.11",
-    "ok": true
-   },
-   "Reimbursements": {
-    "want": "222.06",
-    "got": "222.06",
-    "ok": true
-   },
-   "Deposited to the bank": {
-    "want": "32239.51",
-    "got": "32239.51",
-    "ok": true
-   },
-   "Owed by Amazon at month end": {
-    "want": "69067.66",
-    "got": "69067.66",
-    "ok": true
-   },
-   "Reserve held at month end": {
-    "want": "4069.25",
-    "got": "4069.25",
-    "ok": true
-   },
-   "Orders": {
-    "want": "2917.00",
-    "got": "2917",
-    "ok": true
-   }
-  },
-  "passed": true,
-  "turns": 9,
-  "durationSeconds": 118,
-  "costUsd": 0.514621,
-  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-defsfile-1": {
@@ -1977,6 +1826,7 @@
   "durationSeconds": 118,
   "costUsd": 0.5778146,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-defsfile-2": {
@@ -2037,6 +1887,7 @@
   "durationSeconds": 102,
   "costUsd": 0.5075270000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-defsfile-3": {
@@ -2097,186 +1948,7 @@
   "durationSeconds": 137,
   "costUsd": 0.5951512,
   "plugin": null,
-  "error": null
- },
- "2026-09-pinnedbare-1": {
-  "lines": {
-   "Product sales": {
-    "want": "112613.64",
-    "got": "112613.64",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "-5011.24",
-    "got": "-5011.24",
-    "ok": true
-   },
-   "Net product sales": {
-    "want": "109215.96",
-    "got": "109215.96",
-    "ok": true
-   },
-   "Amazon fees": {
-    "want": "-42856.49",
-    "got": "-42856.49",
-    "ok": true
-   },
-   "Advertising": {
-    "want": "-11886.85",
-    "got": "-11886.85",
-    "ok": true
-   },
-   "Reimbursements": {
-    "want": "161.32",
-    "got": "161.32",
-    "ok": true
-   },
-   "Deposited to the bank": {
-    "want": "67891.70",
-    "got": "67891.70",
-    "ok": true
-   },
-   "Owed by Amazon at month end": {
-    "want": "55376.53",
-    "got": "55376.53",
-    "ok": true
-   },
-   "Reserve held at month end": {
-    "want": "4502.62",
-    "got": "4502.62",
-    "ok": true
-   },
-   "Orders": {
-    "want": "3005.00",
-    "got": "3005",
-    "ok": true
-   }
-  },
-  "passed": true,
-  "turns": 10,
-  "durationSeconds": 72,
-  "costUsd": 0.43430739999999995,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-09-pinnedbare-2": {
-  "lines": {
-   "Product sales": {
-    "want": "112613.64",
-    "got": "112613.64",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "-5011.24",
-    "got": "-5011.24",
-    "ok": true
-   },
-   "Net product sales": {
-    "want": "109215.96",
-    "got": "109215.96",
-    "ok": true
-   },
-   "Amazon fees": {
-    "want": "-42856.49",
-    "got": "-42856.49",
-    "ok": true
-   },
-   "Advertising": {
-    "want": "-11886.85",
-    "got": "-11886.85",
-    "ok": true
-   },
-   "Reimbursements": {
-    "want": "161.32",
-    "got": "161.32",
-    "ok": true
-   },
-   "Deposited to the bank": {
-    "want": "67891.70",
-    "got": "67891.70",
-    "ok": true
-   },
-   "Owed by Amazon at month end": {
-    "want": "55376.53",
-    "got": "55376.53",
-    "ok": true
-   },
-   "Reserve held at month end": {
-    "want": "4502.62",
-    "got": "4502.62",
-    "ok": true
-   },
-   "Orders": {
-    "want": "3005.00",
-    "got": "3005",
-    "ok": true
-   }
-  },
-  "passed": true,
-  "turns": 9,
-  "durationSeconds": 125,
-  "costUsd": 0.6395816,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-09-pinnedbare-3": {
-  "lines": {
-   "Product sales": {
-    "want": "112613.64",
-    "got": "112613.64",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "-5011.24",
-    "got": "-5011.24",
-    "ok": true
-   },
-   "Net product sales": {
-    "want": "109215.96",
-    "got": "109215.96",
-    "ok": true
-   },
-   "Amazon fees": {
-    "want": "-42856.49",
-    "got": "-42856.49",
-    "ok": true
-   },
-   "Advertising": {
-    "want": "-11886.85",
-    "got": "-11886.85",
-    "ok": true
-   },
-   "Reimbursements": {
-    "want": "161.32",
-    "got": "161.32",
-    "ok": true
-   },
-   "Deposited to the bank": {
-    "want": "67891.70",
-    "got": "67891.70",
-    "ok": true
-   },
-   "Owed by Amazon at month end": {
-    "want": "55376.53",
-    "got": "55376.53",
-    "ok": true
-   },
-   "Reserve held at month end": {
-    "want": "4502.62",
-    "got": "4502.62",
-    "ok": true
-   },
-   "Orders": {
-    "want": "3005.00",
-    "got": "3005",
-    "ok": true
-   }
-  },
-  "passed": true,
-  "turns": 10,
-  "durationSeconds": 129,
-  "costUsd": 0.7246942000000001,
-  "plugin": "0.11.1 at 4fea9de",
+  "own_check": null,
   "error": null
  },
  "2026-09-defsfile-1": {
@@ -2337,6 +2009,7 @@
   "durationSeconds": 127,
   "costUsd": 0.7743753999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-defsfile-2": {
@@ -2397,6 +2070,7 @@
   "durationSeconds": 133,
   "costUsd": 0.7650121999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-defsfile-3": {
@@ -2457,6 +2131,739 @@
   "durationSeconds": 126,
   "costUsd": 0.5881962000000001,
   "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-pinnedbare0111-1": {
+  "lines": {
+   "Product sales": {
+    "want": "104709.12",
+    "got": "104709.12",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-4550.17",
+    "got": "-4550.17",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "103162.11",
+    "got": "103162.11",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-40616.33",
+    "got": "-40616.33",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-10826.11",
+    "got": "-10826.11",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "222.06",
+    "got": "222.06",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "32239.51",
+    "got": "32239.51",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "69067.66",
+    "got": "69067.66",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4069.25",
+    "got": "4069.25",
+    "ok": true
+   },
+   "Orders": {
+    "want": "2917.00",
+    "got": "2917",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 8,
+  "durationSeconds": 188,
+  "costUsd": 0.8305308,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare0111-2": {
+  "lines": {
+   "Product sales": {
+    "want": "104709.12",
+    "got": "104709.12",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-4550.17",
+    "got": "-4550.17",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "103162.11",
+    "got": "103162.11",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-40616.33",
+    "got": "-40616.33",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-10826.11",
+    "got": "-10826.11",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "222.06",
+    "got": "222.06",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "32239.51",
+    "got": "32239.51",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "69067.66",
+    "got": "69067.66",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4069.25",
+    "got": "4069.25",
+    "ok": true
+   },
+   "Orders": {
+    "want": "2917.00",
+    "got": "2917",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 8,
+  "durationSeconds": 164,
+  "costUsd": 0.70117,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare0111-3": {
+  "lines": {
+   "Product sales": {
+    "want": "104709.12",
+    "got": "104709.12",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-4550.17",
+    "got": "-4550.17",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "103162.11",
+    "got": "103162.11",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-40616.33",
+    "got": "-40616.33",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-10826.11",
+    "got": "-10826.11",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "222.06",
+    "got": "222.06",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "32239.51",
+    "got": "32239.51",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "69067.66",
+    "got": "69067.66",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4069.25",
+    "got": "4069.25",
+    "ok": true
+   },
+   "Orders": {
+    "want": "2917.00",
+    "got": "2917",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 9,
+  "durationSeconds": 118,
+  "costUsd": 0.514621,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-09-pinnedbare0111-1": {
+  "lines": {
+   "Product sales": {
+    "want": "112613.64",
+    "got": "112613.64",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-5011.24",
+    "got": "-5011.24",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "109215.96",
+    "got": "109215.96",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-42856.49",
+    "got": "-42856.49",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-11886.85",
+    "got": "-11886.85",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "161.32",
+    "got": "161.32",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "67891.70",
+    "got": "67891.70",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "55376.53",
+    "got": "55376.53",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4502.62",
+    "got": "4502.62",
+    "ok": true
+   },
+   "Orders": {
+    "want": "3005.00",
+    "got": "3005",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 10,
+  "durationSeconds": 72,
+  "costUsd": 0.43430739999999995,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-09-pinnedbare0111-2": {
+  "lines": {
+   "Product sales": {
+    "want": "112613.64",
+    "got": "112613.64",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-5011.24",
+    "got": "-5011.24",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "109215.96",
+    "got": "109215.96",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-42856.49",
+    "got": "-42856.49",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-11886.85",
+    "got": "-11886.85",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "161.32",
+    "got": "161.32",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "67891.70",
+    "got": "67891.70",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "55376.53",
+    "got": "55376.53",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4502.62",
+    "got": "4502.62",
+    "ok": true
+   },
+   "Orders": {
+    "want": "3005.00",
+    "got": "3005",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 9,
+  "durationSeconds": 125,
+  "costUsd": 0.6395816,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare0111-3": {
+  "lines": {
+   "Product sales": {
+    "want": "112613.64",
+    "got": "112613.64",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-5011.24",
+    "got": "-5011.24",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "109215.96",
+    "got": "109215.96",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-42856.49",
+    "got": "-42856.49",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-11886.85",
+    "got": "-11886.85",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "161.32",
+    "got": "161.32",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "67891.70",
+    "got": "67891.70",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "55376.53",
+    "got": "55376.53",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4502.62",
+    "got": "4502.62",
+    "ok": true
+   },
+   "Orders": {
+    "want": "3005.00",
+    "got": "3005",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 10,
+  "durationSeconds": 129,
+  "costUsd": 0.7246942000000001,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-08-pinnedbare-1": {
+  "lines": {
+   "Product sales": {
+    "want": "104709.12",
+    "got": "104709.12",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-4550.17",
+    "got": "-4550.17",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "103162.11",
+    "got": "103162.11",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-40616.33",
+    "got": "-40616.33",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-10826.11",
+    "got": "-10826.11",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "222.06",
+    "got": "222.06",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "32239.51",
+    "got": "32239.51",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "69067.66",
+    "got": "69067.66",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4069.25",
+    "got": "4069.25",
+    "ok": true
+   },
+   "Orders": {
+    "want": "2917.00",
+    "got": "2917",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 8,
+  "durationSeconds": 133,
+  "costUsd": 0.6254386000000001,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare-2": {
+  "lines": {
+   "Product sales": {
+    "want": "104709.12",
+    "got": "104709.12",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-4550.17",
+    "got": "-4550.17",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "103162.11",
+    "got": "103162.11",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-40616.33",
+    "got": "-40616.33",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-10826.11",
+    "got": "-10826.11",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "222.06",
+    "got": "222.06",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "32239.51",
+    "got": "32239.51",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "69067.66",
+    "got": "69067.66",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4069.25",
+    "got": "4069.25",
+    "ok": true
+   },
+   "Orders": {
+    "want": "2917.00",
+    "got": "2917",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 8,
+  "durationSeconds": 98,
+  "costUsd": 0.5226082000000001,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-08-pinnedbare-3": {
+  "lines": {
+   "Product sales": {
+    "want": "104709.12",
+    "got": "104709.12",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-4550.17",
+    "got": "-4550.17",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "103162.11",
+    "got": "103162.11",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-40616.33",
+    "got": "-40616.33",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-10826.11",
+    "got": "-10826.11",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "222.06",
+    "got": "222.06",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "32239.51",
+    "got": "32239.51",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "69067.66",
+    "got": "69067.66",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4069.25",
+    "got": "4069.25",
+    "ok": true
+   },
+   "Orders": {
+    "want": "2917.00",
+    "got": "2917",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 6,
+  "durationSeconds": 106,
+  "costUsd": 0.4890898,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare-1": {
+  "lines": {
+   "Product sales": {
+    "want": "112613.64",
+    "got": "112613.64",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-5011.24",
+    "got": "-5011.24",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "109215.96",
+    "got": "109215.96",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-42856.49",
+    "got": "-42856.49",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-11886.85",
+    "got": "-11886.85",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "161.32",
+    "got": "161.32",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "67891.70",
+    "got": "67891.70",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "55376.53",
+    "got": "55376.53",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4502.62",
+    "got": "4502.62",
+    "ok": true
+   },
+   "Orders": {
+    "want": "3005.00",
+    "got": "3005",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 9,
+  "durationSeconds": 130,
+  "costUsd": 0.6399092,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-09-pinnedbare-2": {
+  "lines": {
+   "Product sales": {
+    "want": "112613.64",
+    "got": "112613.64",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-5011.24",
+    "got": "-5011.24",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "109215.96",
+    "got": "109215.96",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-42856.49",
+    "got": "-42856.49",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-11886.85",
+    "got": "-11886.85",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "161.32",
+    "got": "161.32",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "67891.70",
+    "got": "67891.70",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "55376.53",
+    "got": "55376.53",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4502.62",
+    "got": "4502.62",
+    "ok": true
+   },
+   "Orders": {
+    "want": "3005.00",
+    "got": "3005",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 9,
+  "durationSeconds": 145,
+  "costUsd": 0.6764336,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare-3": {
+  "lines": {
+   "Product sales": {
+    "want": "112613.64",
+    "got": "112613.64",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-5011.24",
+    "got": "-5011.24",
+    "ok": true
+   },
+   "Net product sales": {
+    "want": "109215.96",
+    "got": "109215.96",
+    "ok": true
+   },
+   "Amazon fees": {
+    "want": "-42856.49",
+    "got": "-42856.49",
+    "ok": true
+   },
+   "Advertising": {
+    "want": "-11886.85",
+    "got": "-11886.85",
+    "ok": true
+   },
+   "Reimbursements": {
+    "want": "161.32",
+    "got": "161.32",
+    "ok": true
+   },
+   "Deposited to the bank": {
+    "want": "67891.70",
+    "got": "67891.70",
+    "ok": true
+   },
+   "Owed by Amazon at month end": {
+    "want": "55376.53",
+    "got": "55376.53",
+    "ok": true
+   },
+   "Reserve held at month end": {
+    "want": "4502.62",
+    "got": "4502.62",
+    "ok": true
+   },
+   "Orders": {
+    "want": "3005.00",
+    "got": "3005",
+    "ok": true
+   }
+  },
+  "passed": true,
+  "turns": 7,
+  "durationSeconds": 48,
+  "costUsd": 0.3703216,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
   "error": null
  }
 }

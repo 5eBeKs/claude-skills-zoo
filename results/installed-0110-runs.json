@@ -1,5 +1,6 @@
 {
  "model": "claude-opus-5-5",
+ "plugin": "0.11.0",
  "whole_plugin": true,
  "with_mcp": true,
  "cases": [
@@ -19,7 +20,8 @@
       }
      },
      "own_check": "passed",
-     "turns": 5
+     "turns": 5,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-summary-with-2.md",
@@ -34,7 +36,8 @@
       }
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-summary-with-3.md",
@@ -49,7 +52,8 @@
       }
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     }
    ]
   },
@@ -69,7 +73,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-payouts-with-2.md",
@@ -84,7 +89,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-payouts-with-3.md",
@@ -99,7 +105,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     }
    ]
   },
@@ -118,7 +125,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 20
+     "turns": 20,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-margins-with-2.md",
@@ -132,7 +140,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 12
+     "turns": 12,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-margins-with-3.md",
@@ -146,7 +155,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     }
    ]
   },
@@ -166,7 +176,8 @@
       }
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-summary-b-with-2.md",
@@ -181,7 +192,8 @@
       }
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": true
     },
     {
      "answer": "installed-0110-answers/numbers-summary-b-with-3.md",
@@ -196,7 +208,8 @@
       }
      },
      "own_check": "passed",
-     "turns": 9
+     "turns": 9,
+     "sent_back_once": false
     }
    ]
   },
@@ -217,7 +230,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-payouts-b-with-2.md",
@@ -233,7 +247,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 9
+     "turns": 9,
+     "sent_back_once": true
     },
     {
      "answer": "installed-0110-answers/numbers-payouts-b-with-3.md",
@@ -249,7 +264,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     }
    ]
   },
@@ -268,7 +284,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 7
+     "turns": 7,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-margins-b-with-2.md",
@@ -282,7 +299,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 6
+     "turns": 6,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-margins-b-with-3.md",
@@ -296,7 +314,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": false
     }
    ]
   },
@@ -313,7 +332,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-summary-c-with-2.md",
@@ -325,7 +345,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-summary-c-with-3.md",
@@ -337,7 +358,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": false
     }
    ]
   },
@@ -356,7 +378,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 12
+     "turns": 12,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-payouts-c-with-2.md",
@@ -370,7 +393,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 12
+     "turns": 12,
+     "sent_back_once": true
     },
     {
      "answer": "installed-0110-answers/numbers-payouts-c-with-3.md",
@@ -384,7 +408,8 @@
       "skill-fired": true
      },
      "own_check": "passed",
-     "turns": 13
+     "turns": 13,
+     "sent_back_once": true
     }
    ]
   },
@@ -400,7 +425,8 @@
       "unknown-cost-named": true
      },
      "own_check": "passed",
-     "turns": 11
+     "turns": 11,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-margins-c-with-2.md",
@@ -411,7 +437,8 @@
       "unknown-cost-named": true
      },
      "own_check": "passed",
-     "turns": 8
+     "turns": 8,
+     "sent_back_once": false
     },
     {
      "answer": "installed-0110-answers/numbers-margins-c-with-3.md",
@@ -422,7 +449,8 @@
       "unknown-cost-named": true
      },
      "own_check": "passed",
-     "turns": 12
+     "turns": 12,
+     "sent_back_once": false
     }
    ]
   }

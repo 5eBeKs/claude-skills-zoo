@@ -1,16 +1,8 @@
-I ran the month-end calculation you pinned in July on September's files. Every check passed. Before the report, three notes:
+The saved month-end calculation ran on September 2026 without any warnings, found no new kinds of lines and every check passed. Below is its answer word for word. It's also saved as `files/amazon-month-end_2026-09.md`. My earlier reply shortened parts of this answer and restated some figures by hand, so this one replaces it.
 
-- **The warnings at the top don't affect the figures.** One of the settlement files is very short and only has fee and refund lines, so those three columns are empty by nature.
-- **Your deposits moved to a new bank account.** They went to account x4417 until August and to x8841 from September 1. Amazon's payout of August 19 failed, and Amazon added it back into the settlement paid on September 1. It is counted once, in that settlement.
-- **One payout reached the bank after the month ended.** Settlement 27066464770 closed on September 29 but was deposited on October 1, so it's included in what Amazon owed at month end.
-
-The open questions near the end are definitions from July that you haven't confirmed yet. None of them changes a figure below. The full report is also saved as `files/amazon-month-end_2026-09.md`. Here it is exactly as the calculation produced it:
+The key figures are in the tables near the top and in the bookkeeper lines at the end. One settlement closed in September and reached the bank on October 1, so it's part of what Amazon still owed at month end. The "Open questions" are general questions from the question list the calculation was set up with. None of them changes these figures.
 
 ---
-
-- settlement_26988006297.txt, column 'shipment-id': text, now empty on every row. The figures it feeds read as zero: check the export before using them.
-- settlement_26988006297.txt, column 'quantity-purchased': number, now empty on every row. The figures it feeds read as zero: check the export before using them.
-- settlement_26988006297.txt, column 'promotion-id': text, now empty on every row. The figures it feeds read as zero: check the export before using them.
 
 # Amazon month-end, 2026-09 (US dollars)
 
@@ -274,4 +266,4 @@ Owed by Amazon at month end: 55,376.53 USD
 Reserve held at month end: 4,502.62 USD
 Orders: 3,005
 
-Checked by pinned-calculation v0.11.1 · seal 29b3bbb6451b
+Checked by pinned-calculation v0.11.6 · seal fb79d3792d6d

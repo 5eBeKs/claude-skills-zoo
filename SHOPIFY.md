@@ -1,11 +1,100 @@
-# Store D: a store built apart from the skills
+# The Shopify month-end skills
+
+Three skills for a Shopify store's month-end (the sales summary, the payouts reconciled to the bank, the margins per product), on five synthetic stores: A to C written with the skills, D and E each built apart by a separate Claude session. On A to C the skills against plain Opus; the plugin as a client installs it; store D, used to develop them; store E, blind, where they did not win.
+
+## The first three stores, with the skills and without
+
+
+![What the owner can see](gallery/03-what-the-owner-can-see.png)
+
+The comparison, 27 runs with the skills and 27 without, every answer kept in
+[`results/evals/answers/`](results/evals/answers/). My tests and my graders: every answer is here to
+re-grade.
+
+| | with the skills | without |
+|---|---|---|
+| The skill's "How this was counted" section under the answer: each definition in words, marked as the owner's answer or the usual one | 25/27 | 0/27 |
+| On the skill's stated basis: the figure the skill gives on its stated definitions (the usual answers on stores A and B, the owner's on store C) | 27/27 | 13/27 |
+| Everything the owner should see, named (orders left out, disputed, not paid out) | 27/27 | 21/27 |
+| Says it added the figures up by hand | 0/27 | 9/27 |
+| Passed every grader (the figures on the summary and payout questions; on margins, the products that must be named) | 27/27 | 26/27 |
+
+Where the graders check figures (the summary and payout questions), the arithmetic is right either way,
+but for one plain answer; the margins graders check which products are named, not the margin. What
+changes is what was counted and whether the answer says so. Without the skills Opus often says what it
+left out and on what basis, in its own words; several plain answers have a section of their own on how
+they counted, which the first row does not count, because it looks for the skill's heading. Which basis
+differs from question to question and from store to store (the second row). On store C, where the
+owner's definitions were in a file, the three plain runs of each question kept one basis. On its summary
+and payout questions the second row still counts one plain run each as off it: one is an error (see "Own
+code slips" below), the other gives the revenue on the owner's definitions only as "roughly £85k". Plain
+Claude's 9 "by hand"
+answers are on stores A and B, where it had no shell.
+
+The same 27 questions on 0.6.0, with the answer hook (and the plugin's tool server off, so the skills ran
+their scripts): right by the graders, on the stated basis and everything named in 27 of 27, the
+definitions and the files' fingerprints under every answer. The hook sent 7 first
+answers back: 4 had left the owner's open questions out, 1 gave wrong counts (86 orders left out where
+the results have 85), 1 showed sums the model had added itself; the seventh was the check's own
+mistake, a list of days read as figures, fixed in 0.6.1. Every final answer passed. Each stop is read in
+[ZOO.md](ZOO.md#the-later-versions-answer-hook-included).
+On 0.10.1 the same 27 questions with the skills, answer hook included, pass their pattern graders 27 of
+27 on the chat alone (the checks a reader judges were not read, and these 27 answers are kept with the
+private runs, not here). The claim map (each figure under its own words and sign) is in that version, but
+in most of those runs it was saved where the answer hook does not look, so the hook applied only the
+number check. A review in a fresh Claude session found this; 0.11.0 saves it where the hook looks.
+
+### What the owner can see
+
+The model is not the problem. On the summary and payout questions, where the graders check figures,
+Opus 5.5 got them right in 35 of 36 runs, with the skills or without them (on margins the graders check
+which products are named, not the margin). What changes without the skills is what the owner is shown,
+and whether it is the same next month:
+
+- **The basis moves.** For the same margins question Opus led with a loss per unit on store A (€1.64,
+  and a month's loss "of about €34" on another basis), the month's loss on store B, and a loss after
+  spreading discounts and refunds over products on store C. Each is
+  defensible; none is fixed or written down, so next month's answer can differ. For the payouts it
+  started, in all six runs on stores A and B, from every order placed in August (€3,022.62 and
+  $4,335.23), test and cancelled ones included, and explained them away below. With the skills, every answer is on the stated basis (27 of 27).
+- **The orders behind the counts go unnamed.** Store C leaves 85 orders out of August's sales and has
+  400 payout items to account for. Without the skills Opus named them in none of the six summary and
+  payout runs; with them every answer named all of them, in the chat or in the checked file it saved.
+- **Own code slips.** Without the skills on store C the model wrote its own code, read the owner's
+  definitions file and applied it. In one run of three it labelled a total as after discounts when it
+  was before them, and August revenue came out about £1,000 high. The skills' scripts gave the same
+  figures in every run.
+- **Hand-added figures.** Where it had no shell (stores A and B, like a chat with the file attached)
+  Opus said in 9 of 18 answers that it had added the figures up by hand. Most of these say they checked
+  the totals another way; one suggests comparing them with Shopify's own report before sending.
+
+Per store, passed every grader with / without the skills: 9/9 and 9/9 (A), 9/9 and 9/9 (B), 9/9 and 8/9 (C);
+everything named 9/9 and 9/9 (A), 9/9 and 9/9 (B), 9/9 and 3/9 (C). The full tables are in
+[ZOO.md](ZOO.md).
+
+### Three stores against independent truth
+
+Each store's generator computes `truth.json` from its own order records, not from the CSV the scripts
+read. Now: store A 26 of 26 figures, store B 33 of 33, store C 47 of 47; three more figures in the
+truth files (store B's lost and won dispute apart, store C's revenue after product refunds only) are
+not reported by the scripts on their own. The skills of earlier commits,
+measured against the same truth, show what the bench found: at `ad8b48e` store B got 9 of 21 and store
+C 18 of 41; at `b445df1` both ended the payout bridge short of the bank.
+
+
+## The plugin as a client installs it
+
+- **0.11.0**, stores A to C, the nine questions three times each, with the plugin's own tool server running: 27 of 27 answers passed their pattern graders (the graders a reader judges are marked as not scored), the plugin's own check passed 27 at the end, and 4 first answers were sent back once by it. Every run went through the scripts and `answer.py`; the tool server's tools were offered and never called. [The answers](results/installed-0110-answers/)
+- **0.11.6**, stores A to C, the nine questions three times each, with the plugin's own tool server running: 27 of 27 answers passed their pattern graders (the graders a reader judges are marked as not scored), the plugin's own check passed 27 at the end, and 4 first answers were sent back once by it. Every run went through the scripts and `answer.py`; the tool server's tools were offered and never called. [The answers](results/installed-0116-answers/)
+
+## Store D: built apart, used to develop
 
 Stores A to C were built by the same work that wrote the skills, so a wrong idea of Shopify's exports could sit in both and pass. Store D was built by a separate Claude session that was told to make a realistic Shopify store for testing month-end tools and never saw the skills, their checks or this bench. It wrote its own truth from its own events, not from the CSV files, and listed where it was not sure how Shopify writes a field.
 
 - **The store:** a US clothing store (fictional), selling in USD, EUR, GBP, CAD; 30,251 orders June to August 2026 (58,166 rows), 32,249 Shopify Payments transactions, 68 payouts; exports taken on September 5 (`stores/store_d/`). The largest month holds about 15,164 orders.
 - **The traps:** 68 in the 15 groups below (the generator's own list, in Russian, stays private; the orders each judged row needs are in the results files).
 - **What is judged:** only figures that mean the same in its truth and in the skills. Its truth follows Shopify Analytics; the skills follow the owner's definitions. Where the two count differently on purpose, both are shown and neither is scored.
-- **Blind, then not:** the first run (0.6.1) was blind. Everything after it was developed against this same store, so 0.10.1's figures show the fixes hold here, not that they would hold on a store nobody has seen. Store E was that check: [STORE-E.md](STORE-E.md).
+- **Blind, then not:** the first run (0.6.1) was blind. Everything after it was developed against this same store, so 0.10.1's figures show the fixes hold here, not that they would hold on a store nobody has seen. Store E, below, was that check.
 
 | | 0.6.1, the first run (blind) | 0.10.1 |
 |---|---|---|
@@ -16,7 +105,7 @@ Stores A to C were built by the same work that wrote the skills, so a wrong idea
 
 12 of the 56 judged rows are a yes/no or a zero (the script ran, the bridge says what it should, nothing won back, no reserve, no failed payout): they count, but they are not money.
 
-## Every judged figure
+### Every judged figure
 
 | Month | Skill | Figure | Truth | 0.6.1 | 0.10.1 |
 |---|---|---|---|---|---|
@@ -85,7 +174,7 @@ What still differs:
 
 How the rows changed: after the 0.7.0 run, the monthly tips became a definition row (an order cancelled the next month moves $3.78 of tips between June and July; the period total is judged), and the monthly 'orders that do not add up' rows, whose truth of 0 was wrong, gave way to one row for the 27 orders where an edit removed an item. The first run was read again with these rows; its commit message still says 18 of 54.
 
-## Counted differently on purpose
+### Counted differently on purpose
 
 | Month | Figure | Shopify Analytics (truth) | The skills | Why |
 |---|---|---|---|---|
@@ -98,7 +187,7 @@ How the rows changed: after the 0.7.0 run, the monthly tips became a definition 
 
 The skills' sales are money as charged, tax and shipping in, on the usual answers; each answer asks the owner to confirm them, and a definitions file changes them. For a US store that adds sales tax on top this default is the wrong headline for a bookkeeper; see the summary question below.
 
-## The traps, by group
+### The traps, by group
 
 | Traps | Group | What is in the data | What the skills do | Judged here |
 |---|---|---|---|---|
@@ -120,7 +209,7 @@ The skills' sales are money as charged, tax and shipping in, on the usual answer
 
 What still reads badly: most of the 'charge does not match the order' items in June are exchanges (the order's total changed, the first charge did not); the answer lists them without saying so.
 
-## What store D changed
+### What store D changed
 
 In 0.7.0:
 
@@ -138,7 +227,7 @@ Later, after reviews in fresh sessions:
 - **The check travels with the skill:** where no hook runs (claude.ai), the skill's last step renders, checks and seals the answer.
 - **The owner's files:** writing the definitions or recording the export's shape asks the owner; editing an export or the kept results is refused.
 
-## Opus on the owner's questions
+### Opus on the owner's questions
 
 Three questions an owner asks, three runs each, claude-opus-5-5, in `claude -p` sessions with a shell and the store's files; the plugin with its answer hook against no plugin (its MCP server off, `--strict-mcp-config`, so the skills ran their scripts). Every final answer is kept in `results/store-d-answers/`, with the report it saved when it saved one.
 
@@ -182,9 +271,44 @@ The one figure the summary question asks for ("one sales figure") is not graded.
 | no-cost-named | Products sold in July without a cost: three without a SKU, the Forest hoodies, and the bucket hat deleted before the export. (The pattern asks for Enamel Pin Set, Gift Wrap and Silk Bandana; the truth has a fourth product without a SKU or a cost in July, a custom embroidery line, which is not asked for.) | 2 / 2 of 3 | 2 / 2 of 3 |
 | renamed-skus | Classic Crew Tee's SKUs were renamed on July 15 (CT-* to HP-TEE-CLS-*): the old ones sold before, with no cost in the products export under that name. | 1 / 2 of 3 | 0 / 1 of 3 |
 
-## Files
+### Files
 
 - `stores/store_d/`: the four exports and `truth.json`, as the generator wrote them;
 - `results/store-d.json` (0.10.1) and `results/store-d-at-6a8a6f0.json` (0.6.1, the blind run): every row above;
 - `results/store-d-runs*.json`: every run's grades, as written and as read;
 - the generator's code stays private; it rebuilds these files byte for byte from its seed.
+
+
+## Store E: built apart, blind
+
+A second separate Claude session, which never saw the skills, the bench or store D, built a Dutch home goods store: prices in EUR with VAT inside, sales also in GBP, USD and CHF, Shopify Payments, Klarna, PayPal, bank transfer and gift cards, 21,241 orders from July to early October 2026 (709 of them in October), 65 traps, and an answer key from its own events. The skills were not changed for it: both measures below are blind. The data and the answer key are in `stores/store_e/`.
+
+### The scripts against the answer key
+
+40 of 55 judged figures match. What differs: a won chargeback written as a positive dispute row is netted into the chargebacks instead of shown apart; SKUs renamed mid-period are not recognised, so their products read as having no cost; gift cards sold are short by 100 to 225 euros a month; tips are not found; in September the bridge does not close although the bank figure is right. Store D's rows, as in store D's section above: `results/store-e-blind-at-a3202a7.json`.
+
+### Opus on three owner questions
+
+Three runs each, claude-opus-5-5, `claude -p` with a shell and the store's four exports, the plugin (0.10.1, the whole plugin, answer hook included, its MCP server off) against no plugin. The graders were written from the answer key alone and committed before the first run. A separate Claude review session then read them against the answers: five of them ask for a figure any right answer gives (the bank, the failed payout, the reserve, gift cards sold, the products without a cost), and four ask for more than that (the money in transit as one total, the renamed SKUs' old codes written out, the test orders' numbers, and Analytics' net and total sales to the cent, which the orders export cannot give: it does not date refunds). Both counts are below.
+
+| Question | Checks | With the skills | Without | The plugin's own check passed at the end |
+|---|---|---|---|---|
+| Less reached our bank from Shopify in August than we sold. The Shopify exports are in the `files` folder: orders (July to early October), the Shopify Payments transactions and the payouts list. How much reached the bank in August, and where did the rest go? | bank-figure, failed-payout, in-transit, reserve | 3 of 3 | 0 of 3 | 3 of 3 |
+| What did we sell in September? Our bookkeeper needs the sales figures as Shopify reports them, and to know what is in them. The Shopify orders export (July to early October) is in the `files` folder. | gift-cards-sold, net-sales, test-orders, total-sales | 0 of 3 | 0 of 3 | 2 of 3 |
+| Which of our products made money in July, which lost money, and which can you not tell? The Shopify orders export (July to early October) and our products export are in the `files` folder. | no-cost-named, renamed-skus | 3 of 3 | 1 of 3 | 2 of 3 |
+
+All three questions, every grader: **6 of 9** answers passed with the skills, **1 of 9** without. On the five graders any right answer passes: **6 of 9** with the skills, **9 of 9** without. On a second store built apart, the Shopify skills did not do better than plain Opus.
+
+What the answers show, read by hand:
+
+- **The bank question.** Every answer on both sides gave the bank figure, the failed payout and the reserve. The skills gave the money in transit as one total; one plain answer gave it to the cent in two lines, and two gave the same money before fees.
+- **The sales question.** No answer on either side gave Analytics' net or total sales to the cent, and none could from this export. The skills were short on gift cards sold (their script's error, above); plain Opus got them right. The skills' saved reports named the three staff test orders by number (one chat answer did not); two plain answers named them as the store's staff orders without numbers.
+- **The margins question.** The skills put the renamed napkins among the products whose margin they could not tell, though the products export gives their cost (the script's renamed-SKU gap, above), and with them three handmade bowls that have no SKU in either export; the plain answers matched the napkins by name and costed them. The renamed-SKU grader, which asks for the old codes, passed the skills for naming them while leaving them uncosted.
+
+What this means for the skills: the Shopify scripts were developed on stores A to D, and a store built apart finds what they still get wrong (the won chargeback's format, renamed SKUs, gift cards, tips). What held: every report the skills saved carried its definitions, its fingerprints and every left-out order (the chat answers published here do not always repeat them), and the plugin's own check passed most of them.
+
+### Files
+
+- `stores/store_e/`: the four exports, the answer key and the generator's notes;
+- `results/store-e-blind-at-a3202a7.json`: the scripts' blind run, row by row;
+- `results/store-e-runs.json`, `results/store-e-answers/`: every run's grades and final answer, and the reports the runs saved (`*-saved-*.md`), which the graders read with the chat.

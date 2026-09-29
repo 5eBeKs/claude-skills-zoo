@@ -1,0 +1,1777 @@
+{
+ "2026-08-bare-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "213420.57",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "23610.62",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "4732.44",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1416",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "49",
+    "ok": false
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294175.29",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "281648.17",
+    "ok": false
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "359.60",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "201993.27",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497102.44",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 32,
+  "durationSeconds": 544,
+  "costUsd": 2.1171792,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-bare-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "221990.47",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "27854.24",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3790.70",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1475",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294176.15",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "281648.17",
+    "ok": false
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "359.60",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11603.36",
+    "ok": false
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "204545.25",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "509098.68",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 18,
+  "durationSeconds": 288,
+  "costUsd": 1.1750322000000002,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-bare-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "214666.66",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "25094.68",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "4194.97",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1422",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "44",
+    "ok": false
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294176.48",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "281648.17",
+    "ok": false
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "359.60",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "201791.72",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "496343.12",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 29,
+  "durationSeconds": 423,
+  "costUsd": 2.1143576,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-defsfile-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "201106.34",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "22372.33",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1408",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "359.60",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203123.41",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "496979.66",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 32,
+  "durationSeconds": 883,
+  "costUsd": 2.154175,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-defsfile-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "200596.16",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "22197.90",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1403",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "359.60",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203130.57",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497047.01",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 22,
+  "durationSeconds": 476,
+  "costUsd": 2.0270298,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-defsfile-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "200371.90",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "21761.45",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1403",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "366.79",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203123.41",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "496979.66",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 34,
+  "durationSeconds": 674,
+  "costUsd": 2.503151,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-07-pinned-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "175733.17",
+    "got": "176027.01",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "37029.79",
+    "got": "37303.73",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3238.36",
+    "got": "3238.34",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1225.00",
+    "got": "1225",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "41.00",
+    "got": "41",
+    "ok": true
+   },
+   "Billings": {
+    "want": "231084.64",
+    "got": "231084.52",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "237990.42",
+    "got": "237990.42",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-2136.48",
+    "got": "2136.48",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "10608.18",
+    "got": "10608.18",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "231154.90",
+    "got": "231154.90",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "177386.03",
+    "got": "177389.68",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "415666.86",
+    "got": "415667.00",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 53,
+  "durationSeconds": 2441,
+  "costUsd": 5.714372199999997,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-plain-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "200371.82",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "21745.44",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1403",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "366.79",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203133.97",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497043.61",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 45,
+  "durationSeconds": 1053,
+  "costUsd": 3.098341400000001,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-pinnedbare-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "197582.35",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "21910.15",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1387",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "366.79",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203130.57",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497047.01",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 14,
+  "durationSeconds": 125,
+  "costUsd": 0.7865228,
+  "plugin": "0.11.6 at aa226f5",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-08-pinnedbare-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "197582.35",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "21910.15",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1387",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "366.79",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203130.57",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497047.01",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 12,
+  "durationSeconds": 117,
+  "costUsd": 0.7293938000000001,
+  "plugin": "0.11.6 at aa226f5",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "197582.35",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "21910.15",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1387",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "366.79",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203130.57",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497047.01",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 16,
+  "durationSeconds": 141,
+  "costUsd": 0.7573025999999999,
+  "plugin": "0.11.6 at aa226f5",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-09-pinnedbare-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "220394.85",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "22628.43",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "4946.09",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "42",
+    "ok": true
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228760.10",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593812.15",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 11,
+  "durationSeconds": 111,
+  "costUsd": 0.6903282,
+  "plugin": "0.11.6 at aa226f5",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-09-pinnedbare-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": null,
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": null,
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": null,
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": null,
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": null,
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": null,
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": null,
+    "ok": false
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": null,
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": null,
+    "ok": false
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": null,
+    "ok": false
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": null,
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": null,
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 7,
+  "durationSeconds": 48,
+  "costUsd": 0.35711620000000005,
+  "plugin": "0.11.6 at aa226f5",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-plain-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "200596.16",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "21862.15",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1403",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "366.79",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203130.57",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497047.01",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 29,
+  "durationSeconds": 1139,
+  "costUsd": 2.4526339999999998,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-pinnedbare-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "220394.85",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "22628.43",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "4946.09",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "42",
+    "ok": true
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228760.10",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593812.15",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 14,
+  "durationSeconds": 199,
+  "costUsd": 1.051856,
+  "plugin": "0.11.6 at aa226f5",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-plain-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "197365.93",
+    "got": "197582.35",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "21985.17",
+    "got": "21862.15",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-3792.67",
+    "got": "3792.68",
+    "ok": true
+   },
+   "Paying customers at month end": {
+    "want": "1387.00",
+    "got": "1387",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "40.00",
+    "got": "40",
+    "ok": true
+   },
+   "Billings": {
+    "want": "294271.31",
+    "got": "294271.41",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "263648.17",
+    "got": "263648.17",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-366.79",
+    "got": "366.79",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "11065.32",
+    "got": "11065.32",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "195967.18",
+    "got": "195967.18",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "203133.94",
+    "got": "203128.80",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "497043.47",
+    "got": "497053.81",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 35,
+  "durationSeconds": 691,
+  "costUsd": 3.4071430000000005,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-bare-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "238599.41",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "23770.00",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "7865.20",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1553",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "58",
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "324922.29",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228496.51",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593430.49",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 27,
+  "durationSeconds": 414,
+  "costUsd": 2.0185958,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-bare-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "237169.06",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "22772.74",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "7967.00",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1554",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "58",
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "324987.44",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228445.87",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593101.54",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 32,
+  "durationSeconds": 569,
+  "costUsd": 2.4174142,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-bare-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "249155.95",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "30308.41",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "5281.57",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1650",
+    "ok": false
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "43",
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "336045.00",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "13420.09",
+    "ok": false
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "230098.26",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "604011.75",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 30,
+  "durationSeconds": 448,
+  "costUsd": 2.4402116,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-defsfile-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "219995.90",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "18708.42",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "7959.00",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "58",
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228760.10",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593812.15",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 31,
+  "durationSeconds": 501,
+  "costUsd": 2.5877722,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-defsfile-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "220011.63",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "18713.98",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "7967.00",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "58",
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228760.09",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593812.24",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 34,
+  "durationSeconds": 488,
+  "costUsd": 2.2737906,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-defsfile-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "219986.90",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "21934.33",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "4938.09",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "42",
+    "ok": true
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228758.85",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593810.00",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 42,
+  "durationSeconds": 862,
+  "costUsd": 3.6044247999999994,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-plain-1": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "219986.81",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "19209.81",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "7959.00",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "58",
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228760.10",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593812.15",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 27,
+  "durationSeconds": 597,
+  "costUsd": 2.87722,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-plain-2": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "219995.80",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "22239.72",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "4938.09",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "42",
+    "ok": true
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228760.10",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593812.15",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 55,
+  "durationSeconds": 1332,
+  "costUsd": 4.597810800000002,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-09-plain-3": {
+  "lines": {
+   "MRR at month end": {
+    "want": "220270.98",
+    "got": "219986.80",
+    "ok": false
+   },
+   "Net new MRR": {
+    "want": "22720.64",
+    "got": "19423.81",
+    "ok": false
+   },
+   "Churned MRR": {
+    "want": "-4946.10",
+    "got": "7959.00",
+    "ok": false
+   },
+   "Paying customers at month end": {
+    "want": "1548.00",
+    "got": "1548",
+    "ok": true
+   },
+   "Customers lost": {
+    "want": "42.00",
+    "got": "58",
+    "ok": false
+   },
+   "Billings": {
+    "want": "341477.54",
+    "got": "341477.31",
+    "ok": false
+   },
+   "Cash collected": {
+    "want": "330573.95",
+    "got": "330573.95",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "-338.88",
+    "got": "338.88",
+    "ok": true
+   },
+   "Stripe fees": {
+    "want": "12802.04",
+    "got": "12802.04",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "277424.98",
+    "got": "277424.98",
+    "ok": true
+   },
+   "Revenue recognised": {
+    "want": "228758.79",
+    "got": "228760.10",
+    "ok": false
+   },
+   "Deferred revenue at month end": {
+    "want": "593809.92",
+    "got": "593812.15",
+    "ok": false
+   }
+  },
+  "passed": false,
+  "turns": 43,
+  "durationSeconds": 741,
+  "costUsd": 3.6641974000000004,
+  "plugin": null,
+  "own_check": null,
+  "error": null
+ }
+}

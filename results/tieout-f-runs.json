@@ -171,6 +171,8 @@
   "durationSeconds": 144,
   "costUsd": 0.7542978000000002,
   "plugin": null,
+  "plugin_note": null,
+  "own_check": null,
   "error": null
  },
  "tieout-plain-2": {
@@ -345,6 +347,8 @@
   "durationSeconds": 135,
   "costUsd": 0.6789026000000001,
   "plugin": null,
+  "plugin_note": null,
+  "own_check": null,
   "error": null
  },
  "tieout-plain-3": {
@@ -519,6 +523,8 @@
   "durationSeconds": 153,
   "costUsd": 0.7543132000000001,
   "plugin": null,
+  "plugin_note": null,
+  "own_check": null,
   "error": null
  },
  "tieout-skills0110-1": {
@@ -693,6 +699,8 @@
   "durationSeconds": 149,
   "costUsd": 0.7339972,
   "plugin": "0.10.1 at 3a1d008",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
  "tieout-skills0110-2": {
@@ -867,6 +875,8 @@
   "durationSeconds": 218,
   "costUsd": 0.9520128,
   "plugin": "0.10.1 at 3a1d008",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
  "tieout-skills0110-3": {
@@ -1041,6 +1051,8 @@
   "durationSeconds": 193,
   "costUsd": 0.8093104000000002,
   "plugin": "0.10.1 at 3a1d008",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
  "tieout-skills0111-1": {
@@ -1215,6 +1227,8 @@
   "durationSeconds": 244,
   "costUsd": 1.1484194,
   "plugin": "0.11.1 at 8b3930a",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
  "tieout-skills0111-2": {
@@ -1389,6 +1403,8 @@
   "durationSeconds": 226,
   "costUsd": 0.9225341999999999,
   "plugin": "0.11.1 at 8b3930a",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
  "tieout-skills0111-3": {
@@ -1563,9 +1579,11 @@
   "durationSeconds": 261,
   "costUsd": 1.2234516000000002,
   "plugin": "0.11.1 at 8b3930a",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
- "tieout-skills-1": {
+ "tieout-skillsb989-1": {
   "grade": {
    "rows": [
     {
@@ -1737,9 +1755,11 @@
   "durationSeconds": 376,
   "costUsd": 1.2433478,
   "plugin": "0.11.1 at b989585",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
- "tieout-skills-2": {
+ "tieout-skillsb989-2": {
   "grade": {
    "rows": [
     {
@@ -1911,9 +1931,11 @@
   "durationSeconds": 209,
   "costUsd": 1.0367106,
   "plugin": "0.11.1 at b989585",
+  "plugin_note": null,
+  "own_check": "flagged",
   "error": null
  },
- "tieout-skills-3": {
+ "tieout-skillsb989-3": {
   "grade": {
    "rows": [
     {
@@ -2085,6 +2107,1592 @@
   "durationSeconds": 235,
   "costUsd": 1.1526176,
   "plugin": "0.11.1 at b989585",
+  "plugin_note": null,
+  "own_check": "flagged",
+  "error": null
+ },
+ "tieout-skills0114-1": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 0,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 23,
+  "durationSeconds": 194,
+  "costUsd": 1.0417202,
+  "plugin": "0.11.4 at 3947e97",
+  "plugin_note": "the copy each run used was taken at its start from the clean tree at 3947e97; a later edit made the end-of-run label say uncommitted",
+  "own_check": "flagged",
+  "error": null
+ },
+ "tieout-skills0114-2": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 0,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 21,
+  "durationSeconds": 187,
+  "costUsd": 1.0185948,
+  "plugin": "0.11.4 at 3947e97",
+  "plugin_note": "the copy each run used was taken at its start from the clean tree at 3947e97; a later edit made the end-of-run label say uncommitted",
+  "own_check": "flagged",
+  "error": null
+ },
+ "tieout-skills0114-3": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 0,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 24,
+  "durationSeconds": 190,
+  "costUsd": 1.0826092,
+  "plugin": "0.11.4 at 3947e97",
+  "plugin_note": "the copy each run used was taken at its start from the clean tree at 3947e97; a later edit made the end-of-run label say uncommitted",
+  "own_check": "passed",
+  "error": null
+ },
+ "tieout-skills0115-1": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 2,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 22,
+  "durationSeconds": 250,
+  "costUsd": 1.0913556000000002,
+  "plugin": "0.11.5 at d8b5e29",
+  "plugin_note": null,
+  "own_check": "passed",
+  "error": null
+ },
+ "tieout-skills0115-2": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "6: percentage on the wrong base",
+     "ok": false
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "2: gross given where the label says net",
+     "ok": false
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 12,
+   "of": 22,
+   "mistakes_caught": 4,
+   "mistakes": 7,
+   "false_alarms": 0,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 27,
+  "durationSeconds": 311,
+  "costUsd": 0.8964654,
+  "plugin": "0.11.5 at d8b5e29",
+  "plugin_note": null,
+  "own_check": "passed",
+  "error": null
+ },
+ "tieout-skills0115-3": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 0,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 23,
+  "durationSeconds": 204,
+  "costUsd": 0.9500896000000001,
+  "plugin": "0.11.5 at d8b5e29",
+  "plugin_note": null,
+  "own_check": "passed",
+  "error": null
+ },
+ "tieout-skills-1": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 2,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 24,
+  "durationSeconds": 238,
+  "costUsd": 1.1397751999999999,
+  "plugin": "0.11.6 at 486ebee",
+  "plugin_note": null,
+  "own_check": "passed",
+  "error": null
+ },
+ "tieout-skills-2": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 2,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 19,
+  "durationSeconds": 205,
+  "costUsd": 1.1535798,
+  "plugin": "0.11.6 at 486ebee",
+  "plugin_note": null,
+  "own_check": "passed",
+  "error": null
+ },
+ "tieout-skills-3": {
+  "grade": {
+   "rows": [
+    {
+     "value": "about $139k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "6.5 hours",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$139,409.16",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,204.12",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$265.14",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "1: figure from the wrong month",
+     "ok": true
+    },
+    {
+     "value": "$53.45",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$135,969.28",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$6,527.25",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "4: total that leaves out one of its parts",
+     "ok": true
+    },
+    {
+     "value": "2.36%",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "6: percentage on the wrong base",
+     "ok": true
+    },
+    {
+     "value": "4.6%",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$17,641.65",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "2: gross given where the label says net",
+     "ok": true
+    },
+    {
+     "value": "$130,027.10",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "5: payout total that counts the failed payout as paid",
+     "ok": true
+    },
+    {
+     "value": "about $10.1k",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$3,688.05",
+     "want": "right",
+     "got": "right",
+     "kind": null,
+     "ok": true
+    },
+    {
+     "value": "$5,224.32",
+     "want": "wrong",
+     "got": "wrong",
+     "kind": "7: right on a different, unstated definition",
+     "ok": true
+    },
+    {
+     "value": "14",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "two",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$48,759.34",
+     "want": "wrong",
+     "got": "not checkable",
+     "kind": "3: two digits transposed",
+     "ok": false
+    },
+    {
+     "value": "4.9%",
+     "want": "right",
+     "got": "not checkable",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "2,221",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "58",
+     "want": "right",
+     "got": "wrong",
+     "kind": null,
+     "ok": false
+    },
+    {
+     "value": "$4,180.00",
+     "want": "not checkable",
+     "got": "not checkable",
+     "kind": null,
+     "ok": true
+    }
+   ],
+   "correct": 16,
+   "of": 22,
+   "mistakes_caught": 6,
+   "mistakes": 7,
+   "false_alarms": 2,
+   "right_figures": 13,
+   "not_checkable_said": 2,
+   "not_checkable": 2,
+   "no_verdict": 0
+  },
+  "turns": 20,
+  "durationSeconds": 222,
+  "costUsd": 1.0405084,
+  "plugin": "0.11.6 at 486ebee",
+  "plugin_note": null,
+  "own_check": "passed",
   "error": null
  }
 }

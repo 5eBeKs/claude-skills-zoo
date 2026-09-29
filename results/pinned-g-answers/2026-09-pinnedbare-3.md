@@ -1,67 +1,50 @@
-Your September figures come from your pinned Amazon month-end calculation, run unchanged. All of its checks passed, and every bank deposit matches its settlement exactly. The full answer is saved as `files/amazon-month-end_2026-09.md`, next to your exports. It includes how each figure was counted, the checks that ran, and the questions you haven't answered yet.
+I ran the calculation you pinned in July (pin 1, `ee1f712540ac`) on the September files. It used the same code and definitions and found no problems: every check passed, no new kinds of line appeared, and no line was left out. The full answer, including every check and the open questions, is saved in `answer.md`.
 
-**Worth a look:**
-- **Warnings at the top:** these are about the very short settlement covering the night of Aug 31 to Sep 1. Three columns in it are empty only because it has no orders, just a refund, fees and the reserve. They don't change any figure.
-- **Different bank account:** from September 1, Amazon has been paying into a different account than it used in July and August. Please confirm that change was intended.
-- **A missing August deposit:** the payout due on Aug 19 never reached the bank. Amazon credited it back as a "Failed disbursement" and paid it in the September 1 deposit, so it's counted once. This probably comes from the account change.
-- **Unanswered questions:** a few of my interpretations are still waiting for your yes (listed in the saved file). None of them changes this month's figures.
+**Please check one thing:** since the 2026-09-01 deposit, Amazon has been paying into bank account **x8841**. Before that it paid into **x4417**. This follows a failed deposit in August: settlement 26944784040 (21,849.95) never reached the bank, and Amazon added it back into the next payout, the 46,421.19 on Sept 1. Please confirm that x8841 is your account and that you meant to change it.
 
-# Amazon month-end, 2026-09 (US dollars)
+## What we sold (Pacific-time month, excluding tax)
 
-## What we sold
-
-| Sales | USD |
+| | USD |
 |---|---:|
 | Product sales | 112,613.64 |
 | Shipping credits | 4,378.50 |
 | Gift wrap credits | 99.80 |
 | Promotional rebates | -2,864.74 |
 | Refunds | -5,011.24 |
-| Net product sales | 109,215.96 |
+| **Net product sales** | **109,215.96** |
 
-Orders purchased in the month: 3,005. Cancelled orders left out: 40.
+There were 3,005 orders placed in September. I left out 40 cancelled orders.
+
+Amazon collected 7,995.89 of marketplace facilitator tax and paid all of it over itself, so it nets to 0.00 and isn't our money.
 
 ## What Amazon kept
 
-| Amazon fees | USD |
+| | USD |
 |---|---:|
 | Referral fees | -16,538.22 |
 | FBA fulfilment fees | -19,193.09 |
 | Storage fees | -736.75 |
-| Other fees | -6,388.43 |
-| Amazon fees, total | -42,856.49 |
-
-| Other lines | USD |
-|---|---:|
+| Other fees (including Buy Shipping labels -3,865.27 and shipping/gift wrap chargebacks -2,246.22) | -6,388.43 |
+| **Amazon fees, total** | **-42,856.49** |
 | Advertising | -11,886.85 |
 | Reimbursements | 161.32 |
-| Lines no definition places, left out | 0.00 |
-
-Marketplace facilitator tax, not our money: collected 7,995.89, paid over by Amazon -7,995.89, net 0.00.
 
 ## What reached the bank and what Amazon still owes
 
-Deposited to the bank in the month: 67,891.70 in 2 deposit(s):
-- 2026-09-01 settlement 26985759971 46,421.19
-- 2026-09-17 settlement 27027934433 21,470.51
+**Deposited in September: 67,891.70**
+- 2026-09-01: settlement 26985759971, 46,421.19
+- 2026-09-17: settlement 27027934433, 21,470.51
 
-Owed by Amazon at month end: 55,376.53, made of:
-- settlement 27066464770 closed, deposit in transit: 27,448.43
-- settlement (not assigned yet) from the Date Range report: 10,251.30
-- settlement 27108188183 from the Date Range report: 17,676.80
-- reserve released into the open settlement: 4,502.62
-- less the reserve held: -4,502.62
+**Owed by Amazon at month end: 55,376.53**
+- **Settlement in transit, 27,448.43:** settlement 27066464770 closed on Sept 29 and was deposited on 2026-10-01.
+- **Open settlement, 10,251.30:** lines Amazon had posted but not yet put into a settlement.
+- **Held back for a later settlement, 17,676.80:** lines Amazon has already placed in settlement 27108188183.
 
-Reserve held at month end: 4,502.62, the Current Reserve Amount of settlement 27066464770.
+**Reserve held at month end: 4,502.62.** This is the Current Reserve Amount of settlement 27066464770. It isn't part of the amount owed above.
 
-Settlements closed before the month end that had not reached the bank by then:
-- settlement 27066464770 (27,448.43): deposited 2026-10-01
+**How the money moved:** Amazon held 73,136.91 for us on Sept 1, reserve included. September's lines added 54,633.94, the bank received 67,891.70, and Amazon held 59,879.15 at the end. These figures balance exactly.
 
-How the money moved: Amazon held 73,136.91 for us at the start of the month, reserve included; the month's lines added 54,633.94; the bank received 67,891.70; Amazon held 59,879.15 at the end, reserve included.
-
-Checks that failed: none
-
-Counted by the pinned calculation ee1f712540ac ('amazon-month-end', pin 1); the same code, definitions and answer as when the owner pinned it.
+The pin still has six readings I made that you haven't confirmed, for example that a repeated transaction id stops the calculation. None of them changed September's figures. They're listed under "Open questions" in `answer.md`.
 
 For the bookkeeper (US dollars):
 

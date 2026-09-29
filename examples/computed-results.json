@@ -50,12 +50,12 @@
   ],
   "computed_by": {
     "plugin": "shopify-month-end",
-    "version": "0.11.3",
+    "version": "0.11.7",
     "scripts_sha256": "ab61cfedc85c78e05e4acb4d9d52bd3f3d9a9675baf27f5b3cd096525e33731a"
   },
   "fingerprints_in_words": [
     "orders_export.csv: 103 rows, SHA-256 b3f1fd5c8f24954c",
-    "computed by shopify-month-end v0.11.3, scripts ab61cfedc85c"
+    "computed by shopify-month-end v0.11.7, scripts ab61cfedc85c"
   ],
   "warnings": [],
   "open_questions": [

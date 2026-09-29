@@ -1,14 +1,10 @@
-I've saved the complete checked answer as `files/amazon-month-end_2026-08.md`, next to your exports. Below is that text exactly as the pinned calculation printed it. The only exception is a list of 71 recount lines, which is in the file; each one says a file's rows and money columns were counted again and passed.
+No checks failed, no new kinds of row turned up, and nothing was left out. Every line of the month has a place. The numbers come from your saved August calculation (`amazon-month-end`, pin 1), run on the files in `files/`, the same way as July. There are six open questions near the end where I made the call and you haven't confirmed it yet. None of them changes an August figure.
 
-Before the answer, two things to look at:
-- **Three blank columns.** The warnings at the top are about settlement 26988006297. It has only 12 lines, all fees and the reserve, with no orders, so blank shipment, quantity and promotion columns are expected there. They don't affect any dollar figure.
-- **Deposits changed bank account.** After the failed deposit for settlement 26944784040, every deposit went to account x8841 instead of x4417. Please confirm x8841 is your account.
+One thing to check: you said the reports were taken on October 6, but today is [run date]. It doesn't affect August, but please make sure the September files are the ones you meant.
+
+The full answer is below, exactly as the calculation printed it. It is also saved at `<local path>`.
 
 ---
-
-- settlement_26988006297.txt, column 'shipment-id': text, now empty on every row. The figures it feeds read as zero: check the export before using them.
-- settlement_26988006297.txt, column 'quantity-purchased': number, now empty on every row. The figures it feeds read as zero: check the export before using them.
-- settlement_26988006297.txt, column 'promotion-id': text, now empty on every row. The figures it feeds read as zero: check the export before using them.
 
 # Amazon month-end, 2026-08 (US dollars)
 
@@ -160,7 +156,78 @@ Open questions:
 - What should be done with rows that have the same transaction id? Claude counted it this way: Any repeated id stops the calculation Is that how you count?
 - How is free text (transaction descriptions, metadata) handled before AI agents read it? Claude counted it this way: Set it apart before the first agent; agents read only category codes Is that how you count?
 
-Counted again from the files by pin.py: 71 lines, all passed. They are listed in full in `files/amazon-month-end_2026-08.md`.
+Counted again from the files by pin.py:
+- settlement_26821949902.txt: all 8,077 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26821949902.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26860307225.txt: all 7,729 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26860307225.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26900538638.txt: all 11,884 rows are in exactly one of the calculation's 3 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26900538638.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26944784040.txt: all 8,303 rows are in exactly one of the calculation's 3 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26944784040.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26985759971.txt: all 9,017 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26985759971.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26988006297.txt: all 12 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26988006297.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_27027934433.txt: all 8,851 rows are in exactly one of the calculation's 3 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_27027934433.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_27066464770.txt: all 10,120 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_27066464770.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- 2026AugMonthlyTransaction.csv: all 3,882 rows are in exactly one of the calculation's 11 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- 2026AugMonthlyTransaction.csv: the groups' 'Regulatory Fee' add up to the file's own 'Regulatory Fee' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'Tax On Regulatory Fee' add up to the file's own 'Tax On Regulatory Fee' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'fba fees' add up to the file's own 'fba fees' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'gift wrap credits' add up to the file's own 'gift wrap credits' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'giftwrap credits tax' add up to the file's own 'giftwrap credits tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'marketplace withheld tax' add up to the file's own 'marketplace withheld tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'other' add up to the file's own 'other' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'other transaction fees' add up to the file's own 'other transaction fees' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'product sales' add up to the file's own 'product sales' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'product sales tax' add up to the file's own 'product sales tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'promotional rebates' add up to the file's own 'promotional rebates' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'promotional rebates tax' add up to the file's own 'promotional rebates tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'selling fees' add up to the file's own 'selling fees' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'shipping credits' add up to the file's own 'shipping credits' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'shipping credits tax' add up to the file's own 'shipping credits tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'total' add up to the file's own 'total' total (added up again)
+- 2026JulMonthlyTransaction.csv: all 4,277 rows are in exactly one of the calculation's 1 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- 2026JulMonthlyTransaction.csv: the groups' 'Regulatory Fee' add up to the file's own 'Regulatory Fee' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'Tax On Regulatory Fee' add up to the file's own 'Tax On Regulatory Fee' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'fba fees' add up to the file's own 'fba fees' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'gift wrap credits' add up to the file's own 'gift wrap credits' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'giftwrap credits tax' add up to the file's own 'giftwrap credits tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'marketplace withheld tax' add up to the file's own 'marketplace withheld tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'other' add up to the file's own 'other' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'other transaction fees' add up to the file's own 'other transaction fees' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'product sales' add up to the file's own 'product sales' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'product sales tax' add up to the file's own 'product sales tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'promotional rebates' add up to the file's own 'promotional rebates' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'promotional rebates tax' add up to the file's own 'promotional rebates tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'selling fees' add up to the file's own 'selling fees' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'shipping credits' add up to the file's own 'shipping credits' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'shipping credits tax' add up to the file's own 'shipping credits tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'total' add up to the file's own 'total' total (added up again)
+- 2026SepMonthlyTransaction.csv: all 4,073 rows are in exactly one of the calculation's 1 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- 2026SepMonthlyTransaction.csv: the groups' 'Regulatory Fee' add up to the file's own 'Regulatory Fee' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'Tax On Regulatory Fee' add up to the file's own 'Tax On Regulatory Fee' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'fba fees' add up to the file's own 'fba fees' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'gift wrap credits' add up to the file's own 'gift wrap credits' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'giftwrap credits tax' add up to the file's own 'giftwrap credits tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'marketplace withheld tax' add up to the file's own 'marketplace withheld tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'other' add up to the file's own 'other' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'other transaction fees' add up to the file's own 'other transaction fees' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'product sales' add up to the file's own 'product sales' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'product sales tax' add up to the file's own 'product sales tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'promotional rebates' add up to the file's own 'promotional rebates' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'promotional rebates tax' add up to the file's own 'promotional rebates tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'selling fees' add up to the file's own 'selling fees' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'shipping credits' add up to the file's own 'shipping credits' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'shipping credits tax' add up to the file's own 'shipping credits tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'total' add up to the file's own 'total' total (added up again)
+- disbursements.csv: all 6 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- disbursements.csv: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- all_orders_2026-07-01_2026-09-30.txt: all 10,740 rows are in exactly one of the calculation's 3 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- all_orders_2026-07-01_2026-09-30.txt: the groups' 'item-price' add up to the file's own 'item-price' total (added up again)
 
 What happened when copies of the files were broken on purpose:
 - rows exported twice (every 50th) in 2026JulMonthlyTransaction.csv: caught (warned: Control failed: no row exported twice: 86 row(s) appear twice, word for word)
@@ -183,12 +250,10 @@ What happened when copies of the files were broken on purpose:
 - amounts in cents (x100) in settlement_26900538638.txt: caught (warned: Control failed: settlement lines add up to its total: 26900538638: lines 3,223,951.00, total 32,239.51)
 - amounts with a decimal comma in settlement_26900538638.txt: caught (the answer stops: calc.py stopped (exit 2):)
 - times written eight hours later (another time zone) in settlement_26900538638.txt: caught (warned: Control failed: reserve carried forward: a gap or overlap between settlement 26860307225 and 26900538638)
-- a kind of row the calculation never saw (every 50th row) in settlement_26900538638.txt: caught (warned: New in settlement_26900538638.txt, column 'type': 'zz_new_kind' on 86 row(s)) — see file for exact wording
+- a kind of row the calculation never saw (every 50th row) in settlement_26900538638.txt: caught (the answer stops: calc.py stopped (exit 2):)
 - amounts a cent off (every 50th row) in settlement_26900538638.txt: caught (warned: Control failed: settlement lines add up to its total: 26900538638: lines 32,241.88, total 32,239.51)
 
 Counted by the pinned calculation ee1f712540ac ('amazon-month-end', pin 1); the same code, definitions and answer as when the owner pinned it.
-
-Checked by pinned-calculation v0.11.1 · seal 3bb0364ad048
 
 For the bookkeeper (US dollars):
 
@@ -202,3 +267,5 @@ Deposited to the bank: 32,239.51 USD
 Owed by Amazon at month end: 69,067.66 USD
 Reserve held at month end: 4,069.25 USD
 Orders: 2,917
+
+Checked by pinned-calculation v0.11.6 · seal 18e3ce051e55

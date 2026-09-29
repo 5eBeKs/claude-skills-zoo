@@ -62,6 +62,7 @@
   "durationSeconds": 803,
   "costUsd": 3.0169678,
   "plugin": "0.10.1 at e286c75",
+  "own_check": null,
   "error": null
  },
  "2026-07-pinned-setup2": {
@@ -127,6 +128,7 @@
   "durationSeconds": 404,
   "costUsd": 0.8473062,
   "plugin": "0.10.1 at c68c460",
+  "own_check": null,
   "error": null
  },
  "2026-08-pinned-1": {
@@ -192,6 +194,7 @@
   "durationSeconds": 117,
   "costUsd": 0.5704852,
   "plugin": "0.10.1 at 3a1d008",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinned-2": {
@@ -257,6 +260,7 @@
   "durationSeconds": 94,
   "costUsd": 0.430709,
   "plugin": "0.10.1 at 3a1d008",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinned-3": {
@@ -322,6 +326,7 @@
   "durationSeconds": 123,
   "costUsd": 0.5930278,
   "plugin": "0.10.1 at 3a1d008",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinned-1": {
@@ -387,6 +392,7 @@
   "durationSeconds": 88,
   "costUsd": 0.4630116,
   "plugin": "0.10.1 at 3a1d008",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinned-2": {
@@ -452,6 +458,7 @@
   "durationSeconds": 88,
   "costUsd": 0.46395300000000006,
   "plugin": "0.10.1 at 3a1d008",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinned-3": {
@@ -517,6 +524,7 @@
   "durationSeconds": 87,
   "costUsd": 0.4556502,
   "plugin": "0.10.1 at 3a1d008",
+  "own_check": "passed",
   "error": null
  },
  "2026-07-plain-1": {
@@ -582,6 +590,7 @@
   "durationSeconds": 178,
   "costUsd": 0.9442936000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-07-plain-2": {
@@ -647,6 +656,7 @@
   "durationSeconds": 193,
   "costUsd": 1.0204048,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-07-plain-3": {
@@ -712,6 +722,7 @@
   "durationSeconds": 173,
   "costUsd": 0.9310396000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-plain-1": {
@@ -777,6 +788,7 @@
   "durationSeconds": 125,
   "costUsd": 0.7706852000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-plain-2": {
@@ -842,6 +854,7 @@
   "durationSeconds": 137,
   "costUsd": 0.6691958000000002,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-plain-3": {
@@ -907,6 +920,7 @@
   "durationSeconds": 112,
   "costUsd": 0.6326991999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-plain-1": {
@@ -972,6 +986,7 @@
   "durationSeconds": 99,
   "costUsd": 0.5600108,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-plain-2": {
@@ -1037,6 +1052,7 @@
   "durationSeconds": 86,
   "costUsd": 0.5519974000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-plain-3": {
@@ -1102,6 +1118,7 @@
   "durationSeconds": 123,
   "costUsd": 0.6907253999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-bare-1": {
@@ -1167,6 +1184,7 @@
   "durationSeconds": 135,
   "costUsd": 0.6971674000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-bare-2": {
@@ -1232,6 +1250,7 @@
   "durationSeconds": 144,
   "costUsd": 0.8405968000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-bare-3": {
@@ -1297,6 +1316,7 @@
   "durationSeconds": 127,
   "costUsd": 0.7698744000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-bare-1": {
@@ -1362,6 +1382,7 @@
   "durationSeconds": 134,
   "costUsd": 0.6842680000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-bare-2": {
@@ -1427,6 +1448,7 @@
   "durationSeconds": 166,
   "costUsd": 0.9833516000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-bare-3": {
@@ -1492,6 +1514,7 @@
   "durationSeconds": 137,
   "costUsd": 0.7985315999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-pinnedbare0110-1": {
@@ -1557,6 +1580,7 @@
   "durationSeconds": 87,
   "costUsd": 0.468139,
   "plugin": "0.11.0 at d23b4c0",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinnedbare0110-2": {
@@ -1622,6 +1646,7 @@
   "durationSeconds": 34,
   "costUsd": 0.29116420000000004,
   "plugin": "0.11.0 at d23b4c0",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-pinnedbare0110-3": {
@@ -1687,6 +1712,7 @@
   "durationSeconds": 91,
   "costUsd": 0.4744964,
   "plugin": "0.11.0 at d23b4c0",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinnedbare0110-1": {
@@ -1752,6 +1778,7 @@
   "durationSeconds": 87,
   "costUsd": 0.4672754,
   "plugin": "0.11.0 at d23b4c0",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinnedbare0110-2": {
@@ -1817,6 +1844,7 @@
   "durationSeconds": 92,
   "costUsd": 0.476685,
   "plugin": "0.11.0 at d23b4c0",
+  "own_check": "passed",
   "error": null
  },
  "2026-09-pinnedbare0110-3": {
@@ -1882,201 +1910,7 @@
   "durationSeconds": 88,
   "costUsd": 0.4677454,
   "plugin": "0.11.0 at d23b4c0",
-  "error": null
- },
- "2026-08-pinnedbare-1": {
-  "lines": {
-   "Gross charges": {
-    "want": "139409.16",
-    "got": "139409.16",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "3204.12",
-    "got": "3204.12",
-    "ok": true
-   },
-   "Disputes withdrawn": {
-    "want": "289.21",
-    "got": "289.21",
-    "ok": true
-   },
-   "Disputes won back": {
-    "want": "53.45",
-    "got": "53.45",
-    "ok": true
-   },
-   "Net volume": {
-    "want": "135969.28",
-    "got": "135969.28",
-    "ok": true
-   },
-   "Sales tax collected": {
-    "want": "8405.00",
-    "got": "8404.87",
-    "ok": false
-   },
-   "Stripe fees": {
-    "want": "7297.25",
-    "got": "7297.25",
-    "ok": true
-   },
-   "Paid out to the bank": {
-    "want": "126339.05",
-    "got": "126339.05",
-    "ok": true
-   },
-   "Still in transit at month end": {
-    "want": "10085.69",
-    "got": "10085.69",
-    "ok": true
-   },
-   "Stripe balance at month end": {
-    "want": "3751.31",
-    "got": "3751.31",
-    "ok": true
-   },
-   "Held in reserve at month end": {
-    "want": "1473.01",
-    "got": "1473.01",
-    "ok": true
-   }
-  },
-  "passed": false,
-  "turns": 6,
-  "durationSeconds": 97,
-  "costUsd": 0.4650684,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-08-pinnedbare-2": {
-  "lines": {
-   "Gross charges": {
-    "want": "139409.16",
-    "got": "139409.16",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "3204.12",
-    "got": "3204.12",
-    "ok": true
-   },
-   "Disputes withdrawn": {
-    "want": "289.21",
-    "got": "289.21",
-    "ok": true
-   },
-   "Disputes won back": {
-    "want": "53.45",
-    "got": "53.45",
-    "ok": true
-   },
-   "Net volume": {
-    "want": "135969.28",
-    "got": "135969.28",
-    "ok": true
-   },
-   "Sales tax collected": {
-    "want": "8405.00",
-    "got": "8404.87",
-    "ok": false
-   },
-   "Stripe fees": {
-    "want": "7297.25",
-    "got": "7297.25",
-    "ok": true
-   },
-   "Paid out to the bank": {
-    "want": "126339.05",
-    "got": "126339.05",
-    "ok": true
-   },
-   "Still in transit at month end": {
-    "want": "10085.69",
-    "got": "10085.69",
-    "ok": true
-   },
-   "Stripe balance at month end": {
-    "want": "3751.31",
-    "got": "3751.31",
-    "ok": true
-   },
-   "Held in reserve at month end": {
-    "want": "1473.01",
-    "got": "1473.01",
-    "ok": true
-   }
-  },
-  "passed": false,
-  "turns": 8,
-  "durationSeconds": 125,
-  "costUsd": 0.5844846,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-08-pinnedbare-3": {
-  "lines": {
-   "Gross charges": {
-    "want": "139409.16",
-    "got": "139409.16",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "3204.12",
-    "got": "3204.12",
-    "ok": true
-   },
-   "Disputes withdrawn": {
-    "want": "289.21",
-    "got": "289.21",
-    "ok": true
-   },
-   "Disputes won back": {
-    "want": "53.45",
-    "got": "53.45",
-    "ok": true
-   },
-   "Net volume": {
-    "want": "135969.28",
-    "got": "135969.28",
-    "ok": true
-   },
-   "Sales tax collected": {
-    "want": "8405.00",
-    "got": "8404.87",
-    "ok": false
-   },
-   "Stripe fees": {
-    "want": "7297.25",
-    "got": "7297.25",
-    "ok": true
-   },
-   "Paid out to the bank": {
-    "want": "126339.05",
-    "got": "126339.05",
-    "ok": true
-   },
-   "Still in transit at month end": {
-    "want": "10085.69",
-    "got": "10085.69",
-    "ok": true
-   },
-   "Stripe balance at month end": {
-    "want": "3751.31",
-    "got": "3751.31",
-    "ok": true
-   },
-   "Held in reserve at month end": {
-    "want": "1473.01",
-    "got": "1473.01",
-    "ok": true
-   }
-  },
-  "passed": false,
-  "turns": 8,
-  "durationSeconds": 121,
-  "costUsd": 0.6236278000000001,
-  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
   "error": null
  },
  "2026-08-defsfile-1": {
@@ -2142,6 +1976,7 @@
   "durationSeconds": 107,
   "costUsd": 0.6015724,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-defsfile-2": {
@@ -2207,6 +2042,7 @@
   "durationSeconds": 148,
   "costUsd": 0.8503186000000001,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-08-defsfile-3": {
@@ -2272,201 +2108,7 @@
   "durationSeconds": 125,
   "costUsd": 0.6083182,
   "plugin": null,
-  "error": null
- },
- "2026-09-pinnedbare-1": {
-  "lines": {
-   "Gross charges": {
-    "want": "135375.92",
-    "got": "135375.92",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "2839.20",
-    "got": "2839.20",
-    "ok": true
-   },
-   "Disputes withdrawn": {
-    "want": "438.95",
-    "got": "438.95",
-    "ok": true
-   },
-   "Disputes won back": {
-    "want": "34.20",
-    "got": "34.20",
-    "ok": true
-   },
-   "Net volume": {
-    "want": "132131.97",
-    "got": "132131.97",
-    "ok": true
-   },
-   "Sales tax collected": {
-    "want": "8411.00",
-    "got": "8410.83",
-    "ok": false
-   },
-   "Stripe fees": {
-    "want": "7175.00",
-    "got": "7175.00",
-    "ok": true
-   },
-   "Paid out to the bank": {
-    "want": "118440.79",
-    "got": "118440.79",
-    "ok": true
-   },
-   "Still in transit at month end": {
-    "want": "4573.56",
-    "got": "4573.56",
-    "ok": true
-   },
-   "Stripe balance at month end": {
-    "want": "5049.91",
-    "got": "5049.91",
-    "ok": true
-   },
-   "Held in reserve at month end": {
-    "want": "6702.10",
-    "got": "6702.10",
-    "ok": true
-   }
-  },
-  "passed": false,
-  "turns": 6,
-  "durationSeconds": 91,
-  "costUsd": 0.4704448,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-09-pinnedbare-2": {
-  "lines": {
-   "Gross charges": {
-    "want": "135375.92",
-    "got": "135375.92",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "2839.20",
-    "got": "2839.20",
-    "ok": true
-   },
-   "Disputes withdrawn": {
-    "want": "438.95",
-    "got": "438.95",
-    "ok": true
-   },
-   "Disputes won back": {
-    "want": "34.20",
-    "got": "34.20",
-    "ok": true
-   },
-   "Net volume": {
-    "want": "132131.97",
-    "got": "132131.97",
-    "ok": true
-   },
-   "Sales tax collected": {
-    "want": "8411.00",
-    "got": "8410.83",
-    "ok": false
-   },
-   "Stripe fees": {
-    "want": "7175.00",
-    "got": "7175.00",
-    "ok": true
-   },
-   "Paid out to the bank": {
-    "want": "118440.79",
-    "got": "118440.79",
-    "ok": true
-   },
-   "Still in transit at month end": {
-    "want": "4573.56",
-    "got": "4573.56",
-    "ok": true
-   },
-   "Stripe balance at month end": {
-    "want": "5049.91",
-    "got": "5049.91",
-    "ok": true
-   },
-   "Held in reserve at month end": {
-    "want": "6702.10",
-    "got": "6702.10",
-    "ok": true
-   }
-  },
-  "passed": false,
-  "turns": 8,
-  "durationSeconds": 131,
-  "costUsd": 0.6412372000000001,
-  "plugin": "0.11.1 at 4fea9de",
-  "error": null
- },
- "2026-09-pinnedbare-3": {
-  "lines": {
-   "Gross charges": {
-    "want": "135375.92",
-    "got": "135375.92",
-    "ok": true
-   },
-   "Refunds": {
-    "want": "2839.20",
-    "got": "2839.20",
-    "ok": true
-   },
-   "Disputes withdrawn": {
-    "want": "438.95",
-    "got": "438.95",
-    "ok": true
-   },
-   "Disputes won back": {
-    "want": "34.20",
-    "got": "34.20",
-    "ok": true
-   },
-   "Net volume": {
-    "want": "132131.97",
-    "got": "132131.97",
-    "ok": true
-   },
-   "Sales tax collected": {
-    "want": "8411.00",
-    "got": "8410.83",
-    "ok": false
-   },
-   "Stripe fees": {
-    "want": "7175.00",
-    "got": "7175.00",
-    "ok": true
-   },
-   "Paid out to the bank": {
-    "want": "118440.79",
-    "got": "118440.79",
-    "ok": true
-   },
-   "Still in transit at month end": {
-    "want": "4573.56",
-    "got": "4573.56",
-    "ok": true
-   },
-   "Stripe balance at month end": {
-    "want": "5049.91",
-    "got": "5049.91",
-    "ok": true
-   },
-   "Held in reserve at month end": {
-    "want": "6702.10",
-    "got": "6702.10",
-    "ok": true
-   }
-  },
-  "passed": false,
-  "turns": 8,
-  "durationSeconds": 57,
-  "costUsd": 0.38230280000000005,
-  "plugin": "0.11.1 at 4fea9de",
+  "own_check": null,
   "error": null
  },
  "2026-09-defsfile-1": {
@@ -2532,6 +2174,7 @@
   "durationSeconds": 131,
   "costUsd": 0.6745041999999999,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-defsfile-2": {
@@ -2597,6 +2240,7 @@
   "durationSeconds": 104,
   "costUsd": 0.5018634,
   "plugin": null,
+  "own_check": null,
   "error": null
  },
  "2026-09-defsfile-3": {
@@ -2662,6 +2306,799 @@
   "durationSeconds": 153,
   "costUsd": 0.7767154000000001,
   "plugin": null,
+  "own_check": null,
+  "error": null
+ },
+ "2026-08-pinnedbare0111-1": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139409.16",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "135969.28",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8404.87",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7297.25",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "126339.05",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "3751.31",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1473.01",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 6,
+  "durationSeconds": 97,
+  "costUsd": 0.4650684,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare0111-2": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139409.16",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "135969.28",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8404.87",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7297.25",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "126339.05",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "3751.31",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1473.01",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 8,
+  "durationSeconds": 125,
+  "costUsd": 0.5844846,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare0111-3": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139409.16",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "135969.28",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8404.87",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7297.25",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "126339.05",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "3751.31",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1473.01",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 8,
+  "durationSeconds": 121,
+  "costUsd": 0.6236278000000001,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-09-pinnedbare0111-1": {
+  "lines": {
+   "Gross charges": {
+    "want": "135375.92",
+    "got": "135375.92",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "2839.20",
+    "got": "2839.20",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "438.95",
+    "got": "438.95",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "34.20",
+    "got": "34.20",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "132131.97",
+    "got": "132131.97",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8411.00",
+    "got": "8410.83",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7175.00",
+    "got": "7175.00",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "118440.79",
+    "got": "118440.79",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "4573.56",
+    "got": "4573.56",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "5049.91",
+    "got": "5049.91",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "6702.10",
+    "got": "6702.10",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 6,
+  "durationSeconds": 91,
+  "costUsd": 0.4704448,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare0111-2": {
+  "lines": {
+   "Gross charges": {
+    "want": "135375.92",
+    "got": "135375.92",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "2839.20",
+    "got": "2839.20",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "438.95",
+    "got": "438.95",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "34.20",
+    "got": "34.20",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "132131.97",
+    "got": "132131.97",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8411.00",
+    "got": "8410.83",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7175.00",
+    "got": "7175.00",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "118440.79",
+    "got": "118440.79",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "4573.56",
+    "got": "4573.56",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "5049.91",
+    "got": "5049.91",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "6702.10",
+    "got": "6702.10",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 8,
+  "durationSeconds": 131,
+  "costUsd": 0.6412372000000001,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare0111-3": {
+  "lines": {
+   "Gross charges": {
+    "want": "135375.92",
+    "got": "135375.92",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "2839.20",
+    "got": "2839.20",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "438.95",
+    "got": "438.95",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "34.20",
+    "got": "34.20",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "132131.97",
+    "got": "132131.97",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8411.00",
+    "got": "8410.83",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7175.00",
+    "got": "7175.00",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "118440.79",
+    "got": "118440.79",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "4573.56",
+    "got": "4573.56",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "5049.91",
+    "got": "5049.91",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "6702.10",
+    "got": "6702.10",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 8,
+  "durationSeconds": 57,
+  "costUsd": 0.38230280000000005,
+  "plugin": "0.11.1 at 4fea9de",
+  "own_check": "flagged",
+  "error": null
+ },
+ "2026-08-pinnedbare-1": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139409.16",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "135969.28",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8404.87",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7297.25",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "126339.05",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "3751.31",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1473.01",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 8,
+  "durationSeconds": 97,
+  "costUsd": 0.44392619999999994,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare-2": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139409.16",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "135969.28",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8404.87",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7297.25",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "126339.05",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "3751.31",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1473.01",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 6,
+  "durationSeconds": 92,
+  "costUsd": 0.469603,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-08-pinnedbare-3": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139409.16",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "135969.28",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8404.87",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7297.25",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "126339.05",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "3751.31",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1473.01",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 6,
+  "durationSeconds": 90,
+  "costUsd": 0.4649394,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare-1": {
+  "lines": {
+   "Gross charges": {
+    "want": "135375.92",
+    "got": "135375.92",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "2839.20",
+    "got": "2839.20",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "438.95",
+    "got": "438.95",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "34.20",
+    "got": "34.20",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "132131.97",
+    "got": "132131.97",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8411.00",
+    "got": "8410.83",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7175.00",
+    "got": "7175.00",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "118440.79",
+    "got": "118440.79",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "4573.56",
+    "got": "4573.56",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "5049.91",
+    "got": "5049.91",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "6702.10",
+    "got": "6702.10",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 9,
+  "durationSeconds": 71,
+  "costUsd": 0.4361898,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare-2": {
+  "lines": {
+   "Gross charges": {
+    "want": "135375.92",
+    "got": "135375.92",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "2839.20",
+    "got": "2839.20",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "438.95",
+    "got": "438.95",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "34.20",
+    "got": "34.20",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "132131.97",
+    "got": "132131.97",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8411.00",
+    "got": "8410.83",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7175.00",
+    "got": "7175.00",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "118440.79",
+    "got": "118440.79",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "4573.56",
+    "got": "4573.56",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "5049.91",
+    "got": "5049.91",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "6702.10",
+    "got": "6702.10",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 6,
+  "durationSeconds": 91,
+  "costUsd": 0.46930420000000006,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
+  "error": null
+ },
+ "2026-09-pinnedbare-3": {
+  "lines": {
+   "Gross charges": {
+    "want": "135375.92",
+    "got": "135375.92",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "2839.20",
+    "got": "2839.20",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "438.95",
+    "got": "438.95",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "34.20",
+    "got": "34.20",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "132131.97",
+    "got": "132131.97",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8411.00",
+    "got": "8410.83",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7175.00",
+    "got": "7175.00",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "118440.79",
+    "got": "118440.79",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "4573.56",
+    "got": "4573.56",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "5049.91",
+    "got": "5049.91",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "6702.10",
+    "got": "6702.10",
+    "ok": true
+   }
+  },
+  "passed": false,
+  "turns": 6,
+  "durationSeconds": 91,
+  "costUsd": 0.47421120000000005,
+  "plugin": "0.11.6 at 486ebee",
+  "own_check": "passed",
   "error": null
  }
 }

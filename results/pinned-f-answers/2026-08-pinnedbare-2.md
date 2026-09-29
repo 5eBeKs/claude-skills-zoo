@@ -1,8 +1,8 @@
-I ran your saved Stripe month-end calculation on the August 2026 exports. There were no warnings: nothing new showed up in the files and every check passed. The full answer is below, word for word, and it's saved as `files/stripe-month-end_2026-08.md`. At the end are 12 open questions where I chose a reading because the definitions didn't cover it. Tell me if any should count differently and I'll change the calculation and pin it again.
+I ran your saved Stripe month-end calculation on the October 4 exports. It produced no warnings and every check passed. Twelve of the counting rules are still my own choices rather than yours; they're listed under "Open questions", and none of them changes an August figure unless you choose differently. The full answer is below, unchanged, and the figures for your bookkeeper are at the end.
+
+---
 
 # Stripe month-end, 2026-08
-
-
 
 ## What we sold
 
@@ -184,4 +184,4 @@ Held in reserve at month end: $1,473.01
 
 Counted by the pinned calculation d8c663a3d3cd ('stripe-month-end', pin 1); the same code, definitions and answer as when the owner pinned it.
 
-Checked by pinned-calculation v0.11.1 · seal 3d1f1e6427c4
+Checked by pinned-calculation v0.11.6 · seal 3d1f1e6427c4

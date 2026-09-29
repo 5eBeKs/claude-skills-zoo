@@ -2,50 +2,48 @@
 
 *Claude skills for the numbers a business asks every month, from Shopify, Stripe, Amazon or another export,
 and for checking the report someone else sends you. Tested on stores and accounts built apart from the skills;
-every answer the tables count is published with its grades. Version 1.4, September 2026.*
+every answer the tables count is published with its grades. Version 1.5, September 2026.*
 
 I set up Claude to answer a recurring numbers question the way the business counts: its definitions asked
 once and written down; the calculation pinned; every figure from a script and checked against its results,
 an answer that does not match sent back or flagged; anything left out named. I also check the skills and
 plugins you already use.
 
-**Tested on eight synthetic datasets: five Shopify stores, a Stripe account, an Amazon seller account, and an
-agency's report on the Stripe account. Five of them were built by separate Claude sessions that never saw the
-skills.**
+**Tested on nine synthetic datasets: five Shopify stores, a Stripe account, an Amazon seller account, a
+subscription business on Stripe Billing, and an agency's report on the Stripe account. Six of them were built by
+separate Claude sessions that never saw the skills.**
 
-- **The step that matters: your definitions, written down once.** On a Stripe account and an Amazon seller
-  account built apart, the owner's month-end question asked plainly: Opus matched the owner's own definitions
-  on 3 or 4 of 11 bookkeeper lines (Stripe) and 6 or 7 of 10 (Amazon), on its own readings (the month in local
-  time, payouts by the day they reached the bank, the reserve inside what is owed). With the definitions
-  written once, in a file or in a pinned calculation, the same plain question gave 10 of 11 and 10 of 10 in
-  every run. What the pin adds over a file: the same figure in every run where a file's runs differed by
-  cents, fewer turns, the plugin's own check on every answer (it passed 7 of 12 and flagged the others,
-  mostly for leaving out the open questions about Claude's readings), and a refusal to pin a month on
-  incomplete exports until the owner decides. [CASE-F.md](CASE-F.md), [CASE-G.md](CASE-G.md)
-- **Checking the report you already get: no better than plain Opus yet.** An agency's August report on the
-  Stripe account, with 7 mistakes planted by a separate session: with the skill 6, 6, 6 of 7 caught in three runs and 2, 2, 0 right figures called wrong; plain Opus 6, 6, 6 of 7 and 2, 2, 2 (both sides' "wrong" ones are subscription counts read another way). The skill gave as many right verdicts
-  at about twice the turns, and its own check flagged every answer: the closing lines the owner asks for
-  retyped figures in every run, one run also typed a figure in its prose, and in one the result was not where
-  the check looked. Version 0.11.2 renders the closing lines in the report's own form and sends back any other;
-  it has not been run on the report.
-  No side caught two swapped digits in MRR. [CASE-F.md](CASE-F.md#the-same-account-checking-the-agencys-report)
-- **A second Shopify store, blind, and the skills did not win.** A separate session built a Dutch store in EUR
-  with VAT inside its prices (21,241 orders, 65 traps). The Shopify skills were not changed for it. On the
-  five graders any right answer passes, plain Opus passed 9 of 9 answers and the skills 6 of 9: the three misses
-  are gift cards sold, where their script is short (40 of 55 of the store's figures matched the scripts, which
-  also cannot cost renamed products). On graders that ask for more (the money in transit as one total, test orders by number) the skills
-  did better. Both counts and every answer: [STORE-E.md](STORE-E.md)
-- **A Shopify store built apart, used to develop.** A 30,251-order store: the scripts' blind run matched 18 of
-  50 of its figures, 55 of 56 after fixing what it found on the same store; on three owner questions 4 of 9
-  answers at the first graded version and 7 of 9 after, against 0 of 9 without. [STORE-D.md](STORE-D.md)
-- **The plugin as a client installs it.** Version 0.11.0 on the first three stores with the plugin's own tool
-  server running: 27 of 27 answers passed their pattern graders (the graders a reader judges are marked as not
-  scored), every one went through the scripts and the answer check rather than the tool server,
-  and the check passed all 27 at the end. [The answers](results/installed-0110-answers/)
-- **Works where the owner is.** The Shopify skills run in claude.ai chat, uploaded as skills: tried there with
-  Opus 5.5 on store A ([the three answers](live-tests/claude-ai/)); the pinned calculation not yet. Each
-  answer ends with a seal line: `answer.py --verify` on the saved file shows it was not edited after the check,
-  not that the figures are right. Team accounts: documented by Anthropic, not tried here.
+Four pages, one for each piece of work:
+
+- **[Your definitions, written down once](DEFINITIONS.md)** (a Stripe account, an Amazon seller account and a
+  subscription business on Stripe Billing, built apart). Asked the owner's month-end question plainly, Opus matched the owner's own definitions on 3 or 4
+  of 11 bookkeeper lines (Stripe) and 6 or 7 of 10 (Amazon), on readings of its own (the month in local time,
+  payouts by the day they reached the bank, the reserve inside what is owed). With the definitions written down
+  once, in a file or in a pinned calculation, the same plain question gave 10 of 11 and 10 of 10 in every run.
+  What the pin adds over a file: the same figure in every run where a file's runs differed by cents, fewer
+  turns, the plugin's own check on every answer (on the latest version it passed 10 of 12 and flagged two that
+  retold the checked answer shorter or typed a figure), and a refusal to pin a month on incomplete exports until
+  the owner decides. On the subscription business (12 lines: MRR, churn, billings, recognised revenue) a file was
+  not enough: 5 or 6 of 12 with it, 7 of 12 with the pin in every run that answered, because only the pin
+  rebuilt each subscription's status for the month's end (the export gives it for the day it was taken). No run
+  reached MRR to the cent: the answer key knows when a seat change took effect, which no export records.
+- **[Checking the report you already get](TIEOUT.md)** (an agency's report on the Stripe account, 7 mistakes
+  planted by a separate session). The skill gives the same verdicts as plain Opus in every run: 16 of 22
+  right, 6 of 7 mistakes caught, the same two arguable readings; neither caught two swapped digits. It is not
+  more accurate; what it adds is a checked answer, every figure of the report accounted for (on the latest
+  version its own check passed 3 of 3), at about 1.6 times the turns.
+- **[The Shopify month-end skills](SHOPIFY.md)** (five Shopify stores). On the first three, the figure on the
+  skill's stated definitions in 27 of 27 answers against 13 of 27 without, and everything the owner should see
+  named in 27 against 21; as a client installs the plugin, 27 of 27 on 0.11.0 and again on 0.11.6. Store D,
+  built apart and used to develop: the scripts' blind run matched 18 of 50 figures, 55 of 56 after. Store E,
+  built apart and blind: **the skills did not win**, plain Opus 9 of 9 on the neutral graders against 6 of 9.
+- **[A check of Anthropic's free Small Business plugin](https://github.com/5eBeKs/small-business-audit)**, on
+  synthetic books: what it found, and what an owner still cannot see.
+
+**Works where the owner is.** The Shopify skills run in claude.ai chat, uploaded as skills: tried there with
+Opus 5.5 on store A ([the three answers](live-tests/claude-ai/)); the pinned calculation not yet. Each
+answer ends with a seal line: `answer.py --verify` on the saved file shows it was not edited after the check,
+not that the figures are right. Team accounts: documented by Anthropic, not tried here.
 
 ![The owner's definitions, written down once](gallery/01-definitions-written-once.png)
 
@@ -55,50 +53,11 @@ definitions file), a check of the report your bookkeeper or agency
 sends you, or a check of skills that misfire. [Message me on Upwork](https://www.upwork.com/freelancers/ilyashkura)
 with the question you ask Claude and a sample export (test data is fine).
 
-![What the owner can see](gallery/03-what-the-owner-can-see.png)
-
-The comparison, 27 runs with the skills and 27 without, every answer kept in
-[`results/evals/answers/`](results/evals/answers/). My tests and my graders: every answer is here to
-re-grade.
-
-| | with the skills | without |
-|---|---|---|
-| The skill's "How this was counted" section under the answer: each definition in words, marked as the owner's answer or the usual one | 25/27 | 0/27 |
-| On the skill's stated basis: the figure the skill gives on its stated definitions (the usual answers on stores A and B, the owner's on store C) | 27/27 | 13/27 |
-| Everything the owner should see, named (orders left out, disputed, not paid out) | 27/27 | 21/27 |
-| Says it added the figures up by hand | 0/27 | 9/27 |
-| Passed every grader (the figures on the summary and payout questions; on margins, the products that must be named) | 27/27 | 26/27 |
-
-Where the graders check figures (the summary and payout questions), the arithmetic is right either way,
-but for one plain answer; the margins graders check which products are named, not the margin. What
-changes is what was counted and whether the answer says so. Without the skills Opus often says what it
-left out and on what basis, in its own words; several plain answers have a section of their own on how
-they counted, which the first row does not count, because it looks for the skill's heading. Which basis
-differs from question to question and from store to store (the second row). On store C, where the
-owner's definitions were in a file, the three plain runs of each question kept one basis. On its summary
-and payout questions the second row still counts one plain run each as off it: one is an error (see "Own
-code slips" below), the other gives the revenue on the owner's definitions only as "roughly £85k". Plain
-Claude's 9 "by hand"
-answers are on stores A and B, where it had no shell.
-
-The same 27 questions on 0.6.0, with the answer hook (and the plugin's tool server off, so the skills ran
-their scripts): right by the graders, on the stated basis and everything named in 27 of 27, the
-definitions and the files' fingerprints under every answer. The hook sent 7 first
-answers back: 4 had left the owner's open questions out, 1 gave wrong counts (86 orders left out where
-the results have 85), 1 showed sums the model had added itself; the seventh was the check's own
-mistake, a list of days read as figures, fixed in 0.6.1. Every final answer passed. Each stop is read in
-[ZOO.md](ZOO.md#the-later-versions-answer-hook-included).
-On 0.10.1 the same 27 questions with the skills, answer hook included, pass their pattern graders 27 of
-27 on the chat alone (the checks a reader judges were not read, and these 27 answers are kept with the
-private runs, not here). The claim map (each figure under its own words and sign) is in that version, but
-in most of those runs it was saved where the answer hook does not look, so the hook applied only the
-number check. A review in a fresh Claude session found this; 0.11.0 saves it where the hook looks.
-
 ## What you can order
 
 | You have | You get | Evidence here |
 |---|---|---|
-| A task your team does with Claude every week or month: numbers from an export, a report, a reconciliation | Skills that ask your definitions once, in plain words, and print them under every answer; figures from scripts, checked against the scripts' results; every excluded record named. A plugin for Claude Code (tested here; the 27 runs of the version as installed had its tool server on, and never called it); the Shopify skills in claude.ai chat (tried; the pinned calculation and the tie-out not yet); for a whole team's account and in Cowork (documented by Anthropic, not tried yet) | [What the owner can see](#what-the-owner-can-see) |
+| A task your team does with Claude every week or month: numbers from an export, a report, a reconciliation | Skills that ask your definitions once, in plain words, and print them under every answer; figures from scripts, checked against the scripts' results; every excluded record named. A plugin for Claude Code (tested here; the 27 runs of the version as installed had its tool server on, and never called it); the Shopify skills in claude.ai chat (tried; the pinned calculation and the tie-out not yet); for a whole team's account and in Cowork (documented by Anthropic, not tried yet) | [What the owner can see](SHOPIFY.md#what-the-owner-can-see) |
 | Skills you already have that sometimes do not fire, or fire on the wrong request | Your skills through the skill zoo: `claude plugin validate`, a linter for silent mistakes, and a routing eval on how your people actually ask | [The skill zoo](#the-skill-zoo-does-the-right-skill-run) |
 | Answers Claude writes from your data that nobody checks | Your answers with defects planted one at a time, and a record of which layer stops each: the number check, the coverage check, a reviewer model | [The answer zoo](#the-answer-zoo-it-ran-and-the-answer-is-wrong) |
 
@@ -152,7 +111,7 @@ Four parts; the full method is in [METHOD.md](METHOD.md), every table in [ZOO.md
 
 | Part | What is planted | What is measured |
 |---|---|---|
-| **Stores** | Three synthetic stores with the traps of real exports, store C at a real store's size; stores D and E, a Stripe account (F) with an agency's report on it, and an Amazon seller account (G), each built by a separate Claude session that never saw the skills | the scripts against truth computed by each generator from its own records |
+| **Stores** | Three synthetic stores with the traps of real exports, store C at a real store's size; stores D and E, a Stripe account (F) with an agency's report on it, an Amazon seller account (G) and a subscription business on Stripe Billing (H), each built by a separate Claude session that never saw the skills | the scripts against truth computed by each generator from its own records |
 | **Models** | The owner's questions on stores A to C, and three more on store D | Opus 5.5 with the skills and without them: the figures, and what the owner can see |
 | **Answer zoo** | 24 defects in 7 classes, one per copy of a correct answer | the number check, the coverage check, reviewer models |
 | **Skill zoo** | 11 defects in a skill's frontmatter or files, one per copy of the plugin | `claude plugin validate --strict`, the linter, the routing eval |
@@ -162,10 +121,10 @@ Four parts; the full method is in [METHOD.md](METHOD.md), every table in [ZOO.md
   test gateway with no tag, a gift card split, a dispute won, a payout adjustment, a cost sheet
   typed by hand, the previous month's last sales paid out in this one.
 - **Store D**, a US clothing store built by a separate Claude session that never saw the skills: four
-  currencies, 30,251 orders, 68 traps, its own truth. See [STORE-D.md](STORE-D.md).
-- **Store E**, a Dutch home goods store, **account F** (Stripe) with **an agency's report** on it, and
-  **account G** (Amazon): each built apart; see [STORE-E.md](STORE-E.md), [CASE-F.md](CASE-F.md) and
-  [CASE-G.md](CASE-G.md).
+  currencies, 30,251 orders, 68 traps, its own truth. See [SHOPIFY.md](SHOPIFY.md#store-d-built-apart-used-to-develop).
+- **Store E**, a Dutch home goods store, **account F** (Stripe) with **an agency's report** on it,
+  **account G** (Amazon) and **account H** (a subscription business on Stripe Billing): each built apart; see [SHOPIFY.md](SHOPIFY.md#store-e-built-apart-blind),
+  [DEFINITIONS.md](DEFINITIONS.md) and [TIEOUT.md](TIEOUT.md).
 - **Store C**, a UK skincare shop at a real store's size: three months, 4,470 orders, and the
   question is one month. Its owner has answered the definitions: a sale counts once it is shipped,
   revenue is reported without VAT and shipping. So 70 pre-orders, paid and charged, are not
@@ -174,34 +133,6 @@ Four parts; the full method is in [METHOD.md](METHOD.md), every table in [ZOO.md
 Not every trap has a grader of its own: VAT inside store A's prices, store B's sales tax and payout
 adjustment, and on store C the refunds of July orders, the gift cards and PayPal orders and the cost
 sheet's spellings are graded by nothing.
-
-## What the owner can see
-
-The model is not the problem. On the summary and payout questions, where the graders check figures,
-Opus 5.5 got them right in 35 of 36 runs, with the skills or without them (on margins the graders check
-which products are named, not the margin). What changes without the skills is what the owner is shown,
-and whether it is the same next month:
-
-- **The basis moves.** For the same margins question Opus led with a loss per unit on store A (€1.64,
-  and a month's loss "of about €34" on another basis), the month's loss on store B, and a loss after
-  spreading discounts and refunds over products on store C. Each is
-  defensible; none is fixed or written down, so next month's answer can differ. For the payouts it
-  started, in all six runs on stores A and B, from every order placed in August (€3,022.62 and
-  $4,335.23), test and cancelled ones included, and explained them away below. With the skills, every answer is on the stated basis (27 of 27).
-- **The orders behind the counts go unnamed.** Store C leaves 85 orders out of August's sales and has
-  400 payout items to account for. Without the skills Opus named them in none of the six summary and
-  payout runs; with them every answer named all of them, in the chat or in the checked file it saved.
-- **Own code slips.** Without the skills on store C the model wrote its own code, read the owner's
-  definitions file and applied it. In one run of three it labelled a total as after discounts when it
-  was before them, and August revenue came out about £1,000 high. The skills' scripts gave the same
-  figures in every run.
-- **Hand-added figures.** Where it had no shell (stores A and B, like a chat with the file attached)
-  Opus said in 9 of 18 answers that it had added the figures up by hand. Most of these say they checked
-  the totals another way; one suggests comparing them with Shopify's own report before sending.
-
-Per store, passed every grader with / without the skills: 9/9 and 9/9 (A), 9/9 and 9/9 (B), 9/9 and 8/9 (C);
-everything named 9/9 and 9/9 (A), 9/9 and 9/9 (B), 9/9 and 3/9 (C). The full tables are in
-[ZOO.md](ZOO.md).
 
 ## The answer zoo: it ran, and the answer is wrong
 
@@ -273,15 +204,6 @@ against: the owner's figures from Shopify or the bank, or nothing. Up to 0.10.1 
 at all gave zeros with no warning, only that line ("records on 0 of 30 days"); from 0.11.0 it is a warning,
 and so is a gap inside the month.
 
-## Three stores against independent truth
-
-Each store's generator computes `truth.json` from its own order records, not from the CSV the scripts
-read. Now: store A 26 of 26 figures, store B 33 of 33, store C 47 of 47; three more figures in the
-truth files (store B's lost and won dispute apart, store C's revenue after product refunds only) are
-not reported by the scripts on their own. The skills of earlier commits,
-measured against the same truth, show what the bench found: at `ad8b48e` store B got 9 of 21 and store
-C 18 of 41; at `b445df1` both ended the payout bridge short of the bank.
-
 ## Checking the checks
 
 A bench that only confirms its author proves little. After each model run every failure was read,
@@ -343,12 +265,13 @@ could get wrong, read every failure and every pass, and let what you find change
 
 | Path | What it holds |
 |---|---|
+| [`DEFINITIONS.md`](DEFINITIONS.md), [`TIEOUT.md`](TIEOUT.md), [`SHOPIFY.md`](SHOPIFY.md) | The three pages above, every figure read from the runs |
 | [`ZOO.md`](ZOO.md) | Every table, generated from the results, not edited by hand |
 | [`METHOD.md`](METHOD.md) | How each part works, what is published, what the bench is not |
 | [`results/`](results/) | The recorded results the pages count: store comparisons, the answer zoo, the skill zoo, the model runs with their grades. Not published: the runs of 0.9.0 and 0.10.1 on stores A to C, two repeat runs of the store C comparison with the same setup (30 sessions), and the earlier reviewer runs |
 | [`results/evals/answers/`](results/evals/answers/) | The final answer of every model run the tables count, with the skills and without, next to its grades |
 | [`live-tests/`](live-tests/) | The first live tests (Haiku, Sonnet, Opus): 16 answers, unedited, and the figures they were checked against; and the three answers from claude.ai chat (`live-tests/claude-ai/`) |
-| [`stores/`](stores/) | Eight datasets: stores A to E, the Stripe account F and the agency's report on it, the Amazon account G. Their exports, store C's definitions and every answer key (`truth.json`; the report's `key.json`): recount any figure from the files. Store C also has its August books, used by the [small business case](https://github.com/5eBeKs/small-business-audit), not by the comparisons here: QuickBooks Online's transaction list and profit and loss (`qbo_*.csv`), Shopify's list of the month's 21 payouts (`shopify_payouts_aug.csv`), and what a close of those books must find (`ledger_truth.json`) |
+| [`stores/`](stores/) | Nine datasets: stores A to E, the Stripe account F and the agency's report on it, the Amazon account G, the subscription business H (`stores/stripe_s/`). Their exports, store C's definitions and every answer key (`truth.json`; the report's `key.json`): recount any figure from the files. Store C also has its August books, used by the [small business case](https://github.com/5eBeKs/small-business-audit), not by the comparisons here: QuickBooks Online's transaction list and profit and loss (`qbo_*.csv`), Shopify's list of the month's 21 payouts (`shopify_payouts_aug.csv`), and what a close of those books must find (`ledger_truth.json`) |
 | [`examples/`](examples/) | A correct answer with its definitions in words, a plausible wrong one, and what the linter and the number check say |
 | [`gallery/`](gallery/) | The case in pictures and a PDF: the definitions on the Stripe and Amazon accounts, where the skills did not win (store E, the report), then stores A to D |
 

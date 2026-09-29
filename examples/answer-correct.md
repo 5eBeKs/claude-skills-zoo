@@ -46,4 +46,4 @@ How this was counted:
 - Subtotal in this export is before discounts (6 orders)
 - checked against nothing outside the export: give a figure from Shopify or the bank to check it
 - orders_export.csv: 103 rows, SHA-256 b3f1fd5c8f24954c
-- computed by shopify-month-end v0.11.3, scripts ab61cfedc85c
+- computed by shopify-month-end v0.11.7, scripts ab61cfedc85c

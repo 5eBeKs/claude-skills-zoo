@@ -1,14 +1,6 @@
-In my last reply I retyped and shortened parts of the report and left out 9 of the 12 open questions. Below is the exact checked text. It is also saved as `files/stripe-month-end_2026-09.md`.
-
-In September you sold $135,375.92 and Stripe kept $7,175.00 in fees. $118,440.79 went out to the bank, and $4,573.56 of that was still on its way on September 30. It arrived October 1. $5,049.91 was left in your Stripe balance, plus $6,702.10 held in reserve. There were no warnings, and every check passed.
-
-Twelve counting rules are still my reading and not yet confirmed by you; they're under "Open questions". The bookkeeper lines are near the end, just above the calculation's two sign-off lines.
-
----
+I ran the calculation you pinned earlier for this month-end on the October 4 exports, and it gave no warnings. All checks passed: every row was counted exactly once, each payout matches its balance rows, and the balance rolls forward correctly. There's one thing to confirm: 12 of the definitions are still my guesses, not your answers. They're listed under "Open questions" below. If any is wrong, tell me and I'll re-pin. A copy of this report is saved at `scratchpad/answer.md`.
 
 # Stripe month-end, 2026-09
-
-
 
 ## What we sold
 
@@ -190,4 +182,4 @@ Held in reserve at month end: $6,702.10
 
 Counted by the pinned calculation d8c663a3d3cd ('stripe-month-end', pin 1); the same code, definitions and answer as when the owner pinned it.
 
-Checked by pinned-calculation v0.11.1 · seal 5fe3454a7375
+Checked by pinned-calculation v0.11.6 · seal 5fe3454a7375

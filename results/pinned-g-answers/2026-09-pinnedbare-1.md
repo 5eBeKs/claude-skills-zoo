@@ -1,14 +1,10 @@
-I ran September through your saved Amazon month-end calculation (pin 1, set up in July), so the figures are counted the same way as July and August. No checks failed, and every line of the month was placed under one of your definitions.
+I ran the saved Amazon month-end calculation from July on your September files. Every check passed and it found no new kind of line.
 
-- **Warnings at the top:** these are harmless. They're about `settlement_26988006297.txt`, a short settlement from 31 Aug to 1 Sep with no orders in it, so its shipment, quantity and promotion columns are empty. I checked the file itself.
-- **Bank account changed:** from September, Amazon deposits go to account x8841 instead of x4417. If you didn't make that change, check it in Seller Central.
-- **Six of my readings still need your OK:** none of them changes a September figure. They're listed under "Open questions" in the full answer.
+One thing to confirm: from Sep 1, Amazon's deposits went to account **x8841**, where earlier ones went to **x4417**. The switch came after the August 19 payout of $21,849.95 failed; Amazon credited that money back and paid it in the Sep 1 deposit. Please make sure x8841 is your account.
 
-The full answer, with how each figure was counted and every check, is saved as `files/amazon-month-end_2026-09.md`. Here is the main part exactly as the calculation produced it:
+The full checked answer is below, word for word, and saved at `files/amazon-month-end_2026-09.md`.
 
-- settlement_26988006297.txt, column 'shipment-id': text, now empty on every row. The figures it feeds read as zero: check the export before using them.
-- settlement_26988006297.txt, column 'quantity-purchased': number, now empty on every row. The figures it feeds read as zero: check the export before using them.
-- settlement_26988006297.txt, column 'promotion-id': text, now empty on every row. The figures it feeds read as zero: check the export before using them.
+---
 
 # Amazon month-end, 2026-09 (US dollars)
 
@@ -83,11 +79,181 @@ How the money moved: Amazon held 73,136.91 for us at the start of the month, res
 
 Checks that failed: none
 
-*(How this was counted, open questions, what pin.py counted again, and the broken-copy tests: see `files/amazon-month-end_2026-09.md`.)*
+## How this was counted
+
+- A month is the Pacific calendar month (America/Los_Angeles) of each line's posted date and time; a deposit counts in the month the bank posted it; an order in the month of its purchase date, Pacific time.
+- Money is in US dollars from our side: money to us positive; fees, refunds and advertising negative.
+- Product sales: the product principal of the month's Order lines, without tax.
+- Refunds: principal, shipping, gift wrap and the promotion amounts that come back, on Refund, A-to-z Guarantee and Chargeback lines, without tax.
+- Net product sales: product sales plus shipping credits, gift wrap credits and promotional rebates, plus refunds, all without tax.
+- Amazon fees: referral fees (commission, commission returned on refunds, the refund administration fee), FBA fulfilment fees, storage fees (monthly and long-term/aged, in the month they post) and other fees (shipping and gift wrap chargebacks and their reversals, subscription, removal and disposal, inbound placement, coupon fees, Buy Shipping labels).
+- Advertising: the Sponsored Products (Cost of Advertising) invoices charged to the account, by posted date.
+- Reimbursements: every FBA Inventory Reimbursement line, customer-return reimbursements and reversals included.
+- Marketplace facilitator tax is collected and paid over by Amazon: shown apart, not our money, and it nets to zero.
+- Deposited to the bank: the deposits on the bank's list dated in the month; a failed deposit never reaches that list.
+- Owed by Amazon at month end: everything Amazon had posted to us by the end of the month that had not reached the bank (the open settlement, deferred lines that sit in a later settlement, closed settlements in transit or whose deposit failed, negative balances carried), less the reserve held.
+- Reserve held at month end: the Current Reserve Amount of the last settlement closed before the month end.
+- Reserve lines, Payable to Amazon, Failed disbursement and Transfer lines move money inside Amazon or to the bank: never sales, fees or refunds.
+- Claude's reading: the month's lines are read from the Date Range report (Amazon's own posted time, converted to Pacific time); the settlement files are used for the settlement each line belongs to, the reserve and the check that both agree line by line.
+- Claude's reading: Orders is the number of distinct Amazon order ids purchased in the month (Pacific time) in the All Orders report, cancelled orders left out; an order with some items cancelled still counts.
+- Claude's reading: a line posted in the month whose settlement opens after the month end is a deferred line: posted to us, owed, not yet in any settlement's payout.
+- Claude's reading: a failed deposit stays owed until Amazon credits it back (a Failed disbursement line) and from then on it is counted in the settlement that holds that line; a negative settlement is owed (negative) until the next settlement takes it over as Payable to Amazon.
+- Is the sales amount in the report gross (what the customer paid) or net (after the provider's fees)? Gross: what the customer paid, with fees as a separate line (your answer)
+- Which fees count as "provider fees"? All provider fees: processing, disputes, conversion, services, tax on fees (your answer)
+- How is tax charged on provider fees handled? Not applicable here: a US account: Amazon charges no tax on its fees in these reports
+- Does the provider give back its fee when a payment is refunded, and how is that shown? As recorded in the export: if a refund has a negative fee, that fee was given back (your answer)
+- Which period does a refund belong to: the period of the refund or the period of the original payment? The period when the refund was made (your answer)
+- How are disputes (chargebacks) shown? A dispute counts like a refund: it reduces sales in the period when the money is taken (your answer)
+- Where does the dispute fee go? Not applicable here: Amazon charges no separate dispute fee on A-to-z or chargeback lines; their refund administration fee is a referral fee by the owner's definition
+- How is the refund rate calculated? No refund rate is published (Claude's reading, not yet confirmed by you)
+- How are refunds counted that did not reach the customer and came back to the balance? Not applicable here: Amazon refunds buyers itself and the reports have no failed-refund lines; such a line would be a new kind, left out and named
+- Which date puts a transaction in a reporting period? The date the transaction was created (created) (your answer)
+- How are the period boundaries read? Start included, end not included, by exact time (Claude's reading, not yet confirmed by you)
+- In which timezone are dates read to place them in a period? The business's local time, converted from UTC (your answer)
+- What is a payout for the report? A transfer between the business's own accounts: not counted in sales or expenses (your answer)
+- What are payouts reconciled with? With the bank statement (your answer)
+- How are failed and cancelled payouts counted? A failed payout cancels the original one (your answer)
+- Which date puts a payout in a period: when the payout was created or when it arrived in the bank? The expected date it arrives in the bank (automatic_payout_effective_at) (your answer)
+- Which rows belong to a payout when it is reconciled? Rows with this payout's id in automatic_payout_id, except the row of the payout itself (Claude's reading, not yet confirmed by you)
+- Which currency is the report in, and what happens to balances in other currencies? One settlement currency; a row in any other currency stops the calculation (your answer)
+- Which amount counts as the payment amount: the one in the customer's currency or the one in the settlement currency? Not applicable here: amazon.com only: buyers pay in US dollars and Amazon settles in US dollars
+- Where does the currency conversion fee go? Not applicable here: no currency conversion on a US-only account
+- How is a pair of conversion rows between balances in different currencies read? Not applicable here: one balance, in US dollars
+- How are reserves and minimum balance holds shown? As delayed money: not counted in sales or expenses, shown in the payout reconciliation (your answer)
+- How are the provider's manual adjustments counted? Sort them by description: dispute, refund or other (Claude's reading, not yet confirmed by you)
+- What should be done with rows that have the same transaction id? Any repeated id stops the calculation (Claude's reading, not yet confirmed by you)
+- How are the signs of amounts read? As a change in the balance: plus means money came in, minus means money went out; net = gross − fee (your answer)
+- How is free text (transaction descriptions, metadata) handled before AI agents read it? Set it apart before the first agent; agents read only category codes (Claude's reading, not yet confirmed by you)
+
+Each trap and the check that covered it this time:
+- gross payment volume is not net of provider fees and the headline says which one it is: checked by 'every dollar of the month placed', passed
+- a payout is a transfer to the business's own bank account and is neither income nor expense: checked by 'every dollar of the month placed', passed
+- the fee column is positive and is subtracted, so net equals gross minus fee on every row: checked by 'each row's parts add up to its total', passed
+- a refund does not give back the fee of the payment it refunds unless the export records it: checked by 'each row's parts add up to its total', passed
+- a transaction belongs to the period of the date the spec names and not to the period of another date column: checked by 'date range report agrees with the settlements', passed
+- dates are read in the timezone the spec names before a transaction is put in a month: checked by 'date range report agrees with the settlements', passed
+- a dispute costs the disputed amount and a dispute fee, and a won dispute returns only the amount: not applicable here: Amazon charges no separate dispute fee in these reports
+- disputes are counted in refunds only when the spec says so: checked by 'every dollar of the month placed', passed
+- a refund that failed and came back to the balance is not a new sale: checked by 'no row left unplaced', passed
+- every payout equals the sum of the net of the transactions it paid out: checked by 'settlement lines add up to its total', passed
+- a failed or cancelled payout is netted against the payout it reverses: checked by 'failed disbursements matched', passed
+- amounts in different currencies are never added without a rate the spec names: checked by 'all amounts in US dollars', passed
+- the customer's currency amount and the settlement amount are different numbers: not applicable here: amazon.com only, US dollars throughout
+- a currency conversion fee is shown where the spec puts it and not hidden in the rate: not applicable here: no currency conversion on a US-only account
+- a reserve hold is money delayed and not money spent: checked by 'balance rolls forward', passed
+- every adjustment is placed in a line of the report or named as unplaced: checked by 'no row left unplaced', passed
+- one transaction id is one row after deduplication: checked by 'no row exported twice', passed
+- amounts are read with the decimal separator the export declares: checked by 'date range report agrees with the settlements', passed
+- amounts are in major currency units unless the export says cents: checked by 'each bank deposit equals its settlement', passed
+- transaction descriptions are quarantined before any agent reads the export: not applicable here: later months are counted by the pinned code alone, which matches descriptions as exact names
+- the export covers the whole period with no missing days: checked by 'reports cover the whole month', passed
+
+Open questions:
+- How is the refund rate calculated? Claude counted it this way: No refund rate is published Is that how you count?
+- How are the period boundaries read? Claude counted it this way: Start included, end not included, by exact time Is that how you count?
+- Which rows belong to a payout when it is reconciled? Claude counted it this way: Rows with this payout's id in automatic_payout_id, except the row of the payout itself Is that how you count?
+- How are the provider's manual adjustments counted? Claude counted it this way: Sort them by description: dispute, refund or other Is that how you count?
+- What should be done with rows that have the same transaction id? Claude counted it this way: Any repeated id stops the calculation Is that how you count?
+- How is free text (transaction descriptions, metadata) handled before AI agents read it? Claude counted it this way: Set it apart before the first agent; agents read only category codes Is that how you count?
+
+Counted again from the files by pin.py:
+- settlement_26821949902.txt: all 8,077 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26821949902.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26860307225.txt: all 7,729 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26860307225.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26900538638.txt: all 11,884 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26900538638.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26944784040.txt: all 8,303 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26944784040.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26985759971.txt: all 9,017 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26985759971.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_26988006297.txt: all 12 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_26988006297.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_27027934433.txt: all 8,851 rows are in exactly one of the calculation's 3 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_27027934433.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- settlement_27066464770.txt: all 10,120 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- settlement_27066464770.txt: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- 2026AugMonthlyTransaction.csv: all 3,882 rows are in exactly one of the calculation's 1 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- 2026AugMonthlyTransaction.csv: the groups' 'Regulatory Fee' add up to the file's own 'Regulatory Fee' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'Tax On Regulatory Fee' add up to the file's own 'Tax On Regulatory Fee' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'fba fees' add up to the file's own 'fba fees' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'gift wrap credits' add up to the file's own 'gift wrap credits' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'giftwrap credits tax' add up to the file's own 'giftwrap credits tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'marketplace withheld tax' add up to the file's own 'marketplace withheld tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'other' add up to the file's own 'other' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'other transaction fees' add up to the file's own 'other transaction fees' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'product sales' add up to the file's own 'product sales' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'product sales tax' add up to the file's own 'product sales tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'promotional rebates' add up to the file's own 'promotional rebates' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'promotional rebates tax' add up to the file's own 'promotional rebates tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'selling fees' add up to the file's own 'selling fees' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'shipping credits' add up to the file's own 'shipping credits' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'shipping credits tax' add up to the file's own 'shipping credits tax' total (added up again)
+- 2026AugMonthlyTransaction.csv: the groups' 'total' add up to the file's own 'total' total (added up again)
+- 2026JulMonthlyTransaction.csv: all 4,277 rows are in exactly one of the calculation's 1 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- 2026JulMonthlyTransaction.csv: the groups' 'Regulatory Fee' add up to the file's own 'Regulatory Fee' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'Tax On Regulatory Fee' add up to the file's own 'Tax On Regulatory Fee' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'fba fees' add up to the file's own 'fba fees' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'gift wrap credits' add up to the file's own 'gift wrap credits' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'giftwrap credits tax' add up to the file's own 'giftwrap credits tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'marketplace withheld tax' add up to the file's own 'marketplace withheld tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'other' add up to the file's own 'other' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'other transaction fees' add up to the file's own 'other transaction fees' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'product sales' add up to the file's own 'product sales' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'product sales tax' add up to the file's own 'product sales tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'promotional rebates' add up to the file's own 'promotional rebates' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'promotional rebates tax' add up to the file's own 'promotional rebates tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'selling fees' add up to the file's own 'selling fees' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'shipping credits' add up to the file's own 'shipping credits' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'shipping credits tax' add up to the file's own 'shipping credits tax' total (added up again)
+- 2026JulMonthlyTransaction.csv: the groups' 'total' add up to the file's own 'total' total (added up again)
+- 2026SepMonthlyTransaction.csv: all 4,073 rows are in exactly one of the calculation's 11 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- 2026SepMonthlyTransaction.csv: the groups' 'Regulatory Fee' add up to the file's own 'Regulatory Fee' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'Tax On Regulatory Fee' add up to the file's own 'Tax On Regulatory Fee' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'fba fees' add up to the file's own 'fba fees' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'gift wrap credits' add up to the file's own 'gift wrap credits' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'giftwrap credits tax' add up to the file's own 'giftwrap credits tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'marketplace withheld tax' add up to the file's own 'marketplace withheld tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'other' add up to the file's own 'other' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'other transaction fees' add up to the file's own 'other transaction fees' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'product sales' add up to the file's own 'product sales' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'product sales tax' add up to the file's own 'product sales tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'promotional rebates' add up to the file's own 'promotional rebates' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'promotional rebates tax' add up to the file's own 'promotional rebates tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'selling fees' add up to the file's own 'selling fees' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'shipping credits' add up to the file's own 'shipping credits' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'shipping credits tax' add up to the file's own 'shipping credits tax' total (added up again)
+- 2026SepMonthlyTransaction.csv: the groups' 'total' add up to the file's own 'total' total (added up again)
+- disbursements.csv: all 6 rows are in exactly one of the calculation's 2 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- disbursements.csv: the groups' 'amount' add up to the file's own 'amount' total (added up again)
+- all_orders_2026-07-01_2026-09-30.txt: all 10,740 rows are in exactly one of the calculation's 3 groups (pin.py counted the rows again from the file; it checks the groups, not each figure)
+- all_orders_2026-07-01_2026-09-30.txt: the groups' 'item-price' add up to the file's own 'item-price' total (added up again)
+
+What happened when copies of the files were broken on purpose:
+- rows exported twice (every 50th) in 2026JulMonthlyTransaction.csv: caught (warned: Control failed: no row exported twice: 86 row(s) appear twice, word for word)
+- amounts in cents (x100) in 2026JulMonthlyTransaction.csv: caught (warned: Control failed: date range report agrees with the settlements: 3790 posting(s) differ between the two)
+- amounts with a decimal comma in 2026JulMonthlyTransaction.csv: caught (the answer stops: calc.py stopped (exit 2):)
+- a kind of row the calculation never saw (every 50th row) in 2026JulMonthlyTransaction.csv: caught (warned: New in 2026JulMonthlyTransaction.csv, column 'type': 'zz_new_kind' on 86 row(s). The calculation was pinned without it; check how it counts before using these f)
+- amounts a cent off (every 50th row) in 2026JulMonthlyTransaction.csv: caught (warned: Control failed: each row's parts add up to its total: 86 row(s) do not: Jul 1, 2026 12:03:56 AM PDT Order 114-7380122-2935685, Jul 1, 2026 1:23:25 PM PDT Order )
+- rows exported twice (every 50th) in all_orders_2026-07-01_2026-09-30.txt: no effect (the figures stay the same)
+- the last three days of every month missing in all_orders_2026-07-01_2026-09-30.txt: caught (warned: Control failed: orders report covers the whole month: the All Orders report has no order on 2026-07-29, 2026-07-30: it may be cut short)
+- amounts in cents (x100) in all_orders_2026-07-01_2026-09-30.txt: no effect (the figures stay the same)
+- amounts with a decimal comma in all_orders_2026-07-01_2026-09-30.txt: caught (the answer stops: calc.py stopped (exit 2):)
+- times written eight hours later (another time zone) in all_orders_2026-07-01_2026-09-30.txt: caught (warned: Control failed: no order line posted before its purchase: 612 order line(s) posted before the order was placed: the times of one report are off)
+- a kind of row the calculation never saw (every 50th row) in all_orders_2026-07-01_2026-09-30.txt: caught (warned: New in all_orders_2026-07-01_2026-09-30.txt, column 'order-status': 'zz_new_kind' on 215 row(s). The calculation was pinned without it; check how it counts befo)
+- amounts a cent off (every 50th row) in all_orders_2026-07-01_2026-09-30.txt: no effect (the figures stay the same)
+- rows exported twice (every 50th) in disbursements.csv: caught (warned: Control failed: each bank deposit equals its settlement: settlement 26821949902 deposited 2 times)
+- amounts in cents (x100) in disbursements.csv: caught (warned: Control failed: each bank deposit equals its settlement: settlement 26821949902: deposit 2,287,957.00, settlement 22,879.57; settlement 26860307225: deposit 1,4)
+- amounts with a decimal comma in disbursements.csv: caught (the answer stops: calc.py stopped (exit 2):)
+- amounts a cent off (every 50th row) in disbursements.csv: caught (warned: Control failed: each bank deposit equals its settlement: settlement 26821949902: deposit 22,879.58, settlement 22,879.57)
+- rows exported twice (every 50th) in settlement_26900538638.txt: caught (the answer stops: calc.py stopped (exit 2):)
+- amounts in cents (x100) in settlement_26900538638.txt: caught (warned: Control failed: settlement lines add up to its total: 26900538638: lines 3,223,951.00, total 32,239.51)
+- amounts with a decimal comma in settlement_26900538638.txt: caught (the answer stops: calc.py stopped (exit 2):)
+- times written eight hours later (another time zone) in settlement_26900538638.txt: caught (warned: Control failed: reserve carried forward: a gap or overlap between settlement 26860307225 and 26900538638)
+- a kind of row the calculation never saw (every 50th row) in settlement_26900538638.txt: caught (the answer stops: calc.py stopped (exit 2):)
+- amounts a cent off (every 50th row) in settlement_26900538638.txt: caught (warned: Control failed: settlement lines add up to its total: 26900538638: lines 32,241.88, total 32,239.51)
 
 Counted by the pinned calculation ee1f712540ac ('amazon-month-end', pin 1); the same code, definitions and answer as when the owner pinned it.
-
-Checked by pinned-calculation v0.11.1 · seal 29b3bbb6451b
 
 For the bookkeeper (US dollars):
 
@@ -101,3 +267,5 @@ Deposited to the bank: 67,891.70 USD
 Owed by Amazon at month end: 55,376.53 USD
 Reserve held at month end: 4,502.62 USD
 Orders: 3,005
+
+Checked by pinned-calculation v0.11.6 · seal fb79d3792d6d
