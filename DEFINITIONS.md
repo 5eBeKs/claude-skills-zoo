@@ -67,6 +67,18 @@ An owner does not write eleven definitions into every month's question, so three
 
 So the step that matters is having the owner's definitions written down once: 3 or 4 lines of 11 become 10, whether they sit in a file or in a pin. What the pin adds over the file, measured here: fewer turns (6–9 against 11–15); a cost per month of $0.46 on average against $0.67, after the one-time $3.86 of pinning (at that difference, the pinning pays for itself against the file in about 18 months); the plugin's own check on every answer, which passed 6 of 6 on 0.11.6 (on 0.11.1, 4 of 6: the others had left out the open questions about Claude's readings); and, at pin time, the refusal to pin July on incomplete files.
 
+### Anthropic's Finance plugin on the same question
+
+Anthropic's free Finance plugin (version 1.3.0, about 1.8 million installs: month-end close, reconciliation, financial statements, variance analysis) was added in claude.ai, and the August question asked in Cowork with the same five exports, this plugin turned off; one run each, graded as above:
+
+| Runs with | Lines right | Missed |
+|---|---|---|
+| the Finance plugin installed, the question alone | 4 of 11 | Gross charges, Net volume, Sales tax collected, Stripe fees, Paid out to the bank, Stripe balance at month end, Held in reserve at month end |
+| Finance's /reconciliation, the question alone | 4 of 11 | Gross charges, Net volume, Sales tax collected, Stripe fees, Paid out to the bank, Stripe balance at month end, Held in reserve at month end |
+| Finance's /reconciliation, the question and the definitions file | 10 of 11 | Sales tax collected |
+
+Plain Opus without any plugin gave 4 of 11 in August with the question alone and 10 with the definitions file. The Finance plugin gave the same: asked plainly, no skill of it was used; called by its command, its reconciliation skill read the month in the account's local time and a payout by its arrival, as plain Opus does (its answer even gave the answer key's gross charges "on a UTC cut" and kept the other); with the owner's definitions attached it gave the owner's lines but sales tax, which every arm misses by cents. The plugin is written for a ledger (journal entries, a general ledger against a subledger, SOX testing), and on a Stripe month-end it neither helped nor hurt. What moved the figures was, again, the definitions written down. The answers are in `results/finance-f-answers/` (copied from the page as text).
+
 **Files:** `stores/stripe_f/` (the five exports, the answer key and the generator's notes); `results/pinned-f-runs.json` and `results/pinned-f-answers/` (every run's grades, turns, cost and final answer).
 
 

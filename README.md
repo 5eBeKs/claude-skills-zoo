@@ -2,7 +2,7 @@
 
 *Claude skills for the numbers a business asks every month, from Shopify, Stripe, Amazon or another export,
 and for checking the report someone else sends you. Tested on stores and accounts built apart from the skills;
-every answer the tables count is published with its grades. Version 1.5, September 2026.*
+every answer the tables count is published with its grades. Version 1.6, September 2026.*
 
 I set up Claude to answer a recurring numbers question the way the business counts: its definitions asked
 once and written down; the calculation pinned; every figure from a script and checked against its results,
@@ -27,6 +27,8 @@ Four pages, one for each piece of work:
   not enough: 5 or 6 of 12 with it, 7 of 12 with the pin in every run that answered, because only the pin
   rebuilt each subscription's status for the month's end (the export gives it for the day it was taken). No run
   reached MRR to the cent: the answer key knows when a seat change took effect, which no export records.
+  Anthropic's free Finance plugin, asked the same Stripe question in Cowork, gave what plain Opus gives: 4 of
+  11 lines with the question alone (called by its command or not), 10 of 11 with the definitions file.
 - **[Checking the report you already get](TIEOUT.md)** (an agency's report on the Stripe account, 7 mistakes
   planted by a separate session). The skill gives the same verdicts as plain Opus in every run: 16 of 22
   right, 6 of 7 mistakes caught, the same two arguable readings; neither caught two swapped digits. It is not
@@ -41,9 +43,14 @@ Four pages, one for each piece of work:
   synthetic books: what it found, and what an owner still cannot see.
 
 **Works where the owner is.** The Shopify skills run in claude.ai chat, uploaded as skills: tried there with
-Opus 5.5 on store A ([the three answers](live-tests/claude-ai/)); the pinned calculation not yet. Each
-answer ends with a seal line: `answer.py --verify` on the saved file shows it was not edited after the check,
-not that the figures are right. Team accounts: documented by Anthropic, not tried here.
+Opus 5.5 on store A ([the three answers](live-tests/claude-ai/)). In Cowork, with the whole plugin uploaded,
+the three fired on plain questions, ran their scripts in Cowork's sandbox and sealed their answers, the
+figures as the answer key ([the three answers](live-tests/cowork/)); with an older copy of the same skills
+also uploaded, one question loaded the older one. The pinned calculation and the tie-out have not been tried
+in either. Each answer ends with a seal line: `answer.py --verify` on the saved file shows it was not edited
+after the check, not that the figures are right. A checked answer also makes a report page in Claude Design
+that keeps its figures as given ([one page](live-tests/claude-design/)). Team accounts: documented by Anthropic,
+not tried here.
 
 ![The owner's definitions, written down once](gallery/01-definitions-written-once.png)
 
@@ -57,7 +64,7 @@ with the question you ask Claude and a sample export (test data is fine).
 
 | You have | You get | Evidence here |
 |---|---|---|
-| A task your team does with Claude every week or month: numbers from an export, a report, a reconciliation | Skills that ask your definitions once, in plain words, and print them under every answer; figures from scripts, checked against the scripts' results; every excluded record named. A plugin for Claude Code (tested here; the 27 runs of the version as installed had its tool server on, and never called it); the Shopify skills in claude.ai chat (tried; the pinned calculation and the tie-out not yet); for a whole team's account and in Cowork (documented by Anthropic, not tried yet) | [What the owner can see](SHOPIFY.md#what-the-owner-can-see) |
+| A task your team does with Claude every week or month: numbers from an export, a report, a reconciliation | Skills that ask your definitions once, in plain words, and print them under every answer; figures from scripts, checked against the scripts' results; every excluded record named. A plugin for Claude Code (tested here; the 27 runs of the version as installed had its tool server on, and never called it); the Shopify skills in claude.ai chat and in Cowork (tried; the pinned calculation and the tie-out not yet); for a whole team's account (documented by Anthropic, not tried yet) | [What the owner can see](SHOPIFY.md#what-the-owner-can-see) |
 | Skills you already have that sometimes do not fire, or fire on the wrong request | Your skills through the skill zoo: `claude plugin validate`, a linter for silent mistakes, and a routing eval on how your people actually ask | [The skill zoo](#the-skill-zoo-does-the-right-skill-run) |
 | Answers Claude writes from your data that nobody checks | Your answers with defects planted one at a time, and a record of which layer stops each: the number check, the coverage check, a reviewer model | [The answer zoo](#the-answer-zoo-it-ran-and-the-answer-is-wrong) |
 
@@ -99,7 +106,8 @@ Around them:
   the reader is warned. Up to 0.10.1 that warning went wrong in an interactive session; fixed in 0.11.0
   (see [The answer hook](#the-answer-hook)).
 - **A tool server** (MCP) with the same scripts, for a place that loads the plugin but has no terminal,
-  such as Cowork (not tried yet; the desktop app's Chat tab ignores plugin tool servers). The `claude -p`
+  such as Cowork (in Cowork the skills had a sandbox, ran their scripts and did not call it; the desktop app's
+  Chat tab ignores plugin tool servers). The `claude -p`
   runs here had it off, so the skills ran their scripts; the first comparison's runs on stores A and B
   allowed it, and which path they took was not recorded; the 27 runs of 0.11.0 as installed had it on, with a
   shell, and never called it. And **a linter** for the mistakes that make a

@@ -1,0 +1,182 @@
+{
+ "2026-08-bare-1": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139509.28",
+    "ok": false
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "136069.40",
+    "ok": false
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8402.50",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7302.22",
+    "ok": false
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "119805.62",
+    "ok": false
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "4442.14",
+    "ok": false
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1671.14",
+    "ok": false
+   }
+  },
+  "passed": false
+ },
+ "2026-08-reconciliation-1": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139509.28",
+    "ok": false
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "136069.40",
+    "ok": false
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8402.42",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7302.22",
+    "ok": false
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "119805.62",
+    "ok": false
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "4442.14",
+    "ok": false
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1671.14",
+    "ok": false
+   }
+  },
+  "passed": false
+ },
+ "2026-08-reconciliation-defsfile-1": {
+  "lines": {
+   "Gross charges": {
+    "want": "139409.16",
+    "got": "139409.16",
+    "ok": true
+   },
+   "Refunds": {
+    "want": "3204.12",
+    "got": "3204.12",
+    "ok": true
+   },
+   "Disputes withdrawn": {
+    "want": "289.21",
+    "got": "289.21",
+    "ok": true
+   },
+   "Disputes won back": {
+    "want": "53.45",
+    "got": "53.45",
+    "ok": true
+   },
+   "Net volume": {
+    "want": "135969.28",
+    "got": "135969.28",
+    "ok": true
+   },
+   "Sales tax collected": {
+    "want": "8405.00",
+    "got": "8404.78",
+    "ok": false
+   },
+   "Stripe fees": {
+    "want": "7297.25",
+    "got": "7297.25",
+    "ok": true
+   },
+   "Paid out to the bank": {
+    "want": "126339.05",
+    "got": "126339.05",
+    "ok": true
+   },
+   "Still in transit at month end": {
+    "want": "10085.69",
+    "got": "10085.69",
+    "ok": true
+   },
+   "Stripe balance at month end": {
+    "want": "3751.31",
+    "got": "3751.31",
+    "ok": true
+   },
+   "Held in reserve at month end": {
+    "want": "1473.01",
+    "got": "1473.01",
+    "ok": true
+   }
+  },
+  "passed": false
+ }
+}
