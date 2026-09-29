@@ -1,0 +1,313 @@
+{
+ "model": "claude-opus-5-5",
+ "whole_plugin": true,
+ "cases": [
+  {
+   "name": "numbers-payouts-e",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-e-answers/numbers-payouts-e-with-1.md",
+      "saved_reports": [
+       "store-e-answers/numbers-payouts-e-with-1-saved-reconciliation_2026-08.md"
+      ],
+      "passed": true,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "reserve": true,
+       "skill-fired": true
+      },
+      "own_check": "passed",
+      "turns": 10,
+      "costUsd": 0.46118699999999996
+     },
+     {
+      "answer": "store-e-answers/numbers-payouts-e-with-2.md",
+      "saved_reports": [
+       "store-e-answers/numbers-payouts-e-with-2-saved-chat.md",
+       "store-e-answers/numbers-payouts-e-with-2-saved-reconciliation_2026-08.md"
+      ],
+      "passed": true,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "reserve": true,
+       "skill-fired": true
+      },
+      "own_check": "passed",
+      "turns": 14,
+      "costUsd": 0.529702
+     },
+     {
+      "answer": "store-e-answers/numbers-payouts-e-with-3.md",
+      "saved_reports": [
+       "store-e-answers/numbers-payouts-e-with-3-saved-reconciliation_2026-08.md"
+      ],
+      "passed": true,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "reserve": true,
+       "skill-fired": true
+      },
+      "own_check": "passed",
+      "turns": 10,
+      "costUsd": 0.38930739999999997
+     }
+    ],
+    "without": [
+     {
+      "answer": "store-e-answers/numbers-payouts-e-without-1.md",
+      "saved_reports": [],
+      "passed": false,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "reserve": true,
+       "skill-fired": false
+      },
+      "own_check": null,
+      "turns": 8,
+      "costUsd": 0.484257
+     },
+     {
+      "answer": "store-e-answers/numbers-payouts-e-without-2.md",
+      "saved_reports": [],
+      "passed": false,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "reserve": true,
+       "skill-fired": false
+      },
+      "own_check": null,
+      "turns": 8,
+      "costUsd": 0.484816
+     },
+     {
+      "answer": "store-e-answers/numbers-payouts-e-without-3.md",
+      "saved_reports": [],
+      "passed": false,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "reserve": true,
+       "skill-fired": false
+      },
+      "own_check": null,
+      "turns": 12,
+      "costUsd": 0.5819852000000001
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-summary-e",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-e-answers/numbers-summary-e-with-1.md",
+      "saved_reports": [
+       "store-e-answers/numbers-summary-e-with-1-saved-summary_2026-09.md"
+      ],
+      "passed": false,
+      "graders": {
+       "gift-cards-sold": false,
+       "net-sales": false,
+       "skill-fired": true,
+       "test-orders": true,
+       "total-sales": false
+      },
+      "own_check": "passed",
+      "turns": 10,
+      "costUsd": 0.3884454
+     },
+     {
+      "answer": "store-e-answers/numbers-summary-e-with-2.md",
+      "saved_reports": [
+       "store-e-answers/numbers-summary-e-with-2-saved-summary.md",
+       "store-e-answers/numbers-summary-e-with-2-saved-summary_2026-09.md"
+      ],
+      "passed": false,
+      "graders": {
+       "gift-cards-sold": false,
+       "net-sales": false,
+       "skill-fired": true,
+       "test-orders": true,
+       "total-sales": false
+      },
+      "own_check": "flagged",
+      "turns": 12,
+      "costUsd": 0.510158
+     },
+     {
+      "answer": "store-e-answers/numbers-summary-e-with-3.md",
+      "saved_reports": [
+       "store-e-answers/numbers-summary-e-with-3-saved-summary_2026-09.md"
+      ],
+      "passed": false,
+      "graders": {
+       "gift-cards-sold": false,
+       "net-sales": false,
+       "skill-fired": true,
+       "test-orders": true,
+       "total-sales": false
+      },
+      "own_check": "passed",
+      "turns": 10,
+      "costUsd": 0.437469
+     }
+    ],
+    "without": [
+     {
+      "answer": "store-e-answers/numbers-summary-e-without-1.md",
+      "saved_reports": [
+       "store-e-answers/numbers-summary-e-without-1-saved-september_2026_sales.md"
+      ],
+      "passed": false,
+      "graders": {
+       "gift-cards-sold": true,
+       "net-sales": false,
+       "skill-fired": false,
+       "test-orders": false,
+       "total-sales": false
+      },
+      "own_check": null,
+      "turns": 19,
+      "costUsd": 0.9931942
+     },
+     {
+      "answer": "store-e-answers/numbers-summary-e-without-2.md",
+      "saved_reports": [],
+      "passed": false,
+      "graders": {
+       "gift-cards-sold": true,
+       "net-sales": false,
+       "skill-fired": false,
+       "test-orders": false,
+       "total-sales": false
+      },
+      "own_check": null,
+      "turns": 14,
+      "costUsd": 0.867519
+     },
+     {
+      "answer": "store-e-answers/numbers-summary-e-without-3.md",
+      "saved_reports": [],
+      "passed": false,
+      "graders": {
+       "gift-cards-sold": true,
+       "net-sales": false,
+       "skill-fired": false,
+       "test-orders": false,
+       "total-sales": false
+      },
+      "own_check": null,
+      "turns": 18,
+      "costUsd": 1.0233588000000002
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-margins-e",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-e-answers/numbers-margins-e-with-1.md",
+      "saved_reports": [
+       "store-e-answers/numbers-margins-e-with-1-saved-margins_2026-07.md"
+      ],
+      "passed": true,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "own_check": "passed",
+      "turns": 12,
+      "costUsd": 0.5818374
+     },
+     {
+      "answer": "store-e-answers/numbers-margins-e-with-2.md",
+      "saved_reports": [
+       "store-e-answers/numbers-margins-e-with-2-saved-margins_2026-07.md"
+      ],
+      "passed": true,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "own_check": "passed",
+      "turns": 13,
+      "costUsd": 0.5304184000000001
+     },
+     {
+      "answer": "store-e-answers/numbers-margins-e-with-3.md",
+      "saved_reports": [
+       "store-e-answers/numbers-margins-e-with-3-saved-margins_2026-07.md"
+      ],
+      "passed": true,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "own_check": "flagged",
+      "turns": 15,
+      "costUsd": 0.6672486
+     }
+    ],
+    "without": [
+     {
+      "answer": "store-e-answers/numbers-margins-e-without-1.md",
+      "saved_reports": [],
+      "passed": false,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": false,
+       "skill-fired": false
+      },
+      "own_check": null,
+      "turns": 13,
+      "costUsd": 0.7424732
+     },
+     {
+      "answer": "store-e-answers/numbers-margins-e-without-2.md",
+      "saved_reports": [],
+      "passed": true,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": false
+      },
+      "own_check": null,
+      "turns": 14,
+      "costUsd": 0.8854961999999997
+     },
+     {
+      "answer": "store-e-answers/numbers-margins-e-without-3.md",
+      "saved_reports": [],
+      "passed": false,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": false,
+       "skill-fired": false
+      },
+      "own_check": null,
+      "turns": 13,
+      "costUsd": 0.8114709999999999
+     }
+    ]
+   }
+  }
+ ]
+}

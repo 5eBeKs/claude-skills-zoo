@@ -1,0 +1,367 @@
+{
+ "model": "claude-opus-5-5",
+ "whole_plugin": true,
+ "cases": [
+  {
+   "name": "numbers-payouts-d",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-d-answers/numbers-payouts-d-with-1.md",
+      "saved": [
+       "store-d-answers/numbers-payouts-d-with-1.saved-reconciliation_2026-06.md"
+      ],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-payouts-d-with-2.md",
+      "saved": [
+       "store-d-answers/numbers-payouts-d-with-2.saved-reconciliation_2026-06.md"
+      ],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-payouts-d-with-3.md",
+      "saved": [
+       "store-d-answers/numbers-payouts-d-with-3.saved-reconciliation_2026-06.md"
+      ],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true
+      },
+      "own_check": "passed"
+     }
+    ],
+    "without": [
+     {
+      "answer": "store-d-answers/numbers-payouts-d-without-1.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "may-transactions": false,
+       "skill-fired": false
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "may-transactions": false
+      },
+      "own_check": null
+     },
+     {
+      "answer": "store-d-answers/numbers-payouts-d-without-2.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "may-transactions": false,
+       "skill-fired": false
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "may-transactions": false
+      },
+      "own_check": null
+     },
+     {
+      "answer": "store-d-answers/numbers-payouts-d-without-3.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "may-transactions": true,
+       "skill-fired": false
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": false,
+       "may-transactions": true
+      },
+      "own_check": null
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-summary-d",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-d-answers/numbers-summary-d-with-1.md",
+      "saved": [
+       "store-d-answers/numbers-summary-d-with-1.saved-summary_2026-08.md"
+      ],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": true,
+       "test-orders": true,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-summary-d-with-2.md",
+      "saved": [
+       "store-d-answers/numbers-summary-d-with-2.saved-summary_2026-08.md"
+      ],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": true,
+       "test-orders": true,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-summary-d-with-3.md",
+      "saved": [
+       "store-d-answers/numbers-summary-d-with-3.saved-summary_2026-08.md"
+      ],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": true,
+       "test-orders": true,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "own_check": "passed"
+     }
+    ],
+    "without": [
+     {
+      "answer": "store-d-answers/numbers-summary-d-without-1.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": false,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": false
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": false
+      },
+      "own_check": null
+     },
+     {
+      "answer": "store-d-answers/numbers-summary-d-without-2.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": false,
+       "test-orders": false,
+       "tips": false,
+       "unflagged-test-order": false
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": false,
+       "unflagged-test-order": false
+      },
+      "own_check": null
+     },
+     {
+      "answer": "store-d-answers/numbers-summary-d-without-3.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": false,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "own_check": null
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-margins-d",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-1.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-1.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": false
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-2.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-2.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-3.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "no-cost-named": false,
+       "renamed-skus": false,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": false,
+       "renamed-skus": false
+      },
+      "own_check": "passed"
+     }
+    ],
+    "without": [
+     {
+      "answer": "store-d-answers/numbers-margins-d-without-1.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": false,
+       "skill-fired": false
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": false
+      },
+      "own_check": null
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-without-2.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "no-cost-named": false,
+       "renamed-skus": false,
+       "skill-fired": false
+      },
+      "strict": {
+       "no-cost-named": false,
+       "renamed-skus": false
+      },
+      "own_check": null
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-without-3.md",
+      "saved": [],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": false
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": false
+      },
+      "own_check": null
+     }
+    ]
+   }
+  }
+ ]
+}

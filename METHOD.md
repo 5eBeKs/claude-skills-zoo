@@ -11,8 +11,9 @@ which nothing stops.
 What it found changes the question. The strongest model rarely gets the arithmetic wrong any more;
 it gets the context wrong, or leaves it unsaid: which orders count, what "sales" includes, which
 month a refund or a payout belongs to. So the bench also reads every answer for what the owner can
-see: whether its figures rest on the store's definitions, whether every order left out, disputed or
-not yet paid out is named, and whether the answer says its own figures are approximate.
+see: whether it gives the figure the skill gives on its stated definitions, whether every order left
+out, disputed or not yet paid out is named, and whether the answer says it added the figures up by hand
+or could not run code.
 
 ## Four parts
 
@@ -21,7 +22,7 @@ not yet paid out is named, and whether the answer says its own figures are appro
 | **Stores** | Three synthetic stores with real-export traps; store C at a real store's size | the skills' scripts against each generator's own truth | none |
 | **Skill zoo** | 11 defects in a skill's frontmatter or files, one per plugin copy | `claude plugin validate --strict`, the linter, the routing eval | 6 questions × 3 runs per defect |
 | **Answer zoo** | 24 defects in 7 classes in correct answers | the number check, the coverage check, a reviewer model | 3 runs per defect and per clean answer, per reviewer |
-| **Models** | the owner's questions on the three stores | Opus 5.5 with the plugin and without it: right figures, and what the owner can see | 3 runs per arm per case |
+| **Models** | the owner's questions on the three stores | Opus 5.5 with the plugin and without it: the graders (figures on the summary and payout questions, products named on margins), and what the owner can see | 3 runs per arm per case |
 
 ### Stores
 
@@ -36,8 +37,8 @@ rows and 4,133 payout lines, and the question is one month. Its owner has answer
 (`store_definitions.json`, next to the exports, written so a person can read it): a sale counts once
 it is shipped, revenue is reported without VAT and without shipping. So August's 70 pre-orders,
 paid and charged, are not August sales. It also has test orders both ways, orders cancelled after
-payment, refunds of July orders paid out in August, disputes lost, won and still open, and
-gift cards.
+payment, refunds of July orders paid out in August, disputes lost, won and still open (no dispute is
+won in August, so the August questions do not test a won one), and gift cards.
 The bench can run the same comparison on the scripts of any earlier commit; `results/stores-at-ad8b48e.json` is its first run, before the fixes it led to.
 
 ### Skill zoo
@@ -66,6 +67,10 @@ The reviewer must answer `VERDICT: PASS` or `VERDICT: FAIL` and list problems. *
 named the defect (a pattern per defect); **F**: FAIL for something else; **M**: PASS; **E**: the run
 failed. A reviewer catches a defect when most of its three runs are B. The three untouched answers
 are the clean control, also three runs each: a FAIL there is an objection to an untouched answer, read like any other.
+ZOO.md counts the final reviewer run. Earlier runs, on reference answers since corrected, are not
+counted: in the first (one run per answer) Opus 5.5 and Fable 5.1 failed all three untouched answers and
+Sonnet 5 passed one defect; in the second Sonnet passed that defect in 2 of 3 runs and failed 3 of 6
+untouched payout and margin runs.
 
 ### Models
 
@@ -76,10 +81,13 @@ Without the plugin the model can read the files but has no shell: on Windows plu
 have none, which is what a chat with the file attached gives. Store C is too big to add up by
 reading, and the fair comparison there is the plugin's scripts against code the model writes
 itself, so its cases run in plain `claude -p` sessions with a shell, in a fresh folder holding the
-files, with no MCP servers (none of the user's connectors), no web, publishing, notification or
+files, with no MCP servers (none of the user's connectors, and `--strict-mcp-config` keeps the
+plugin's own server off too, so the skills run their scripts), no web, publishing, notification or
 scheduling tools, and no user settings; with the plugin, it is loaded from a fresh copy. Those
-sessions run code on the machine without a sandbox. A run passes when every
-grader passes: the right headline figure, the traps named, nothing misleading printed. Where only
+sessions run code on the machine without a sandbox. A run passes when every grader passes. On the
+summary and payout questions that is the headline figures and the traps named; on the margins
+questions it is the products that must be named (the one below cost, the one with no known cost),
+and no margin figure is graded. Where only
 one form of the right answer exists (an order number, a total), the grader is a pattern. Where a
 right answer can take several forms (a margin per unit or for the month, a bridge that starts from
 card sales or from every order), the grader is a model judge given the correct figures, and a test
@@ -88,7 +96,11 @@ patterns only: the figure on the bank statement, the money in transit (net or gr
 (all, or only those paid out in the month), the disputes and the orders that never reach payouts. A
 judge given the correct bridge failed right answers there, so it was dropped. The price: a pattern does
 not see a misleading sentence around a right figure (in the live tests, Sonnet without the skill
-called the PayPal order a permanent gap). That is graded only in the live tests, by reading.
+called the PayPal order a permanent gap). That is graded only in the live tests, by reading. Not
+every planted trap has a grader: VAT inside store A's prices, store B's sales tax and payout
+adjustment, and on store C the refunds of July orders, the gift cards and PayPal orders and the cost
+sheet's spellings are graded by nothing. The test on the graders' figures checks that each figure
+appears in the scripts' results or the CSVs, not that it is the right one for its grader.
 
 ### The data zoo
 
@@ -109,13 +121,17 @@ no result, unknown order numbers or another currency, or items the owner should 
 does not name (unless it points to a saved answer that passes the whole check), send Claude back once
 with the list. If the second answer fails too, the turn ends with a warning to the reader and a record
 of the failed answer next to the exports. Other sessions are left alone. `results/hook-check.md` has
-three live sessions with hook events recorded. Every answer also ends with the fingerprints of what it
-was computed from and by (each file's rows and SHA-256, the plugin's version).
+three live sessions with hook events recorded, and what the bench's own runs with the hook show. Up to
+0.10.1 the second warning went wrong in a session that keeps a transcript, as an interactive one does
+(the hook took its own feedback for the start of a new turn); the bench's sessions keep none. Fixed in
+0.11.0: a turn starts at the person's own message. Every answer also ends with the fingerprints of what it was computed from
+and by (each file's rows and SHA-256, the plugin's version).
 
 ## Checking the checks
 
 A bench that only confirms its author is worth little, so after each model run every failure was
-read, and so were the answers the plugin got right. What that turned up:
+read, and so were the answers the plugin got right, except at 0.10.1, where the checks a reader judges
+were not read. What that turned up:
 
 - **Graders that failed right answers.** On the first run, four patterns failed answers written
   without the plugin that were right: a margin given per unit instead of for the month, a payout
@@ -131,11 +147,13 @@ read, and so were the answers the plugin got right. What that turned up:
   the skill's "paid out this month" would not match the owner's bank. Independent arithmetic is not independent
   definitions. The bridge now ends at the bank; `results/stores-at-b445df1.json` is the skills the
   first model runs used, measured against the corrected truth.
-- **Reviewers that were right about the references.** Opus as a reviewer failed the untouched
-  summary: "left after refunds" read as money kept, and VAT, shipping and the month basis were
+- **Reviewers that were right about the references.** On the first run Opus as a reviewer failed all
+  three untouched answers; on the summary: "left after refunds" read as money kept, and VAT, shipping and the month basis were
   missing. Later Sonnet failed the untouched payout and margin answers: the figures rest on answers
   the owner has not confirmed, and the question at the end reads as cut off from them. Both were
-  right; the references and the skills' instructions changed before the final run.
+  right; the references and the skills' instructions changed before the final run. On the final run
+  Opus objected again, in 3 of 9 runs, to what the untouched answers leave unsaid or put loosely; those
+  answers were not changed after it.
 - **A defect nothing static saw.** `disable-model-invocation: true` passes `claude plugin
   validate` and passed the linter, and the summary skill stopped firing (0 of 6: its question
   asked plainly and indirectly, three runs each). The linter now warns on it (W06).
@@ -158,20 +176,28 @@ read, and so were the answers the plugin got right. What that turned up:
 ## What is published
 
 The skills, the checks and the bench are private: they are the working tool. The case publishes
-everything they measured:
+what its pages count:
 
 - `ZOO.md`, generated from the results, not edited by hand;
-- `results/`: every result as recorded, including the `claude plugin eval` and `claude -p` runs
-  (local paths removed, run times cut to the month), and `hook-check.md`;
+- `results/`: the results the pages count, as recorded, including the `claude plugin eval` and
+  `claude -p` runs (local paths removed, run times cut to the month), and `hook-check.md`;
 - `live-tests/`: every model answer, unedited, and the figures they were checked against;
-- `results/evals/answers/`: the final answer of every numbers and reviewer run, with and without
-  the plugin, next to its grades, with the saved answer it points to when it saved one. The answers
-  are as the model wrote them, with one change: where a model mentioned the day of the run, it reads
-  `[run date]`;
-- `stores/`: the three stores' exports, store C's definitions and every `truth.json`, so anyone can
-  recount the truth from the CSVs;
-- `gallery/`: the case in pictures and a two-page PDF, every figure read from the results;
+- `results/evals/answers/`: the final answer of every numbers and reviewer run the pages count, with
+  and without the plugin, next to its grades, with the saved answer it points to when it saved one.
+  The answers are as the model wrote them, with one change: where a model mentioned the day of the
+  run, it reads `[run date]`;
+- `stores/`: eight datasets: stores A to E, the Stripe account (F) and the agency's report on it, and the
+  Amazon seller account (G); their exports, store C's definitions and every answer key (`truth.json`, and
+  the report's `key.json`), so anyone can
+  recount the truth from the CSVs; for store C also its August books (QuickBooks Online's transaction
+  list and profit and loss, Shopify's payout list, and `ledger_truth.json`, what a close of those books
+  must find), used by the small business case;
+- `gallery/`: the case in pictures and a four-page PDF, every figure read from the results: the
+  Stripe and Amazon accounts, where the skills did not beat plain Opus, then stores A to D;
 - `examples/`: what the linter and the number check print on the examples.
+
+Not published: the runs of 0.9.0 and 0.10.1 on stores A to C, two repeat runs of the store C
+comparison with the same setup, and the earlier reviewer runs.
 
 Model runs used Claude Code on the author's machine; `claude plugin eval` reports a list-price
 estimate next to each run, not a charge. On Windows,

@@ -1,5 +1,7 @@
 # August 2026 sales
 
+
+
 In August 2026 the store charged €2,918.82 and had €2,848.32 left after refunds. Both figures still include VAT (€466.00) and the shipping customers paid (€151.90); neither is profit, and card fees are not taken off.
 
 | Figure | Value |
@@ -26,7 +28,7 @@ These figures use the usual answers to the questions below until you confirm the
 - Does a sale count when it is paid, or only once it is shipped?
 - Should revenue be reported with VAT, as the customer paid, or without VAT?
 - Is the shipping fee customers pay part of revenue, or kept out of it?
-- A partial refund: subtract only the amount (usual), or treat the whole order as refunded?
+- A partially refunded order: is it still a sale (usual), or a refunded order? Either way only the amount refunded comes off.
 - A refund belongs to the month of the order (this export can only do that), or the month of the refund?
 - The export's shape is not recorded yet: are the payment methods, statuses, tags and currencies listed under "How this was counted" all as expected? If so, they are kept as store_shape.json, and a new one next month is flagged.
 
@@ -41,6 +43,7 @@ How this was counted:
 - a refund belongs to the month of its order (the usual answer; please confirm)
 - the orders export has records on 25 of 31 days of August 2026
 - the orders export's shape is not recorded yet (financial status: paid, partially_refunded, refunded, voided; fulfillment status: fulfilled, unfulfilled; currency: EUR; payment method: PayPal Express Checkout, Shopify Payments; tags: test)
+- Subtotal in this export is before discounts (6 orders)
 - checked against nothing outside the export: give a figure from Shopify or the bank to check it
 - orders_export.csv: 103 rows, SHA-256 b3f1fd5c8f24954c
-- computed by shopify-month-end v0.6.1, scripts f5c57f31c2db
+- computed by shopify-month-end v0.11.3, scripts ab61cfedc85c

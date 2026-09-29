@@ -82,7 +82,21 @@
 
 > Stop says: Month-end check: the answer above did not pass the check against the computed results (85 items the results list for the owner are not named, for example: orders_excluded: #32854; orders_excluded: #32872; orders_excluded: #32917; orders_excluded: #32993; orders_excluded: #33065; orders_excluded: #33276). Ask for the checked answer before using these figures.
 
-*The failed answer and why were also kept next to the exports, in .monthend/unchecked-answer-<time>.json.*
+*The failed answer and why were also kept next to the exports, in .monthend/unchecked-answer-<time>.json (version 0.4.0; from 0.6.0 in .monthend/unchecked/).*
 
-In six more sessions with the hook (store C, the summary and the payouts questions, three each, the owner's usual message) the first answer already passed: each showed the checked text or pointed to the checked file it saved, and the hook let it stand. All six graded right.
+## The bench's own runs with the hook
+
+The nine questions on stores A to C, three runs each, in `claude -p` sessions with the plugin's skills, checks and answer hook (Opus 5.5, the owner's usual message), counted from each run's trace. The sessions kept no transcript (`--no-session-persistence`), and no MCP server started in any of them (the bench passes `--strict-mcp-config`, which also keeps the plugin's own server off).
+
+| version | sessions | the hook ran | first answer sent back | sent back twice | last answer passed |
+|---|---|---|---|---|---|
+| 0.5.1 | 27 | 27 | 5 | 0 | 27 |
+| 0.5.2 | 27 | 27 | 4 | 0 | 27 |
+| 0.6.0 | 27 | 27 | 7 | 0 | 27 |
+
+Each first answer the hook sent back is read in ZOO.md.
+
+## What these sessions do not show
+
+Session 3 ran on version 0.4.0. From 0.6.0 the hook checks only the turn in which the scripts ran, and it takes the last text the transcript records from the user as the start of that turn. Claude Code records the hook's own feedback ("Stop hook feedback: ...") that way. So up to 0.10.1, in a session that keeps a transcript, as an interactive one does, a second failed answer gets the warning that no month-end script ran in this turn instead of the one above, and the failed answer is not kept. Other text Claude Code records from the user, such as a compaction summary, moves the start of the turn too, and the next answer is then not checked against the results. The bench's runs above kept no transcript, so they never met this. Fixed in 0.11.0: a turn starts at the person's own message.
 

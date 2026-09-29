@@ -1,0 +1,156 @@
+[
+  {
+    "quote": "Sales were up on July at about $139k",
+    "value": "about $139k",
+    "verdict": "right",
+    "kind": null,
+    "truth": "$139,409.16 = months.2026-08.volume.gross_charges, which rounds to $139k."
+  },
+  {
+    "quote": "We spent 6.5 hours on your books this month",
+    "value": "6.5 hours",
+    "verdict": "not checkable",
+    "kind": null,
+    "truth": "Agency time record. Not in the Stripe exports or truth.json."
+  },
+  {
+    "quote": "| Gross sales | $139,409.16 |",
+    "value": "$139,409.16",
+    "verdict": "right",
+    "kind": null,
+    "truth": "$139,409.16 = months.2026-08.volume.gross_charges."
+  },
+  {
+    "quote": "| Refunds | $3,204.12 |",
+    "value": "$3,204.12",
+    "verdict": "right",
+    "kind": null,
+    "truth": "$3,204.12 = months.2026-08.volume.refunds."
+  },
+  {
+    "quote": "| Disputes (amounts withdrawn) | $265.14 |",
+    "value": "$265.14",
+    "verdict": "wrong",
+    "kind": "1: figure from the wrong month",
+    "truth": "$289.21 = months.2026-08.volume.disputes_lost. The report's $265.14 is July's figure, months.2026-07.volume.disputes_lost."
+  },
+  {
+    "quote": "| Disputes won back | $53.45 |",
+    "value": "$53.45",
+    "verdict": "right",
+    "kind": null,
+    "truth": "$53.45 = months.2026-08.volume.disputes_won_back."
+  },
+  {
+    "quote": "| Net sales after refunds and disputes | $135,969.28 |",
+    "value": "$135,969.28",
+    "verdict": "right",
+    "kind": null,
+    "truth": "$135,969.28 = months.2026-08.volume.net_volume (gross_charges - refunds - disputes_lost + disputes_won_back)."
+  },
+  {
+    "quote": "| Total Stripe fees (processing, dispute and Billing/Tax usage fees) | $6,527.25 |",
+    "value": "$6,527.25",
+    "verdict": "wrong",
+    "kind": "4: total that leaves out one of its parts",
+    "truth": "$7,297.25 = months.2026-08.fees.total (processing $6,407.25 + dispute_fees_net $120.00 + other $770.00). The report's $6,527.25 is processing + dispute fees only; it leaves out the Billing/Tax usage fees (fees.other, $770.00) although the label names them."
+  },
+  {
+    "quote": "Refunds came to 2.36% of gross sales",
+    "value": "2.36%",
+    "verdict": "wrong",
+    "kind": "6: percentage on the wrong base",
+    "truth": "2.30% = months.2026-08.volume.refunds $3,204.12 / volume.gross_charges $139,409.16. The report's 2.36% divides refunds by volume.net_volume $135,969.28 but is labelled as a share of gross sales."
+  },
+  {
+    "quote": "Processing fees alone were 4.6% of gross sales",
+    "value": "4.6%",
+    "verdict": "right",
+    "kind": null,
+    "truth": "4.60% = months.2026-08.fees.processing $6,407.25 / volume.gross_charges $139,409.16."
+  },
+  {
+    "quote": "Payments in euros came to $17,641.65 net of Stripe's processing fees",
+    "value": "$17,641.65",
+    "verdict": "wrong",
+    "kind": "2: gross given where the label says net",
+    "truth": "$16,524.01 = months.2026-08.volume.by_currency.eur.gross_usd $17,641.65 - by_currency.eur.fees_usd $1,117.64. The report's $17,641.65 is the gross in USD, before fees."
+  },
+  {
+    "quote": "Stripe paid out $130,027.10 to your bank in August",
+    "value": "$130,027.10",
+    "verdict": "wrong",
+    "kind": "5: payout total that counts the failed payout as paid",
+    "truth": "$126,339.05 = months.2026-08.payouts.paid_total (18 payouts, including the one in transit at month end). The report's $130,027.10 also counts the failed payout po_1y0KCu9fHvRz2kWb2JadhltI ($3,688.05, months.2026-08.payouts.failed), whose money came back as a payout_reversal and left again in a later payout."
+  },
+  {
+    "quote": "of which about $10.1k was still in transit at month end",
+    "value": "about $10.1k",
+    "verdict": "right",
+    "kind": null,
+    "truth": "$10,085.69 = months.2026-08.balance.in_transit_at_month_end (po_1y6qln9fHvRz2kWb1nwUqJzF, arrival 2026-09-01), which rounds to $10.1k."
+  },
+  {
+    "quote": "The payout of $3,688.05 in mid-August was returned",
+    "value": "$3,688.05",
+    "verdict": "right",
+    "kind": null,
+    "truth": "$3,688.05 = months.2026-08.payouts.failed[0].amount (po_1y0KCu9fHvRz2kWb2JadhltI)."
+  },
+  {
+    "quote": "The Stripe balance at month end was $5,224.32",
+    "value": "$5,224.32",
+    "verdict": "wrong",
+    "kind": "7: right on a different, unstated definition",
+    "truth": "$3,751.31 = months.2026-08.balance.closing (available + pending, reserved funds excluded, per meta.definitions.balance). The report's $5,224.32 adds the rolling reserve, balance.reserve_held_closing $1,473.01."
+  },
+  {
+    "quote": "At month end 14 cases were still open",
+    "value": "14",
+    "verdict": "right",
+    "kind": null,
+    "truth": "14 = number of entries in months.2026-08.lists.disputes_open_at_month_end (13 chargebacks and 1 inquiry)."
+  },
+  {
+    "quote": "two of them need a response from you",
+    "value": "two",
+    "verdict": "right",
+    "kind": null,
+    "truth": "2 = entries of months.2026-08.lists.disputes_open_at_month_end with status_at_month_end needs_response (du_1y6s4E9fHvRz2kWb0UnxgMv1, du_1y64wi9fHvRz2kWb1Y5nOQ3u)."
+  },
+  {
+    "quote": "Gridloft Pro MRR closed August at $48,759.34",
+    "value": "$48,759.34",
+    "verdict": "wrong",
+    "kind": "3: two digits transposed",
+    "truth": "$48,795.34 = months.2026-08.subscriptions.mrr_closing. The report swaps the 9 and the 5."
+  },
+  {
+    "quote": "up 4.9% on July",
+    "value": "4.9%",
+    "verdict": "right",
+    "kind": null,
+    "truth": "4.85% = months.2026-08.subscriptions.mrr_closing $48,795.34 / months.2026-07.subscriptions.mrr_closing $46,536.72 - 1, which rounds to 4.9%."
+  },
+  {
+    "quote": "During the month 2,221 renewals were paid",
+    "value": "2,221",
+    "verdict": "right",
+    "kind": null,
+    "truth": "2,221 = months.2026-08.subscriptions.renewals_paid."
+  },
+  {
+    "quote": "58 renewal invoices were still unpaid at month end",
+    "value": "58",
+    "verdict": "right",
+    "kind": null,
+    "truth": "58 = months.2026-08.subscriptions.renewals_failed."
+  },
+  {
+    "quote": "We booked your August Google Ads invoice, $4,180.00, to Advertising",
+    "value": "$4,180.00",
+    "verdict": "not checkable",
+    "kind": null,
+    "truth": "Google Ads spend, from the client's Google Ads invoice. Not in the Stripe exports or truth.json."
+  }
+]

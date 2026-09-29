@@ -1,0 +1,206 @@
+{
+ "model": "claude-opus-5-5",
+ "whole_plugin": true,
+ "cases": [
+  {
+   "name": "numbers-payouts-d",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-d-answers/numbers-payouts-d-with-1-now.md",
+      "saved": [
+       "store-d-answers/numbers-payouts-d-with-1-now.saved-reconciliation.tmpl.md",
+       "store-d-answers/numbers-payouts-d-with-1-now.saved-reconciliation_2026-06.md"
+      ],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true
+      },
+      "own_check": "flagged"
+     },
+     {
+      "answer": "store-d-answers/numbers-payouts-d-with-2-now.md",
+      "saved": [
+       "store-d-answers/numbers-payouts-d-with-2-now.saved-reconciliation_2026-06.md"
+      ],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-payouts-d-with-3-now.md",
+      "saved": [
+       "store-d-answers/numbers-payouts-d-with-3-now.saved-reconciliation.tmpl.md",
+       "store-d-answers/numbers-payouts-d-with-3-now.saved-reconciliation_2026-06.md"
+      ],
+      "error": null,
+      "graders": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "bank-figure": true,
+       "failed-payout": true,
+       "in-transit": true,
+       "may-transactions": true
+      },
+      "own_check": "flagged"
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-summary-d",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-d-answers/numbers-summary-d-with-1-now.md",
+      "saved": [
+       "store-d-answers/numbers-summary-d-with-1-now.saved-summary_2026-08.md"
+      ],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": true,
+       "test-orders": true,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": true,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-summary-d-with-2-now.md",
+      "saved": [
+       "store-d-answers/numbers-summary-d-with-2-now.saved-summary_2026-08.md"
+      ],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": true,
+       "test-orders": true,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-summary-d-with-3-now.md",
+      "saved": [
+       "store-d-answers/numbers-summary-d-with-3-now.saved-summary_2026-08.md"
+      ],
+      "error": null,
+      "graders": {
+       "gift-cards-sold": true,
+       "skill-fired": true,
+       "test-orders": true,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "strict": {
+       "gift-cards-sold": true,
+       "test-orders": false,
+       "tips": true,
+       "unflagged-test-order": true
+      },
+      "own_check": "passed"
+     }
+    ]
+   }
+  },
+  {
+   "name": "numbers-margins-d",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-1-now.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-1-now.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-2-now.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-2-now.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-3-now.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-3-now.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": true
+      },
+      "own_check": "passed"
+     }
+    ]
+   }
+  }
+ ]
+}

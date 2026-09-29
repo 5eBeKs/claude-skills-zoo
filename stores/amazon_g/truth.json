@@ -1,0 +1,1847 @@
+{
+  "meta": {
+    "seller": {
+      "legal_name": "Brambleford Kitchen Co. LLC (fictional)",
+      "store_name": "Brambleford Kitchen",
+      "merchant_token": "A3BRMBLFD7K2Q9",
+      "marketplace": "amazon.com",
+      "marketplace_id": "ATVPDKIKX0DER",
+      "selling_plan": "Professional"
+    },
+    "timezone": "America/Los_Angeles",
+    "report_timezone": "UTC",
+    "report_timezones": {
+      "settlement_flat_file_v2": "UTC (dates written 'YYYY-MM-DD HH:MM:SS UTC'; posted-date is the UTC date)",
+      "all_orders_report": "UTC (ISO 8601 with +00:00)",
+      "date_range_transaction_reports": "America/Los_Angeles (PDT/PST suffix); each monthly file covers the Pacific calendar month",
+      "bank_disbursements": "bank posting date (local business date)"
+    },
+    "currency": "USD",
+    "reports_taken_at": "2026-10-06T09:14:00-07:00",
+    "file_counts": {
+      "settlement_flat_files_v2": 8,
+      "date_range_monthly_transaction_reports": 3,
+      "all_orders_reports": 1,
+      "bank_disbursement_lists": 1
+    },
+    "month_rule": "An amount belongs to the calendar month (America/Los_Angeles) of its posted date-time; deposits belong to the month the bank posted them; orders belong to the month of purchase-date in America/Los_Angeles.",
+    "sign_convention": "Seller's point of view as in the settlement file: money to the seller positive, fees/refunds/advertising negative; marketplace_facilitator_collected positive and _remitted negative (they net to zero); owed_by_amazon amounts are positive when Amazon holds seller money.",
+    "definitions": {
+      "net_product_sales": "product_sales + shipping_credits + gift_wrap_credits + promotional_rebates + refunds_product (all ex tax)",
+      "refunds_product": "everything given back to buyers on Refund, A-to-z Guarantee and Chargeback lines except tax: principal, shipping, gift wrap, and the promotion amounts that come back (positive) on the refund",
+      "amazon_fees.referral": "Commission on orders, Commission returned on refunds, RefundCommission (refund administration fee)",
+      "amazon_fees.fba_fulfillment": "FBAPerUnitFulfillmentFee",
+      "amazon_fees.storage": "monthly FBA inventory storage fee and the aged-inventory (long-term) storage fee, by the month they are posted (each is for an earlier month)",
+      "amazon_fees.other": "ShippingChargeback and GiftwrapChargeback (and their reversals), subscription fee, FBA removal/disposal fees, FBA inbound placement service fees, coupon participation and performance fees, Buy Shipping label purchases",
+      "advertising.total": "Sponsored Products invoices charged to the seller account, by posted date (not ad spend by day)",
+      "reimbursements.total": "FBA Inventory Reimbursement lines incl. customer-return reimbursements and reversals",
+      "activity": "sum of every economic line in the month = net_product_sales + amazon_fees.total + advertising.total + reimbursements.total + tax collected + tax remitted",
+      "owed_by_amazon_at_month_end.open_settlement_balance": "all money Amazon had posted to the seller by the end of the month that had not reached the seller's bank, minus reserve_held: open-settlement lines, DD+7 deferred orders, closed settlements whose deposit was in transit or failed, negative carried balances",
+      "owed_by_amazon_at_month_end.reserve_held": "the 'Current Reserve Amount' of the last settlement closed before the month end",
+      "not_economic": "Previous Reserve Amount Balance, Current Reserve Amount, Payable to Amazon, Failed disbursement and Transfer lines move money inside Amazon or to the bank; they are never activity"
+    },
+    "opening_owed_by_amazon_2026-06-30": {
+      "open_settlement_balance": 33654.01,
+      "reserve_held": 3820.75
+    },
+    "roll_forward": {
+      "2026-07": {
+        "open": 37474.76,
+        "activity": 53321.7,
+        "deposits": 37361.77,
+        "close": 53434.69
+      },
+      "2026-08": {
+        "open": 53434.69,
+        "activity": 51941.73,
+        "deposits": 32239.51,
+        "close": 73136.91
+      },
+      "2026-09": {
+        "open": 73136.91,
+        "activity": 54633.94,
+        "deposits": 67891.7,
+        "close": 59879.15
+      }
+    },
+    "settlements": [
+      {
+        "label": "W3",
+        "settlement_id": "26778527540",
+        "start": "2026-06-09 03:15:44 UTC",
+        "end": "2026-06-23 03:15:44 UTC",
+        "status": "deposited",
+        "total": 21517.57,
+        "in_files": false,
+        "deposit_date_in_file": "2026-06-24 03:15:44 UTC",
+        "bank_date": "2026-06-25"
+      },
+      {
+        "label": "S1",
+        "settlement_id": "26821949902",
+        "start": "2026-06-23 03:15:44 UTC",
+        "end": "2026-07-07 03:15:44 UTC",
+        "status": "deposited",
+        "total": 22879.57,
+        "in_files": true,
+        "deposit_date_in_file": "2026-07-08 03:15:44 UTC",
+        "bank_date": "2026-07-09"
+      },
+      {
+        "label": "S2",
+        "settlement_id": "26860307225",
+        "start": "2026-07-07 03:15:44 UTC",
+        "end": "2026-07-21 03:15:44 UTC",
+        "status": "deposited",
+        "total": 14482.2,
+        "in_files": true,
+        "deposit_date_in_file": "2026-07-22 03:15:44 UTC",
+        "bank_date": "2026-07-23"
+      },
+      {
+        "label": "S3",
+        "settlement_id": "26900538638",
+        "start": "2026-07-21 03:15:44 UTC",
+        "end": "2026-08-04 03:15:44 UTC",
+        "status": "deposited",
+        "total": 32239.51,
+        "in_files": true,
+        "deposit_date_in_file": "2026-08-05 03:15:44 UTC",
+        "bank_date": "2026-08-06"
+      },
+      {
+        "label": "S4",
+        "settlement_id": "26944784040",
+        "start": "2026-08-04 03:15:44 UTC",
+        "end": "2026-08-18 03:15:44 UTC",
+        "status": "failed",
+        "total": 21849.95,
+        "in_files": true,
+        "deposit_date_in_file": "2026-08-19 03:15:44 UTC",
+        "bank_date": null
+      },
+      {
+        "label": "S5",
+        "settlement_id": "26985759971",
+        "start": "2026-08-18 03:15:44 UTC",
+        "end": "2026-08-31 23:42:09 UTC",
+        "status": "deposited",
+        "total": 46421.19,
+        "in_files": true,
+        "deposit_date_in_file": "2026-08-31 23:42:09 UTC",
+        "bank_date": "2026-09-01"
+      },
+      {
+        "label": "S6a",
+        "settlement_id": "26988006297",
+        "start": "2026-08-31 23:42:09 UTC",
+        "end": "2026-09-01 03:15:44 UTC",
+        "status": "negative",
+        "total": -179.5,
+        "in_files": true,
+        "deposit_date_in_file": "2026-09-02 03:15:44 UTC",
+        "bank_date": null
+      },
+      {
+        "label": "S6",
+        "settlement_id": "27027934433",
+        "start": "2026-09-01 03:15:44 UTC",
+        "end": "2026-09-15 03:15:44 UTC",
+        "status": "deposited",
+        "total": 21470.51,
+        "in_files": true,
+        "deposit_date_in_file": "2026-09-16 03:15:44 UTC",
+        "bank_date": "2026-09-17"
+      },
+      {
+        "label": "S7",
+        "settlement_id": "27066464770",
+        "start": "2026-09-15 03:15:44 UTC",
+        "end": "2026-09-29 03:15:44 UTC",
+        "status": "deposited",
+        "total": 27448.43,
+        "in_files": true,
+        "deposit_date_in_file": "2026-09-30 03:15:44 UTC",
+        "bank_date": "2026-10-01"
+      },
+      {
+        "label": "S8",
+        "settlement_id": "27108188183",
+        "start": "2026-09-29 03:15:44 UTC",
+        "end": "2026-10-13 03:15:44 UTC",
+        "status": "open",
+        "total": null,
+        "in_files": false,
+        "deposit_date_in_file": null,
+        "bank_date": null
+      }
+    ],
+    "seed": "brambleford-kitchen/2026-10-06/v1"
+  },
+  "months": {
+    "2026-07": {
+      "sales": {
+        "product_sales": 112818.17,
+        "shipping_credits": 4760.87,
+        "gift_wrap_credits": 139.72,
+        "promotional_rebates": -3467.27,
+        "refunds_product": -4389.13,
+        "net_product_sales": 109862.36
+      },
+      "amazon_fees": {
+        "referral": -16617.62,
+        "fba_fulfillment": -19422.42,
+        "storage": -683.23,
+        "other": -6750.81,
+        "total": -43474.08
+      },
+      "advertising": {
+        "total": -13275.33
+      },
+      "reimbursements": {
+        "total": 208.75
+      },
+      "tax": {
+        "marketplace_facilitator_collected": 8063.67,
+        "marketplace_facilitator_remitted": -8063.67
+      },
+      "disbursements": {
+        "deposited_total": 37361.77,
+        "deposited_count": 2,
+        "deposited": [
+          {
+            "settlement_id": "26821949902",
+            "deposit_date": "2026-07-09",
+            "amount": 22879.57,
+            "settlement_file_deposit_date": "2026-07-08 03:15:44 UTC",
+            "account": "x4417"
+          },
+          {
+            "settlement_id": "26860307225",
+            "deposit_date": "2026-07-23",
+            "amount": 14482.2,
+            "settlement_file_deposit_date": "2026-07-22 03:15:44 UTC",
+            "account": "x4417"
+          }
+        ],
+        "failed": []
+      },
+      "owed_by_amazon_at_month_end": {
+        "open_settlement_balance": 49054.47,
+        "reserve_held": 4380.22
+      },
+      "orders": {
+        "count": 3208,
+        "units": 4078,
+        "cancelled": 27
+      },
+      "excluded": {
+        "cancelled_orders": {
+          "count": 27,
+          "units": 41,
+          "value_ex_tax_if_shipped": 1216.59
+        },
+        "partially_cancelled_lines": 11,
+        "orders_placed_this_month_charged_next_month": {
+          "count": 74,
+          "product_sales": 3180.03
+        },
+        "orders_placed_earlier_charged_this_month": {
+          "count": 83,
+          "product_sales": 2816.98
+        },
+        "marketplace_facilitator_tax_not_seller_money": {
+          "collected": 8063.67,
+          "remitted": -8063.67,
+          "net": 0.0
+        },
+        "reserve_lines_posted_this_month": {
+          "previous_reserve_released": 8166.81,
+          "current_reserve_held": -8166.81
+        },
+        "negative_balance_carried_lines": [],
+        "failed_disbursement_return_lines": [],
+        "amazon_transfers_initiated_this_month": [
+          {
+            "settlement_id": "26821949902",
+            "initiated_at": "2026-07-07T20:15:44-07:00",
+            "amount": 22879.57,
+            "status": "deposited",
+            "bank_date": "2026-07-09"
+          },
+          {
+            "settlement_id": "26860307225",
+            "initiated_at": "2026-07-21T20:15:44-07:00",
+            "amount": 14482.2,
+            "status": "deposited",
+            "bank_date": "2026-07-23"
+          }
+        ],
+        "deposits_in_transit_at_month_end": [],
+        "failed_disbursements_not_yet_repaid_at_month_end": [],
+        "dd7_deferred_orders_unreleased_at_month_end": {
+          "count": 882,
+          "net_amount": 22985.72
+        },
+        "lines_whose_utc_posted_date_is_next_month": 208,
+        "activity_not_in_any_settlement_file": {
+          "transactions": 0,
+          "net_amount": 0.0,
+          "settlement_ids": [],
+          "unreleased_without_settlement_id": 0
+        }
+      },
+      "lists": {
+        "claims_open_at_month_end": [
+          {
+            "claim_id": "AZ-2",
+            "order_id": "114-5200041-0329294",
+            "type": "A-to-z Guarantee",
+            "filed_at": "2026-07-30T09:05:00-07:00",
+            "amount_claimed": 48.14,
+            "resolved_at": "2026-08-11T09:20:47-07:00",
+            "outcome_as_of_report": "granted"
+          },
+          {
+            "claim_id": "AZ-3",
+            "order_id": "114-0878973-1525653",
+            "type": "A-to-z Guarantee",
+            "filed_at": "2026-07-29T15:48:00-07:00",
+            "amount_claimed": 94.75,
+            "resolved_at": "2026-08-06T10:02:00-07:00",
+            "outcome_as_of_report": "decided_for_seller"
+          },
+          {
+            "claim_id": "CB-1",
+            "order_id": "112-1382426-1273636",
+            "type": "Chargeback",
+            "filed_at": "2026-07-24T13:10:00-07:00",
+            "amount_claimed": 68.89,
+            "resolved_at": "2026-08-20T11:44:02-07:00",
+            "outcome_as_of_report": "debited"
+          }
+        ],
+        "orders_refunded_in_later_month": [
+          {
+            "order_id": "112-0817090-1927178",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-02T01:31:35-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -21.98,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-2584552-7641059",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-02T17:09:44-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -27.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-1634158-4396080",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-02T19:23:40-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -26.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-3737395-1367786",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-02T20:22:08-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -14.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-8649175-9530833",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-02T20:58:00-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -44.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-7033600-2150167",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-02T22:39:47-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -9.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-8940548-6456399",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-03T14:58:17-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -89.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-8234384-8999383",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-03T15:50:47-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -29.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-5893647-3457537",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-03T21:08:57-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -4.5,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-8394785-7153148",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-03T22:05:30-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -9.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-0021283-9997158",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-03T22:21:16-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -149.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-9988847-1231375",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T00:03:07-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -24.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-1702209-3388275",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T01:13:16-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -36.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-3436318-8675723",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T11:15:35-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -12.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-3504948-8193967",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T15:55:45-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-5493764-7390578",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T19:21:44-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -17.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-0540354-4896494",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T19:23:20-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -12.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-7260384-5163686",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T20:36:57-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -21.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-5203782-9558953",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T21:50:28-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -7.5,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-1549710-3550908",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-04T23:08:54-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -21.98,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-0766153-8974762",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-05T03:16:33-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -24.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-7193372-7986050",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-05T16:54:46-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -44.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-4413951-6714552",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-05T18:07:20-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -24.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-3954076-2506691",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-05T20:46:33-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -24.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-5186204-2916292",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-05T22:07:43-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -149.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-1529251-0349047",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-06T01:25:59-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -11.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-4181974-4576329",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-06T02:14:56-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-2655273-8634698",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-06T16:46:56-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-6763933-7049627",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-06T20:19:49-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -34.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-5905774-2124769",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-07T00:39:56-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -11.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-0314125-3263606",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-08T01:15:26-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -29.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-7926584-0875433",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-08T15:24:10-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -15.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-4212680-0257691",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-08T20:11:45-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -15.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-9848684-0320270",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-09T02:02:14-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -35.97,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-7366544-7164047",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-09T13:19:41-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -21.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-7100660-6580970",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-09T18:23:52-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -64.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-5200041-0329294",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-11T09:20:47-07:00",
+            "refund_month": "2026-08",
+            "type": "A-to-z Guarantee Refund",
+            "refund_ex_tax": -44.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-6356665-6783536",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-12T00:36:43-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -17.98,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-4831548-4075284",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-12T21:07:22-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -54.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-9216682-7129658",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-13T00:10:43-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -149.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-6123977-5169626",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-13T15:26:37-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -17.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-4011520-1514713",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-14T01:24:19-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -44.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-1142365-9899991",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-18T02:11:32-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -64.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-9280697-7546993",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-19T00:58:54-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -59.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-5591725-9185094",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-19T15:09:30-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -54.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-1382426-1273636",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-20T11:44:02-07:00",
+            "refund_month": "2026-08",
+            "type": "Chargeback Refund",
+            "refund_ex_tax": -64.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-7696771-3294424",
+            "sale_posted_month": "2026-07",
+            "refund_posted_at": "2026-08-22T17:46:21-07:00",
+            "refund_month": "2026-08",
+            "type": "Refund",
+            "refund_ex_tax": -64.99,
+            "in_a_settlement_file": true
+          }
+        ]
+      }
+    },
+    "2026-08": {
+      "sales": {
+        "product_sales": 104709.12,
+        "shipping_credits": 4270.66,
+        "gift_wrap_credits": 119.76,
+        "promotional_rebates": -1387.26,
+        "refunds_product": -4550.17,
+        "net_product_sales": 103162.11
+      },
+      "amazon_fees": {
+        "referral": -15616.88,
+        "fba_fulfillment": -17840.96,
+        "storage": -774.85,
+        "other": -6383.64,
+        "total": -40616.33
+      },
+      "advertising": {
+        "total": -10826.11
+      },
+      "reimbursements": {
+        "total": 222.06
+      },
+      "tax": {
+        "marketplace_facilitator_collected": 7540.11,
+        "marketplace_facilitator_remitted": -7540.11
+      },
+      "disbursements": {
+        "deposited_total": 32239.51,
+        "deposited_count": 1,
+        "deposited": [
+          {
+            "settlement_id": "26900538638",
+            "deposit_date": "2026-08-06",
+            "amount": 32239.51,
+            "settlement_file_deposit_date": "2026-08-05 03:15:44 UTC",
+            "account": "x4417"
+          }
+        ],
+        "failed": [
+          {
+            "settlement_id": "26944784040",
+            "deposit_date": "2026-08-19",
+            "amount": 21849.95,
+            "attempted_at": "2026-08-18T20:15:44-07:00",
+            "account": "x4417",
+            "reason": "ACH return R02 (account closed): seller closed bank account ending 4417 on 2026-08-14 before updating Seller Central",
+            "funds_returned_at": "2026-08-25T10:22:10-07:00",
+            "returned_as_line_in_settlement_id": "26985759971",
+            "paid_again_in_bank_on": "2026-09-01"
+          }
+        ]
+      },
+      "owed_by_amazon_at_month_end": {
+        "open_settlement_balance": 69067.66,
+        "reserve_held": 4069.25
+      },
+      "orders": {
+        "count": 2917,
+        "units": 3717,
+        "cancelled": 41
+      },
+      "excluded": {
+        "cancelled_orders": {
+          "count": 41,
+          "units": 44,
+          "value_ex_tax_if_shipped": 1128.56
+        },
+        "partially_cancelled_lines": 9,
+        "orders_placed_this_month_charged_next_month": {
+          "count": 102,
+          "product_sales": 3439.74
+        },
+        "orders_placed_earlier_charged_this_month": {
+          "count": 74,
+          "product_sales": 3180.03
+        },
+        "marketplace_facilitator_tax_not_seller_money": {
+          "collected": 7540.11,
+          "remitted": -7540.11,
+          "net": 0.0
+        },
+        "reserve_lines_posted_this_month": {
+          "previous_reserve_released": 16742.11,
+          "current_reserve_held": -16742.11
+        },
+        "negative_balance_carried_lines": [
+          {
+            "settlement_id": "27027934433",
+            "amount": -179.5,
+            "posted_at": "2026-08-31T20:15:44-07:00",
+            "carried_from_settlement_id": "26988006297"
+          }
+        ],
+        "failed_disbursement_return_lines": [
+          {
+            "settlement_id": "26985759971",
+            "amount": 21849.95,
+            "posted_at": "2026-08-25T10:22:10-07:00",
+            "returned_from_settlement_id": "26944784040"
+          }
+        ],
+        "amazon_transfers_initiated_this_month": [
+          {
+            "settlement_id": "26900538638",
+            "initiated_at": "2026-08-04T20:15:44-07:00",
+            "amount": 32239.51,
+            "status": "deposited",
+            "bank_date": "2026-08-06"
+          },
+          {
+            "settlement_id": "26944784040",
+            "initiated_at": "2026-08-18T20:15:44-07:00",
+            "amount": 21849.95,
+            "status": "failed",
+            "bank_date": null
+          },
+          {
+            "settlement_id": "26985759971",
+            "initiated_at": "2026-08-31T16:42:09-07:00",
+            "amount": 46421.19,
+            "status": "deposited",
+            "bank_date": "2026-09-01"
+          }
+        ],
+        "deposits_in_transit_at_month_end": [
+          {
+            "settlement_id": "26985759971",
+            "amount": 46421.19,
+            "initiated_at": "2026-08-31T16:42:09-07:00",
+            "bank_date": "2026-09-01"
+          }
+        ],
+        "failed_disbursements_not_yet_repaid_at_month_end": [
+          {
+            "settlement_id": "26944784040",
+            "amount": 21849.95
+          }
+        ],
+        "dd7_deferred_orders_unreleased_at_month_end": {
+          "count": 877,
+          "net_amount": 22831.25
+        },
+        "lines_whose_utc_posted_date_is_next_month": 197,
+        "activity_not_in_any_settlement_file": {
+          "transactions": 0,
+          "net_amount": 0.0,
+          "settlement_ids": [],
+          "unreleased_without_settlement_id": 0
+        }
+      },
+      "lists": {
+        "claims_open_at_month_end": [
+          {
+            "claim_id": "AZ-4",
+            "order_id": "111-4840009-6719816",
+            "type": "A-to-z Guarantee",
+            "filed_at": "2026-08-29T12:12:00-07:00",
+            "amount_claimed": 127.18,
+            "resolved_at": "2026-09-09T08:37:21-07:00",
+            "outcome_as_of_report": "granted"
+          }
+        ],
+        "orders_refunded_in_later_month": [
+          {
+            "order_id": "114-5759868-0367298",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-01T01:10:13-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-1335689-9586743",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-01T01:52:40-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -34.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-5036092-8031419",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-01T17:26:59-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -12.5,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-1351121-9705609",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-01T20:22:03-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -26.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-8908584-2255754",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-01T20:41:02-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -10.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-1875884-0591441",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-01T21:11:56-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -129.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-3097474-8055048",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-02T01:22:24-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -24.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-4370857-1871680",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-02T14:22:27-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -29.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-6265004-6137696",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-02T15:31:56-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -129.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-8684363-2806812",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-02T18:05:22-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -27.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-1550335-9629260",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-02T19:32:12-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -24.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-4434153-3321848",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-02T19:43:27-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -44.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-3583255-1329151",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-02T20:41:34-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -69.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-5355509-7630213",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T02:08:50-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -17.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-0015483-8700756",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T03:41:20-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -13.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-7131110-7702552",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T13:04:16-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -11.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-5685218-2393746",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T19:27:11-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -79.98,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-7394507-2220459",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T19:33:11-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -17.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-6238395-8107756",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T19:33:26-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -27.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-0341191-1880725",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T20:20:28-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -29.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-1616413-7496542",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T20:44:07-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -27.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-0050530-6368188",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T21:01:23-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -34.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-8595762-0537794",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T21:33:49-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -16.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-2510283-6806254",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T22:04:49-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-2532111-9618860",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T22:07:21-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -149.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-5972038-2265716",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-03T23:34:56-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -14.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-2447213-0014663",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T02:28:36-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -14.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-3897730-7459473",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T16:41:30-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -20.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-6587290-3128513",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T17:07:50-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-6168280-2681931",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T17:11:21-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -13.5,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-9221514-9656169",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T19:07:31-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -16.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-3151496-2062853",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T20:12:30-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -34.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-2355377-0936889",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T21:49:10-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -15.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-5336112-5361836",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T21:55:49-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -69.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-7354712-5680559",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-04T22:21:49-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -149.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-1641974-9499465",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-05T16:43:42-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -19.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-0331789-3896948",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-05T20:41:35-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -69.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-6322354-2388372",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-05T22:46:51-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -15.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-0130006-1374951",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-05T22:55:08-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -12.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-8818139-4017803",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-06T00:50:38-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -89.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-6581160-8981968",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-06T22:39:01-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -16.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-2068975-4675222",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-06T22:59:31-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -16.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-3944010-4403353",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-06T23:38:34-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -36.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-7870197-9461316",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-07T00:05:18-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -29.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-2692878-1164796",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-07T01:15:57-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-3743071-7785829",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-07T21:39:59-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -5.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-9556108-4204530",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-07T23:16:31-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -26.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-4776936-5265093",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-08T14:02:38-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -17.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-4840009-6719816",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-09T08:37:21-07:00",
+            "refund_month": "2026-09",
+            "type": "A-to-z Guarantee Refund",
+            "refund_ex_tax": -119.98,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-7652665-5708023",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-10T02:28:14-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -26.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-9532076-5839135",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-10T16:32:04-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -64.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "114-7030586-9442992",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-11T22:45:44-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -10.0,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-7593735-6959283",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-12T23:41:26-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -27.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-9652438-6580932",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-12T23:59:11-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -54.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "111-4768105-0695127",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-14T17:02:25-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -54.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-4350264-6697906",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-19T01:56:02-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -59.99,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "113-1985642-4954240",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-23T22:14:04-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -21.98,
+            "in_a_settlement_file": true
+          },
+          {
+            "order_id": "112-7461608-0299683",
+            "sale_posted_month": "2026-08",
+            "refund_posted_at": "2026-09-25T18:11:53-07:00",
+            "refund_month": "2026-09",
+            "type": "Refund",
+            "refund_ex_tax": -32.99,
+            "in_a_settlement_file": true
+          }
+        ]
+      }
+    },
+    "2026-09": {
+      "sales": {
+        "product_sales": 112613.64,
+        "shipping_credits": 4378.5,
+        "gift_wrap_credits": 99.8,
+        "promotional_rebates": -2864.74,
+        "refunds_product": -5011.24,
+        "net_product_sales": 109215.96
+      },
+      "amazon_fees": {
+        "referral": -16538.22,
+        "fba_fulfillment": -19193.09,
+        "storage": -736.75,
+        "other": -6388.43,
+        "total": -42856.49
+      },
+      "advertising": {
+        "total": -11886.85
+      },
+      "reimbursements": {
+        "total": 161.32
+      },
+      "tax": {
+        "marketplace_facilitator_collected": 7995.89,
+        "marketplace_facilitator_remitted": -7995.89
+      },
+      "disbursements": {
+        "deposited_total": 67891.7,
+        "deposited_count": 2,
+        "deposited": [
+          {
+            "settlement_id": "26985759971",
+            "deposit_date": "2026-09-01",
+            "amount": 46421.19,
+            "settlement_file_deposit_date": "2026-08-31 23:42:09 UTC",
+            "account": "x8841"
+          },
+          {
+            "settlement_id": "27027934433",
+            "deposit_date": "2026-09-17",
+            "amount": 21470.51,
+            "settlement_file_deposit_date": "2026-09-16 03:15:44 UTC",
+            "account": "x8841"
+          }
+        ],
+        "failed": []
+      },
+      "owed_by_amazon_at_month_end": {
+        "open_settlement_balance": 55376.53,
+        "reserve_held": 4502.62
+      },
+      "orders": {
+        "count": 3005,
+        "units": 3893,
+        "cancelled": 40
+      },
+      "excluded": {
+        "cancelled_orders": {
+          "count": 40,
+          "units": 53,
+          "value_ex_tax_if_shipped": 1278.17
+        },
+        "partially_cancelled_lines": 12,
+        "orders_placed_this_month_charged_next_month": {
+          "count": 67,
+          "product_sales": 2526.17
+        },
+        "orders_placed_earlier_charged_this_month": {
+          "count": 102,
+          "product_sales": 3439.74
+        },
+        "marketplace_facilitator_tax_not_seller_money": {
+          "collected": 7995.89,
+          "remitted": -7995.89,
+          "net": 0.0
+        },
+        "reserve_lines_posted_this_month": {
+          "previous_reserve_released": 8832.35,
+          "current_reserve_held": -8832.35
+        },
+        "negative_balance_carried_lines": [],
+        "failed_disbursement_return_lines": [],
+        "amazon_transfers_initiated_this_month": [
+          {
+            "settlement_id": "27027934433",
+            "initiated_at": "2026-09-15T20:15:44-07:00",
+            "amount": 21470.51,
+            "status": "deposited",
+            "bank_date": "2026-09-17"
+          },
+          {
+            "settlement_id": "27066464770",
+            "initiated_at": "2026-09-29T20:15:44-07:00",
+            "amount": 27448.43,
+            "status": "deposited",
+            "bank_date": "2026-10-01"
+          }
+        ],
+        "deposits_in_transit_at_month_end": [
+          {
+            "settlement_id": "27066464770",
+            "amount": 27448.43,
+            "initiated_at": "2026-09-29T20:15:44-07:00",
+            "bank_date": "2026-10-01"
+          }
+        ],
+        "failed_disbursements_not_yet_repaid_at_month_end": [],
+        "dd7_deferred_orders_unreleased_at_month_end": {
+          "count": 948,
+          "net_amount": 25324.25
+        },
+        "lines_whose_utc_posted_date_is_next_month": 175,
+        "activity_not_in_any_settlement_file": {
+          "transactions": 1172,
+          "net_amount": 27928.1,
+          "settlement_ids": [
+            "27108188183"
+          ],
+          "unreleased_without_settlement_id": 352
+        }
+      },
+      "lists": {
+        "claims_open_at_month_end": [
+          {
+            "claim_id": "AZ-5",
+            "order_id": "111-7534508-6272878",
+            "type": "A-to-z Guarantee",
+            "filed_at": "2026-09-22T10:30:00-07:00",
+            "amount_claimed": 24.08,
+            "resolved_at": null,
+            "outcome_as_of_report": "open"
+          },
+          {
+            "claim_id": "CB-2",
+            "order_id": "114-6997768-4352666",
+            "type": "Chargeback",
+            "filed_at": "2026-09-02T09:55:00-07:00",
+            "amount_claimed": 23.03,
+            "resolved_at": null,
+            "outcome_as_of_report": "open"
+          }
+        ],
+        "orders_refunded_in_later_month": [
+          {
+            "order_id": "113-1044326-5784864",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T17:31:24-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -9.0,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-1380212-3205188",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T20:27:06-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -16.5,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-5528512-1717943",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T21:11:50-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -34.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-2895054-1532596",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T21:53:09-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -18.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-4902986-5121724",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T22:22:43-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-0218123-2759582",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T22:46:11-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -13.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-4811993-3653353",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T22:56:06-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -9.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "111-1168973-1801721",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-01T23:44:18-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "111-3726279-2457698",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-02T02:05:07-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -15.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-0174406-6661354",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-02T03:00:49-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -129.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "111-1558384-4650209",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-02T21:11:16-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -16.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-5908931-9702122",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-03T00:38:38-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -23.98,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-9895233-7089516",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-03T00:45:39-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -36.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-9667713-5091429",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-03T19:09:31-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -15.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-8761310-3390944",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-03T21:18:46-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -15.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-2201576-5124194",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-03T21:51:49-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -64.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "111-0053522-4882903",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-03T22:33:07-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -23.98,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "112-7571373-4689125",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-04T13:41:02-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -11.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-7102544-0384408",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-04T14:08:06-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -18.0,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-4225601-0544605",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-04T19:10:52-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -26.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-6042881-7469435",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-04T20:14:07-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -149.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-3209158-2711540",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-04T21:45:57-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -19.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-6864018-8587450",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-05T01:25:26-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -19.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "112-6111341-8267101",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-05T15:51:44-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -17.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-2434236-6716294",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-05T16:47:40-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -17.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "112-3141358-6305214",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-05T21:01:13-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -39.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "114-2329720-2872644",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-05T21:25:36-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -129.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "113-9731882-4365411",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-06T00:38:20-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -26.99,
+            "in_a_settlement_file": false
+          },
+          {
+            "order_id": "111-8062680-1997549",
+            "sale_posted_month": "2026-09",
+            "refund_posted_at": "2026-10-06T02:07:14-07:00",
+            "refund_month": "2026-10",
+            "type": "Refund",
+            "refund_ex_tax": -3.75,
+            "in_a_settlement_file": false
+          }
+        ]
+      }
+    }
+  }
+}

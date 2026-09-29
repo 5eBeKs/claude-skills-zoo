@@ -1,0 +1,723 @@
+{
+ "revision": "cf1eceb",
+ "version": "0.10.1",
+ "store": "D",
+ "months": [
+  "2026-06",
+  "2026-07",
+  "2026-08"
+ ],
+ "summary": {
+  "match": 55,
+  "differs": 1,
+  "not reported": 0
+ },
+ "rows": [
+  {
+   "area": "payouts",
+   "figure": "paid out in the month (the bank)",
+   "traps": "T64 T67",
+   "truth": "572456.23",
+   "ours": "572456.23",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "the bridge says it closes only when the bank figure is right",
+   "traps": "T67",
+   "truth": "True",
+   "ours": "True",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "in transit at month end",
+   "traps": "T66",
+   "truth": "117366.9",
+   "ours": "117366.90",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "refunds processed",
+   "traps": "T04-T10",
+   "truth": "-82726.47",
+   "ours": "82726.47",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "processing fees",
+   "traps": "T39",
+   "truth": "25967.07",
+   "ours": "25967.07",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargebacks",
+   "traps": "T19-T22",
+   "truth": "-1212.93",
+   "ours": "1212.93",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargebacks won back",
+   "traps": "T19",
+   "truth": "0.0",
+   "ours": "0",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargeback fees, net of fees returned",
+   "traps": "T19",
+   "truth": "240.0",
+   "ours": "240.00",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "reserve held at month end",
+   "traps": "T65",
+   "truth": "0.0",
+   "ours": "0",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "Shopify Payments activity (paid out + in transit, net)",
+   "traps": "T64",
+   "truth": "584811.45",
+   "ours": "584811.45",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "failed payouts",
+   "traps": "T64",
+   "truth": [
+    "2026-06-30"
+   ],
+   "ours": [
+    "2026-06-30"
+   ],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "summary",
+   "figure": "orders created in the month, test orders left out",
+   "traps": "T35-T37",
+   "truth": "7047",
+   "ours": "7047",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "summary",
+   "figure": "test orders, left out or named for the owner",
+   "traps": "T35 T36",
+   "truth": [
+    "#50774",
+    "#50775",
+    "#50777",
+    "#50780",
+    "#50789"
+   ],
+   "ours": [
+    "#50774",
+    "#50775",
+    "#50777",
+    "#50780",
+    "#50789"
+   ],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "summary",
+   "figure": "cancelled orders",
+   "traps": "T15-T18",
+   "truth": "121",
+   "ours": "121",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "summary",
+   "figure": "gift cards sold, kept out of sales",
+   "traps": "T23",
+   "truth": "6125.0",
+   "ours": "6125.00",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "summary",
+   "figure": "tips, kept out of sales",
+   "traps": "T43",
+   "truth": "748.28",
+   "ours": "744.50",
+   "verdict": "definition",
+   "note": "an order cancelled next month: its tip is the month's in Analytics and reversed later; the skill leaves the cancelled order out (the period is judged)",
+   "month": "2026-06"
+  },
+  {
+   "area": "summary",
+   "figure": "sales (Shopify Analytics: gross, discounts, returns by their own day)",
+   "traps": "",
+   "truth": "582638.72",
+   "ours": "687315.88",
+   "verdict": "definition",
+   "note": "Analytics counts unpaid orders and dates returns by refund day; the skill counts paid orders and refunds in the month of the order, as the owner's definitions say",
+   "month": "2026-06"
+  },
+  {
+   "area": "margins",
+   "figure": "the margins ran on Shopify's products export (Cost per item)",
+   "traps": "T56",
+   "truth": "True",
+   "ours": "True",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "margins",
+   "figure": "products sold without a cost",
+   "traps": "T54 T56 T57",
+   "truth": [
+    "(no SKU) Custom embroidery (initials)",
+    "(no SKU) Enamel Pin Set",
+    "(no SKU) Gift Wrap",
+    "(no SKU) Silk Bandana - Navy Dot",
+    "(no SKU) Silk Bandana - Paisley",
+    "HP-ACC-BKT-NAT",
+    "HP-ACC-BKT-OLV"
+   ],
+   "ours": [
+    "(no SKU) Custom embroidery (initials)",
+    "(no SKU) Enamel Pin Set",
+    "(no SKU) Gift Wrap",
+    "(no SKU) Silk Bandana - Navy Dot",
+    "(no SKU) Silk Bandana - Paisley",
+    "HP-ACC-BKT-NAT",
+    "HP-ACC-BKT-OLV"
+   ],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "margins",
+   "figure": "SKUs renamed mid-period, named as possible renames",
+   "traps": "T55",
+   "truth": "30 items",
+   "ours": "30 items",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06"
+  },
+  {
+   "area": "payouts",
+   "figure": "paid out in the month (the bank)",
+   "traps": "T64 T67",
+   "truth": "723870.37",
+   "ours": "723870.37",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "the bridge says it closes only when the bank figure is right",
+   "traps": "T67",
+   "truth": "True",
+   "ours": "True",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "in transit at month end",
+   "traps": "T66",
+   "truth": "72442.46",
+   "ours": "72442.46",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "refunds processed",
+   "traps": "T04-T10",
+   "truth": "-80598.77",
+   "ours": "80598.77",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "processing fees",
+   "traps": "T39",
+   "truth": "29470.93",
+   "ours": "29470.93",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargebacks",
+   "traps": "T19-T22",
+   "truth": "-3202.05",
+   "ours": "3202.05",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargebacks won back",
+   "traps": "T19",
+   "truth": "268.13",
+   "ours": "268.13",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargeback fees, net of fees returned",
+   "traps": "T19",
+   "truth": "330.0",
+   "ours": "330.00",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "reserve held at month end",
+   "traps": "T65",
+   "truth": "0.0",
+   "ours": "0",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "Shopify Payments activity (paid out + in transit, net)",
+   "traps": "T64",
+   "truth": "678945.93",
+   "ours": "678945.93",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "failed payouts",
+   "traps": "T64",
+   "truth": [],
+   "ours": [],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "summary",
+   "figure": "orders created in the month, test orders left out",
+   "traps": "T35-T37",
+   "truth": "8023",
+   "ours": "8023",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "summary",
+   "figure": "test orders, left out or named for the owner",
+   "traps": "T35 T36",
+   "truth": [
+    "#61399",
+    "#61405",
+    "#61407",
+    "#61410"
+   ],
+   "ours": [
+    "#61399",
+    "#61405",
+    "#61407",
+    "#61410"
+   ],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "summary",
+   "figure": "cancelled orders",
+   "traps": "T15-T18",
+   "truth": "141",
+   "ours": "141",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "summary",
+   "figure": "gift cards sold, kept out of sales",
+   "traps": "T23",
+   "truth": "7925.0",
+   "ours": "7925.00",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "summary",
+   "figure": "tips, kept out of sales",
+   "traps": "T43",
+   "truth": "1193.16",
+   "ours": "1196.94",
+   "verdict": "definition",
+   "note": "an order cancelled next month: its tip is the month's in Analytics and reversed later; the skill leaves the cancelled order out (the period is judged)",
+   "month": "2026-07"
+  },
+  {
+   "area": "summary",
+   "figure": "sales (Shopify Analytics: gross, discounts, returns by their own day)",
+   "traps": "",
+   "truth": "664373.26",
+   "ours": "764287.41",
+   "verdict": "definition",
+   "note": "Analytics counts unpaid orders and dates returns by refund day; the skill counts paid orders and refunds in the month of the order, as the owner's definitions say",
+   "month": "2026-07"
+  },
+  {
+   "area": "margins",
+   "figure": "the margins ran on Shopify's products export (Cost per item)",
+   "traps": "T56",
+   "truth": "True",
+   "ours": "True",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "margins",
+   "figure": "products sold without a cost",
+   "traps": "T54 T56 T57",
+   "truth": [
+    "(no SKU) Custom embroidery (initials)",
+    "(no SKU) Enamel Pin Set",
+    "(no SKU) Gift Wrap",
+    "(no SKU) Silk Bandana - Navy Dot",
+    "(no SKU) Silk Bandana - Paisley",
+    "HP-ACC-BKT-NAT",
+    "HP-ACC-BKT-OLV",
+    "HP-HWH-FOR-L",
+    "HP-HWH-FOR-M",
+    "HP-HWH-FOR-S",
+    "HP-HWH-FOR-XL",
+    "HP-HWH-FOR-XXL"
+   ],
+   "ours": [
+    "(no SKU) Custom embroidery (initials)",
+    "(no SKU) Enamel Pin Set",
+    "(no SKU) Gift Wrap",
+    "(no SKU) Silk Bandana - Navy Dot",
+    "(no SKU) Silk Bandana - Paisley",
+    "HP-ACC-BKT-NAT",
+    "HP-ACC-BKT-OLV",
+    "HP-HWH-FOR-L",
+    "HP-HWH-FOR-M",
+    "HP-HWH-FOR-S",
+    "HP-HWH-FOR-XL",
+    "HP-HWH-FOR-XXL"
+   ],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "margins",
+   "figure": "SKUs renamed mid-period, named as possible renames",
+   "traps": "T55",
+   "truth": "30 items",
+   "ours": "30 items",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-07"
+  },
+  {
+   "area": "payouts",
+   "figure": "paid out in the month (the bank)",
+   "traps": "T64 T67",
+   "truth": "986756.77",
+   "ours": "986756.77",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "the bridge says it closes only when the bank figure is right",
+   "traps": "T67",
+   "truth": "True",
+   "ours": "True",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "in transit at month end",
+   "traps": "T66",
+   "truth": "312160.86",
+   "ours": "312160.86",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "refunds processed",
+   "traps": "T04-T10",
+   "truth": "-110526.53",
+   "ours": "110526.53",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "processing fees",
+   "traps": "T39",
+   "truth": "53410.28",
+   "ours": "53410.28",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargebacks",
+   "traps": "T19-T22",
+   "truth": "-2184.93",
+   "ours": "2184.93",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargebacks won back",
+   "traps": "T19",
+   "truth": "677.51",
+   "ours": "677.51",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "chargeback fees, net of fees returned",
+   "traps": "T19",
+   "truth": "210.0",
+   "ours": "210.00",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "reserve held at month end",
+   "traps": "T65",
+   "truth": "25000.0",
+   "ours": "25000.00",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "Shopify Payments activity (paid out + in transit, net)",
+   "traps": "T64",
+   "truth": "1226475.17",
+   "ours": "1226475.17",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "payouts",
+   "figure": "failed payouts",
+   "traps": "T64",
+   "truth": [],
+   "ours": [],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "summary",
+   "figure": "orders created in the month, test orders left out",
+   "traps": "T35-T37",
+   "truth": "15164",
+   "ours": "15165",
+   "verdict": "differs",
+   "note": "counted until the owner says: #67254 has no test tag or test gateway, only a note or an e-mail says test, and the answer names it and asks",
+   "month": "2026-08"
+  },
+  {
+   "area": "summary",
+   "figure": "test orders, left out or named for the owner",
+   "traps": "T35 T36",
+   "truth": [
+    "#67053",
+    "#67054",
+    "#67056",
+    "#67062",
+    "#67067",
+    "#67254",
+    "#67256",
+    "#67258"
+   ],
+   "ours": [
+    "#67053",
+    "#67054",
+    "#67056",
+    "#67062",
+    "#67067",
+    "#67254",
+    "#67256",
+    "#67258"
+   ],
+   "verdict": "match",
+   "note": "named, counted until the owner says: #67254",
+   "month": "2026-08"
+  },
+  {
+   "area": "summary",
+   "figure": "cancelled orders",
+   "traps": "T15-T18",
+   "truth": "264",
+   "ours": "264",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "summary",
+   "figure": "gift cards sold, kept out of sales",
+   "traps": "T23",
+   "truth": "15475.0",
+   "ours": "15475.00",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "summary",
+   "figure": "tips, kept out of sales",
+   "traps": "T43",
+   "truth": "1827.67",
+   "ours": "1827.67",
+   "verdict": "definition",
+   "note": "an order cancelled next month: its tip is the month's in Analytics and reversed later; the skill leaves the cancelled order out (the period is judged)",
+   "month": "2026-08"
+  },
+  {
+   "area": "summary",
+   "figure": "sales (Shopify Analytics: gross, discounts, returns by their own day)",
+   "traps": "",
+   "truth": "1218849.78",
+   "ours": "1442109.13",
+   "verdict": "definition",
+   "note": "Analytics counts unpaid orders and dates returns by refund day; the skill counts paid orders and refunds in the month of the order, as the owner's definitions say",
+   "month": "2026-08"
+  },
+  {
+   "area": "margins",
+   "figure": "the margins ran on Shopify's products export (Cost per item)",
+   "traps": "T56",
+   "truth": "True",
+   "ours": "True",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "margins",
+   "figure": "products sold without a cost",
+   "traps": "T54 T56 T57",
+   "truth": "14 items",
+   "ours": "14 items",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "margins",
+   "figure": "SKUs renamed mid-period, named as possible renames",
+   "traps": "T55",
+   "truth": [],
+   "ours": [],
+   "verdict": "match",
+   "note": "",
+   "month": "2026-08"
+  },
+  {
+   "area": "summary",
+   "figure": "tips over the period, kept out of sales",
+   "traps": "T43",
+   "truth": "3769.11",
+   "ours": "3769.11",
+   "verdict": "match",
+   "note": "",
+   "month": "2026-06..08"
+  },
+  {
+   "area": "summary",
+   "figure": "orders flagged as not adding up: exactly those where an edit removed an item and its line stayed in the export",
+   "traps": "T12 T48",
+   "truth": "27 items",
+   "ours": "27 items",
+   "verdict": "match",
+   "note": "27 flagged",
+   "month": "2026-06..08"
+  }
+ ]
+}

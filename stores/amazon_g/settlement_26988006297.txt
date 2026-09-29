@@ -1,0 +1,13 @@
+settlement-id	settlement-start-date	settlement-end-date	deposit-date	total-amount	currency	transaction-type	order-id	merchant-order-id	adjustment-id	shipment-id	marketplace-name	amount-type	amount-description	amount	fulfillment-id	posted-date	posted-date-time	order-item-code	merchant-order-item-id	merchant-adjustment-item-id	sku	quantity-purchased	promotion-id
+26988006297	2026-08-31 23:42:09 UTC	2026-09-01 03:15:44 UTC	2026-09-02 03:15:44 UTC	-179.50	USD																		
+26988006297						other-transaction						other-transaction	Previous Reserve Amount Balance	4090.08		2026-08-31	2026-08-31 23:42:09 UTC						
+26988006297						other-transaction	112-2356064-6204484				Amazon.com	other-transaction	Shipping label purchase	-8.55	MFN	2026-08-31	2026-08-31 23:48:07 UTC						
+26988006297						Refund	111-2210073-2408108		57998502948377		Amazon.com	ItemPrice	Principal	-12.99	AFN	2026-09-01	2026-09-01 00:07:25 UTC	48826367914516		ZemwfyEAv	BFK-CUTB-PLAS-4		
+26988006297						Refund	111-2210073-2408108		57998502948377		Amazon.com	ItemPrice	Tax	-0.69	AFN	2026-09-01	2026-09-01 00:07:25 UTC	48826367914516		ZemwfyEAv	BFK-CUTB-PLAS-4		
+26988006297						Refund	111-2210073-2408108		57998502948377		Amazon.com	ItemWithheldTax	MarketplaceFacilitatorTax-Principal	0.69	AFN	2026-09-01	2026-09-01 00:07:25 UTC	48826367914516		ZemwfyEAv	BFK-CUTB-PLAS-4		
+26988006297						Refund	111-2210073-2408108		57998502948377		Amazon.com	ItemFees	Commission	1.95	AFN	2026-09-01	2026-09-01 00:07:25 UTC	48826367914516		ZemwfyEAv	BFK-CUTB-PLAS-4		
+26988006297						Refund	111-2210073-2408108		57998502948377		Amazon.com	ItemFees	RefundCommission	-0.39	AFN	2026-09-01	2026-09-01 00:07:25 UTC	48826367914516		ZemwfyEAv	BFK-CUTB-PLAS-4		
+26988006297						other-transaction						other-transaction	Subscription Fee	-39.99		2026-09-01	2026-09-01 00:12:37 UTC						
+26988006297						ServiceFee						Cost of Advertising	TransactionTotalAmount	-139.56		2026-09-01	2026-09-01 02:31:05 UTC						
+26988006297						AmazonFees	112-2174769-1577363				Amazon.com	Coupon Performance Based Fee	Base fee	-0.80		2026-09-01	2026-09-01 02:56:08 UTC						
+26988006297						other-transaction						other-transaction	Current Reserve Amount	-4069.25		2026-09-01	2026-09-01 03:15:44 UTC						

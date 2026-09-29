@@ -4,6 +4,7 @@
   "unknown_order_refs": [],
   "wrong_currency": [],
   "missing_from_answer": [],
+  "verdicts_not_rendered": [],
   "skipped": [
     "2026",
     "2026"

@@ -1,0 +1,64 @@
+{
+ "model": "claude-opus-5-5",
+ "whole_plugin": true,
+ "cases": [
+  {
+   "name": "numbers-margins-d",
+   "arms": {
+    "with": [
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-1-0.8.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-1-0.8.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": true
+      },
+      "own_check": "passed"
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-2-0.8.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-2-0.8.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": true
+      },
+      "own_check": "flagged"
+     },
+     {
+      "answer": "store-d-answers/numbers-margins-d-with-3-0.8.md",
+      "saved": [
+       "store-d-answers/numbers-margins-d-with-3-0.8.saved-margins_2026-07.md"
+      ],
+      "error": null,
+      "graders": {
+       "no-cost-named": true,
+       "renamed-skus": true,
+       "skill-fired": true
+      },
+      "strict": {
+       "no-cost-named": true,
+       "renamed-skus": false
+      },
+      "own_check": "passed"
+     }
+    ]
+   }
+  }
+ ]
+}
